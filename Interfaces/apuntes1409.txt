@@ -1,0 +1,26 @@
+perogrullo jaja
+
+interfaz: metodos de usabilidad 
+
+http protrocolo de comunicacion 
+
+interfaz de usuario: lo que ofrece al app para que el usuario la use (utilidad, funcionalidad) 
+
+diseñar: estructurar la interfaz y la funcionalidad de la applicacion 
+	definir la funcionalidad que se va a dar/ en que manera se mostraran los componentes que daran las funcioanlidad
+
+
+Portada
+ 
+
+Índice 
+Introducción
+
+
+Requisitos que debería cumplir
+Ejecutar comandos sencillos a una alta velocidad de procesado, preguntar al usuario cuando limpiar la pantalla, cuando ejecutar, marcar el número de líneas que están escritas, reposicionar el texto a partir de un botón.
+
+Dibujo de la apariencia de la aplicación
+Proceso de ejecución y uso
+Para la ejecución, el usuario pulsará la tecla de iniciar, situada en la caja de herramientas del programa, que arrancará los comandos escritos por el usuario y mostrará el resultado en una ventana emergente. Cuando el comando se escriba de forma errónea, en vez de aparecer una ventana con la ejecución, aparecerá una ventana diciendo que el codigo es ilegible y no lo puede reconocer, dando a entender al usuario que tiene que cambiar algo de lo que ha escrito.
+El mismo programa también tiene funcionalidad para borrar la pantalla (todo lo que el usuario haya escrito), guardar/exportar (hacia el ordenador) , copiar, pegar

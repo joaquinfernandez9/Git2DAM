@@ -1,0 +1,26 @@
+formato desarrollo de interfaces
+
+- portada/caratula (nombre, titulo, fecha, version, afiliacion //ies fco de queveo 2º interfaces curso22-23)
+
+- indice (nivel max3)
+
+- introducción (objetivos, aprendizajes, metas, descripcion de caps siguientes)
+
+- capitulo N conclusiones (resumen del trabajo, apreciacion)
+
+- capitulo N+1 REFERENCIAS (referencias numeradas indicando capitulo del proyecto, fecha de ultima consulta)
+
+
+
+
+
+oficce 365 con cuenta de educamadrid (no me la acuerdo)
+
+
+hacer apuntes de que se va a escribir antes de empezar
+
+usar powershell y cmd ejecutar javad esde ahi
+
+
+
+
