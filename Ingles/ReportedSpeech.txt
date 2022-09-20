@@ -1,0 +1,30 @@
+REPORTED SPEECH 
+
+statements : Joaquin wants to go to the cinema -> He told me he wanted to go to the cinema
+Question: What will you do? -> She asked me what I would do
+	Are you doing exercises now? -> She asked me if I was doing exercises at the moment
+Orders: Do it! -> She told/ordered me to do it
+Advice: You should stay in bed -> She advised me to stay in bed.
+Suggestion: Lets go home -> She suggested me going home.
+
+
+1, She told me not to do it
+2. She's told me she's leaving the next day
+3. She asked me to get a cup of tea.
+4. She told me she had gotten married the year before
+5. She ordered me to be quick
+6. She asked me if i could explain number four to her.
+7. She asked me where I lived.
+8. She told me they had gone to the cinema and to a chinese restaurant
+9. She told me she would come at twelve to help me
+10. she asked me what i was doing the following day
+11. She ordered me not to go.
+12. She asked me if i worked in london
+13. She asked me where the post office was.
+14. She ordered me to come there
+15. She told me she had never been in Wales
+16. She asked me if i had ever seen the LOTR
+17. She told me she didn't like mushrooms
+18. She told me not to be silly
+19. She asked me if i would mind waiting a moment.
+20. She asked me how often I played sports
