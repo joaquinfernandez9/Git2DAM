@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" prefHeight="500.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <MenuBar fx:id="Options">
+            <Menu mnemonicParsing="false" text="Options">
+
+                <MenuItem fx:id="menuItemLogout" mnemonicParsing="false"
+                          text="Logout"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Newspaper">
+                <MenuItem fx:id="npList" mnemonicParsing="false"
+                          text="List"/>
+                <MenuItem fx:id="npAdd" mnemonicParsing="false"
+                          text="Add"/>
+                <MenuItem fx:id="npUpdate" mnemonicParsing="false"
+                          text="Update"/>
+                <MenuItem fx:id="npDelete" mnemonicParsing="false"
+                          text="Delete"/>
+
+            </Menu>
+            <Menu mnemonicParsing="false" text="Reader">
+                <MenuItem fx:id="rList" mnemonicParsing="false"
+                          text="List"/>
+                <MenuItem fx:id="rAdd" mnemonicParsing="false"
+                          text="Add"/>
+                <MenuItem fx:id="rUpdate" mnemonicParsing="false"
+                          text="Update"/>
+                <MenuItem fx:id="rDelete" mnemonicParsing="false"
+                          text="Delete"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Article">
+                <MenuItem fx:id="artList" mnemonicParsing="false"
+                          text="List"/>
+                <MenuItem fx:id="artAdd" mnemonicParsing="false"
+                          text="Add"/>
+                <MenuItem fx:id="artUpdate" mnemonicParsing="false"
+                          text="Update"/>
+                <MenuItem fx:id="artDelete" mnemonicParsing="false"
+                          text="Delete"/>
+            </Menu>
+
+        </MenuBar>
+    </top>
+</BorderPane>
