@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.cartas.CartasController">
+   <children>
+
+       <Label layoutX="28.0" layoutY="39.0" text="Que cartas quieres buscar?">
+           <font>
+               <Font name="Calibri Bold Italic" size="20.0" />
+           </font>
+       </Label>
+       <TextField fx:id="cardName" layoutX="19.0" layoutY="89.0" prefHeight="39.0" prefWidth="234.0" />
+
+
+<!--        cartas con ese nomrbe-->
+      <TableView fx:id="tablaCartas" layoutX="43.0" layoutY="203.0" prefHeight="200.0" prefWidth="425.0">
+        <columns>
+          <TableColumn fx:id="nombreCol" prefWidth="85.0" text="Name" />
+          <TableColumn fx:id="idCol" prefWidth="85.0" text="ID" />
+          <TableColumn fx:id="lvlCol" prefWidth="85.0" text="Level" />
+          <TableColumn fx:id="atkCol" prefWidth="85.0" text="Attack" />
+          <TableColumn fx:id="defCol" prefWidth="85.0" text="Defense" />
+        </columns>
+      </TableView>
+      <Button layoutX="273.0" layoutY="96.0" mnemonicParsing="false" onAction="#btnBuscar" text="Buscar" />
+
+      <Label fx:id="coolstuffinc_price" layoutX="678.0" layoutY="221.0" prefHeight="25.0" prefWidth="58.0" text="Label" />
+      <Label fx:id="tcgplayer_price" layoutX="678.0" layoutY="256.0" prefHeight="25.0" prefWidth="58.0" text="Label" />
+      <Label fx:id="amazon_price" layoutX="678.0" layoutY="291.0" prefHeight="25.0" prefWidth="58.0" text="Label" />
+      <Label fx:id="ebay_price" layoutX="678.0" layoutY="326.0" prefHeight="25.0" prefWidth="58.0" text="Label" />
+      <Label fx:id="cardmarket_price" layoutX="678.0" layoutY="361.0" prefHeight="25.0" prefWidth="58.0" text="Label" />
+   </children>
+</AnchorPane>

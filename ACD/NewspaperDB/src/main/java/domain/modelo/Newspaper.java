@@ -9,13 +9,5 @@ public class Newspaper {
     private double price;
     private String director;
 
-    public Newspaper(int newspaperID,
-                     String newspaperName,
-                     double price,
-                     String director) {
-        this.newspaperID = newspaperID;
-        this.newspaperName = newspaperName;
-        this.price = price;
-        this.director = director;
-    }
+
 }

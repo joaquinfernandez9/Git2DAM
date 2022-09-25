@@ -1,0 +1,63 @@
+package ui.pantallas.principal;
+
+import jakarta.enterprise.inject.Instance;
+import jakarta.inject.Inject;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import lombok.extern.log4j.Log4j2;
+import ui.common.BasePantallaController;
+import ui.common.Pantallas;
+
+import java.io.IOException;
+
+@Log4j2
+public class PrincipalController {
+
+    @FXML
+    private final Alert alert;
+    Instance<Object> instance;
+
+    //cambio pantalla
+    @FXML
+    private BorderPane root;
+
+    @Inject
+    public PrincipalController(Instance<Object> instance) {
+        this.instance = instance;
+        alert = new Alert(Alert.AlertType.ERROR);
+    }
+
+    public void cargarPantalla(Pantallas pantalla) {
+        cambioPantalla(cargarPantalla(pantalla.getRuta()));
+    }
+
+    private void cambioPantalla(Pane pantallaNueva) {
+        root.setCenter(pantallaNueva);
+    }
+
+    private Pane cargarPantalla(String ruta) {
+        Pane panePantalla = null;
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setControllerFactory(controller -> instance.select(controller).get());
+            panePantalla = fxmlLoader.load(getClass().getResourceAsStream(ruta));
+            BasePantallaController pantallaController = fxmlLoader.getController();
+            pantallaController.setPrincipalController(this);
+            pantallaController.principalCargado();
+
+
+        } catch (IOException e) {
+            log.error(e.getMessage(), e);
+        }
+        return panePantalla;
+    }
+
+    public void initialize() {
+        cargarPantalla(Pantallas.FILTRO);
+    }
+
+}

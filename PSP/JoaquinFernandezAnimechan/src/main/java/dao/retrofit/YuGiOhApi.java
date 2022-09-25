@@ -1,18 +1,30 @@
 package dao.retrofit;
 
-import modelo.ResponseApi;
+import domain.modelo.cards.DataItem;
+import domain.modelo.cards.CardsList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface YuGiOhApi {
 
-    @GET("v7/cardinfo.php?name=")
-    Call<ResponseApi> getCardInfo(@Query("name") String name);
+    @GET("v7/cardinfo.php")
+    Call<CardsList> getCardsInfo(@Query("fname") String name);
+
+    @GET("v7/cardinfo.php")
+    Call<CardsList> getCardName(@Query("name") String name);
+
+//    @GET("v7/carinfo.php")
+//    Call<CardsList> getCardsAtkAtt(@Query("fname") String name, @Query("atk") Integer atk,
+//                                   @Query("attribute") String attribute, @Query("sort") String sort);
+    @GET("v7/cardinfo.php")
+    Call<CardsList> getCardsAtkRace(@Query("fname") String name, @Query("atk") Integer atk,
+                                   @Query("race") String race, @Query("sort") String sort);
+
 
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?name
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?fname  // buscar las cartas que tengan el texto introducido en el nombre
-    //https://db.ygoprodeck.com/api/v7/cardinfo.php?id  //no entiendo este del todo, mirar foro
+    //https://db.ygoprodeck.com/api/v7/cardinfo.php?id
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?type // buscar por tipo (https://yugipedia.com/wiki/Type)
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?atk //filtrar por ataque
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?def //filtrar por defensa
@@ -33,6 +45,7 @@ public interface YuGiOhApi {
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?startdate
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?enddate
     //https://db.ygoprodeck.com/api/v7/cardinfo.php?dateregion
+    //https://db.ygoprodeck.com/api/v7/cardinfo.php?desc
 
 
 

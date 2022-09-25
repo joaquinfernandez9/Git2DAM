@@ -10,11 +10,5 @@ public class Reader {
     private String readerName;
     private LocalDate birthDate;
 
-    public Reader(int readerID,
-                  String readerName,
-                  LocalDate birthDate) {
-        this.readerID = readerID;
-        this.readerName = readerName;
-        this.birthDate = birthDate;
-    }
+
 }

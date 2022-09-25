@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var cajaEmail: EditText
     lateinit var cajaPassword: EditText
 
-    val paquete =  "eres un paquete loco"
-    val hola = "hola"
+    private val paquete = resources.getString(R.string.paquete)
+    private val hola = resources.getString(R.string.hola)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +39,11 @@ class MainActivity : AppCompatActivity() {
         cajaPassword = this.findViewById(R.id.pass)
 
         btnLogin.setOnClickListener {
-            if (cajaEmail.text.toString().contains("@gmail.com")){
+            if (cajaEmail.text.toString().contains(resources.getString(R.string.gmail))){
                 if (cajaPassword.text.toString().length in 8..13){
-                    Toast.makeText(this, "Login Correcto", Toast.LENGTH_SHORT).show()
-                } else Toast.makeText(this, "Login Incorrecto", Toast.LENGTH_SHORT).show()
-            } else Toast.makeText(this, "Login Incorrecto", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,resources.getString(R.string.LogOK) , Toast.LENGTH_SHORT).show()
+                } else Toast.makeText(this, resources.getString(R.string.LogERROR), Toast.LENGTH_SHORT).show()
+            } else Toast.makeText(this, resources.getString(R.string.LogERROR), Toast.LENGTH_SHORT).show()
         }
 
         etName.text = hola

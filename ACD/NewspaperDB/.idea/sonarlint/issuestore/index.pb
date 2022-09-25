@@ -11,23 +11,15 @@ P
 .src/main/java/domain/services/ArticleServ.java,5\4\545de931a8ac783064eb6f6cc24498b28dcc6a94
 ]
 -src/main/java/domain/services/ReaderServ.java,d\6\d6afef25e905b347d490ca78840d02c53c82addc
-Z
-*src/main/java/domain/modelo/Newspaper.java,7\9\79656c0a6ee966b44a0679974604c2dd741e7e3d
-W
-'src/main/java/domain/modelo/Reader.java,3\8\3806eef425a706598647d984db378fde15aa19a7
 m
-=src/main/java/ui/pantallas/principal/PrincipalController.java,6\8\6854908843d482996cd7f7c9ccd44ffdc547ca45
-X
-(src/main/java/domain/modelo/Article.java,f\3\f367fbbdec3cc6bd8b866dbbd8733354955801e9
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-W
-'src/main/java/ui/main/StartupScene.java,6\7\67e2e8cd1ccdf2df73312c03c460f4b3fbed5ef4
-]
--src/main/java/ui/main/FXMLLoaderProducer.java,8\8\889e8b07e827237e9db61a8b268bc7b0c770ff00
-Q
-!src/main/java/ui/main/MainFX.java,2\e\2e7801e75bc7d7b888b07031d0746a50f31ff377
-O
-src/main/java/ui/main/Main.java,e\a\ea96b99dd8d725725ad637073873194d3860069f
+=src/main/java/ui/pantallas/common/BasePantallaController.java,c\c\cc1ae912583ea46a90bdbcb27df07083ec460f34
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
+W
+'src/main/java/ui/main/StartupScene.java,6\7\67e2e8cd1ccdf2df73312c03c460f4b3fbed5ef4
+Q
+!src/main/java/ui/main/MainFX.java,2\e\2e7801e75bc7d7b888b07031d0746a50f31ff377
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+]
+-src/main/java/ui/main/FXMLLoaderProducer.java,8\8\889e8b07e827237e9db61a8b268bc7b0c770ff00

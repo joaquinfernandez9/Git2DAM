@@ -20,7 +20,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Juan"
+        android:text="@string/juan"
         app:layout_constraintBottom_toTopOf="@+id/cajaTexto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -34,7 +34,8 @@
         android:ems="10"
         android:inputType="textEmailAddress" app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor" />
     <EditText
         android:id="@+id/pass"
         android:layout_width="wrap_content"
@@ -43,12 +44,13 @@
         android:ems="10" android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin" app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502" app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.829"/>
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.829"
+        tools:ignore="LabelFor" />
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/button"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498" app:layout_constraintStart_toStartOf="parent"

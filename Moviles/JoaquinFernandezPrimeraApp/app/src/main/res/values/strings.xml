@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="paquete">eres un paquete loco</string>
+    <string name="hola">holi uwu</string>
+<!--    esto ta feo-->
+    <string name="gmail">/@gmail.com</string>
+    <string name="LogOK">Login Correcto</string>
+    <string name="LogERROR">Login Incorrecto</string>
+    <string name="juan">Juan</string>
+    <string name="button">Button</string>
 </resources>

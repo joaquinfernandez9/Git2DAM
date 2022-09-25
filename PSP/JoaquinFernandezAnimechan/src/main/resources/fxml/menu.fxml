@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.menu.MenuController">
+   <children>
+      <Button onAction="#moverCartas" layoutX="90.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Cartas" />
+      <Button onAction="#moverMazos" layoutX="253.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Mazos" />
+      <Button onAction="#moverFiltro" layoutX="426.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="????" />
+   </children>
+</AnchorPane>

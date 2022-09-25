@@ -1,0 +1,10 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableView?>
+<?import javax.swing.table.TableColumn?>
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <TableView fx:id="table" layoutX="10.0" layoutY="10.0" prefHeight="480.0" prefWidth="680.0">
+        <columns>
+        </columns>
+    </TableView>
+</AnchorPane>
