@@ -8,19 +8,26 @@
 
 <AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ui.pantallas.article.add.ArticleAddController">
-   <children>
-      <TableView layoutX="66.0" layoutY="57.0" prefHeight="386.0" prefWidth="406.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="Title" />
-            <TableColumn prefWidth="75.0" text="Description" />
-            <TableColumn prefWidth="75.0" text="Author" />
-        </columns>
-      </TableView>
-      <Button layoutX="560.0" layoutY="391.0" mnemonicParsing="false" text="Button" />
-      <MFXTextField layoutX="498.0" layoutY="103.0" prefHeight="37.0" prefWidth="176.0" promptText="ID" />
-      <MFXTextField layoutX="498.0" layoutY="165.0" prefHeight="37.0" prefWidth="176.0" promptText="Title" />
-      <MFXTextField layoutX="498.0" layoutY="225.0" prefHeight="37.0" prefWidth="176.0" promptText="Description" />
-      <MFXTextField layoutX="498.0" layoutY="292.0" prefHeight="37.0" prefWidth="176.0" promptText="Author" />
-   </children>
+    <children>
+        <TableView fx:id="articleTable" layoutX="66.0" layoutY="57.0" prefHeight="386.0" prefWidth="406.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID"/>
+                <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title"/>
+                <TableColumn fx:id="authorColumn" prefWidth="75.0" text="Author"/>
+                <TableColumn fx:id="npIDColumn" prefWidth="75.0" text="Newspaper ID"/>
+                <TableColumn fx:id="typeIDColumn" prefWidth="75.0" text="Type ID"/>
+            </columns>
+        </TableView>
+        <Button onAction="#add" layoutX="560.0" layoutY="431.0" mnemonicParsing="false" text="Button"/>
+        <MFXTextField fx:id="articleID" layoutX="498.0" layoutY="103.0" prefHeight="37.0" prefWidth="176.0"
+                      promptText="Article ID"/>
+        <MFXTextField fx:id="title" layoutX="498.0" layoutY="165.0" prefHeight="37.0" prefWidth="176.0"
+                      promptText="Title"/>
+        <MFXTextField fx:id="author" layoutX="498.0" layoutY="225.0" prefHeight="37.0" prefWidth="176.0"
+                      promptText="Author"/>
+        <MFXTextField fx:id="newspaperID" layoutX="498.0" layoutY="282.0" prefHeight="37.0" prefWidth="176.0"
+                      promptText="Newspaper ID"/>
+        <MFXTextField fx:id="typeID" layoutX="498.0" layoutY="341.0" prefHeight="37.0" prefWidth="176.0"
+                      promptText="Type ID"/>
+    </children>
 </AnchorPane>

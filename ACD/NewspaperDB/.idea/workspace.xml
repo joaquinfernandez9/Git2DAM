@@ -5,46 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00a168197ce395305c37a33f896012577da7634b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00a168197ce395305c37a33f896012577da7634b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c89a5491fbfda3fb050196d6a239f20200296e7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29d4be5d284d65b0729e0bc26fc2a01f29333efb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/321f7b15febc3fcfb7ca9d2dfccc0418e2c82e4f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/321f7b15febc3fcfb7ca9d2dfccc0418e2c82e4f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3ac623b9bae3a82390d199eb7b0d436c65f991d5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/6/265da7cdb708512fd84e9ea10efb0f0af1573ba4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29d4be5d284d65b0729e0bc26fc2a01f29333efb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29d4be5d284d65b0729e0bc26fc2a01f29333efb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/545de931a8ac783064eb6f6cc24498b28dcc6a94" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/b/5b9bbea9b2922a36880bc6fa8eec81875df77718" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/639d7002b6404379a71e79b109bc12a7217fab50" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/639d7002b6404379a71e79b109bc12a7217fab50" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/647b58ebd945f7ef08da1bf964677993759ad06e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/87d42a8a6967e707d6c44eb756c4666397d7a7d2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/87d42a8a6967e707d6c44eb756c4666397d7a7d2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b994ab04d25534c8ea2a17f872b34b5e053b3e4c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c8e9a4179aec1b9773b96f47d2f4badc7a174dfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69233f23518fc63b3ae3be899879ab135784027c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f65008c4429282c115106bd65c0c1e5e6d88c95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/1/b199a4268f4e876a904ad0a0c7f66f8f13cff7ee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc1ae912583ea46a90bdbcb27df07083ec460f34" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc1ae912583ea46a90bdbcb27df07083ec460f34" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/eba3ccb9beb9883b0df9fcda7ca192f5623a5ea4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ec75ca22881b9fe9cc082f0033bd4bcaf8460c92" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/edfe09e2c6ea872a8a499393c00347d2b1ed5a4b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f367fbbdec3cc6bd8b866dbbd8733354955801e9" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/articles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/articles.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/articlesType.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/articlesType.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/newspapers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/newspapers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoArticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoNewspaper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoNewspaper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/modelo/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/modelo/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/modelo/Newspaper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/modelo/Newspaper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/ArticleServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/ArticleServ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/NewspaperServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/NewspaperServ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/article/articleList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/article/articleList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DaoLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoNewspaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DaoNewspaper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/modelo/Newspaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/modelo/Newspaper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/article/articleAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/article/articleAdd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoArticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DaoArticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DaoType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/ArticleServ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/ArticleServ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/article/articleAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/article/articleAdd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/add/ArticleAddController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/article/add/ArticleAddController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/add/ArticleAddViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/article/add/ArticleAddViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/list/ArticleListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/article/list/ArticleListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/list/ArticleListViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/article/list/ArticleListViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Interfaces/PrimeraEntrega.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Interfaces/PrimeraEntrega.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +172,9 @@
       <workItem from="1664205302312" duration="14763000" />
       <workItem from="1664271502280" duration="6339000" />
       <workItem from="1664277859006" duration="2780000" />
+      <workItem from="1664293522439" duration="1144000" />
+      <workItem from="1664294682965" duration="4962000" />
+      <workItem from="1664312437028" duration="1112000" />
     </task>
     <servers />
   </component>
@@ -200,37 +199,46 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/login/LoginViewModel.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddController.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/domain/services/LoginServ.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="24" />
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoArticle.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java</url>
-          <line>113</line>
-          <properties class="ui.pantallas.principal.PrincipalController" method="menuClick">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddController.java</url>
+          <line>69</line>
+          <properties class="ui.pantallas.article.add.ArticleAddController" method="add">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/login/LoginViewModel.java</url>
-          <line>24</line>
-          <properties class="ui.pantallas.login.LoginViewModel" method="login">
+          <url>file://$PROJECT_DIR$/src/main/java/domain/services/ArticleServ.java</url>
+          <line>36</line>
+          <properties class="domain.services.ArticleServ" method="addArticle">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoArticle.java</url>
+          <line>63</line>
+          <properties class="dao.DaoArticle" method="save">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

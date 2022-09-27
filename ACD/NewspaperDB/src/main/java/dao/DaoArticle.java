@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,6 +21,12 @@ import java.util.stream.Collectors;
 public class DaoArticle {
 
     DaoType daoType;
+
+    // getAll(either)
+    // get (Article)
+    // save/add (int)
+    // update (int)
+    // delete (int)
 
     @Inject
     public DaoArticle(DaoType daoType) {
@@ -43,27 +50,25 @@ public class DaoArticle {
 
     public List<Article> getArticlesFilter(String description) {
         List<Article> articlesList = getAll();
-        ArticleType articleTypes = daoType.get(description);
-        return articlesList.stream()
-                .filter(article ->
-                        article.getTypeID() == articleTypes.getTypeID())
-                .collect(Collectors.toList());
+        ArticleType articleTypes = daoType.getFilter(description);
+        if (articleTypes == null) {
+            return Collections.emptyList();
+        } else {
+            return articlesList.stream()
+                    .filter(article ->
+                            article.getTypeID() == articleTypes.getTypeID())
+                    .collect(Collectors.toList());
+        }
     }
 
-    public boolean addArticle(Article a) {
-        Path file = Paths.get(ConfigYaml.getInstance()
+    public boolean save(Article a) {
+        Path file = Paths.get(ConfigProperties.getInstance()
                 .getProperty("pathArticles"));
-        List<Article> articlesList = getAll();
-
         try {
             List<String> articles = Files.readAllLines(file);
-            articles.forEach(article ->
-                    articlesList.add(new Article(article)));
-            if (!articlesList.contains(a)) {
-                articles.add(a.toStringTextFile());
-                Files.write(file, articles, StandardOpenOption.APPEND);
-                return true;
-            } else return false;
+            articles.add(a.toStringTextFile());
+            Files.write(file, articles);
+            return true;
         } catch (IOException e) {
             log.error(e.getMessage());
             return false;

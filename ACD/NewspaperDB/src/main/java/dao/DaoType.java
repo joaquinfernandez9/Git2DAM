@@ -1,7 +1,6 @@
 package dao;
 
 import config.ConfigProperties;
-import domain.modelo.Article;
 import domain.modelo.ArticleType;
 import lombok.extern.log4j.Log4j2;
 
@@ -11,7 +10,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Log4j2
 public class DaoType {
@@ -29,7 +27,7 @@ public class DaoType {
         return articlesList;
     }
 
-    public ArticleType get(String descricpion) {
+    public ArticleType getFilter(String descricpion) {
         List<ArticleType> articleTypes = getAll();
         return articleTypes.stream()
                 .filter(linea -> linea.getDescription().equals(descricpion))

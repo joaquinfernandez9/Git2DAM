@@ -51,18 +51,20 @@ public class ArticleListController extends BasePantallaController {
 
         super.principalCargado();
 
-        articleListViewModel.getState().addListener((observable, oldValue, newValue) -> {
-            if (newValue.getArticleList() != null) {
-                tableArticle.getItems().clear();
-                tableArticle.getItems().addAll(newValue.getArticleList());
-            }
-        });
+//        articleListViewModel.getState().addListener((observable, oldValue, newValue) -> {
+//            if (newValue.getArticleList() != null) {
+//                tableArticle.getItems().clear();
+//                tableArticle.getItems().addAll(newValue.getArticleList());
+//            }
+//        });
 
         articleListViewModel.load();
     }
 
 
-    @FXML private void filterBtn(ActionEvent actionEvent) {
-         articleListViewModel.getAllfilter(combo.getValue());
+    @FXML
+    private void filterBtn() {
+        tableArticle.getItems().clear();
+        tableArticle.getItems().addAll(articleListViewModel.getAllfilter(combo.getValue()));
     }
 }

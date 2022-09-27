@@ -31,11 +31,12 @@ public class ArticleListViewModel {
         return state;
     }
 
-    public List<Article> getAll() {
-        return articleServ.getAll();
-    }
+//    public List<Article> getAll() {
+//        return articleServ.getAll();
+//    }
 
-    public void getAllfilter(String description){
-        articleServ.getArticlesFilter(description);
+    public List<Article> getAllfilter(String description){
+        state.setValue(new ArticleListState(null, !state.get().isChange(), articleServ.getAll()));
+        return articleServ.getArticlesFilter(description);
     }
 }

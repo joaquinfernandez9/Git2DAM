@@ -38,5 +38,9 @@ public class ArticleAddViewModel {
         return articleServ.getAll();
     }
 
+    public boolean add(Article article){
+        return articleServ.addArticle(article);
+    }
+
 
 }
