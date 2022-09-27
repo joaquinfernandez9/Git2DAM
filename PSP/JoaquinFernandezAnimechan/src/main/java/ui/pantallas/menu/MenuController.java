@@ -1,19 +1,23 @@
 package ui.pantallas.menu;
 
+import javafx.fxml.FXML;
 import ui.common.BasePantallaController;
 import ui.common.Pantallas;
 
 public class MenuController extends BasePantallaController {
 
-    public void moverCartas() {
+    @FXML
+    private void moverCartas() {
         getPrincipalController().cargarPantalla(Pantallas.CARTAS);
     }
 
-    public void moverMazos() {
+    @FXML
+    private void moverMazos() {
         getPrincipalController().cargarPantalla(Pantallas.MAZOS);
     }
 
-    public void moverFiltro(){
+    @FXML
+    private void moverFiltro(){
         getPrincipalController().cargarPantalla(Pantallas.FILTRO);
     }
 }

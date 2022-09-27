@@ -1,0 +1,3 @@
+pathArticles=data/articles.txt
+pathType=data/articlesType.txt
+pathNewspaper=data/newspapers.txt

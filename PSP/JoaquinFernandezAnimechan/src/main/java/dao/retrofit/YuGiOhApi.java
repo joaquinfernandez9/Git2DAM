@@ -18,7 +18,7 @@ public interface YuGiOhApi {
 //    Call<CardsList> getCardsAtkAtt(@Query("fname") String name, @Query("atk") Integer atk,
 //                                   @Query("attribute") String attribute, @Query("sort") String sort);
     @GET("v7/cardinfo.php")
-    Call<CardsList> getCardsAtkRace(@Query("fname") String name, @Query("atk") Integer atk,
+    Call<CardsList> getCardsAtkRace(@Query("fname") String name, @Query("atk") String atk,
                                    @Query("race") String race, @Query("sort") String sort);
 
 

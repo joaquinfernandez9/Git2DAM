@@ -8,6 +8,6 @@
    <children>
       <Button onAction="#moverCartas" layoutX="90.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Cartas" />
       <Button onAction="#moverMazos" layoutX="253.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Mazos" />
-      <Button onAction="#moverFiltro" layoutX="426.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="????" />
+      <Button onAction="#moverFiltro" layoutX="426.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Filtrar" />
    </children>
 </AnchorPane>

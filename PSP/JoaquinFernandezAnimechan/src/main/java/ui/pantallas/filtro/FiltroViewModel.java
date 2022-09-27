@@ -1,11 +1,11 @@
 package ui.pantallas.filtro;
 
+import domain.modelo.cards.CardsList;
 import domain.servicios.ServiciosCartas;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import ui.pantallas.cartas.CartasState;
 
 import java.io.IOException;
 
@@ -29,9 +29,9 @@ public class FiltroViewModel {
     }
 
 
-    public void getCardsAtkRace(String nombre, Integer attack, String race, String sort) throws IOException {
-        serviciosCartas.getCardsAtkRace(nombre, attack, race, sort);
+    public CardsList getCardsAtkRace(String nombre, String attack, String race, String sort) throws IOException {
         state.setValue(new FiltroState(null, !state.get().isCambio(), serviciosCartas.getCardsAtkRace(nombre,attack,race,sort)));
+        return serviciosCartas.getCardsAtkRace(nombre, attack, race, sort);
     }
 
 

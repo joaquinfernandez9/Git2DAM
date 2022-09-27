@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -15,18 +16,16 @@ import lombok.extern.log4j.Log4j2;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.Pantallas;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Optional;
 
 @Log4j2
 public class PrincipalController {
-    Instance<Object> instance;
 
+    Instance<Object> instance;
     @FXML
     private BorderPane root;
-
-    private Stage primaryStage;
-
     @FXML
     private MenuBar options;
 
@@ -39,6 +38,7 @@ public class PrincipalController {
     private void cargarPantalla(Pantallas pantalla) {
         cambioPantalla(cargarPantalla(pantalla.getRuta()));
     }
+
     public void initialize() {
         cargarPantalla(Pantallas.LOGIN);
         options.setVisible(false);
@@ -51,6 +51,7 @@ public class PrincipalController {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setControllerFactory(controller -> instance.select(controller).get());
             panePantalla = fxmlLoader.load(getClass().getResourceAsStream(ruta));
+            //nullpointer 1 falta extends en controller 2 fxml sin fx:controller
             BasePantallaController pantallaController = fxmlLoader.getController();
             pantallaController.setPrincipalController(this);
             pantallaController.principalCargado();
@@ -69,10 +70,6 @@ public class PrincipalController {
     @FXML
     private final Alert alert;
 
-
-
-
-
     public void sacarAlertError(String mensaje) {
         alert.setAlertType(Alert.AlertType.ERROR);
         alert.setContentText(mensaje);
@@ -84,6 +81,51 @@ public class PrincipalController {
         cargarPantalla(Pantallas.WELCOME_SCREEN);
     }
 
+    //change screen menu
+
+    @FXML
+    public MenuItem logout;
+    @FXML
+    public MenuItem npList;
+    @FXML
+    public MenuItem npAdd;
+    @FXML
+    public MenuItem npUpdate;
+    @FXML
+    public MenuItem npDelete;
+    @FXML
+    public MenuItem rList;
+    @FXML
+    public MenuItem rAdd;
+    @FXML
+    public MenuItem rUpdate;
+    @FXML
+    public MenuItem rDelete;
+    @FXML
+    public MenuItem artList;
+    @FXML
+    public MenuItem artAdd;
+    @FXML
+    public MenuItem artUpdate;
+    @FXML
+    public MenuItem artDelete;
 
 
+    public void menuClick(javafx.event.ActionEvent actionEvent) {
+        switch (((javafx.scene.control.MenuItem) actionEvent.getSource())
+                .getId()){
+            case "npList":
+                cargarPantalla(Pantallas.NEWS_LIST);
+                break;
+            case "npDelete":
+                cargarPantalla(Pantallas.NEWS_DELETE);
+                break;
+            case "artList":
+                cargarPantalla(Pantallas.ARTICLE_LIST);
+                break;
+            case "artAdd":
+                cargarPantalla(Pantallas.ARTICLE_ADD);
+                break;
+        }
+    }
 }

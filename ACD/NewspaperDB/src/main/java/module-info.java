@@ -24,12 +24,33 @@ module javafx {
     exports domain.services;
     exports domain.modelo;
     exports ui.pantallas.welcome;
+    exports ui.pantallas.reader.add;
+    exports ui.pantallas.reader.list;
+    exports ui.pantallas.reader.delete;
+    exports ui.pantallas.reader.update;
+
+    exports ui.pantallas.newspaper.add;
+    exports ui.pantallas.newspaper.list;
+    exports ui.pantallas.newspaper.delete;
+    exports ui.pantallas.newspaper.update;
+
+    exports ui.pantallas.article.add;
+    exports ui.pantallas.article.list;
+    exports ui.pantallas.article.delete;
+    exports ui.pantallas.article.update;
+
+
+    exports ui;
+    exports DI;
+    exports config;
 
     opens ui.main;
     opens ui.pantallas.principal;
     opens domain.modelo;
     opens ui.pantallas.login;
     opens fxml;
+    opens config;
+    opens ui.pantallas.newspaper.delete;
 
 
 

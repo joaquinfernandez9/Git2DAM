@@ -1,0 +1,8 @@
+
+g
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¨ã€ìùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¦²Û›
+Q	java:S125"<This block of commented-out lines of code should be removed.(úÍùÔ
+U	java:S106""9Replace this use of System.out or System.err by a logger.(’§À8ö®òÖ·0
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8÷®òÖ·0

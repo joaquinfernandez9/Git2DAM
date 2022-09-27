@@ -31,6 +31,7 @@ module JoaquinFernandezAnimechan {
     opens domain.modelo.cards;
     opens ui.pantallas.filtro;
     opens ui.main;
+    opens ui.pantallas.menu;
     opens ui.pantallas.principal;
     opens ui.pantallas.cartas;
     opens ui.pantallas.mazos;

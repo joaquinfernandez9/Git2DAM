@@ -6,7 +6,7 @@ public enum Pantallas {
     MAZOS("/fxml/buscarCarta.fxml"),
     CARTAS("/fxml/cartas.fxml"),
     FILTRO("/fxml/filter.fxml");
-    private String ruta;
+    private final String ruta;
     Pantallas(String ruta) {
         this.ruta=ruta;
     }

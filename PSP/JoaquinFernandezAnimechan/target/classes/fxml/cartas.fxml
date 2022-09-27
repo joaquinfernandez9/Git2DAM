@@ -15,7 +15,6 @@
        <TextField fx:id="cardName" layoutX="19.0" layoutY="89.0" prefHeight="39.0" prefWidth="234.0" />
 
 
-<!--        cartas con ese nomrbe-->
       <TableView fx:id="tablaCartas" layoutX="43.0" layoutY="203.0" prefHeight="200.0" prefWidth="425.0">
         <columns>
           <TableColumn fx:id="nombreCol" prefWidth="85.0" text="Name" />

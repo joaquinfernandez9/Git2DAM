@@ -10,39 +10,38 @@
     <top>
         <MenuBar fx:id="options">
             <Menu mnemonicParsing="false" text="Options">
-
-                <MenuItem fx:id="menuItemLogout" mnemonicParsing="false"
+                <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#menuClick"
                           text="Logout"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Newspaper">
-                <MenuItem fx:id="npList" mnemonicParsing="false"
+                <MenuItem fx:id="npList" mnemonicParsing="false" onAction="#menuClick"
                           text="List"/>
-                <MenuItem fx:id="npAdd" mnemonicParsing="false"
+                <MenuItem fx:id="npAdd" mnemonicParsing="false" onAction="#menuClick"
                           text="Add"/>
-                <MenuItem fx:id="npUpdate" mnemonicParsing="false"
+                <MenuItem fx:id="npUpdate" mnemonicParsing="false" onAction="#menuClick"
                           text="Update"/>
-                <MenuItem fx:id="npDelete" mnemonicParsing="false"
+                <MenuItem fx:id="npDelete" mnemonicParsing="false" onAction="#menuClick"
                           text="Delete"/>
 
             </Menu>
             <Menu mnemonicParsing="false" text="Reader">
-                <MenuItem fx:id="rList" mnemonicParsing="false"
+                <MenuItem fx:id="rList" mnemonicParsing="false" onAction="#menuClick"
                           text="List"/>
-                <MenuItem fx:id="rAdd" mnemonicParsing="false"
+                <MenuItem fx:id="rAdd" mnemonicParsing="false" onAction="#menuClick"
                           text="Add"/>
-                <MenuItem fx:id="rUpdate" mnemonicParsing="false"
+                <MenuItem fx:id="rUpdate" mnemonicParsing="false" onAction="#menuClick"
                           text="Update"/>
-                <MenuItem fx:id="rDelete" mnemonicParsing="false"
+                <MenuItem fx:id="rDelete" mnemonicParsing="false" onAction="#menuClick"
                           text="Delete"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Article">
-                <MenuItem fx:id="artList" mnemonicParsing="false"
+                <MenuItem fx:id="artList" mnemonicParsing="false" onAction="#menuClick"
                           text="List"/>
-                <MenuItem fx:id="artAdd" mnemonicParsing="false"
+                <MenuItem fx:id="artAdd" mnemonicParsing="false" onAction="#menuClick"
                           text="Add"/>
-                <MenuItem fx:id="artUpdate" mnemonicParsing="false"
+                <MenuItem fx:id="artUpdate" mnemonicParsing="false" onAction="#menuClick"
                           text="Update"/>
-                <MenuItem fx:id="artDelete" mnemonicParsing="false"
+                <MenuItem fx:id="artDelete" mnemonicParsing="false" onAction="#menuClick"
                           text="Delete"/>
             </Menu>
 

@@ -30,6 +30,12 @@ public class PrincipalController {
         alert = new Alert(Alert.AlertType.ERROR);
     }
 
+    public void sacarAlertError(String mensaje) {
+        alert.setAlertType(Alert.AlertType.ERROR);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
     public void cargarPantalla(Pantallas pantalla) {
         cambioPantalla(cargarPantalla(pantalla.getRuta()));
     }
@@ -57,7 +63,7 @@ public class PrincipalController {
     }
 
     public void initialize() {
-        cargarPantalla(Pantallas.FILTRO);
+        cargarPantalla(Pantallas.MENU);
     }
 
 }

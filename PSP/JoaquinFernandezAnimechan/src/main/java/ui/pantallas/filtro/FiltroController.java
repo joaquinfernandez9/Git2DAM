@@ -40,22 +40,24 @@ public class FiltroController extends BasePantallaController {
     }
 
     public void initialize() {
+
+
+    }
+    @Override
+    public void principalCargado() throws IOException {
+        super.principalCargado();
+
         raceCombo.getItems().addAll("continuous", "zombie", "fiend", "normal", "quick-play", "rock","warrior",
- "winged beast", "spellcaster", "beast", "fairy", "equip", "field", "fish", "beast-warrior",
- "thunder", "machine", "sea serpent", "aqua", "plant", "dragon", "reptile", "counter", "psychic",
- "insect", "pyro", "dinosaur", "wyrm", "cyberse", "ritual", "divine-beast", "creator-god", "cyverse",
- "mai", "pegasus", "ishizu", "joey", "kaiba", "yugi");
+                "winged beast", "spellcaster", "beast", "fairy", "equip", "field", "fish", "beast-warrior",
+                "thunder", "machine", "sea serpent", "aqua", "plant", "dragon", "reptile", "counter", "psychic",
+                "insect", "pyro", "dinosaur", "wyrm", "cyberse", "ritual", "divine-beast", "creator-god", "cyverse",
+                "mai", "pegasus", "ishizu", "joey", "kaiba", "yugi");
 
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         nombreCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         lvlCol.setCellValueFactory(new PropertyValueFactory<>("level"));
         atkCol.setCellValueFactory(new PropertyValueFactory<>("atk"));
         defCol.setCellValueFactory(new PropertyValueFactory<>("def"));
-
-    }
-    @Override
-    public void principalCargado() throws IOException {
-        super.principalCargado();
 
         filtroViewModel.getState().addListener((observable, oldValue, newValue) -> {
             tablaCartas.getItems().clear();
@@ -65,12 +67,21 @@ public class FiltroController extends BasePantallaController {
         filtroViewModel.load();
     }
 
-    public void buscarRaza() throws IOException {
-        filtroViewModel.getCardsAtkRace(nameField.getText(), Integer.parseInt(atkField.getText()), raceCombo.getSelectionModel().getSelectedItem(), filterField.getText());
+    @FXML private void buscarRaza() throws IOException {
+        if (atkField.getText().isEmpty()
+                || filtroViewModel.getCardsAtkRace(nameField.getText(),
+                String.valueOf(Integer.parseInt(atkField.getText())),
+                raceCombo.getSelectionModel().getSelectedItem(),
+                filterField.getText()) == null  || nameField.getText().isEmpty() ||
+                raceCombo.getSelectionModel().isEmpty() || filterField.getText().isEmpty()){
+            getPrincipalController().sacarAlertError("Patata");
+        } else {
+            filtroViewModel.getCardsAtkRace(nameField.getText(),
+                    String.valueOf(Integer.parseInt(atkField.getText())),
+                    raceCombo.getSelectionModel().getSelectedItem(),
+                    filterField.getText());
+        }
     }
 
 
-//    public void buscarRaza() throws IOException {
-//
-//    }
 }

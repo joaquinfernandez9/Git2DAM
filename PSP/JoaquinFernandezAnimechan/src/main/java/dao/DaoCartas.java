@@ -53,7 +53,7 @@ public class DaoCartas {
 
     }
 
-    public CardsList getCardsAtkRace(String nombre, Integer atk, String race, String sort) throws IOException{
+    public CardsList getCardsAtkRace(String nombre, String atk, String race, String sort) throws IOException{
         Response<CardsList> lista = yuGiOhApi.getCardsAtkRace(nombre, atk, race, sort).execute();
         assert lista.body() != null;
         return lista.body();

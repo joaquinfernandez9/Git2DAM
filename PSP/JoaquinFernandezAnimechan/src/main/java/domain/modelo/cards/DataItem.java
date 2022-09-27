@@ -10,7 +10,7 @@ public class DataItem {
     private String name;
     private int id;
     private int level;
-    private Integer atk;
+    private String atk;
     private int def;
     private String type;
     private String race;

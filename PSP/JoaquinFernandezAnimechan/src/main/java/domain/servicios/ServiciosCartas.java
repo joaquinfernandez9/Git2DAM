@@ -23,8 +23,8 @@ public class ServiciosCartas {
     }
 
 
-    public CardsList getCardsAtkRace(String nombre, Integer attack, String race, String sort) throws IOException {
-        return daoCartas.getCardsAtkRace(nombre,attack,race,sort);
+    public CardsList getCardsAtkRace(String nombre, String attack, String race, String sort) throws IOException {
+        return daoCartas.getCardsAtkRace(nombre,"gt"+attack,race,sort);
     }
 
 
