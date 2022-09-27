@@ -1,8 +1,10 @@
 package domain.modelo;
 
 import lombok.Data;
+import lombok.Getter;
 
 @Data
+@Getter
 public class Newspaper {
     private int newspaperID;
     private String newspaperName;

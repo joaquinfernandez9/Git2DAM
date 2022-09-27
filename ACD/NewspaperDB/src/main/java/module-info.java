@@ -51,6 +51,7 @@ module javafx {
     opens fxml;
     opens config;
     opens ui.pantallas.newspaper.delete;
+    opens ui.pantallas.article.list;
 
 
 

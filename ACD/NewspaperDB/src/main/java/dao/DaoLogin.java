@@ -12,12 +12,12 @@ import java.nio.file.Paths;
 public class DaoLogin {
 
     public boolean login(String userName, String password){
-        Path name = Paths.get(ConfigYaml
-                .getInstance().getProperty("user"));
-        Path pass = Paths.get(ConfigYaml
-                .getInstance().getProperty("password"));
-        return userName.equals(name.toString()) &&
-                password.equals(pass.toString());
+        String name = String.valueOf(Paths.get(ConfigYaml
+                .getInstance().getProperty("user")));
+        String pass = String.valueOf(Paths.get(ConfigYaml
+                .getInstance().getProperty("password")));
+        return userName.equals(name) &&
+                password.equals(pass);
     }
 
 }

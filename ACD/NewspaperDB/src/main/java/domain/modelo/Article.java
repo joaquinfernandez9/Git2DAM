@@ -6,7 +6,6 @@ import lombok.Data;
 public class Article {
     private int articleID;
     private String title;
-    private String description;
     private String author;
     private int newspaperID;
     private int typeID;
@@ -15,13 +14,14 @@ public class Article {
         String[] charArray = linea.split(";");
         this.articleID = Integer.parseInt(charArray[0]);
         this.title = charArray[1];
-        this.description = charArray[2];
-        this.author = charArray[3];
-        this.newspaperID = Integer.parseInt(charArray[4]);
+        this.author = charArray[2];
+        this.newspaperID = Integer.parseInt(charArray[3]);
+        this.typeID = Integer.parseInt(charArray[4]);
     }
 
     public String toStringTextFile() {
-        return articleID + ";" + title + ";" + description + ";" + author;
+        return articleID + ";" + title + ";" + author
+                + ";" + newspaperID + ";" + typeID;
     }
 
 }

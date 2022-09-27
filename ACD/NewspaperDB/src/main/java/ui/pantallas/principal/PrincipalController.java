@@ -51,7 +51,7 @@ public class PrincipalController {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setControllerFactory(controller -> instance.select(controller).get());
             panePantalla = fxmlLoader.load(getClass().getResourceAsStream(ruta));
-            //nullpointer 1 falta extends en controller 2 fxml sin fx:controller
+            //nullpointer 1 falta extends en controller 2 fxml sin fx:controller 3 pane pantalla= ruta mal Config
             BasePantallaController pantallaController = fxmlLoader.getController();
             pantallaController.setPrincipalController(this);
             pantallaController.principalCargado();

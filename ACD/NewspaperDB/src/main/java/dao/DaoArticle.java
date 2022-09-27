@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,7 +43,7 @@ public class DaoArticle {
 
     public List<Article> getArticlesFilter(String description) {
         List<Article> articlesList = getAll();
-        ArticleType articleTypes = daoType.filterByDesc(description);
+        ArticleType articleTypes = daoType.get(description);
         return articlesList.stream()
                 .filter(article ->
                         article.getTypeID() == articleTypes.getTypeID())
@@ -59,7 +60,8 @@ public class DaoArticle {
             articles.forEach(article ->
                     articlesList.add(new Article(article)));
             if (!articlesList.contains(a)) {
-                articlesList.add(a);
+                articles.add(a.toStringTextFile());
+                Files.write(file, articles, StandardOpenOption.APPEND);
                 return true;
             } else return false;
         } catch (IOException e) {

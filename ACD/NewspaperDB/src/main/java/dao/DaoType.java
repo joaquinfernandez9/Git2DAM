@@ -29,7 +29,7 @@ public class DaoType {
         return articlesList;
     }
 
-    public ArticleType filterByDesc(String descricpion) {
+    public ArticleType get(String descricpion) {
         List<ArticleType> articleTypes = getAll();
         return articleTypes.stream()
                 .filter(linea -> linea.getDescription().equals(descricpion))

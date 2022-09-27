@@ -29,9 +29,9 @@ public class NewsListViewModel {
         return state;
     }
 
-    public List<Newspaper> getAll(){
-        return newspaperServ.getAll();
-    }
+//    public List<Newspaper> getAll(){
+//        return newspaperServ.getAll();
+//    }
 
 
 
