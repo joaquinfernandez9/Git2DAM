@@ -15,14 +15,15 @@ module JoaquinFernandezAnimechan {
     requires moshi;
     requires okhttp3;
     requires okio;
+    requires io.vavr;
 
     exports dao;
     exports domain.servicios;
-    exports ui;
+    exports dao.retrofit;
     exports ui.main;
     exports ui.common;
     exports ui.pantallas.menu;
-    exports ui.pantallas.mazos;
+    exports ui.pantallas.unicaCarta;
     exports ui.pantallas.cartas;
     exports ui.pantallas.principal;
     exports domain.modelo.cards;
@@ -34,6 +35,6 @@ module JoaquinFernandezAnimechan {
     opens ui.pantallas.menu;
     opens ui.pantallas.principal;
     opens ui.pantallas.cartas;
-    opens ui.pantallas.mazos;
+    opens ui.pantallas.unicaCarta;
 
 }

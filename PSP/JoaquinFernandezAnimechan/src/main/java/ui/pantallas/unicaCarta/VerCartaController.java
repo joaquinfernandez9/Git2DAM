@@ -1,8 +1,6 @@
-package ui.pantallas.mazos;
+package ui.pantallas.unicaCarta;
 
-import domain.modelo.cards.DataItem;
 import jakarta.inject.Inject;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import ui.common.BasePantallaController;
@@ -13,35 +11,25 @@ public class VerCartaController extends BasePantallaController {
 
 
     @FXML
-    public TextField nombre;
+    private TextField nombre;
     @FXML
-    public Label mostrarCarta;
+    private Label mostrarCarta;
 
 
-    VerCartaViewModel verCartaViewModel;
+    private final VerCartaViewModel verCartaViewModel;
 
     @Inject
     VerCartaController(VerCartaViewModel verCartaViewModel) {
         this.verCartaViewModel = verCartaViewModel;
     }
 
-    public void initialize() {
 
-    }
-
-    @Override
-    public void principalCargado() throws IOException {
-        super.principalCargado();
-
-    }
-
-
-    public void buscar(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void buscar(){
         if (nombre.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error al eliminar bebida");
-            alert.setContentText("No se puede eliminar una bebida sin seleccionarla");
+            alert.setHeaderText("No se ha proporcionado un nombre");
             alert.showAndWait();
         } else {
             mostrarCarta.setText(verCartaViewModel.verCartaNombre(nombre.getText()).toString());

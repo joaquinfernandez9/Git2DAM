@@ -9,12 +9,12 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var etName: TextView
-    lateinit var btn: Button
+    private lateinit var etName: TextView
+    private lateinit var btn: Button
 
-    lateinit var btnLogin: Button
-    lateinit var cajaEmail: EditText
-    lateinit var cajaPassword: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var cajaEmail: EditText
+    private lateinit var cajaPassword: EditText
 
     private val paquete = resources.getString(R.string.paquete)
     private val hola = resources.getString(R.string.hola)

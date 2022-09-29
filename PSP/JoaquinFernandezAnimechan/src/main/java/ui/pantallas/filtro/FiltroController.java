@@ -3,7 +3,10 @@ package ui.pantallas.filtro;
 import domain.modelo.cards.DataItem;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.common.BasePantallaController;
 
@@ -11,43 +14,39 @@ import java.io.IOException;
 
 public class FiltroController extends BasePantallaController {
     @FXML
-    public TableView<DataItem> tablaCartas;
+    private TableView<DataItem> tablaCartas;
     @FXML
-    public TableColumn<Integer, DataItem> idCol;
+    private TableColumn<Integer, DataItem> idCol;
     @FXML
-    public TableColumn<String, DataItem> nombreCol;
+    private TableColumn<String, DataItem> nombreCol;
     @FXML
-    public TableColumn<Integer, DataItem> lvlCol;
+    private TableColumn<Integer, DataItem> lvlCol;
     @FXML
-    public TableColumn<Integer, DataItem> atkCol;
+    private TableColumn<Integer, DataItem> atkCol;
     @FXML
-    public TableColumn<Integer, DataItem> defCol;
+    private TableColumn<Integer, DataItem> defCol;
     @FXML
-    public TextField nameField;
+    private TextField nameField;
     @FXML
-    public TextField atkField;
+    private TextField atkField;
     @FXML
-    public TextField filterField;
+    private TextField filterField;
     @FXML
-    public ComboBox<String> raceCombo;
+    private ComboBox<String> raceCombo;
 
 
-    FiltroViewModel filtroViewModel;
+    private final FiltroViewModel filtroViewModel;
 
     @Inject
-    FiltroController(FiltroViewModel filtroViewModel){
+    FiltroController(FiltroViewModel filtroViewModel) {
         this.filtroViewModel = filtroViewModel;
     }
 
-    public void initialize() {
-
-
-    }
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado() {
         super.principalCargado();
 
-        raceCombo.getItems().addAll("continuous", "zombie", "fiend", "normal", "quick-play", "rock","warrior",
+        raceCombo.getItems().addAll("continuous", "zombie", "fiend", "normal", "quick-play", "rock", "warrior",
                 "winged beast", "spellcaster", "beast", "fairy", "equip", "field", "fish", "beast-warrior",
                 "thunder", "machine", "sea serpent", "aqua", "plant", "dragon", "reptile", "counter", "psychic",
                 "insect", "pyro", "dinosaur", "wyrm", "cyberse", "ritual", "divine-beast", "creator-god", "cyverse",
@@ -61,19 +60,16 @@ public class FiltroController extends BasePantallaController {
 
         filtroViewModel.getState().addListener((observable, oldValue, newValue) -> {
             tablaCartas.getItems().clear();
-            tablaCartas.getItems().addAll(newValue.getCardsList().getData());
+            tablaCartas.getItems().addAll(newValue.cardsList().getData());
         });
 
         filtroViewModel.load();
     }
 
-    @FXML private void buscarRaza() throws IOException {
-        if (atkField.getText().isEmpty()
-                || filtroViewModel.getCardsAtkRace(nameField.getText(),
-                String.valueOf(Integer.parseInt(atkField.getText())),
-                raceCombo.getSelectionModel().getSelectedItem(),
-                filterField.getText()) == null  || nameField.getText().isEmpty() ||
-                raceCombo.getSelectionModel().isEmpty() || filterField.getText().isEmpty()){
+    @FXML
+    private void buscarRaza() throws IOException {
+        if (nameField.getText().isEmpty() ||
+                raceCombo.getSelectionModel().isEmpty() || filterField.getText().isEmpty()) {
             getPrincipalController().sacarAlertError("Patata");
         } else {
             filtroViewModel.getCardsAtkRace(nameField.getText(),

@@ -18,6 +18,7 @@ public class PrincipalController {
 
     @FXML
     private final Alert alert;
+
     Instance<Object> instance;
 
     //cambio pantalla
@@ -65,5 +66,6 @@ public class PrincipalController {
     public void initialize() {
         cargarPantalla(Pantallas.MENU);
     }
+
 
 }

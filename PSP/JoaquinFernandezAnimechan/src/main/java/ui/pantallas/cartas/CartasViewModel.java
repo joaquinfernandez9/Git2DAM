@@ -6,7 +6,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
-import java.io.IOException;
 
 public class CartasViewModel {
 
@@ -16,11 +15,14 @@ public class CartasViewModel {
     @Inject
     public CartasViewModel(ServiciosCartas serviciosCartas) {
         this.serviciosCartas = serviciosCartas;
-        state = new SimpleObjectProperty<>(new CartasState(null, false, null));
+        state = new SimpleObjectProperty<>(
+                new CartasState(null, false, null));
     }
 
-    public void load() throws IOException {
-        state.setValue(new CartasState(null, !state.get().isCambio(), serviciosCartas.verTodasLasCartas()));
+    public void load(){
+        state.setValue(new CartasState(null,
+                !state.get().cambio(),
+                serviciosCartas.verTodasLasCartas().getOrNull()));
     }
 
     public ReadOnlyObjectProperty<CartasState> getState() {
@@ -29,9 +31,11 @@ public class CartasViewModel {
 
 
 
-    public void verCartasName(String name) throws IOException {
+    public void verCartasName(String name){
         serviciosCartas.verCartasName(name);
-        state.setValue(new CartasState(null, !state.get().isCambio(), serviciosCartas.verCartasName(name)));
+        state.setValue(new CartasState(null,
+                !state.get().cambio(),
+                serviciosCartas.verCartasName(name).getOrNull()));
     }
 
 

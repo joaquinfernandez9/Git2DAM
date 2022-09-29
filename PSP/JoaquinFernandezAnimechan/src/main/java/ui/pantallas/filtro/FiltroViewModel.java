@@ -1,6 +1,5 @@
 package ui.pantallas.filtro;
 
-import domain.modelo.cards.CardsList;
 import domain.servicios.ServiciosCartas;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
@@ -20,8 +19,10 @@ public class FiltroViewModel {
         state = new SimpleObjectProperty<>(new FiltroState(null, false, null));
     }
 
-    public void load() throws IOException {
-        state.setValue(new FiltroState(null, !state.get().isCambio(), serviciosCartas.verTodasLasCartas()));
+    public void load() {
+        //no se que tan vien ta esto pero lo he puesto dos veces y es un porro
+        state.setValue(new FiltroState(null, !state.get().cambio(),
+                serviciosCartas.verTodasLasCartas().getOrNull()));
     }
 
     public ReadOnlyObjectProperty<FiltroState> getState() {
@@ -29,9 +30,9 @@ public class FiltroViewModel {
     }
 
 
-    public CardsList getCardsAtkRace(String nombre, String attack, String race, String sort) throws IOException {
-        state.setValue(new FiltroState(null, !state.get().isCambio(), serviciosCartas.getCardsAtkRace(nombre,attack,race,sort)));
-        return serviciosCartas.getCardsAtkRace(nombre, attack, race, sort);
+    public void getCardsAtkRace(String nombre, String attack, String race, String sort){
+        serviciosCartas.getCardsAtkRace(nombre, attack, race, sort);
+        state.setValue(new FiltroState(null, !state.get().cambio(), serviciosCartas.getCardsAtkRace(nombre, attack, race, sort).getOrNull()));
     }
 
 

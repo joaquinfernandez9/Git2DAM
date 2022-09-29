@@ -1,0 +1,7 @@
+estandar = acuerdo entre varias entidades para hacer algo de la misma manera (ahorrar coste, facilitar gtrabajo...) (limita creatividad por ajustarte a ello)
+
+experiencia de usuario = snecacion que al usuario le da su trbajo con una herramienta (conocimiento del suuario sobre la herramienta)
+
+interaccion hokmbre-maquina = la ciencia que estudia como los seres humanos deben usar mmaquinas en general (no ui)
+
+a

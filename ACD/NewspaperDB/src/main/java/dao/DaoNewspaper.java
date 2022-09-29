@@ -56,5 +56,6 @@ public class DaoNewspaper {
             return false;
         }
     }
+    // get getAll save delete update
 
 }
