@@ -1,14 +1,18 @@
 package ui.pantallas.filtro;
 
+import domain.modelo.cards.CardsList;
 import domain.servicios.ServiciosCartas;
+import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import ui.common.Constantes;
 
 import java.io.IOException;
 
 public class FiltroViewModel {
+
 
     private final ServiciosCartas serviciosCartas;
     private final ObjectProperty<FiltroState> state;
@@ -30,9 +34,8 @@ public class FiltroViewModel {
     }
 
 
-    public void getCardsAtkRace(String nombre, String attack, String race, String sort){
-        serviciosCartas.getCardsAtkRace(nombre, attack, race, sort);
-        state.setValue(new FiltroState(null, !state.get().cambio(), serviciosCartas.getCardsAtkRace(nombre, attack, race, sort).getOrNull()));
+    public Either<String, CardsList> getCardsAtkRace(String nombre, String attack, String race, String sort){
+        return serviciosCartas.getCardsAtkRace(nombre, Constantes.GT +attack, race, sort);
     }
 
 

@@ -4,10 +4,10 @@ import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import ui.common.BasePantallaController;
-
-import java.io.IOException;
+import ui.common.Constantes;
 
 public class VerCartaController extends BasePantallaController {
+
 
 
     @FXML
@@ -23,17 +23,23 @@ public class VerCartaController extends BasePantallaController {
         this.verCartaViewModel = verCartaViewModel;
     }
 
-
     @FXML
     private void buscar(){
         if (nombre.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("No se ha proporcionado un nombre");
+            alert.setTitle(Constantes.ERROR);
+            alert.setHeaderText(Constantes.NO_SE_HA_PROPORCIONADO_UN_NOMBRE);
             alert.showAndWait();
         } else {
-            mostrarCarta.setText(verCartaViewModel.verCartaNombre(nombre.getText()).toString());
-
+            if (verCartaViewModel.verCartaNombre(nombre.getText()).isRight()){
+                mostrarCarta.setText(verCartaViewModel
+                        .verCartaNombre(nombre.getText()).get().toString());
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle(Constantes.ERROR);
+                alert.setHeaderText(Constantes.NO_HAY_CARTAS_CON_ESE_NOMBRE);
+                alert.showAndWait();
+            }
         }
     }
 }

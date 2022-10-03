@@ -67,18 +67,17 @@ public class ArticleAddController extends BasePantallaController {
     private MFXTextField typeID;
 
     @FXML
-    private boolean add(ActionEvent actionEvent) {
+    private void add(ActionEvent actionEvent) {
         if (articleID.getText().isEmpty() || title.getText().isEmpty()||
         author.getText().isEmpty()||newspaperID.getText().isEmpty() ||
         typeID.getText().isEmpty()){
-            return false;
+            getPrincipalController().sacarAlertError("Error");
         } else {
             Article a  = new Article(Integer.parseInt(articleID.getText())+";"
                     +title.getText()+";"+author.getText()+";"
                     +Integer.parseInt(newspaperID.getText())+";"
                     +Integer.parseInt(typeID.getText()));
             articleAddViewModel.add(a);
-            return true;
         }
 
     }

@@ -15,7 +15,8 @@ import java.util.List;
 public class DaoType {
 
     public List<ArticleType> getAll(){
-        Path file= Paths.get(ConfigProperties.getInstance().getProperty("pathType"));
+        Path file= Paths.get(ConfigProperties
+                .getInstance().getProperty("pathType"));
         List<ArticleType> articlesList = new ArrayList<>();
 
         try{
@@ -25,13 +26,6 @@ public class DaoType {
             log.error(e.getMessage());
         }
         return articlesList;
-    }
-
-    public ArticleType getFilter(String descricpion) {
-        List<ArticleType> articleTypes = getAll();
-        return articleTypes.stream()
-                .filter(linea -> linea.getDescription().equals(descricpion))
-                .findFirst().orElse(null);
     }
 
 }

@@ -21,7 +21,7 @@ public class ArticleListViewModel {
                         articleServ.getAll()));
     }
 
-    public void load() {
+    public void reloadState() {
         state.setValue(new
                 ArticleListState(null, !state.get().isChange(),
                 articleServ.getAll()));
@@ -31,12 +31,9 @@ public class ArticleListViewModel {
         return state;
     }
 
-//    public List<Article> getAll() {
-//        return articleServ.getAll();
-//    }
 
     public List<Article> getAllfilter(String description){
-        state.setValue(new ArticleListState(null, !state.get().isChange(), articleServ.getAll()));
+        state.setValue(new ArticleListState(null, !state.get().isChange(), articleServ.getArticlesFilter(description)));
         return articleServ.getArticlesFilter(description);
     }
 }

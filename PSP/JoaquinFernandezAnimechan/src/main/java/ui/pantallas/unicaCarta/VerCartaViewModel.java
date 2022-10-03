@@ -15,23 +15,10 @@ public class VerCartaViewModel {
     @Inject
     public VerCartaViewModel(ServiciosCartas serviciosCartas) {
         this.serviciosCartas = serviciosCartas;
-//        state = new SimpleObjectProperty<>(new VerCartaState(null, false, null));
     }
 
-//    public void load() throws IOException {
-//        state.setValue(new VerCartaState(null, false, serviciosCartas.verTodasLasCartas()));
-//    }
-//
-//    public ReadOnlyObjectProperty<VerCartaState> getState() {
-//        return state;
-//    }
-
     public Either<String, DataItem> verCartaNombre(String nombre){
-        if (serviciosCartas.verUnaCarta(nombre).isRight()){
             return serviciosCartas.verUnaCarta(nombre);
-        } else {
-            return Either.left("No hay cartas");
-        }
     }
 
 }

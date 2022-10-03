@@ -6,64 +6,55 @@ import dao.DaoType;
 import domain.modelo.Article;
 import domain.modelo.ArticleType;
 import domain.modelo.Newspaper;
+import jakarta.enterprise.inject.New;
 import jakarta.inject.Inject;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ArticleServ {
 
     private final DaoArticle daoArticle;
-    private final DaoType daoType;
-    private final DaoNewspaper daoNewspaper;
+    private final TypeServ typeServ;
+    private final NewspaperServ newspaperServ;
 
     @Inject
-    public ArticleServ(DaoArticle daoArticle, DaoType daoType,
-                       DaoNewspaper daoNewspaper) {
+    public ArticleServ(DaoArticle daoArticle, TypeServ typeServ,
+                       NewspaperServ newspaperServ) {
         this.daoArticle = daoArticle;
-        this.daoType = daoType;
-        this.daoNewspaper = daoNewspaper;
+        this.typeServ = typeServ;
+        this.newspaperServ = newspaperServ;
     }
 
 
-    public List<Article> getAll(){
+
+    public List<Article> getAll() {
         return daoArticle.getAll();
     }
 
-    public List<Article> getArticlesFilter(String description){
-        return daoArticle.getArticlesFilter(description);
+    public List<Article> getArticlesFilter(String description) {
+        List<Article> articlesList = getAll();
+        ArticleType articleTypes = typeServ.getFilter(description);
+        if (articleTypes == null) {
+            return Collections.emptyList();
+        } else {
+            return articlesList.stream()
+                    .filter(article ->
+                            article.getTypeID() == articleTypes.getTypeID())
+                    .collect(Collectors.toList());
+        }
     }
 
-    public boolean addArticle(Article a){
-
+    public void addArticle(Article a) {
         List<Article> articles = getAll();
-
-        List<ArticleType> types = daoType.getAll();
-        ArticleType articleType = types.stream()
-                .filter(type ->
-                        type.getTypeID() == a.getTypeID())
-                .findFirst().orElse(null);
-
-        List<Newspaper> newspapers = daoNewspaper.getAll();
-        Newspaper newspaper = newspapers.stream()
-                .filter(np ->
-                        np.getNewspaperID() == a.getNewspaperID())
-                .findFirst().orElse(null);
-
-        if (!articles.contains(a) && newspaper!=null
-        && articleType!=null){
-            return daoArticle.save(a);
-        } else return false;
-
+        ArticleType art = typeServ.getByID(a.getTypeID());
+        Newspaper np = newspaperServ.getByID(a.getNewspaperID());
+        if (!articles.contains(a) && np != null && art != null) {
+            daoArticle.save(a);
+        }
     }
-
-//    La idea era usarlo en el newspaperServ para comprobar el delete
-//    public List<Article> getArticlesByNewspaperID(int id){
-//        List<Article> articles = getAll();
-//        return articles.stream().filter(article ->
-//                article.getArticleID() == id)
-//                .collect(Collectors.toList());
-//    }
-
 
 }
+
+

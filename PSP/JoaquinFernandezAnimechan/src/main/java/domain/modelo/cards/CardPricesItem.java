@@ -10,7 +10,8 @@ public class CardPricesItem{
 	private String ebay_price;
 	private String cardmarket_price;
 
-	public CardPricesItem(String coolstuffincPrice, String tcgplayerPrice, String amazonPrice, String ebayPrice, String cardmarketPrice) {
+	public CardPricesItem(String coolstuffincPrice, String tcgplayerPrice,
+						  String amazonPrice, String ebayPrice, String cardmarketPrice) {
 		this.coolstuffinc_price = coolstuffincPrice;
 		this.tcgplayer_price = tcgplayerPrice;
 		this.amazon_price = amazonPrice;
@@ -21,12 +22,10 @@ public class CardPricesItem{
 
 	@Override
 	public String toString() {
-		return "CardPricesItem{" +','+ '\n' +
-				"coolstuffinc_price='" + coolstuffinc_price +','+ '\n' +
-				", tcgplayer_price='" + tcgplayer_price +','+ '\n' +
-				", amazon_price='" + amazon_price +','+ '\n' +
-				", ebay_price='" + ebay_price +','+ '\n' +
-				", cardmarket_price='" + cardmarket_price +
-				'}';
+		return "Coolstuffinc price='" + coolstuffinc_price +','+ '\n' +
+				"Tcgplayer price='" + tcgplayer_price +','+ '\n' +
+				"Amazon price='" + amazon_price +','+ '\n' +
+				"Ebay price='" + ebay_price +','+ '\n' +
+				"Cardmarket price='" + cardmarket_price;
 	}
 }

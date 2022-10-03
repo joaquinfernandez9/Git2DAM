@@ -2,12 +2,10 @@ package ui.pantallas.article.add;
 
 import domain.modelo.Article;
 import domain.services.ArticleServ;
-import domain.services.NewspaperServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import ui.pantallas.newspaper.list.NewsState;
 
 import java.util.List;
 
@@ -38,8 +36,9 @@ public class ArticleAddViewModel {
         return articleServ.getAll();
     }
 
-    public boolean add(Article article){
-        return articleServ.addArticle(article);
+    public void add(Article article){
+        articleServ.addArticle(article);
+        state.setValue(new ArticleAddState(null, !state.get().isChange(), articleServ.getAll()));
     }
 
 

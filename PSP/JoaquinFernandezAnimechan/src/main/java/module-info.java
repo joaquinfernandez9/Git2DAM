@@ -36,5 +36,9 @@ module JoaquinFernandezAnimechan {
     opens ui.pantallas.principal;
     opens ui.pantallas.cartas;
     opens ui.pantallas.unicaCarta;
+    opens ui.common;
+    exports dao.retrofit.llamada;
+    exports dao.impl;
+    exports domain.servicios.impl;
 
 }

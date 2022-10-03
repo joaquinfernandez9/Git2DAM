@@ -13,16 +13,16 @@ import java.util.List;
 public class NewsDeleteViewModel {
 
     private final NewspaperServ newspaperServ;
-    private final ObjectProperty<ui.pantallas.newspaper.list.NewsState> state;
+    private final ObjectProperty<NewsState> state;
 
     @Inject
     public NewsDeleteViewModel(NewspaperServ newspaperServ) {
         this.newspaperServ = newspaperServ;
-        state = new SimpleObjectProperty<>(new ui.pantallas.newspaper.list.NewsState(null, false, null));
+        state = new SimpleObjectProperty<>(new NewsState(null, false, null));
     }
 
     public void load() {
-        state.setValue(new ui.pantallas.newspaper.list.NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
+        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
     }
 
     public ReadOnlyObjectProperty<NewsState> getState() {
@@ -33,7 +33,8 @@ public class NewsDeleteViewModel {
         return newspaperServ.getAll();
     }
 
-    public boolean deleteNewspaper(int news){
-        return newspaperServ.deleteNewspaper(news);
+    public void deleteNewspaper(int news){
+        newspaperServ.deleteNewspaper(news);
+        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
     }
 }

@@ -48,30 +48,15 @@ public class DaoArticle {
         return articlesList;
     }
 
-    public List<Article> getArticlesFilter(String description) {
-        List<Article> articlesList = getAll();
-        ArticleType articleTypes = daoType.getFilter(description);
-        if (articleTypes == null) {
-            return Collections.emptyList();
-        } else {
-            return articlesList.stream()
-                    .filter(article ->
-                            article.getTypeID() == articleTypes.getTypeID())
-                    .collect(Collectors.toList());
-        }
-    }
 
-    public boolean save(Article a) {
+
+    public void save(Article a) {
         Path file = Paths.get(ConfigProperties.getInstance()
                 .getProperty("pathArticles"));
         try {
-            List<String> articles = Files.readAllLines(file);
-            articles.add(a.toStringTextFile());
-            Files.write(file, articles);
-            return true;
+            Files.write(file, a.toStringTextFile().getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             log.error(e.getMessage());
-            return false;
         }
     }
 

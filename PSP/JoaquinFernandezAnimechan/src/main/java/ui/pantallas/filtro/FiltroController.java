@@ -9,10 +9,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.common.BasePantallaController;
+import ui.common.Constantes;
 
 import java.io.IOException;
 
 public class FiltroController extends BasePantallaController {
+
+    //de estos me salen un monton como que no los uso pero si los pulso me llevan a sitios, es por el plugin del javafx
     @FXML
     private TableView<DataItem> tablaCartas;
     @FXML
@@ -46,17 +49,14 @@ public class FiltroController extends BasePantallaController {
     public void principalCargado() {
         super.principalCargado();
 
-        raceCombo.getItems().addAll("continuous", "zombie", "fiend", "normal", "quick-play", "rock", "warrior",
-                "winged beast", "spellcaster", "beast", "fairy", "equip", "field", "fish", "beast-warrior",
-                "thunder", "machine", "sea serpent", "aqua", "plant", "dragon", "reptile", "counter", "psychic",
-                "insect", "pyro", "dinosaur", "wyrm", "cyberse", "ritual", "divine-beast", "creator-god", "cyverse",
-                "mai", "pegasus", "ishizu", "joey", "kaiba", "yugi");
+        raceCombo.getItems().addAll(Constantes.comboRaceStrings);
 
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nombreCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        lvlCol.setCellValueFactory(new PropertyValueFactory<>("level"));
-        atkCol.setCellValueFactory(new PropertyValueFactory<>("atk"));
-        defCol.setCellValueFactory(new PropertyValueFactory<>("def"));
+        //no se que hacer con el codigo duplicado aqui
+        idCol.setCellValueFactory(new PropertyValueFactory<>(Constantes.ID));
+        nombreCol.setCellValueFactory(new PropertyValueFactory<>(Constantes.NAME));
+        lvlCol.setCellValueFactory(new PropertyValueFactory<>(Constantes.LEVEL));
+        atkCol.setCellValueFactory(new PropertyValueFactory<>(Constantes.ATK));
+        defCol.setCellValueFactory(new PropertyValueFactory<>(Constantes.DEF));
 
         filtroViewModel.getState().addListener((observable, oldValue, newValue) -> {
             tablaCartas.getItems().clear();
@@ -67,15 +67,20 @@ public class FiltroController extends BasePantallaController {
     }
 
     @FXML
-    private void buscarRaza() throws IOException {
+    private void buscarRaza(){
         if (nameField.getText().isEmpty() ||
                 raceCombo.getSelectionModel().isEmpty() || filterField.getText().isEmpty()) {
-            getPrincipalController().sacarAlertError("Patata");
-        } else {
+            getPrincipalController().sacarAlertError(Constantes.HAY_CAMPOS_VACIOS);
+        } else if (filtroViewModel.getCardsAtkRace(nameField.getText(),
+                String.valueOf(Integer.parseInt(atkField.getText())),
+                raceCombo.getSelectionModel().getSelectedItem(),
+                filterField.getText()).isRight()){
             filtroViewModel.getCardsAtkRace(nameField.getText(),
                     String.valueOf(Integer.parseInt(atkField.getText())),
                     raceCombo.getSelectionModel().getSelectedItem(),
                     filterField.getText());
+        } else {
+            getPrincipalController().sacarAlertError(Constantes.NO_HAY_CARTAS_CON_ESOS_DATOS);
         }
     }
 

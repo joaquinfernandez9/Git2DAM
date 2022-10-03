@@ -1,6 +1,7 @@
 package dao.retrofit;
 
 import com.squareup.moshi.Moshi;
+import dao.retrofit.llamada.YuGiOhApi;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Singleton;
 import okhttp3.OkHttpClient;

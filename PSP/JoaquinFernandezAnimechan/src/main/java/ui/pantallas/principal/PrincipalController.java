@@ -2,9 +2,12 @@ package ui.pantallas.principal;
 
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import lombok.extern.log4j.Log4j2;
@@ -24,6 +27,14 @@ public class PrincipalController {
     //cambio pantalla
     @FXML
     private BorderPane root;
+    @FXML
+    private MenuBar options;
+    @FXML
+    private MenuItem mostrarCartas;
+    @FXML
+    private MenuItem buscarCarta;
+    @FXML
+    private MenuItem filtrarCarta;
 
     @Inject
     public PrincipalController(Instance<Object> instance) {
@@ -67,5 +78,12 @@ public class PrincipalController {
         cargarPantalla(Pantallas.MENU);
     }
 
-
+    @FXML
+    private void menuClick(ActionEvent actionEvent) {
+        switch (((MenuItem) actionEvent.getSource()).getId()) {
+            case "mostrarCartas" -> cargarPantalla(Pantallas.CARTAS);
+            case "buscarCarta" -> cargarPantalla(Pantallas.MAZOS);
+            case "filtrarCarta" -> cargarPantalla(Pantallas.FILTRO);
+        }
+    }
 }

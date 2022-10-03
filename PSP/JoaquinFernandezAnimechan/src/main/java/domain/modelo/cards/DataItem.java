@@ -1,6 +1,5 @@
 package domain.modelo.cards;
 
-import jakarta.inject.Inject;
 import lombok.Data;
 
 import java.util.List;
@@ -27,16 +26,15 @@ public class DataItem {
 
     @Override
     public String toString() {
-        return "DataItem{" +'\n'+
-                "name= " + name + ','+
-                "id= " + id +','+
-                "level= " + level +','+'\n'+
-                "atk= " + atk +','+
-                "def= " + def +','+'\n'+
-                "type= " + type + ','+
-                "race= " + race + ','+
-                "attribute= " + attribute + ','+'\n'+
-                "desc= " + desc + '\n' +
+        return "Name= " + name + ','+
+                "ID= " + id +','+
+                "Level= " + level +','+'\n'+
+                "ATK= " + atk +','+
+                "DEF= " + def +','+'\n'+
+                "Type= " + type + ','+
+                "Race= " + race + ','+
+                "Attribute= " + attribute + ','+'\n'+
+                "Desc= " + desc + '\n' +
                 "Archetype= "+ archetype+','+'\n'+
                 "Sets item= "+ card_sets +','+'\n'+
                 "Prices= "+ card_prices+','+'\n'+

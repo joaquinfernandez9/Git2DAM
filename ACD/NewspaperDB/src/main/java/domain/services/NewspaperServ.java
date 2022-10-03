@@ -26,19 +26,24 @@ public class NewspaperServ {
         return daoNewspaper.getAll();
     }
 
-    public boolean deleteNewspaper(int news){
-        return daoNewspaper.deleteNewspaper(news);
+    public void deleteNewspaper(int news){
+        daoNewspaper.deleteNewspaper(news);
+    }
+
+    public Newspaper getByID(int id){
+        List<Newspaper> newspapers = daoNewspaper.getAll();
+        return newspapers.stream()
+                .filter(np ->
+                        np.getNewspaperID() == id)
+                .findFirst().orElse(null);
+
     }
 
     public List<Article> newspaperContainsArticles(int idNewspaper){
-        //conseguir np y articles
-        List<Newspaper> npList = getAll();
-        List<Article> articles = articleServ.getAll();
 
-        //buscar np con ese id
-        Newspaper np = npList.stream().filter(newspaper ->
-                newspaper.getNewspaperID() == idNewspaper)
-                .findFirst().orElse(null);
+
+        List<Article> articles = articleServ.getAll();
+        Newspaper np = getByID(idNewspaper);
 
         if (np==null){
             return Collections.emptyList();

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.menu.MenuController">
+<AnchorPane prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.menu.MenuController">
    <children>
-      <Button onAction="#moverCartas" layoutX="90.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Cartas" />
-      <Button onAction="#moverMazos" layoutX="253.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Mazos" />
-      <Button onAction="#moverFiltro" layoutX="426.0" layoutY="233.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Ver Filtrar" />
+      <Button layoutX="104.0" layoutY="287.0" mnemonicParsing="false" onAction="#moverCartas" prefHeight="43.0" prefWidth="94.0" text="Ver Cartas" />
+      <Button layoutX="303.0" layoutY="287.0" mnemonicParsing="false" onAction="#moverMazos" prefHeight="43.0" prefWidth="94.0" text="Ver Mazos" />
+      <Button layoutX="534.0" layoutY="287.0" mnemonicParsing="false" onAction="#moverFiltro" prefHeight="43.0" prefWidth="94.0" text="Ver Filtrar" />
+      <ImageView fx:id="imageView" fitHeight="189.0" fitWidth="353.0" layoutX="174.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

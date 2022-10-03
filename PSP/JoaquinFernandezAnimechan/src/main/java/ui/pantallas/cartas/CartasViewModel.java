@@ -1,6 +1,8 @@
 package ui.pantallas.cartas;
 
+import domain.modelo.cards.CardsList;
 import domain.servicios.ServiciosCartas;
+import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -8,7 +10,6 @@ import javafx.beans.property.SimpleObjectProperty;
 
 
 public class CartasViewModel {
-
     private final ServiciosCartas serviciosCartas;
     private final ObjectProperty<CartasState> state;
 
@@ -29,16 +30,9 @@ public class CartasViewModel {
         return state;
     }
 
-
-
     public void verCartasName(String name){
-        serviciosCartas.verCartasName(name);
-        state.setValue(new CartasState(null,
-                !state.get().cambio(),
-                serviciosCartas.verCartasName(name).getOrNull()));
+        Either<String, CardsList> catar = serviciosCartas.verCartasName(name);
+
     }
-
-
-
 
 }
