@@ -1,11 +1,12 @@
 package domain.services;
 
+import dao.DaoArticle;
 import dao.DaoNewspaper;
 import domain.modelo.Article;
 import domain.modelo.Newspaper;
+import io.vavr.control.Either;
 import jakarta.inject.Inject;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,59 +14,55 @@ import java.util.stream.Collectors;
 public class NewspaperServ {
 
     private final DaoNewspaper daoNewspaper;
-    private final ArticleServ articleServ;
+    private final DaoArticle daoArticle;
 
     @Inject
     public NewspaperServ(DaoNewspaper daoNewspaper,
-                         ArticleServ articleServ){
+                         DaoArticle daoArticle) {
         this.daoNewspaper = daoNewspaper;
-        this.articleServ = articleServ;
+        this.daoArticle = daoArticle;
     }
 
-    public List<Newspaper> getAll(){
+    public List<Newspaper> getAll() {
         return daoNewspaper.getAll();
     }
 
-    public void deleteNewspaper(int news){
-        daoNewspaper.deleteNewspaper(news);
-    }
 
-    public Newspaper getByID(int id){
-        List<Newspaper> newspapers = daoNewspaper.getAll();
-        return newspapers.stream()
-                .filter(np ->
-                        np.getNewspaperID() == id)
-                .findFirst().orElse(null);
+    public Either<String, Boolean> deleteNewspaper(int id) {
+        List<Article> articles = daoArticle.getAll();
+        Either<String, Boolean> respuesta;
+        articles.forEach(article -> {
+            if (article.getNewspaperID() == id){
+                daoArticle.delete(article.getArticleID());
 
-    }
-
-    public List<Article> newspaperContainsArticles(int idNewspaper){
-
-
-        List<Article> articles = articleServ.getAll();
-        Newspaper np = getByID(idNewspaper);
-
-        if (np==null){
-            return Collections.emptyList();
+            }
+        });
+        if (daoNewspaper.delete(id).isRight()){
+            respuesta = Either.right(true);
         } else {
-            //lista de articulos con el id del periodico
-            return articles.stream().filter(article ->
-                    article.getNewspaperID() == np.getNewspaperID())
-                    .collect(Collectors.toList());
+            respuesta = Either.left("Cant operate");
         }
+        return respuesta;
     }
 
-    public boolean borrar(boolean respuesta, int id){
-        if (respuesta){
-            List<Article> articlesTotal = articleServ.getAll();
-            List<Article> articlesDelete = newspaperContainsArticles(id);
-            articlesTotal = articlesTotal.stream()
-                    .peek(articlesDelete::remove).collect(Collectors.toList());
-            return !new HashSet<>(articlesTotal).containsAll(articlesDelete);
-
-        } else {
-            return false;
-        }
+    public boolean newspaperContainsArticles(int idNewspaper) {
+        List<Article> articles = daoArticle.getAll();
+        Newspaper np = daoNewspaper.get(idNewspaper);
+        List<Article> articlesContian = articles.stream().filter(article ->
+                article.getNewspaperID() == np.getNewspaperID())
+                .collect(Collectors.toList());
+        return !articlesContian.isEmpty();
     }
+
+    public List<Article> articlesNewspaper(int id){
+        List<Article> articles = daoArticle.getAll();
+        Newspaper np = daoNewspaper.get(id);
+        return articles.stream().filter(article ->
+                        article.getNewspaperID() == np.getNewspaperID())
+                .collect(Collectors.toList());
+    }
+
+
+
 
 }

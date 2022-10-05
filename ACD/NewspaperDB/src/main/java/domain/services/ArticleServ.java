@@ -6,7 +6,6 @@ import dao.DaoType;
 import domain.modelo.Article;
 import domain.modelo.ArticleType;
 import domain.modelo.Newspaper;
-import jakarta.enterprise.inject.New;
 import jakarta.inject.Inject;
 
 import java.util.Collections;
@@ -16,15 +15,15 @@ import java.util.stream.Collectors;
 public class ArticleServ {
 
     private final DaoArticle daoArticle;
-    private final TypeServ typeServ;
-    private final NewspaperServ newspaperServ;
+    private final DaoType daoType;
+    private final DaoNewspaper daoNewspaper;
 
     @Inject
-    public ArticleServ(DaoArticle daoArticle, TypeServ typeServ,
-                       NewspaperServ newspaperServ) {
+    public ArticleServ(DaoArticle daoArticle, DaoType daoType,
+                       DaoNewspaper daoNewspaper) {
         this.daoArticle = daoArticle;
-        this.typeServ = typeServ;
-        this.newspaperServ = newspaperServ;
+        this.daoType = daoType;
+        this.daoNewspaper = daoNewspaper;
     }
 
 
@@ -35,7 +34,7 @@ public class ArticleServ {
 
     public List<Article> getArticlesFilter(String description) {
         List<Article> articlesList = getAll();
-        ArticleType articleTypes = typeServ.getFilter(description);
+        ArticleType articleTypes = daoType.get(null, description);
         if (articleTypes == null) {
             return Collections.emptyList();
         } else {
@@ -48,8 +47,8 @@ public class ArticleServ {
 
     public void addArticle(Article a) {
         List<Article> articles = getAll();
-        ArticleType art = typeServ.getByID(a.getTypeID());
-        Newspaper np = newspaperServ.getByID(a.getNewspaperID());
+        ArticleType art = daoType.get(a.getTypeID(), null);
+        Newspaper np = daoNewspaper.get(a.getNewspaperID());
         if (!articles.contains(a) && np != null && art != null) {
             daoArticle.save(a);
         }

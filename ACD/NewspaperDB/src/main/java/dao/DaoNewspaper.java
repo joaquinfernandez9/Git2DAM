@@ -2,6 +2,7 @@ package dao;
 
 import config.ConfigProperties;
 import domain.modelo.Newspaper;
+import io.vavr.control.Either;
 import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;
@@ -30,7 +31,8 @@ public class DaoNewspaper {
         return newspaperList;
     }
 
-    public void deleteNewspaper(int id) {
+    public Either<String, Boolean> delete(int id) {
+        Either<String, Boolean> respuesta;
         Path file = Paths.get(ConfigProperties.getInstance()
                 .getProperty("pathNewspaper"));
         List<Newspaper> newspaperList = getAll();
@@ -43,13 +45,27 @@ public class DaoNewspaper {
                 newspaperList.remove(n);
                 newspapers.remove(n.toStringTextFile());
                 Files.write(file, newspapers);
-
+                respuesta = Either.right(true);
+            } else {
+                respuesta = Either.left("Error, there are not any newspapers with that ID");
             }
 
+
         } catch (IOException e) {
-            log.error(e.getMessage());
+            respuesta = Either.left(e.getMessage());
         }
+        return respuesta;
     }
+
+    public Newspaper get(int id){
+        List<Newspaper> newspapers = getAll();
+        return newspapers.stream()
+                .filter(np ->
+                        np.getNewspaperID() == id)
+                .findFirst().orElse(null);
+
+    }
+
     // get getAll save delete update
 
 }

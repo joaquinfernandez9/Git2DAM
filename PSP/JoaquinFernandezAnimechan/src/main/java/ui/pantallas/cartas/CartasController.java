@@ -74,11 +74,9 @@ public class CartasController extends BasePantallaController {
     private void btnBuscar() {
         if (cardName.getText().isEmpty()){
             getPrincipalController().sacarAlertError(Constantes.NO_SE_HA_PROPORCIONADO_UN_NOMBRE);
-        } else if (cartasViewModel.verCartasName(cardName.getText()).isRight()){
+        } else {
             cartasViewModel.verCartasName(cardName.getText());
             cartasViewModel.load();
-        } else {
-            getPrincipalController().sacarAlertError(Constantes.NO_HAY_CARTAS_CON_ESE_NOMBRE);
         }
     }
 

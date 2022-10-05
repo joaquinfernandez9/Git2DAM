@@ -9,4 +9,5 @@
     <string name="id">ID</string>
     <string name="name">Name</string>
     <string name="sino">Bluetooth</string>
+    <string name="errorAddHeadset">Error cosas</string>
 </resources>

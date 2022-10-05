@@ -28,6 +28,7 @@ public class ArticleAddController extends BasePantallaController {
     private TableColumn<Integer, Article> typeIDColumn;
 
     private final ArticleAddViewModel articleAddViewModel;
+
     @Inject
     public ArticleAddController(ArticleAddViewModel articleAddViewModel) {
         this.articleAddViewModel = articleAddViewModel;

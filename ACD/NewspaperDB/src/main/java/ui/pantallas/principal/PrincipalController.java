@@ -44,6 +44,10 @@ public class PrincipalController {
         options.setVisible(false);
     }
 
+    public void closeWindowEvent(WindowEvent event) {
+
+    }
+
     private Pane cargarPantalla(String ruta) {
         Pane panePantalla = null;
         try {

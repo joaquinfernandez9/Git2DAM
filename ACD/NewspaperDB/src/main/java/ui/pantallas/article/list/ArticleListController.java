@@ -1,6 +1,7 @@
 package ui.pantallas.article.list;
 
 import domain.modelo.Article;
+import domain.modelo.ArticleType;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import jakarta.inject.Inject;
@@ -28,10 +29,11 @@ public class ArticleListController extends BasePantallaController {
     @FXML
     public TableColumn<String, Article> typeID;
 
-    private final ArticleListViewModel articleListViewModel;
 
     @FXML
     public MFXComboBox<String> combo;
+
+    private final ArticleListViewModel articleListViewModel;
 
     @Inject
     public ArticleListController(ArticleListViewModel articleListViewModel) {
@@ -40,7 +42,7 @@ public class ArticleListController extends BasePantallaController {
 
     @Override
     public void principalCargado() throws IOException {
-        combo.getItems().addAll(articleListViewModel);
+        combo.getItems().addAll("Sports", "Science");
 
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("articleID"));

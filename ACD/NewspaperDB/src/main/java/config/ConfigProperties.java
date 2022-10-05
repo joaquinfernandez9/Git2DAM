@@ -13,7 +13,6 @@ import java.util.Properties;
 @Log4j2
 public class ConfigProperties {
 
-    // for paths
 
     private static ConfigProperties instance=null;
     private Properties p;

@@ -7,8 +7,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
-import java.io.IOException;
-import java.util.List;
 
 public class NewsListViewModel {
 
@@ -18,7 +16,7 @@ public class NewsListViewModel {
     @Inject
     public NewsListViewModel(NewspaperServ newspaperServ) {
         this.newspaperServ = newspaperServ;
-        state = new SimpleObjectProperty<>(new NewsState(null, false, null));
+        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServ.getAll()));
     }
 
     public void load() {
@@ -28,11 +26,6 @@ public class NewsListViewModel {
     public ReadOnlyObjectProperty<NewsState> getState() {
         return state;
     }
-
-//    public List<Newspaper> getAll(){
-//        return newspaperServ.getAll();
-//    }
-
 
 
 }

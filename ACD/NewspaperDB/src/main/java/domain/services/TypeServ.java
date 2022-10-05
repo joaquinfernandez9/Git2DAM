@@ -19,19 +19,6 @@ public class TypeServ {
         return daoType.getAll();
     }
 
-    public ArticleType getFilter(String descricpion) {
-        List<ArticleType> articleTypes = getAll();
-        return articleTypes.stream()
-                .filter(linea -> linea.getDescription().equals(descricpion))
-                .findFirst().orElse(null);
-    }
 
-    public ArticleType getByID(int id){
-        List<ArticleType> types = getAll();
-        return types.stream()
-                .filter(type ->
-                        type.getTypeID() == id)
-                .findFirst().orElse(null);
-    }
 
 }

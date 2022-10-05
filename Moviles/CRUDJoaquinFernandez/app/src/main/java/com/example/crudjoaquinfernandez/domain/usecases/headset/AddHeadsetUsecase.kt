@@ -5,6 +5,7 @@ import com.example.crudjoaquinfernandez.domain.model.Headset
 
 class AddHeadsetUsecase {
     // se pone como usecase o cmo usecases?¿?¿?¿
-    fun addHeadset(headset: Headset) = DataHeadset.addHeadset(headset)
+    operator fun invoke(headset: Headset) =
+        DataHeadset.addHeadset(headset)
 
 }

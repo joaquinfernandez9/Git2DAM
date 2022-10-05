@@ -11,7 +11,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import ui.common.BasePantallaController;
 import ui.common.Constantes;
 
-import java.io.IOException;
 
 public class FiltroController extends BasePantallaController {
 

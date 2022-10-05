@@ -8,9 +8,6 @@ module JoaquinFernandezAnimechan {
     requires org.apache.logging.log4j;
     requires jakarta.cdi;
     requires jakarta.inject;
-    requires com.fasterxml.jackson.databind;
-    requires com.fasterxml.jackson.dataformat.yaml;
-    requires com.google.gson;
     requires retrofit2.converter.moshi;
     requires moshi;
     requires okhttp3;
@@ -40,5 +37,6 @@ module JoaquinFernandezAnimechan {
     exports dao.retrofit.llamada;
     exports dao.impl;
     exports domain.servicios.impl;
+    exports common;
 
 }

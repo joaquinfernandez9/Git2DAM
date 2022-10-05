@@ -1,8 +1,10 @@
 package dao.retrofit;
 
 import com.squareup.moshi.Moshi;
+import common.Config;
 import dao.retrofit.llamada.YuGiOhApi;
 import jakarta.enterprise.inject.Produces;
+import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -16,6 +18,13 @@ public class ProducesRetrofit {
         return new Moshi.Builder().build();
     }
 
+    private final Config config;
+
+    @Inject
+    public ProducesRetrofit(Config config) {
+        this.config = config;
+    }
+
     @Produces
     @Singleton
     public Retrofit retrofit(Moshi moshi) {
@@ -27,7 +36,7 @@ public class ProducesRetrofit {
 
 
         return new Retrofit.Builder()
-                .baseUrl("https://db.ygoprodeck.com/api/")
+                .baseUrl(config.getPath())
                 .addConverterFactory(retrofit2.converter.moshi.MoshiConverterFactory.create(moshi))
                 .client(clientOK)
                 .build();

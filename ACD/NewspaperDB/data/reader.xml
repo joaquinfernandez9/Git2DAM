@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<readers>
+    <reader maxOccurs="unbounded">
+        <id>1</id>
+        <name>Joaquin</name>
+        <dateOfBirth>2001-03-22</dateOfBirth>
+        <subscriptions>
+            <subscription maxOccurs="unbounded">
+                <idSubscription>1</idSubscription>
+                <idReader>2</idReader>
+                <idNewspaper>1</idNewspaper>
+                <signingDate>2001-03-22</signingDate>
+                <cancellationDate>2001-03-22</cancellationDate>
+            </subscription>
+        </subscriptions>
+        <readArticles>
+            <readArticle maxOccurs="unbounded">
+                <idReadArticle>1</idReadArticle>
+                <idReader>1</idReader>
+                <idArticle>1</idArticle>
+                <rating>1</rating>
+            </readArticle>
+        </readArticles>
+    </reader>
+</readers>

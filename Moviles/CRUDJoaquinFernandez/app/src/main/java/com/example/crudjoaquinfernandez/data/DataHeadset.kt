@@ -3,34 +3,25 @@ package com.example.crudjoaquinfernandez.data
 import com.example.crudjoaquinfernandez.domain.model.Headset
 
 object DataHeadset {
-    private val headset = mutableMapOf<Int, Headset>()
+    private val headset = mutableListOf<Headset>()
 
     init {
-        headset[1] = Headset(1, "HyperX Cloud Stinger",
-            29.99, true, bluetooth = false,
-        )
-        headset[2] = Headset(2, "Mixcder 9",
-            price = 29.99, true, bluetooth = true,
-        )
-        headset[3] = Headset(3, "Razer Kraken",
-            price = 49.99, true, bluetooth = false,
-        )
+        headset.add(Headset(1, "HyperX Cloud Stinger",
+            true, bluetooth = false,))
+        headset.add(Headset(2, "HyperX Cloud Alpha",
+             true, bluetooth = false,))
+        headset.add(Headset(3, "HyperX Cloud Flight",
+             true, bluetooth = true,))
     }
 
     //CRUD create read update delete
-    fun addHeadset(headset: Headset) {
-        this.headset[headset.id] = headset
-    }
+    fun addHeadset(cascos: Headset) = headset.add(cascos)
 
     fun removeHeadset(id: Int) {
-        this.headset.remove(id)
+        headset.remove(headset.find { it.id == id })
     }
 
-    fun updateHeadset(headset: Headset) {
-        this.headset[headset.id] = headset
-    }
-
-    fun getHeadset(id: Int): Headset? {
+    fun getHeadset(id: Int): Headset {
         return this.headset[id]
     }
 

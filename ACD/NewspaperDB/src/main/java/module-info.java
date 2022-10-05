@@ -9,7 +9,6 @@ module javafx {
     requires MaterialFX;
 
     requires com.fasterxml.jackson.databind;
-    requires com.fasterxml.jackson.dataformat.yaml;
 
     requires jakarta.cdi;
     requires jakarta.inject;
@@ -17,9 +16,7 @@ module javafx {
     exports ui.main;
     exports ui.pantallas.common;
     exports ui.pantallas.login;
-//    exports ui.pantallas.newspaper;
     exports ui.pantallas.principal;
-//    exports ui.pantallas.reader;
     exports dao;
     exports domain.services;
     exports domain.modelo;
@@ -40,9 +37,8 @@ module javafx {
     exports ui.pantallas.article.update;
 
 
-    exports ui;
-    exports DI;
     exports config;
+    exports dao.localDate;
 
     opens ui.main;
     opens ui.pantallas.principal;
@@ -54,9 +50,11 @@ module javafx {
     opens ui.pantallas.article.list;
     opens ui.pantallas.article.add;
 
+    requires io.vavr;
 
 
 
     requires jakarta.el;
     requires jakarta.annotation;
+    requires jakarta.xml.bind;
 }

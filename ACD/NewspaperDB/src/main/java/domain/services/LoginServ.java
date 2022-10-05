@@ -5,7 +5,7 @@ import jakarta.inject.Inject;
 
 public class LoginServ {
 
-    DaoLogin daoLogin;
+    private final DaoLogin daoLogin;
 
     @Inject
     public LoginServ(DaoLogin daoLogin) {

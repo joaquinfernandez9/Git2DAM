@@ -18,7 +18,7 @@ public class NewsDeleteViewModel {
     @Inject
     public NewsDeleteViewModel(NewspaperServ newspaperServ) {
         this.newspaperServ = newspaperServ;
-        state = new SimpleObjectProperty<>(new NewsState(null, false, null));
+        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServ.getAll()));
     }
 
     public void load() {
@@ -34,7 +34,14 @@ public class NewsDeleteViewModel {
     }
 
     public void deleteNewspaper(int news){
-        newspaperServ.deleteNewspaper(news);
-        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
+        if (newspaperServ.deleteNewspaper(news).isRight()){
+            state.setValue(new NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
+        }
     }
+
+    public boolean containsArticels(int id){
+        return newspaperServ.newspaperContainsArticles(id);
+    }
+
+
 }

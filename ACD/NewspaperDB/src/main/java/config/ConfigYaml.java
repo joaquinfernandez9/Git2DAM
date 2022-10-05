@@ -1,7 +1,6 @@
 package config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import jakarta.inject.Singleton;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +13,6 @@ import java.util.Properties;
 @Singleton
 public class ConfigYaml {
 
-    //for users
 
     private static ConfigYaml instance = null;
     private Properties p;
@@ -28,7 +26,6 @@ public class ConfigYaml {
             log.error(e.getMessage());
         }
     }
-
     public static ConfigYaml getInstance() {
 
         if (instance == null) {

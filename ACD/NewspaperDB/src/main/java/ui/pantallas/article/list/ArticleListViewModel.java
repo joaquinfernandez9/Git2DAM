@@ -1,15 +1,13 @@
 package ui.pantallas.article.list;
 
-import domain.modelo.Article;
 import domain.services.ArticleServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
-import java.util.List;
-
 public class ArticleListViewModel {
+
     private final ArticleServ articleServ;
     private final ObjectProperty<ArticleListState> state;
 
@@ -32,8 +30,10 @@ public class ArticleListViewModel {
     }
 
 
-    public List<Article> getAllfilter(String description){
+    public void getAllfilter(String description){
         state.setValue(new ArticleListState(null, !state.get().isChange(), articleServ.getArticlesFilter(description)));
-        return articleServ.getArticlesFilter(description);
+        articleServ.getArticlesFilter(description);
     }
+
+
 }

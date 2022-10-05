@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SimpleTimeZone;
 
 @Log4j2
 public class DaoType {
@@ -27,5 +28,21 @@ public class DaoType {
         }
         return articlesList;
     }
+
+    public ArticleType get(Integer id, String description){
+        List<ArticleType> articleTypes = getAll();
+        if (id == null){
+            return articleTypes.stream()
+                    .filter(linea -> linea.getDescription().equals(description))
+                    .findFirst().orElse(null);
+        } else {
+            return articleTypes.stream()
+                    .filter(type ->
+                            type.getTypeID() == id)
+                    .findFirst().orElse(null);
+        }
+    }
+
+
 
 }

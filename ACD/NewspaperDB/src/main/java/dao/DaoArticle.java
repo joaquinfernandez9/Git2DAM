@@ -4,6 +4,8 @@ import config.ConfigProperties;
 import config.ConfigYaml;
 import domain.modelo.Article;
 import domain.modelo.ArticleType;
+import domain.modelo.Newspaper;
+import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 
@@ -20,18 +22,11 @@ import java.util.stream.Collectors;
 @Log4j2
 public class DaoArticle {
 
-    DaoType daoType;
-
     // getAll(either)
     // get (Article)
     // save/add (int)
     // update (int)
     // delete (int)
-
-    @Inject
-    public DaoArticle(DaoType daoType) {
-        this.daoType = daoType;
-    }
 
     public List<Article> getAll() {
         Path file = Paths.get(ConfigProperties.getInstance()
@@ -58,6 +53,32 @@ public class DaoArticle {
         } catch (IOException e) {
             log.error(e.getMessage());
         }
+    }
+
+    public Either<String, Boolean> delete(int id) {
+        Either<String, Boolean> respuesta;
+        Path file = Paths.get(ConfigProperties.getInstance()
+                .getProperty("pathArticles"));
+        List<Article> articles = getAll();
+        try {
+            List<String> articlesData = Files.readAllLines(file);
+            Article art = articles.stream().filter(article ->
+                            article.getArticleID() == id)
+                    .findFirst().orElse(null);
+            if (art!=null){
+                articles.remove(art);
+                articlesData.remove(art.toStringTextFile());
+                Files.write(file, articlesData);
+                respuesta = Either.right(true);
+            } else {
+                respuesta = Either.left("Error, there are not any articles with that ID");
+            }
+
+
+        } catch (IOException e) {
+            respuesta = Either.left(e.getMessage());
+        }
+        return respuesta;
     }
 
 
