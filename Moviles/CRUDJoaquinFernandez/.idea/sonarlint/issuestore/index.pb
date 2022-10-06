@@ -1,8 +1,4 @@
 
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 y
 Iapp/src/main/java/com/example/crudjoaquinfernandez/ui/mainScreen/Const.kt,a\7\a70093d51edf3bc295739b7c985bbd8d8a2d66d6
 ’
@@ -11,15 +7,17 @@ bapp/src/main/java/com/example/crudjoaquinfernandez/domain/usecases/headset/Remo
 _app/src/main/java/com/example/crudjoaquinfernandez/domain/usecases/headset/GetHeadsetUsecase.kt,4\f\4f46d0b2ce3a7a0ae6dbaa60143542cf79e40ff9
 z
 Japp/src/main/java/com/example/crudjoaquinfernandez/utils/StringProvider.kt,5\a\5a6a7ec4d338cedb086a28a6ba883b97eeb179a7
-z
-Japp/src/main/java/com/example/crudjoaquinfernandez/domain/model/Headset.kt,f\6\f6cb354ea5cada0438c44a594c01464cb92f695c
-}
-Mapp/src/main/java/com/example/crudjoaquinfernandez/ui/mainScreen/MainState.kt,c\4\c4b93b86299d123d52e5713fa902262c96850be2
 v
 Fapp/src/main/java/com/example/crudjoaquinfernandez/data/DataHeadset.kt,8\7\8729f6ba25945330a66de0dcdee8d7ded3e03536
 
 _app/src/main/java/com/example/crudjoaquinfernandez/domain/usecases/headset/AddHeadsetUsecase.kt,9\c\9ced29171a1046c691b2efd295bb63ce43a302f0
+}
+Mapp/src/main/java/com/example/crudjoaquinfernandez/ui/mainScreen/MainState.kt,c\4\c4b93b86299d123d52e5713fa902262c96850be2
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 
 Qapp/src/main/java/com/example/crudjoaquinfernandez/ui/mainScreen/MainViewModel.kt,2\a\2add6a02bd154ddd76f309842cb254dd1c9e3350
 €
 Papp/src/main/java/com/example/crudjoaquinfernandez/ui/mainScreen/MainActivity.kt,6\e\6e69fcaf6a9b3b81457ca8f2eec44218ee14bd05
+z
+Japp/src/main/java/com/example/crudjoaquinfernandez/domain/model/Headset.kt,f\6\f6cb354ea5cada0438c44a594c01464cb92f695c

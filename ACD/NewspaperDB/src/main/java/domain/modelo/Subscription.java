@@ -25,15 +25,5 @@ public class Subscription {
     @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate cancellationDate;
 
-    public Subscription(int idSubscription, int idReader, int idNewspaper, LocalDate singDate, LocalDate cancellationDate) {
-        this.idSubscription = idSubscription;
-        this.idReader = idReader;
-        this.idNewspaper = idNewspaper;
-        this.singDate = singDate;
-        this.cancellationDate = cancellationDate;
-    }
-
-    public Subscription() {
-
-    }
+    public Subscription() {}
 }

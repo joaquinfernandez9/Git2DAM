@@ -21,10 +21,10 @@ module javafx {
     exports domain.services;
     exports domain.modelo;
     exports ui.pantallas.welcome;
-    exports ui.pantallas.reader.add;
-    exports ui.pantallas.reader.list;
+    exports ui.pantallas.reader.appendArticle;
+    exports ui.pantallas.reader.listSubscription;
     exports ui.pantallas.reader.delete;
-    exports ui.pantallas.reader.update;
+    exports ui.pantallas.reader.listType;
 
     exports ui.pantallas.newspaper.add;
     exports ui.pantallas.newspaper.list;
@@ -43,14 +43,26 @@ module javafx {
     opens ui.main;
     opens ui.pantallas.principal;
     opens domain.modelo;
+    opens domain.services;
     opens ui.pantallas.login;
     opens fxml;
     opens config;
     opens ui.pantallas.newspaper.delete;
     opens ui.pantallas.article.list;
     opens ui.pantallas.article.add;
+    opens ui.pantallas.reader.appendArticle;
+
 
     requires io.vavr;
+    requires io.vavr.match;
+    opens ui;
+
+
+    opens ui.pantallas.reader.delete;
+    opens ui.pantallas.reader.listSubscription;
+    opens ui.pantallas.reader.listType;
+
+    exports ui;
 
 
 

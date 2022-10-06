@@ -24,7 +24,6 @@ public class Main extends Application {
         container.getBeanManager().fireEvent(stage, new AnnotationLiteral<StartupScene>() {});
 
 //        container.getBeanManager().getEvent().select(new AnnotationLiteral<StartupScene>(){
-//
 //        }).fire(stage);
 
         stage.show();

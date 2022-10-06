@@ -19,13 +19,13 @@ public class Reader {
     @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate dateOfBirth;
     @XmlElement(name = "subscriptions")
-    private List<Subscriptions> subscriptions;
+    private Subscriptions subscriptions;
     @XmlElement(name = "readArticles")
-    private List<ReadArticles> readArticles;
+    private ReadArticles readArticles;
 
     public Reader(int id, String name, LocalDate dateOfBirth,
-                  List<Subscriptions> subscriptions,
-                  List<ReadArticles> readArticles) {
+                  Subscriptions subscriptions,
+                  ReadArticles readArticles) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -33,14 +33,7 @@ public class Reader {
         this.readArticles = readArticles;
     }
 
-    public Reader() {
-
-    }
-
-    public Reader(String name, LocalDate dateOfBirth) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-    }
+    public Reader() {}
 }
 
 

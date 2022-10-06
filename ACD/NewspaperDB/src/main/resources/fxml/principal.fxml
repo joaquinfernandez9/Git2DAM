@@ -25,12 +25,12 @@
 
             </Menu>
             <Menu mnemonicParsing="false" text="Reader">
-                <MenuItem fx:id="rList" mnemonicParsing="false" onAction="#menuClick"
-                          text="List"/>
-                <MenuItem fx:id="rAdd" mnemonicParsing="false" onAction="#menuClick"
-                          text="Add"/>
-                <MenuItem fx:id="rUpdate" mnemonicParsing="false" onAction="#menuClick"
-                          text="Update"/>
+                <MenuItem fx:id="rListSubscription" mnemonicParsing="false" onAction="#menuClick"
+                          text="List of Readers (news subscription)"/>
+                <MenuItem fx:id="rAppendReadArticle" mnemonicParsing="false" onAction="#menuClick"
+                          text="Append Article"/>
+                <MenuItem fx:id="rListType" mnemonicParsing="false" onAction="#menuClick"
+                          text="List of Readers (Specific type)"/>
                 <MenuItem fx:id="rDelete" mnemonicParsing="false" onAction="#menuClick"
                           text="Delete"/>
             </Menu>

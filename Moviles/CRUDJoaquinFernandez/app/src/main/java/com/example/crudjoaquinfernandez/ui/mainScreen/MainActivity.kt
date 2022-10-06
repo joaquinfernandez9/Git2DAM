@@ -29,19 +29,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
 
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
 
+
             addBtn.setOnClickListener {
-                if (nameHeadset.text.isBlank()) {
+                if (nameHeadset.tag.toString().isBlank()) {
                     Toast.makeText(this@MainActivity, "Rellena los campos", Toast.LENGTH_SHORT).show()
                 } else {
                     viewModel.addHeadset(
                         Headset(
-                            name = nameHeadset.text.toString(),
-                            id = idHeadset.tag.toString().toInt(),
+                            name = nameHeadset.tag.toString(),
+                            id = (idHeadset as String).toInt(),
                             bluetooth = bluetooth.isChecked,
                             mic = mic.isChecked,
                         ))
@@ -49,5 +50,7 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
+
     }
 }

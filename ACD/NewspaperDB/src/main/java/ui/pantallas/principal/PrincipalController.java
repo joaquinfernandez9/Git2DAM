@@ -5,20 +5,15 @@ import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import lombok.extern.log4j.Log4j2;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.Pantallas;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
-import java.util.Optional;
 
 @Log4j2
 public class PrincipalController {
@@ -44,9 +39,6 @@ public class PrincipalController {
         options.setVisible(false);
     }
 
-    public void closeWindowEvent(WindowEvent event) {
-
-    }
 
     private Pane cargarPantalla(String ruta) {
         Pane panePantalla = null;
@@ -98,11 +90,11 @@ public class PrincipalController {
     @FXML
     public MenuItem npDelete;
     @FXML
-    public MenuItem rList;
+    public MenuItem rListSubscription;
     @FXML
-    public MenuItem rAdd;
+    public MenuItem rAppendReadArticle;
     @FXML
-    public MenuItem rUpdate;
+    public MenuItem rListType;
     @FXML
     public MenuItem rDelete;
     @FXML
@@ -129,6 +121,18 @@ public class PrincipalController {
                 break;
             case "artAdd":
                 cargarPantalla(Pantallas.ARTICLE_ADD);
+                break;
+            case "rDelete":
+                cargarPantalla(Pantallas.READER_DELETE);
+                break;
+            case "rListSubscription":
+                cargarPantalla(Pantallas.READER_LIST_SUBSCRIPTION);
+                break;
+            case "rListType":
+                cargarPantalla(Pantallas.READER_LIST_TYPE);
+                break;
+            case "rAppendReadArticle":
+                cargarPantalla(Pantallas.READER_ADD_READARTICLE);
                 break;
         }
     }
