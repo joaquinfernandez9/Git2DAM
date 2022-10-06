@@ -9,6 +9,9 @@ import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 
@@ -61,24 +64,25 @@ public class DaoReader {
     public Either<String, Boolean> delete(int id){
         Either<String, Boolean> respuesta;
         List<Reader> readerList = getAll().get();
+        Path file = Paths.get(ConfigXML.getInstance()
+                .getProperty("xmlReaderPath"));
         try {
             if (!readerList.isEmpty()){
                 Reader r = readerList.stream()
                         .filter(reader -> reader.getId() == id)
                         .findFirst().orElse(null);
                 if (r != null){
-                    readerList.remove(r);
+
                     JAXBContext jaxbContext = JAXBContext.newInstance(Readers.class);
                     Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
                     jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+                    Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+                    Readers lista = (Readers) unmarshaller.unmarshal(Files.newInputStream(file));
+                    lista.getReaders().remove(r);
 
-                    //mostrar la lista nueva por consola
-                    //jaxbMarshaller.marshal(readerList, System.out);
+                    jaxbMarshaller.marshal(lista,
+                            Files.newOutputStream(file));
 
-                    //meter la lista en el archivo
-                    jaxbMarshaller.marshal(readerList,
-                            new File(ConfigXML.getInstance()
-                                    .getProperty("xmlReaderPath")));
                     respuesta = Either.right(true);
                 } else {
                     respuesta = Either.left("error");

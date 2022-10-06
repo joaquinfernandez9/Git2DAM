@@ -1,22 +1,63 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <readers>
-    <reader maxOccurs="unbounded">
+    <reader>
         <id>1</id>
         <name>Joaquin</name>
         <dateOfBirth>2001-03-22</dateOfBirth>
         <subscriptions>
-            <subscription maxOccurs="unbounded">
+            <subscription>
                 <idSubscription>1</idSubscription>
-                <idReader>2</idReader>
+                <idReader>1</idReader>
                 <idNewspaper>1</idNewspaper>
-                <signingDate>2001-03-22</signingDate>
                 <cancellationDate>2001-03-22</cancellationDate>
             </subscription>
         </subscriptions>
         <readArticles>
-            <readArticle maxOccurs="unbounded">
+            <readArticle>
                 <idReadArticle>1</idReadArticle>
                 <idReader>1</idReader>
+                <idArticle>1</idArticle>
+                <rating>1</rating>
+            </readArticle>
+        </readArticles>
+    </reader>
+    <reader>
+        <id>2</id>
+        <name>Joaquin</name>
+        <dateOfBirth>2001-03-22</dateOfBirth>
+        <subscriptions>
+            <subscription>
+                <idSubscription>1</idSubscription>
+                <idReader>2</idReader>
+                <idNewspaper>1</idNewspaper>
+                <cancellationDate>2001-03-22</cancellationDate>
+            </subscription>
+        </subscriptions>
+        <readArticles>
+            <readArticle>
+                <idReadArticle>1</idReadArticle>
+                <idReader>2</idReader>
+                <idArticle>1</idArticle>
+                <rating>1</rating>
+            </readArticle>
+        </readArticles>
+    </reader>
+    <reader>
+        <id>3</id>
+        <name>Joaquin</name>
+        <dateOfBirth>2001-03-22</dateOfBirth>
+        <subscriptions>
+            <subscription>
+                <idSubscription>1</idSubscription>
+                <idReader>3</idReader>
+                <idNewspaper>1</idNewspaper>
+                <cancellationDate>2001-03-22</cancellationDate>
+            </subscription>
+        </subscriptions>
+        <readArticles>
+            <readArticle>
+                <idReadArticle>1</idReadArticle>
+                <idReader>3</idReader>
                 <idArticle>1</idArticle>
                 <rating>1</rating>
             </readArticle>

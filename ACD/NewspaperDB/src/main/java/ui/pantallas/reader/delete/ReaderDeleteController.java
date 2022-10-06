@@ -50,5 +50,6 @@ public class ReaderDeleteController extends BasePantallaController {
     private void deleteReader() {
         viewmodel.deleteReader(readersTable.getSelectionModel()
                 .getSelectedItem().getId());
+        viewmodel.reloadState();
     }
 }

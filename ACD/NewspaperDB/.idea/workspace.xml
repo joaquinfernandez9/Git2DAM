@@ -4,66 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="xml funciona, en proceso el dao completo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteViewmodel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/reader/appendReadArticle.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerListSubscription.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/6/e/6e69fcaf6a9b3b81457ca8f2eec44218ee14bd05" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/f/6/f6cb354ea5cada0438c44a594c01464cb92f695c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f6b33d1a9a5694be1bfe44edd12d4d8db6849d0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/171715ec360793390b87c216ba812c75a375fa9a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/278ceaa4b30cf573a99782b58ee57629d91a8ddd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/4861e9d8a01db2b73fe5a0e975743b07b1fcd2b5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/639d7002b6404379a71e79b109bc12a7217fab50" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6699e1d439ac0d1922c217887651886f9bf8ac69" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/79656c0a6ee966b44a0679974604c2dd741e7e3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/80c4413bdb90236232f054ab04b745f12ef7984b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6afef25e905b347d490ca78840d02c53c82addc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f367fbbdec3cc6bd8b866dbbd8733354955801e9" beforeDir="false" />
+    <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="delete btn borra todo el xml, cargan las pantallas y se puede poner todos los datos">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e2819d9e501028ab411cfc2c5b2f721fd07822d7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/reader.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/reader.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/modelo/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/modelo/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/modelo/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/modelo/Subscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainPrueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MainPrueba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/common/Pantallas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/common/Pantallas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/add/ReaderAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/appendArticle/ReaderAppendArticleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/list/ReaderListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ReaderListSubscriptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/update/ReaderUpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listType/ReaderListTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerListType.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerDelete.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerDelete.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerList.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerUpdate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/2/a/2add6a02bd154ddd76f309842cb254dd1c9e3350" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DaoReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/modelo/Reader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/modelo/Reader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/ReaderServ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/ReaderServ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reader/readerAdd.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reader/readerDelete.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/reader/readerDelete.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reader/readerList.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reader/readerUpdate.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/common/Pantallas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/common/Pantallas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/principal/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/principal/PrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/add/ReaderAddController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/delete/ReaderDeleteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/delete/ReaderDeleteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/list/ReaderListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/update/ReaderUpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Interfaces/Estudio comparativo de IDE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Interfaces/Estudio comparativo de IDE.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/app/src/main/java/com/example/crudjoaquinfernandez/ui/mainScreen/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/app/src/main/java/com/example/crudjoaquinfernandez/ui/mainScreen/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,31 +41,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/joaqu/Downloads/NewspaperFX",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joaqu/Downloads/NewspaperFX&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDB\src\main\java\domain\modelo" />
@@ -168,8 +115,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.MainTest" />
         <item itemvalue="Application.MainPrueba" />
+        <item itemvalue="Application.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +174,8 @@
       <workItem from="1664986432446" duration="4436000" />
       <workItem from="1664994187336" duration="608000" />
       <workItem from="1665044767199" duration="1868000" />
-      <workItem from="1665063145465" duration="9382000" />
+      <workItem from="1665063145465" duration="9504000" />
+      <workItem from="1665076372464" duration="2329000" />
     </task>
     <task id="LOCAL-00001" summary="he arreglado cosas varias pero no me acuerdo de cuales eran asi que todo jodido para que nadie entienda nada ya que ni yo entiendo que hago pero tamos piola uuuuuuuuuuuuuuuuuuuuuuuuueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
       <created>1664809829447</created>
@@ -243,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664960730457</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="delete btn borra todo el xml, cargan las pantallas y se puede poner todos los datos">
+      <created>1665073074888</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665073074888</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +219,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="he arreglado cosas varias pero no me acuerdo de cuales eran asi que todo jodido para que nadie entienda nada ya que ni yo entiendo que hago pero tamos piola uuuuuuuuuuuuuuuuuuuuuuuuueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" />
     <MESSAGE value="xml funciona, en proceso el dao completo" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml funciona, en proceso el dao completo" />
+    <MESSAGE value="delete btn borra todo el xml, cargan las pantallas y se puede poner todos los datos" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete btn borra todo el xml, cargan las pantallas y se puede poner todos los datos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -276,18 +232,40 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="19" />
+          <line>50</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java</url>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteViewmodel.java</url>
           <line>41</line>
-          <option name="timeStamp" value="21" />
+          <properties class="ui.pantallas.reader.delete.ReaderDeleteViewmodel" method="deleteReader">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java</url>
+          <line>115</line>
+          <properties class="domain.services.ReaderServ" method="deleteReader">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoReader.java</url>
+          <line>63</line>
+          <properties class="dao.DaoReader" method="delete">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
