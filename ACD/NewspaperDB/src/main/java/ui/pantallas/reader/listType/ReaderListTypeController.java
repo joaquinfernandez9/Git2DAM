@@ -1,19 +1,57 @@
 package ui.pantallas.reader.listType;
 
+import domain.modelo.Reader;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import jakarta.inject.Inject;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 
-public class ReaderListTypeController extends BasePantallaController {
-    public TableView readersTable;
-    public TableColumn idColumn;
-    public TableColumn nameColum;
-    public TableColumn dateColumn;
-    public MFXTextField idNewspaper;
+import java.io.IOException;
+import java.time.LocalDate;
 
-    public void search(ActionEvent actionEvent) {
+public class ReaderListTypeController extends BasePantallaController {
+    private final ListTypeViewmodel viewmodel;
+    @FXML
+    private TableView<Reader> readersTable;
+    @FXML
+    private TableColumn<Integer, Reader> idColumn;
+    @FXML
+    private TableColumn<String, Reader> nameColum;
+    @FXML
+    private TableColumn<LocalDate, Reader> dateColumn;
+    @FXML
+    private MFXTextField description;
+
+    @Inject
+    public ReaderListTypeController(ListTypeViewmodel viewmodel) {
+        this.viewmodel = viewmodel;
+    }
+
+    public void principalCargado() throws IOException {
+        super.principalCargado();
+
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+
+        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
+            if (newValue.getReaderList() != null) {
+                readersTable.getItems().clear();
+                readersTable.getItems().addAll(newValue.getReaderList());
+            }
+        });
+
+        viewmodel.reloadState();
+
+    }
+
+    @FXML
+    private void search(ActionEvent actionEvent) {
+        viewmodel.getByDesc(description.getText());
     }
 }
 

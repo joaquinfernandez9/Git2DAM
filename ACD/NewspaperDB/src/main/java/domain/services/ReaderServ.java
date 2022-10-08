@@ -1,13 +1,11 @@
 package domain.services;
 
-import dao.DaoArticle;
-import dao.DaoNewspaper;
-import dao.DaoReader;
-import dao.DaoType;
+import dao.*;
 import domain.modelo.*;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,14 +15,17 @@ public class ReaderServ {
     private final DaoReader daoReader;
     private final DaoArticle daoArticle;
     private final DaoType daoType;
+    private final DaoReadArticle daoReadArticle;
 
     @Inject
     public ReaderServ(DaoNewspaper daoNewspaper, DaoReader daoReader,
-                      DaoArticle daoArticle, DaoType daoType) {
+                      DaoArticle daoArticle, DaoType daoType,
+                      DaoReadArticle daoReadArticle) {
         this.daoNewspaper = daoNewspaper;
         this.daoReader = daoReader;
         this.daoArticle = daoArticle;
         this.daoType = daoType;
+        this.daoReadArticle = daoReadArticle;
     }
 
 
@@ -39,39 +40,39 @@ public class ReaderServ {
     }
 
     //Get information about the readers subscribed to a specific newspaper
-    public Either<String, List<Reader>> readersSubscribed(int idNewspaper) {
+    public List<Reader> readersSubscribed(int idNewspaper) {
         List<Reader> readers = daoReader.getAll().get();
-        Either<String, List<Reader>> respuesta;
-        respuesta = Either.right(readers.stream()
-                .filter(reader ->
-                        reader.getSubscriptions().getSubscriptionsList()
-                                .stream().filter(subscription ->
-                                        subscription.getIdNewspaper() == idNewspaper).isParallel())
-                .collect(Collectors.toList()));
+        List<Reader> respuesta = new ArrayList<>();
+
+       readers.forEach(reader ->
+               reader.getSubscriptions().getSubscriptionsList().forEach(subscription -> {
+                   if (subscription.getIdNewspaper() == idNewspaper){
+                       respuesta.add(reader);
+                   }
+               }));
+
         return respuesta;
     }
 
     //Get the readers of articles of a specific type
-    public Either<String, List<Reader>> getReadersFromArticleType(String descType) {
-        Either<String, List<Reader>> respuesta;
-        ArticleType aT = daoType.get(null, descType);
-        Article article = daoArticle.getAll().stream().filter(article1 ->
-                article1.getTypeID() == aT.getTypeID()).findFirst().orElse(null);
-        List<Reader> readers = daoReader.getAll().get();
-        if (article != null) {
-            respuesta = Either.right(
-                    readers.stream().filter(reader ->
-                                    reader.getReadArticles().getReadArticlesList()
-                                            .stream().filter(readArticle ->
-                                                    readArticle.getIdArticle() == article.getArticleID()).isParallel())
-                            .collect(Collectors.toList())
-            );
-        } else {
-            respuesta = Either.left("No va we");
-        }
+    public List<Reader> getReadersFromArticleType(String descType) {
+        ArticleType articleType = daoType.get(null, descType);
 
+        List<Reader> readers = getAll().get();
+        List<Reader> solution = new ArrayList<>();
 
-        return respuesta;
+        List<Article> articles = daoArticle.getAll()
+                .stream().filter(article ->
+                        article.getTypeID() == articleType.getTypeID()).collect(Collectors.toList());
+
+        readers.forEach(reader -> articles.forEach(article -> {
+            if (article.getArticleID() == reader.getReadArticles()
+                    .getReadArticlesList().get(0).getIdArticle()){
+                solution.add(reader);
+            }
+        }));
+        return solution;
+
     }
 
     public Either<String, Boolean> appendReadArticle(int idReader, int idArticle, int rating){
@@ -95,8 +96,13 @@ public class ReaderServ {
                 if (sub!=null){
                     ReadArticle readArticle = new ReadArticle(r.getReadArticles().getReadArticlesList().size()+1,
                             r.getId(), article.getArticleID(), rating);
-                    r.getReadArticles().getReadArticlesList().add(readArticle);
-                    respuesta = Either.right(true);
+                    //crear un DaoReadArticle, hacer un add ahi y meterle al id del lector
+                    // el article dado no es tan dificil coño vamos
+                    if (daoReadArticle.add(r.getId(), readArticle).isRight()){
+                        respuesta = Either.right(true);
+                    } else {
+                        respuesta = Either.left("error");
+                    }
                 } else {
                     respuesta = Either.left("Error");
                 }
@@ -123,17 +129,6 @@ public class ReaderServ {
         return respuesta;
     }
 
-
-    //para la informacion de los lectores subscritos a un periodico en la lista de
-    // lectores una caja de texto con el id del periodico
-
-    //para los lectores de un tipo especifico de articulos otra pantalla con una lista de lectores y una caja de
-    // texto que recibe la descripcion
-
-    //agregar un articulo leido en la pantalla de add, cambiarle el nombre y eso,
-    // meter un read article al lector seleccionado en la tabla
-
-    //delete en una pantalla aparte
 
 
 }

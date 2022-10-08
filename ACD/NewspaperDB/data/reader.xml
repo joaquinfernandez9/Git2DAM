@@ -8,7 +8,8 @@
             <subscription>
                 <idSubscription>1</idSubscription>
                 <idReader>1</idReader>
-                <idNewspaper>1</idNewspaper>
+                <idNewspaper>4</idNewspaper>
+                <singDate>2001-03-22</singDate>
                 <cancellationDate>2001-03-22</cancellationDate>
             </subscription>
         </subscriptions>
@@ -18,6 +19,12 @@
                 <idReader>1</idReader>
                 <idArticle>1</idArticle>
                 <rating>1</rating>
+            </readArticle>
+            <readArticle>
+                <idReadArticle>2</idReadArticle>
+                <idReader>1</idReader>
+                <idArticle>7</idArticle>
+                <rating>7</rating>
             </readArticle>
         </readArticles>
     </reader>
@@ -29,7 +36,8 @@
             <subscription>
                 <idSubscription>1</idSubscription>
                 <idReader>2</idReader>
-                <idNewspaper>1</idNewspaper>
+                <idNewspaper>2</idNewspaper>
+                <singDate>2001-03-22</singDate>
                 <cancellationDate>2001-03-22</cancellationDate>
             </subscription>
         </subscriptions>
@@ -50,7 +58,8 @@
             <subscription>
                 <idSubscription>1</idSubscription>
                 <idReader>3</idReader>
-                <idNewspaper>1</idNewspaper>
+                <idNewspaper>4</idNewspaper>
+                <singDate>2001-03-22</singDate>
                 <cancellationDate>2001-03-22</cancellationDate>
             </subscription>
         </subscriptions>
