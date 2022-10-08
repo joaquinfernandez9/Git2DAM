@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="funciona todo lo probado por ahora uwuwuwuwuwuwuwuwuwuwu">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/15a3d7e8017d63923ed644539b4536940b180b65" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3f1fdd1a5c64ac4d055ceb671498d7d2fcece873" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6699e1d439ac0d1922c217887651886f9bf8ac69" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c63f549e8ca0d4289597ebe1aa85e4da2f01b6e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85da6f48031fb3ee1522b939779c4c35ab4e0193" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9ca95ed740cbe65de0f090457fc2edc17d9dbd7e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/debd34c73241f333357fe07b4daf97caa312d51b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DaoReadArticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/appendArticle/AppendArticleState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/appendArticle/AppendArticleViewmodel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ListSubscriptionState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ListSubscriptionViewmodel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listType/ListTypeState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listType/ListTypeViewmodel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c8e9a4179aec1b9773b96f47d2f4badc7a174dfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db93dd9f30efac7e08e8637e6e5366716263c1ae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/newspapers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/newspapers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reader.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/reader.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/appendArticle/ReaderAppendArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/appendArticle/ReaderAppendArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ReaderListSubscriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ReaderListSubscriptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listType/ReaderListTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listType/ReaderListTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reader/appendReadArticle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reader/appendReadArticle.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerListType.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reader/readerListType.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DaoReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/ReaderServ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/ReaderServ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/delete/ReaderDeleteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/delete/ReaderDeleteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/JoaquinFernandezAnimechan/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/JoaquinFernandezAnimechan/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/JoaquinFernandezAnimechan/.idea/sonarlint/issuestore/c/c/ccd87e276b67365b26103877f230523f1fd6aa65" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/JoaquinFernandezAnimechan/.idea/sonarlint/issuestore/c/c/ccd87e276b67365b26103877f230523f1fd6aa65" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/JoaquinFernandezAnimechan/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/JoaquinFernandezAnimechan/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-    </list>
+    <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="falta filtrar lectores por tipo pero no se hacerlo pumpumpum" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,7 +172,7 @@
       <workItem from="1665160717197" duration="3503000" />
       <workItem from="1665166453410" duration="677000" />
       <workItem from="1665175321216" duration="3905000" />
-      <workItem from="1665215508706" duration="3291000" />
+      <workItem from="1665215508706" duration="3425000" />
     </task>
     <task id="LOCAL-00001" summary="he arreglado cosas varias pero no me acuerdo de cuales eran asi que todo jodido para que nadie entienda nada ya que ni yo entiendo que hago pero tamos piola uuuuuuuuuuuuuuuuuuuuuuuuueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
       <created>1664809829447</created>
@@ -236,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665080280820</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="falta filtrar lectores por tipo pero no se hacerlo pumpumpum">
+      <created>1665220982216</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665220982216</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +232,8 @@
     <MESSAGE value="xml funciona, en proceso el dao completo" />
     <MESSAGE value="delete btn borra todo el xml, cargan las pantallas y se puede poner todos los datos" />
     <MESSAGE value="funciona todo lo probado por ahora uwuwuwuwuwuwuwuwuwuwu" />
-    <option name="LAST_COMMIT_MESSAGE" value="funciona todo lo probado por ahora uwuwuwuwuwuwuwuwuwuwu" />
+    <MESSAGE value="falta filtrar lectores por tipo pero no se hacerlo pumpumpum" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta filtrar lectores por tipo pero no se hacerlo pumpumpum" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

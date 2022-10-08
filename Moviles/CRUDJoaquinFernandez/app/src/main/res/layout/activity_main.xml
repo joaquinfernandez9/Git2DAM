@@ -6,222 +6,212 @@
     android:layout_height="match_parent"
     tools:context=".ui.mainScreen.MainActivity">
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/headset_list"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/idHeadset"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/textField"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="@string/name">-->
-
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content" />-->
-
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/nameHeadset"-->
-<!--        android:layout_width="227dp"-->
-<!--        android:layout_height="56dp"-->
-<!--        android:autofillHints=""-->
-<!--        android:ems="10"-->
-<!--        android:hint="@string/name"-->
-<!--        android:inputType="text"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/idHeadset"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.497"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@id/textView"-->
-<!--        app:layout_constraintVertical_bias="0.302">-->
-
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content" />-->
-
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:checkedButton="@+id/radio_button_1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idText"
+        android:inputType="number"
+        android:layout_width="167dp"
+        android:layout_height="52dp"
+        android:hint="@string/id"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
+        app:layout_constraintBottom_toTopOf="@+id/nameText"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal2"
+        app:startIconDrawable="@drawable/baseline_perm_identity_24"
         >
 
 
-        <RadioButton
-            android:id="@+id/radio_button_2"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="@string/label" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <RadioButton
-            android:id="@+id/radio_button_1"
-            android:layout_width="98dp"
-            android:layout_height="50dp"
-            android:text="@string/label"
-            app:layout_constraintBottom_toTopOf="@+id/radio_button_3"
-            app:layout_constraintEnd_toEndOf="@id/verticalDerecha" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <RadioButton
-            android:id="@+id/radio_button_3"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="@string/label" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameText"
+        android:layout_width="167dp"
+        android:layout_height="52dp"
+        android:hint="@string/name"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
+        app:layout_constraintTop_toBottomOf="@+id/idText"
+        app:startIconDrawable="@drawable/baseline_headphones_24">
 
-        <RadioButton
-            android:id="@+id/radio_button_4"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="@string/label" />
 
-        <RadioButton
-            android:id="@+id/radio_button_5"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:enabled="false"
-            android:text="@string/label" />
-    </RadioGroup>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/micCheck"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:checked="true"
+        android:text="@string/microfono"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
+        app:layout_constraintEnd_toStartOf="@+id/bluetooth" />
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/bluetooth"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:checked="true"
+        android:text="@string/sino"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal1"
+        app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal3"
+        app:layout_constraintStart_toEndOf="@id/micCheck"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVert2" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a_adir"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal3"
+        app:layout_constraintBottom_toTopOf="@+id/remove"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
+        app:layout_constraintEnd_toStartOf="@+id/search"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        />
+
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/borrar"
+        app:layout_constraintTop_toBottomOf="@+id/add"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal4"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVert1"
+        app:layout_constraintEnd_toStartOf="@+id/update"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buscar"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal3"
+        app:layout_constraintBottom_toTopOf="@+id/update"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toEndOf="@+id/add"
+
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/actualizar"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal4"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toEndOf="@+id/remove"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idSearching"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:hint="@string/id"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal4"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal4">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/goLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal5"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVert1"
+        app:srcCompat="@drawable/arrow_left_long_solid"
+        android:contentDescription="@string/cosas" />
+
+    <ImageButton
+        android:id="@+id/goRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal5"
+        app:layout_constraintStart_toEndOf="@id/guidelineVert2"
+        app:srcCompat="@drawable/arrow_right_long_solid"
+        android:contentDescription="@string/cosas"
+        />
+
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalDerecha"
+        android:id="@+id/guidelineVert1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="350dp" />
+        app:layout_constraintGuide_begin="64dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalIzquierda"
+        android:id="@+id/guidelineVert2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="151dp" />
+        app:layout_constraintGuide_begin="332dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="289dp" />
 
-    <!--    <Switch-->
-<!--        android:id="@+id/bluetooth"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/sino"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/guideline4"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/mic"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/idHeadset"-->
-<!--        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="45dp" />
 
-<!--    <CheckBox-->
-<!--        android:id="@+id/mic"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/checkbox"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/guideline4"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@id/bluetooth"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/idHeadset"-->
-<!--        tools:ignore="MissingConstraints" />-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="394dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="647dp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/addBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/add"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/deleteBtn"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.501"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/guideline4"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/deleteBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:text="@string/delete"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/updateBtn"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/addBtn" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/updateBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="28dp"-->
-<!--        android:text="@string/update"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/getBtn"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/deleteBtn" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/getBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/search"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/updateBtn"-->
-<!--        app:layout_constraintVertical_bias="0.812" />-->
-
-
-<!--    <EditText-->
-<!--        android:id="@+id/idSearch"-->
-<!--        android:layout_width="54dp"-->
-<!--        android:layout_height="41dp"-->
-<!--        android:layout_marginBottom="15dp"-->
-<!--        android:autofillHints=""-->
-<!--        android:ems="10"-->
-<!--        android:hint="@string/id"-->
-<!--        android:inputType="textPersonName"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/getBtn"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/guideline5"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/guideline6" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/guideline4"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintGuide_begin="315dp" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/guideline5"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_begin="47dp" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/guideline6"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintGuide_begin="630dp" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/guideline7"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_begin="342dp" />-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

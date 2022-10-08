@@ -1,8 +1,9 @@
 package com.example.crudjoaquinfernandez.domain.model
 
+
 data class Headset(
     val id: Int,
-    val name: String,
-    val mic: Boolean,
-    val bluetooth: Boolean,
+    var name: String,
+    var mic: Boolean,
+    var bluetooth: Boolean,
 )

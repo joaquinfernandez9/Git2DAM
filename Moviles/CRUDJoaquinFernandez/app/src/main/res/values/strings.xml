@@ -10,4 +10,11 @@
     <string name="name">Name</string>
     <string name="sino">Bluetooth</string>
     <string name="errorAddHeadset">Error cosas</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="microfono">Microfono</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="buscar">Buscar</string>
+    <string name="borrar">Borrar</string>
+    <string name="a_adir">Añadir</string>
+    <string name="cosas">cosas</string>
 </resources>

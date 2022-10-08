@@ -1,4 +1,5 @@
 package com.example.crudjoaquinfernandez.ui.mainScreen
 
-class Const {
+object Const {
+    const val s = "Error cosas"
 }

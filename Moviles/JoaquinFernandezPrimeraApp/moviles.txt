@@ -1,0 +1,13 @@
+manifest = XML puta mierda
+
+	- permisos de la app, el main activity
+	- estilo de la app
+	- icono
+	- permisos de la app (internet, archivos, etc)
+
+
+gradel scripts (como compila la app /// proguard dejarlo vacio para ofuscar cod)
+
+2 build.gradel 1 global 1 modular - > espresso (test)
+
+

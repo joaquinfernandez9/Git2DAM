@@ -1,0 +1,8 @@
+
+Q	java:S125%"<This block of commented-out lines of code should be removed.(¢Ë‚¾
+S
+java:S1128"1Remove this unused import 'domain.modelo.Reader'.(ìïöªÿÿÿÿÿ8í£¦£»0
+i
+java:S1128	"GRemove this unused import 'ui.pantallas.article.list.ArticleListState'.(ÆŒË¦ùÿÿÿÿ8î£¦£»0
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8î£¦£»0
