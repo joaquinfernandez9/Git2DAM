@@ -7,7 +7,6 @@ import domain.modelo.Newspaper;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,16 +52,6 @@ public class NewspaperServ {
                 .collect(Collectors.toList());
         return !articlesContian.isEmpty();
     }
-
-    public List<Article> articlesNewspaper(int id){
-        List<Article> articles = daoArticle.getAll();
-        Newspaper np = daoNewspaper.get(id);
-        return articles.stream().filter(article ->
-                        article.getNewspaperID() == np.getNewspaperID())
-                .collect(Collectors.toList());
-    }
-
-
 
 
 }

@@ -29,9 +29,9 @@ public class ReaderServ {
     }
 
 
-    public Either<String, List<Reader>> getAll(){
+    public Either<String, List<Reader>> getAll() {
         Either<String, List<Reader>> respuesta;
-        if (daoReader.getAll().isRight()){
+        if (daoReader.getAll().isRight()) {
             respuesta = Either.right(daoReader.getAll().get());
         } else {
             respuesta = Either.left("Error");
@@ -43,14 +43,12 @@ public class ReaderServ {
     public List<Reader> readersSubscribed(int idNewspaper) {
         List<Reader> readers = daoReader.getAll().get();
         List<Reader> respuesta = new ArrayList<>();
-
-       readers.forEach(reader ->
-               reader.getSubscriptions().getSubscriptionsList().forEach(subscription -> {
-                   if (subscription.getIdNewspaper() == idNewspaper){
-                       respuesta.add(reader);
-                   }
-               }));
-
+        readers.forEach(reader ->
+                reader.getSubscriptions().getSubscriptionsList().forEach(subscription -> {
+                    if (subscription.getIdNewspaper() == idNewspaper) {
+                        respuesta.add(reader);
+                    }
+                }));
         return respuesta;
     }
 
@@ -63,72 +61,60 @@ public class ReaderServ {
 
         List<Article> articles = daoArticle.getAll()
                 .stream().filter(article ->
-                        article.getTypeID() == articleType.getTypeID()).collect(Collectors.toList());
+                        article.getTypeID() == articleType.getTypeID())
+                .collect(Collectors.toList());
 
         readers.forEach(reader -> articles.forEach(article -> {
             if (article.getArticleID() == reader.getReadArticles()
-                    .getReadArticlesList().get(0).getIdArticle()){
+                    .getReadArticlesList().get(0).getIdArticle()) {
                 solution.add(reader);
             }
         }));
-        return solution;
 
+        readers.forEach(reader ->
+                reader.getReadArticles().getReadArticlesList()
+                        .forEach(readArticle ->
+                                articles.forEach(article -> {
+                                    if (article.getArticleID() == readArticle.getIdArticle()
+                                    && !solution.contains(reader)) {
+                                            solution.add(reader);
+                                    }
+                                }))
+
+        );
+        return solution;
     }
 
-    public Either<String, Boolean> appendReadArticle(int idReader, int idArticle, int rating){
-        Either<String, Boolean> respuesta;
+    public void appendReadArticle(int idReader, int idArticle, int rating) {
 
         Article article = daoArticle.getAll().stream()
                 .filter(article1 ->
                         article1.getArticleID() == idArticle)
                 .findFirst().orElse(null);
         Reader r;
-        if (daoReader.get(idReader).isRight()){
+        if (daoReader.get(idReader).isRight()) {
             r = daoReader.get(idReader).get();
 
-            if (article!= null){
+            if (article != null) {
                 Newspaper np = daoNewspaper.get(article.getNewspaperID());
                 Subscription sub = r.getSubscriptions().getSubscriptionsList()
                         .stream().filter(subscription ->
                                 subscription.getIdNewspaper() == np.getNewspaperID())
                         .findFirst().orElse(null);
-
-                if (sub!=null){
-                    ReadArticle readArticle = new ReadArticle(r.getReadArticles().getReadArticlesList().size()+1,
+                if (sub != null) {
+                    ReadArticle readArticle = new ReadArticle(r.getReadArticles().getReadArticlesList().size() + 1,
                             r.getId(), article.getArticleID(), rating);
-                    //crear un DaoReadArticle, hacer un add ahi y meterle al id del lector
-                    // el article dado no es tan dificil coño vamos
-                    if (daoReadArticle.add(r.getId(), readArticle).isRight()){
-                        respuesta = Either.right(true);
-                    } else {
-                        respuesta = Either.left("error");
-                    }
-                } else {
-                    respuesta = Either.left("Error");
+                    daoReadArticle.add(r.getId(), readArticle).isRight();
                 }
-
-            } else {
-                respuesta = Either.left("Error");
             }
-        } else {
-            respuesta = Either.left("Error");
         }
 
-
-        return respuesta;
     }
 
 
-    public Either<String, Boolean> deleteReader(int idReader){
-        Either<String, Boolean> respuesta;
-        if (daoReader.delete(idReader).isRight()){
-            respuesta = Either.right(true);
-        } else {
-            respuesta = Either.left("Error deleting user");
-        }
-        return respuesta;
+    public void deleteReader(int idReader) {
+        daoReader.delete(idReader);
     }
-
 
 
 }

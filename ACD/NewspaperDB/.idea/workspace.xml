@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="falta filtrar lectores por tipo pero no se hacerlo pumpumpum" />
+    <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="falta filtrar lectores por tipo pero no se hacerlo pumpumpum">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/15a3d7e8017d63923ed644539b4536940b180b65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c27b0a151645ba141e92fe41db7f7db30209be7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1ec020c76d1412769452612053dc0801fbc4ca17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1ecc68f267745af0eafaeef9497fecfcac1a52a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/6/265da7cdb708512fd84e9ea10efb0f0af1573ba4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/3806eef425a706598647d984db378fde15aa19a7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3ac623b9bae3a82390d199eb7b0d436c65f991d5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/545de931a8ac783064eb6f6cc24498b28dcc6a94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a7bef0cc36bfe7f0e56916a35b2ba6bff74bd02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/1/b199a4268f4e876a904ad0a0c7f66f8f13cff7ee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b95b1a01f13469863090e3f8f8b29fd28de46f5f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c1d1e9ea42b4922001d175afb8b8661800baca84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c31a441f93991a8f17d7731dfd1568a03356ebe0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca2d3409300e028d75a8c719cddd3c5e3ca4a25f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6afef25e905b347d490ca78840d02c53c82addc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e23a83a56683fbac0dffbbba4784668fa61ea383" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/eba3ccb9beb9883b0df9fcda7ca192f5623a5ea4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/edfe09e2c6ea872a8a499393c00347d2b1ed5a4b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f367fbbdec3cc6bd8b866dbbd8733354955801e9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/newspapers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/newspapers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reader.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/reader.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/NewspaperServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/NewspaperServ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,6 +199,7 @@
       <workItem from="1665166453410" duration="677000" />
       <workItem from="1665175321216" duration="3905000" />
       <workItem from="1665215508706" duration="3425000" />
+      <workItem from="1665309199776" duration="3238000" />
     </task>
     <task id="LOCAL-00001" summary="he arreglado cosas varias pero no me acuerdo de cuales eran asi que todo jodido para que nadie entienda nada ya que ni yo entiendo que hago pero tamos piola uuuuuuuuuuuuuuuuuuuuuuuuueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
       <created>1664809829447</created>
@@ -247,26 +274,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/dao/DaoType.java</url>
           <line>37</line>
           <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/domain/services/ReaderServ.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/dao/DaoReader.java</url>

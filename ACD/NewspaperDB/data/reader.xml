@@ -15,10 +15,10 @@
         </subscriptions>
         <readArticles>
             <readArticle>
-                <idReadArticle>1</idReadArticle>
+                <idReadArticle>2</idReadArticle>
                 <idReader>1</idReader>
-                <idArticle>1</idArticle>
-                <rating>1</rating>
+                <idArticle>2</idArticle>
+                <rating>7</rating>
             </readArticle>
             <readArticle>
                 <idReadArticle>2</idReadArticle>
