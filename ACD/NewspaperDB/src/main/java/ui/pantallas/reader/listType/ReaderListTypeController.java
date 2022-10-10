@@ -8,7 +8,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.logging.log4j.util.Constants;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -51,7 +53,11 @@ public class ReaderListTypeController extends BasePantallaController {
 
     @FXML
     private void search(ActionEvent actionEvent) {
-        viewmodel.getByDesc(description.getText());
+        if (description.getText().isEmpty()){
+            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+        } else {
+            viewmodel.getByDesc(description.getText());
+        }
     }
 }
 

@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -48,8 +49,14 @@ public class ReaderDeleteController extends BasePantallaController {
 
     @FXML
     private void deleteReader() {
-        viewmodel.deleteReader(readersTable.getSelectionModel()
-                .getSelectedItem().getId());
-        viewmodel.reloadState();
+        if (readersTable.getSelectionModel()
+                .getSelectedItem()!=null){
+            viewmodel.deleteReader(readersTable.getSelectionModel()
+                    .getSelectedItem().getId());
+            viewmodel.reloadState();
+        } else {
+            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+        }
+
     }
 }

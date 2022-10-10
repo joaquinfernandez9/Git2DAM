@@ -11,5 +11,4 @@ import java.util.List;
 public class Readers {
     @XmlElement(name = "reader")
     private List<Reader> readers;
-
 }

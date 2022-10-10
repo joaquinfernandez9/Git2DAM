@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 import java.io.IOException;
 
@@ -72,11 +73,11 @@ public class ArticleAddController extends BasePantallaController {
         if (articleID.getText().isEmpty() || title.getText().isEmpty()||
         author.getText().isEmpty()||newspaperID.getText().isEmpty() ||
         typeID.getText().isEmpty()){
-            getPrincipalController().sacarAlertError("Error");
+            getPrincipalController().sacarAlertError(UiConstants.ERROR_COMPLETE_ALL_THE_FIELDS);
         } else {
-            Article a  = new Article(Integer.parseInt(articleID.getText())+";"
-                    +title.getText()+";"+author.getText()+";"
-                    +Integer.parseInt(newspaperID.getText())+";"
+            Article a  = new Article(Integer.parseInt(articleID.getText())+ UiConstants.DOT_COMMA
+                    +title.getText()+ UiConstants.DOT_COMMA +author.getText()+ UiConstants.DOT_COMMA
+                    +Integer.parseInt(newspaperID.getText())+ UiConstants.DOT_COMMA
                     +Integer.parseInt(typeID.getText()));
             articleAddViewModel.add(a);
         }

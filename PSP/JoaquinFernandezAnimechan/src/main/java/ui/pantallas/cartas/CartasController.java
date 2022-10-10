@@ -1,7 +1,6 @@
 package ui.pantallas.cartas;
 
-import domain.modelo.cards.CardPricesItem;
-import domain.modelo.cards.DataItem;
+import dao.retrofit.cards.DataItem;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

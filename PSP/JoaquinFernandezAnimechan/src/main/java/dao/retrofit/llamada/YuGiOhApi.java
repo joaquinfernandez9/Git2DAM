@@ -1,8 +1,6 @@
 package dao.retrofit.llamada;
 
-import domain.modelo.cards.DataItem;
-import domain.modelo.cards.CardsList;
-import javafx.scene.control.Cell;
+import dao.retrofit.cards.CardsList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

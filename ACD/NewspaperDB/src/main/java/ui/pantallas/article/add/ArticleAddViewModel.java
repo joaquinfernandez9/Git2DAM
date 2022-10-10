@@ -11,21 +11,21 @@ import java.util.List;
 
 public class ArticleAddViewModel {
 
-    private final ArticleServ articleServ;
+    private final ArticleServ articleServImpl;
     private final ObjectProperty<ArticleAddState> state;
 
     @Inject
-    public ArticleAddViewModel(ArticleServ articleServ) {
-        this.articleServ = articleServ;
+    public ArticleAddViewModel(ArticleServ articleServImpl) {
+        this.articleServImpl = articleServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ArticleAddState(null, false,
-                        articleServ.getAll()));
+                        articleServImpl.getAll()));
     }
 
     public void load() {
         state.setValue(new
                 ArticleAddState(null, !state.get().isChange(),
-                articleServ.getAll()));
+                articleServImpl.getAll()));
     }
 
     public ReadOnlyObjectProperty<ArticleAddState> getState() {
@@ -33,12 +33,12 @@ public class ArticleAddViewModel {
     }
 
     public List<Article> getAll() {
-        return articleServ.getAll();
+        return articleServImpl.getAll();
     }
 
     public void add(Article article){
-        articleServ.addArticle(article);
-        state.setValue(new ArticleAddState(null, !state.get().isChange(), articleServ.getAll()));
+        articleServImpl.addArticle(article);
+        state.setValue(new ArticleAddState(null, !state.get().isChange(), articleServImpl.getAll()));
     }
 
 

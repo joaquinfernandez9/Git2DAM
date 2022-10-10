@@ -1,6 +1,6 @@
 package ui.pantallas.filtro;
 
-import domain.modelo.cards.DataItem;
+import dao.retrofit.cards.DataItem;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;

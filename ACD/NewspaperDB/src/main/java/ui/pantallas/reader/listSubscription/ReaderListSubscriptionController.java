@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -52,6 +53,10 @@ public class ReaderListSubscriptionController extends BasePantallaController {
 
     @FXML
     private  void search(ActionEvent actionEvent) {
-        viewmodel.search(Integer.parseInt(idNewspaper.getText()));
+        if (idNewspaper.getText().isEmpty()){
+            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+        }else {
+            viewmodel.search(Integer.parseInt(idNewspaper.getText()));
+        }
     }
 }

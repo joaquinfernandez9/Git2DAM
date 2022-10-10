@@ -9,13 +9,13 @@ import javafx.beans.property.SimpleObjectProperty;
 public class LoginViewModel {
 
     private final ObjectProperty<LoginState> state;
-    private final LoginServ loginServ;
+    private final LoginServ loginServImpl;
 
 
     @Inject
-    public LoginViewModel(LoginServ loginServ) {
+    public LoginViewModel(LoginServ loginServImpl) {
         state = new SimpleObjectProperty<>(new LoginState(false, null));
-        this.loginServ = loginServ;
+        this.loginServImpl = loginServImpl;
     }
 
     public ReadOnlyObjectProperty<LoginState> getState() {
@@ -23,7 +23,7 @@ public class LoginViewModel {
     }
 
     public boolean login(String usuario, String password) {
-        return loginServ.login(usuario, password);
+        return loginServImpl.login(usuario, password);
     }
 
 

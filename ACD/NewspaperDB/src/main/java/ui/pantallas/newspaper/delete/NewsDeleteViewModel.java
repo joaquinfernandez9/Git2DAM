@@ -12,17 +12,17 @@ import java.util.List;
 
 public class NewsDeleteViewModel {
 
-    private final NewspaperServ newspaperServ;
+    private final NewspaperServ newspaperServImpl;
     private final ObjectProperty<NewsState> state;
 
     @Inject
-    public NewsDeleteViewModel(NewspaperServ newspaperServ) {
-        this.newspaperServ = newspaperServ;
-        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServ.getAll()));
+    public NewsDeleteViewModel(NewspaperServ newspaperServImpl) {
+        this.newspaperServImpl = newspaperServImpl;
+        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServImpl.getAll()));
     }
 
     public void load() {
-        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
+        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServImpl.getAll()));
     }
 
     public ReadOnlyObjectProperty<NewsState> getState() {
@@ -30,17 +30,17 @@ public class NewsDeleteViewModel {
     }
 
     public List<Newspaper> getAll(){
-        return newspaperServ.getAll();
+        return newspaperServImpl.getAll();
     }
 
     public void deleteNewspaper(int news){
-        if (newspaperServ.deleteNewspaper(news).isRight()){
-            state.setValue(new NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
+        if (newspaperServImpl.deleteNewspaper(news).isRight()){
+            state.setValue(new NewsState(null, !state.get().isChange(), newspaperServImpl.getAll()));
         }
     }
 
     public boolean containsArticels(int id){
-        return newspaperServ.newspaperContainsArticles(id);
+        return newspaperServImpl.newspaperContainsArticles(id);
     }
 
 

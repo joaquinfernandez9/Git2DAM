@@ -1,6 +1,5 @@
 package ui.pantallas.newspaper.list;
 
-import domain.modelo.Newspaper;
 import domain.services.NewspaperServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
@@ -10,17 +9,17 @@ import javafx.beans.property.SimpleObjectProperty;
 
 public class NewsListViewModel {
 
-    private final NewspaperServ newspaperServ;
+    private final NewspaperServ newspaperServImpl;
     private final ObjectProperty<NewsState> state;
 
     @Inject
-    public NewsListViewModel(NewspaperServ newspaperServ) {
-        this.newspaperServ = newspaperServ;
-        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServ.getAll()));
+    public NewsListViewModel(NewspaperServ newspaperServImpl) {
+        this.newspaperServImpl = newspaperServImpl;
+        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServImpl.getAll()));
     }
 
     public void load() {
-        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServ.getAll()));
+        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServImpl.getAll()));
     }
 
     public ReadOnlyObjectProperty<NewsState> getState() {

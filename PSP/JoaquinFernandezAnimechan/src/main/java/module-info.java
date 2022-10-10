@@ -16,6 +16,7 @@ module JoaquinFernandezAnimechan {
 
     exports dao;
     exports domain.servicios;
+    exports domain.modelo;
     exports dao.retrofit;
     exports ui.main;
     exports ui.common;
@@ -23,10 +24,10 @@ module JoaquinFernandezAnimechan {
     exports ui.pantallas.unicaCarta;
     exports ui.pantallas.cartas;
     exports ui.pantallas.principal;
-    exports domain.modelo.cards;
+    exports dao.retrofit.cards;
     exports ui.pantallas.filtro;
 
-    opens domain.modelo.cards;
+    opens dao.retrofit.cards;
     opens ui.pantallas.filtro;
     opens ui.main;
     opens ui.pantallas.menu;

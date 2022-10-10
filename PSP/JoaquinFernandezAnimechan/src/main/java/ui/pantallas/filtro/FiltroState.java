@@ -1,6 +1,6 @@
 package ui.pantallas.filtro;
 
-import domain.modelo.cards.CardsList;
+import dao.retrofit.cards.CardsList;
 
 public record FiltroState(String error, boolean cambio, CardsList cardsList) {
 }

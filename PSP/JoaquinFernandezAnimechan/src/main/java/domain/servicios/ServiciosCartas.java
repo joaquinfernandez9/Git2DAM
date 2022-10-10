@@ -1,15 +1,17 @@
 package domain.servicios;
 
-import domain.modelo.cards.CardsList;
-import domain.modelo.cards.DataItem;
+import dao.retrofit.cards.CardsList;
+import dao.retrofit.cards.DataItem;
+import domain.modelo.Carta;
+import domain.modelo.ListaCartas;
 import io.vavr.control.Either;
 
 public interface ServiciosCartas {
-    Either<String, DataItem> verUnaCarta(String nombreCarta);
+    Either<String, Carta> verUnaCarta(String nombreCarta);
 
-    Either<String, CardsList> verCartasName(String nombre);
+    Either<String, ListaCartas> verCartasName(String nombre);
 
-    Either<String, CardsList> verTodasLasCartas();
+    Either<String, ListaCartas> verTodasLasCartas();
 
-    Either<String, CardsList> getCardsAtkRace(String nombre, String attack, String race, String sort);
+    Either<String, ListaCartas> getCardsAtkRace(String nombre, String attack, String race, String sort);
 }

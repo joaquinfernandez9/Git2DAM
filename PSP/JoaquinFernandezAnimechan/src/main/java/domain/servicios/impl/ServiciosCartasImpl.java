@@ -1,8 +1,10 @@
 package domain.servicios.impl;
 
 import dao.DaoCartas;
-import domain.modelo.cards.DataItem;
-import domain.modelo.cards.CardsList;
+import dao.retrofit.cards.DataItem;
+import dao.retrofit.cards.CardsList;
+import domain.modelo.Carta;
+import domain.modelo.ListaCartas;
 import domain.servicios.ServiciosCartas;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
@@ -17,22 +19,22 @@ public class ServiciosCartasImpl implements ServiciosCartas {
     }
 
     @Override
-    public Either<String, DataItem> verUnaCarta(String nombreCarta){
+    public Either<String, Carta> verUnaCarta(String nombreCarta){
         return daoCartas.verUnaCarta(nombreCarta);
     }
 
     @Override
-    public Either<String, CardsList> verCartasName(String nombre){
+    public Either<String, ListaCartas> verCartasName(String nombre){
         return daoCartas.verCartasConNombre(nombre);
     }
 
     @Override
-    public Either<String, CardsList> verTodasLasCartas(){
+    public Either<String, ListaCartas> verTodasLasCartas(){
             return daoCartas.verTodasLasCartas();
     }
 
     @Override
-    public Either<String, CardsList> getCardsAtkRace(String nombre, String attack, String race, String sort) {
+    public Either<String, ListaCartas> getCardsAtkRace(String nombre, String attack, String race, String sort) {
         return daoCartas.getCardsAtkRace(nombre,attack,race,sort);
     }
 

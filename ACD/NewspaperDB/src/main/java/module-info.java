@@ -8,10 +8,16 @@ module javafx {
     requires weld.api;
     requires MaterialFX;
 
+    opens domain.services.strings;
+    opens dao.strings;
+    opens ui.pantallas.common;
     requires com.fasterxml.jackson.databind;
 
     requires jakarta.cdi;
     requires jakarta.inject;
+
+    exports dao.impl;
+    exports domain.services.impl;
 
     exports ui.main;
     exports ui.pantallas.common;
@@ -55,15 +61,13 @@ module javafx {
 
     requires io.vavr;
     requires io.vavr.match;
-    opens ui;
 
 
     opens ui.pantallas.reader.delete;
     opens ui.pantallas.reader.listSubscription;
     opens ui.pantallas.reader.listType;
 
-    exports ui;
-
+    exports dao.strings;
 
 
     requires jakarta.el;

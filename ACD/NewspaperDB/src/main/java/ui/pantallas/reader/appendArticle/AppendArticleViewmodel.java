@@ -10,15 +10,15 @@ import javafx.beans.property.SimpleObjectProperty;
 import java.util.List;
 
 public class AppendArticleViewmodel {
-    private final ReaderServ readerServ;
+    private final ReaderServ readerServImpl;
     private final ObjectProperty<AppendArticleState> state;
 
     @Inject
-    public AppendArticleViewmodel(ReaderServ readerServ) {
-        this.readerServ = readerServ;
+    public AppendArticleViewmodel(ReaderServ readerServImpl) {
+        this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new AppendArticleState(null, false,
-                        readerServ.getAll().get()));
+                        readerServImpl.getAll().get()));
     }
 
     public ReadOnlyObjectProperty<AppendArticleState> getState() {
@@ -29,16 +29,16 @@ public class AppendArticleViewmodel {
     public void reloadState() {
         state.setValue(new AppendArticleState(
                 null, !state.get().isChange(),
-                readerServ.getAll().get()
+                readerServImpl.getAll().get()
         ));
     }
 
     public List<Reader> getAll() {
-        return readerServ.getAll().get();
+        return readerServImpl.getAll().get();
     }
 
-    public void appendArticle(int id, int idArticle, int rating) {
-        readerServ.appendReadArticle(id, idArticle, rating);
+    public boolean appendArticle(int id, int idArticle, int rating) {
+        return readerServImpl.appendReadArticle(id, idArticle, rating);
     }
 
 }

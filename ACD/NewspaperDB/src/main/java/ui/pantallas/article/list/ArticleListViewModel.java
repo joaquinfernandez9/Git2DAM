@@ -8,21 +8,21 @@ import javafx.beans.property.SimpleObjectProperty;
 
 public class ArticleListViewModel {
 
-    private final ArticleServ articleServ;
+    private final ArticleServ articleServImpl;
     private final ObjectProperty<ArticleListState> state;
 
     @Inject
-    public ArticleListViewModel(ArticleServ articleServ) {
-        this.articleServ = articleServ;
+    public ArticleListViewModel(ArticleServ articleServImpl) {
+        this.articleServImpl = articleServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ArticleListState(null, false,
-                        articleServ.getAll()));
+                        articleServImpl.getAll()));
     }
 
     public void reloadState() {
         state.setValue(new
                 ArticleListState(null, !state.get().isChange(),
-                articleServ.getAll()));
+                articleServImpl.getAll()));
     }
 
     public ReadOnlyObjectProperty<ArticleListState> getState() {
@@ -31,8 +31,8 @@ public class ArticleListViewModel {
 
 
     public void getAllfilter(String description){
-        state.setValue(new ArticleListState(null, !state.get().isChange(), articleServ.getArticlesFilter(description)));
-        articleServ.getArticlesFilter(description);
+        state.setValue(new ArticleListState(null, !state.get().isChange(), articleServImpl.getArticlesFilter(description)));
+        articleServImpl.getArticlesFilter(description);
     }
 
 

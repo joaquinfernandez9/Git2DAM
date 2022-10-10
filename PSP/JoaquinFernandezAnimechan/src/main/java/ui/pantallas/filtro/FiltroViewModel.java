@@ -1,6 +1,7 @@
 package ui.pantallas.filtro;
 
-import domain.modelo.cards.CardsList;
+import dao.retrofit.cards.CardsList;
+import domain.modelo.ListaCartas;
 import domain.servicios.ServiciosCartas;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
@@ -8,8 +9,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import ui.common.Constantes;
-
-import java.io.IOException;
 
 public class FiltroViewModel {
 
@@ -34,7 +33,7 @@ public class FiltroViewModel {
     }
 
 
-    public Either<String, CardsList> getCardsAtkRace(String nombre, String attack, String race, String sort){
+    public Either<String, ListaCartas> getCardsAtkRace(String nombre, String attack, String race, String sort){
         return serviciosCartas.getCardsAtkRace(nombre, Constantes.GT +attack, race, sort);
     }
 

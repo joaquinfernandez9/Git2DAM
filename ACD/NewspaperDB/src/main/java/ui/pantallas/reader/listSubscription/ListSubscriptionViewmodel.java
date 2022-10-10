@@ -1,25 +1,21 @@
 package ui.pantallas.reader.listSubscription;
 
-import domain.modelo.Reader;
 import domain.services.ReaderServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import ui.pantallas.article.list.ArticleListState;
-
-import java.util.List;
 
 public class ListSubscriptionViewmodel {
-    private final ReaderServ readerServ;
+    private final ReaderServ readerServImpl;
     private final ObjectProperty<ListSubscriptionState> state;
 
     @Inject
-    public ListSubscriptionViewmodel(ReaderServ readerServ) {
-        this.readerServ = readerServ;
+    public ListSubscriptionViewmodel(ReaderServ readerServImpl) {
+        this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ListSubscriptionState(null, false,
-                        readerServ.getAll().get()));
+                        readerServImpl.getAll().get()));
     }
 
     public ReadOnlyObjectProperty<ListSubscriptionState> getState() {
@@ -30,7 +26,7 @@ public class ListSubscriptionViewmodel {
     public void reloadState() {
         state.setValue(new ListSubscriptionState(
                 null, !state.get().isChange(),
-                readerServ.getAll().get()
+                readerServImpl.getAll().get()
         ));
     }
 
@@ -39,7 +35,7 @@ public class ListSubscriptionViewmodel {
 //    }
 
     public void search(int id){
-        state.setValue(new ListSubscriptionState(null, !state.get().isChange(), readerServ.readersSubscribed(id)));
+        state.setValue(new ListSubscriptionState(null, !state.get().isChange(), readerServImpl.readersSubscribed(id)));
     }
 
 }

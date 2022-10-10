@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 import java.io.IOException;
 
@@ -67,6 +68,10 @@ public class ArticleListController extends BasePantallaController {
 
     @FXML
     private void filterBtn() {
-        articleListViewModel.getAllfilter(combo.getValue());
+        if (combo.getValue() != null){
+            articleListViewModel.getAllfilter(combo.getValue());
+        } else {
+            getPrincipalController().sacarAlertError(UiConstants.ERROR);
+        }
     }
 }
