@@ -1,9 +1,6 @@
 package ui.pantallas.cartas;
 
-import dao.retrofit.cards.CardsList;
-import domain.modelo.ListaCartas;
 import domain.servicios.ServiciosCartas;
-import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -32,8 +29,7 @@ public class CartasViewModel {
     }
 
     public void verCartasName(String name){
-        Either<String, ListaCartas> catar = serviciosCartas.verCartasName(name);
-
+        serviciosCartas.verCartasName(name);
     }
 
 }

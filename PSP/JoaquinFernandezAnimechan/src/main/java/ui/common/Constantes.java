@@ -19,7 +19,7 @@ public class Constantes {
     public static final String NO_HAY_CARTAS_CON_ESE_NOMBRE = "No hay cartas con ese nombre";
     public static final String HAY_CAMPOS_VACIOS = "Hay campos vacíos";
     public static final String ERROR = "Error";
-    public static final String NO_SE_HA_PROPORCIONADO_UN_NOMBRE = "No se ha proporcionado un nombre";
+    public static final String NO_SE_HA_PROPORCIONADO_UN_NOMBRE = "No se ha proporcionado un nombre,\n se generará una carta aleatoria.";
     public static final String IMG_DUEL_TIME_GIF = "/img/duelTime.gif";
     public static final String NO_HAY_CARTAS_CON_ESOS_DATOS = "No hay cartas con esos datos";
 }

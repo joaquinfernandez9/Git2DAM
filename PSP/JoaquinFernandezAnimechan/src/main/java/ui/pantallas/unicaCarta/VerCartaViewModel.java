@@ -21,4 +21,8 @@ public class VerCartaViewModel {
             return serviciosCartas.verUnaCarta(nombre);
     }
 
+    public Either<String, Carta> cartaRandom(){
+        return serviciosCartas.cartaRandom();
+    }
+
 }

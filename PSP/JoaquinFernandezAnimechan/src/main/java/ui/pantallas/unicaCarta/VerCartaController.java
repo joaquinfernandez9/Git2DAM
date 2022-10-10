@@ -30,6 +30,7 @@ public class VerCartaController extends BasePantallaController {
             alert.setTitle(Constantes.ERROR);
             alert.setHeaderText(Constantes.NO_SE_HA_PROPORCIONADO_UN_NOMBRE);
             alert.showAndWait();
+            mostrarCarta.setText(verCartaViewModel.cartaRandom().get().toString());
         } else {
             if (verCartaViewModel.verCartaNombre(nombre.getText()).isRight()){
                 mostrarCarta.setText(verCartaViewModel

@@ -19,15 +19,14 @@ public class Carta {
     private String attribute;
     private String desc;
     private String archetype;
-    private List<ListaSetsCarta> setsCartas;
     private List<ListaPreciosCarta> preciosCartas;
     private List<ListaImgCarta> listaImgCartas;
 
     public Carta(String name, int id, int level, String atk,
                  int def, String type, String race, String attribute,
-                 String desc, String archetype, List<CardSetsItem> setsCartas,
-                 List<CardPricesItem> preciosCartas,
-                 List<CardImagesItem> listaImgCartas) {
+                 String desc, String archetype,
+                 List<ListaPreciosCarta> preciosCartas,
+                 List<ListaImgCarta> listaImgCartas) {
         this.name = name;
         this.id = id;
         this.level = level;
@@ -38,7 +37,6 @@ public class Carta {
         this.attribute = attribute;
         this.desc = desc;
         this.archetype = archetype;
-        this.setsCartas = setsCartas;
         this.preciosCartas = preciosCartas;
         this.listaImgCartas = listaImgCartas;
     }

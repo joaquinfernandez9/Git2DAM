@@ -1,13 +1,14 @@
 package domain.servicios.impl;
 
 import dao.DaoCartas;
-import dao.retrofit.cards.DataItem;
-import dao.retrofit.cards.CardsList;
 import domain.modelo.Carta;
 import domain.modelo.ListaCartas;
+import domain.modelo.ListaSetsCarta;
 import domain.servicios.ServiciosCartas;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
+
+import java.util.List;
 
 public class ServiciosCartasImpl implements ServiciosCartas {
 
@@ -24,8 +25,18 @@ public class ServiciosCartasImpl implements ServiciosCartas {
     }
 
     @Override
-    public Either<String, ListaCartas> verCartasName(String nombre){
-        return daoCartas.verCartasConNombre(nombre);
+    public Either<String, Carta> cartaRandom(){
+        return daoCartas.cartaRandom();
+    }
+
+    @Override
+    public Either<String, List<ListaSetsCarta>> getAllCardSets(){
+        return daoCartas.getAllCardSets();
+    }
+
+    @Override
+    public void verCartasName(String nombre){
+        daoCartas.verCartasConNombre(nombre);
     }
 
     @Override

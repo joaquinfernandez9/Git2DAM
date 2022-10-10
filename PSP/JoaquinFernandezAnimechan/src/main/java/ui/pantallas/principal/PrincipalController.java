@@ -21,6 +21,7 @@ public class PrincipalController {
 
     @FXML
     private final Alert alert;
+    @FXML private MenuItem getSets;
 
     Instance<Object> instance;
 
@@ -84,6 +85,7 @@ public class PrincipalController {
             case "mostrarCartas" -> cargarPantalla(Pantallas.CARTAS);
             case "buscarCarta" -> cargarPantalla(Pantallas.MAZOS);
             case "filtrarCarta" -> cargarPantalla(Pantallas.FILTRO);
+            case "getSets" -> cargarPantalla(Pantallas.SETS);
         }
     }
 }

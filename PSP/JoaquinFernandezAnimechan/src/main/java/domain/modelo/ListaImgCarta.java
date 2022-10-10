@@ -4,7 +4,8 @@ import lombok.Data;
 
 @Data
 public class ListaImgCarta {
-    String urlImg;
-    String urlImgPequena;
-    int id;
+    private String urlImg;
+    public ListaImgCarta(String urlImg) {
+        this.urlImg = urlImg;
+    }
 }

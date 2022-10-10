@@ -20,6 +20,8 @@
                           text="Buscar una carta"/>
                 <MenuItem fx:id="filtrarCarta" mnemonicParsing="false" onAction="#menuClick"
                           text="Filtrar cartas"/>
+                <MenuItem fx:id="getSets" mnemonicParsing="false" onAction="#menuClick"
+                          text="Cartas sets"/>
             </Menu>
         </MenuBar>
     </top>

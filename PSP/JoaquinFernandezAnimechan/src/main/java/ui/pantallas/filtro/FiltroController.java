@@ -1,6 +1,6 @@
 package ui.pantallas.filtro;
 
-import dao.retrofit.cards.DataItem;
+import domain.modelo.Carta;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -14,19 +14,20 @@ import ui.common.Constantes;
 
 public class FiltroController extends BasePantallaController {
 
+    private final FiltroViewModel filtroViewModel;
     //de estos me salen un monton como que no los uso pero si los pulso me llevan a sitios, es por el plugin del javafx
     @FXML
-    private TableView<DataItem> tablaCartas;
+    private TableView<Carta> tablaCartas;
     @FXML
-    private TableColumn<Integer, DataItem> idCol;
+    private TableColumn<Integer, Carta> idCol;
     @FXML
-    private TableColumn<String, DataItem> nombreCol;
+    private TableColumn<String, Carta> nombreCol;
     @FXML
-    private TableColumn<Integer, DataItem> lvlCol;
+    private TableColumn<Integer, Carta> lvlCol;
     @FXML
-    private TableColumn<Integer, DataItem> atkCol;
+    private TableColumn<Integer, Carta> atkCol;
     @FXML
-    private TableColumn<Integer, DataItem> defCol;
+    private TableColumn<Integer, Carta> defCol;
     @FXML
     private TextField nameField;
     @FXML
@@ -35,9 +36,6 @@ public class FiltroController extends BasePantallaController {
     private TextField filterField;
     @FXML
     private ComboBox<String> raceCombo;
-
-
-    private final FiltroViewModel filtroViewModel;
 
     @Inject
     FiltroController(FiltroViewModel filtroViewModel) {
@@ -59,29 +57,24 @@ public class FiltroController extends BasePantallaController {
 
         filtroViewModel.getState().addListener((observable, oldValue, newValue) -> {
             tablaCartas.getItems().clear();
-            tablaCartas.getItems().addAll(newValue.cardsList().getData());
+            tablaCartas.getItems().addAll(newValue.cardsList().getCartas());
         });
 
         filtroViewModel.load();
     }
 
     @FXML
-    private void buscarRaza(){
+    private void buscarRaza() {
         if (nameField.getText().isEmpty() ||
                 raceCombo.getSelectionModel().isEmpty() || filterField.getText().isEmpty()) {
             getPrincipalController().sacarAlertError(Constantes.HAY_CAMPOS_VACIOS);
-        } else if (filtroViewModel.getCardsAtkRace(nameField.getText(),
-                String.valueOf(Integer.parseInt(atkField.getText())),
-                raceCombo.getSelectionModel().getSelectedItem(),
-                filterField.getText()).isRight()){
+        } else {
             filtroViewModel.getCardsAtkRace(nameField.getText(),
                     String.valueOf(Integer.parseInt(atkField.getText())),
                     raceCombo.getSelectionModel().getSelectedItem(),
                     filterField.getText());
-        } else {
-            getPrincipalController().sacarAlertError(Constantes.NO_HAY_CARTAS_CON_ESOS_DATOS);
         }
+
+
     }
-
-
 }

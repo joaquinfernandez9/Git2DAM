@@ -4,10 +4,17 @@ import dao.retrofit.cards.CardsList;
 import dao.retrofit.cards.DataItem;
 import domain.modelo.Carta;
 import domain.modelo.ListaCartas;
+import domain.modelo.ListaSetsCarta;
 import io.vavr.control.Either;
+
+import java.util.List;
 
 public interface DaoCartas {
     Either<String, Carta> verUnaCarta(String nombre);
+
+    Either<String, Carta> cartaRandom();
+
+    Either<String, List<ListaSetsCarta>> getAllCardSets();
 
     Either<String, ListaCartas> verCartasConNombre(String nombre);
 

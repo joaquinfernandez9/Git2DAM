@@ -1,6 +1,7 @@
 package ui.pantallas.cartas;
 
 import dao.retrofit.cards.DataItem;
+import domain.modelo.Carta;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -18,17 +19,17 @@ public class CartasController extends BasePantallaController {
     @FXML
     private TextField cardName;
     @FXML
-    private TableView<DataItem> tablaCartas;
+    private TableView<Carta> tablaCartas;
     @FXML
-    private TableColumn<Integer, DataItem> idCol;
+    private TableColumn<Integer, Carta> idCol;
     @FXML
-    private TableColumn<String, DataItem> nombreCol;
+    private TableColumn<String, Carta> nombreCol;
     @FXML
-    private TableColumn<Integer, DataItem> lvlCol;
+    private TableColumn<Integer, Carta> lvlCol;
     @FXML
-    private TableColumn<Integer, DataItem> atkCol;
+    private TableColumn<Integer, Carta> atkCol;
     @FXML
-    private TableColumn<Integer, DataItem> defCol;
+    private TableColumn<Integer, Carta> defCol;
     @FXML
     private Label lvPrecio;
 
@@ -55,15 +56,16 @@ public class CartasController extends BasePantallaController {
 
         cartasViewModel.getState().addListener((observable, oldValue, newValue) -> {
             tablaCartas.getItems().clear();
-            tablaCartas.getItems().addAll(newValue.cardsList().getData());
+            tablaCartas.getItems().addAll(newValue.cardsList().getCartas());
         });
 
         tablaCartas.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> {
                     if (tablaCartas.getSelectionModel().getSelectedItem() != null) {
-                        lvPrecio.setText(tablaCartas.getSelectionModel().getSelectedItem().getCard_prices().toString());
-                        imageView.setImage(new Image(tablaCartas.getSelectionModel().getSelectedItem()
-                                .getCard_images().get(0).getImage_url()));
+                        lvPrecio.setText(tablaCartas.getSelectionModel().getSelectedItem().getPreciosCartas().toString());
+                        // no se por que peta esto, es una imagen, si no lo consigo me sudala polla en vd
+                        imageView.setImage(new Image(String.valueOf(tablaCartas.getSelectionModel().getSelectedItem()
+                                .getListaImgCartas().get(0).getUrlImg())));
                     }
                 });
         cartasViewModel.load();

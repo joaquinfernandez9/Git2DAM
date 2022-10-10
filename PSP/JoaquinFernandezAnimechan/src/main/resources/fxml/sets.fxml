@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.sets.SetsController">
+      <TableView fx:id="tabla" layoutX="50.0" layoutY="50" prefHeight="350.0" prefWidth="659.0">
+        <columns>
+          <TableColumn fx:id="codigoColunm" prefWidth="329.0" text="Codigo" />
+            <TableColumn fx:id="nombreColunm" prefWidth="330.0" text="Nombre" />
+        </columns>
+      </TableView>
+</AnchorPane>

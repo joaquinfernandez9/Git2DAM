@@ -5,8 +5,10 @@ import lombok.Data;
 @Data
 public class ListaSetsCarta {
     private String codigoSet;
-    private String rarezaSet;
     private String nombreSet;
-    private String codigoRareza;
-    private String precioTotal;
+
+    public ListaSetsCarta(String codigoSet, String nombreSet) {
+        this.codigoSet = codigoSet;
+        this.nombreSet = nombreSet;
+    }
 }

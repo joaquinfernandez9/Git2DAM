@@ -25,7 +25,7 @@ public class FiltroViewModel {
     public void load() {
         //no se que tan vien ta esto pero lo he puesto dos veces y es un porro
         state.setValue(new FiltroState(null, !state.get().cambio(),
-                serviciosCartas.verTodasLasCartas().getOrNull()));
+                serviciosCartas.verTodasLasCartas().get()));
     }
 
     public ReadOnlyObjectProperty<FiltroState> getState() {
@@ -33,8 +33,12 @@ public class FiltroViewModel {
     }
 
 
-    public Either<String, ListaCartas> getCardsAtkRace(String nombre, String attack, String race, String sort){
-        return serviciosCartas.getCardsAtkRace(nombre, Constantes.GT +attack, race, sort);
+    public boolean getCardsAtkRace(String nombre, String attack, String race, String sort){
+        if (serviciosCartas.getCardsAtkRace(nombre, Constantes.GT +attack, race, sort).isRight()){
+            state.setValue(new FiltroState(null, !state.get().cambio(),
+                    serviciosCartas.getCardsAtkRace(nombre, Constantes.GT +attack, race, sort).get()));
+            return true;
+        } else return false;
     }
 
 

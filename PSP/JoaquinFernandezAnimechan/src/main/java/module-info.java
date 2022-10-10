@@ -13,11 +13,14 @@ module JoaquinFernandezAnimechan {
     requires okhttp3;
     requires okio;
     requires io.vavr;
+    requires annotations;
 
     exports dao;
+    exports ui.pantallas.sets;
     exports domain.servicios;
     exports domain.modelo;
     exports dao.retrofit;
+    opens ui.pantallas.sets;
     exports ui.main;
     exports ui.common;
     exports ui.pantallas.menu;

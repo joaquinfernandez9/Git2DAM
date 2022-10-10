@@ -1,17 +1,20 @@
 package dao.impl;
 
 import dao.DaoCartas;
+import dao.retrofit.cards.CardSetsItem;
 import dao.retrofit.cards.CardsList;
 import dao.retrofit.cards.DataItem;
 import dao.retrofit.llamada.YuGiOhApi;
-import domain.modelo.Carta;
-import domain.modelo.ListaCartas;
+import domain.modelo.*;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
+import org.jetbrains.annotations.NotNull;
 import retrofit2.Response;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 
@@ -27,22 +30,42 @@ public class DaoCartasImpl implements DaoCartas {
     }
 
     @Override
-    public Either<String, Carta> verUnaCarta(String nombre) {
+    public Either<String, Carta> cartaRandom() {
         Either<String, Carta> respuesta = null;
-        Response<CardsList> r;
+        Response<DataItem> r;
+
+        try {
+            r = api.getRandomCard().execute();
+            if (r.isSuccessful()) {
+                DataItem cartas = r.body();
+                if (cartas != null) {
+                    //nullpointer
+                    Carta cartita;
+                    cartita = crearCarta(cartas);
+                    respuesta = Either.right(cartita);
+                } else {
+                    respuesta = Either.left("Error");
+                }
+            } else {
+                respuesta = Either.left("Error");
+            }
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
+        return respuesta;
+    }
+
+    @Override
+    public Either<String, Carta> verUnaCarta(String nombre) {
+        Either<String, Carta> respuesta;
+        Response<DataItem> r;
         try {
             r = api.getCardName(nombre).execute();
-
             if (r.isSuccessful()) {
-                CardsList cartas = r.body();
+                DataItem cartas = r.body();
                 if (cartas != null) {
-                    DataItem data = cartas.getData().get(0);
                     Carta cartita;
-                    cartita = new Carta(data.getName(), data.getId(), data.getLevel(),
-                            data.getAtk(), data.getDef(), data.getType(), data.getRace(),
-                            data.getAttribute(), data.getDesc(), data.getArchetype(),
-                            data.getCard_sets(), data.getCard_prices(), data.getCard_images()
-                    );
+                    cartita = crearCarta(cartas);
                     respuesta = Either.right(cartita);
                 } else {
                     respuesta = Either.left(nombre);
@@ -57,6 +80,34 @@ public class DaoCartasImpl implements DaoCartas {
     }
 
     @Override
+    public Either<String, List<ListaSetsCarta>> getAllCardSets() {
+        Response<List<CardSetsItem>> r;
+        Either<String, List<ListaSetsCarta>> respuesta = null;
+        try {
+            r = api.getAllSets().execute();
+            if (r.isSuccessful()){
+                List<CardSetsItem> setsItem = r.body();
+                if (setsItem!=null){
+                    List<ListaSetsCarta> listaSetsCarta;
+                    listaSetsCarta = setsItem.stream().map(cardSetsItem ->
+                            new ListaSetsCarta(cardSetsItem.getSet_code(),
+                                    cardSetsItem.getSet_name()
+                                    )).toList();
+                    respuesta = Either.right(listaSetsCarta);
+                } else {
+                    respuesta = Either.left("Error");
+                }
+            } else {
+                respuesta = Either.left("Error");
+            }
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
+        return respuesta;
+    }
+
+
+    @Override
     public Either<String, ListaCartas> verCartasConNombre(String nombre) {
         Response<CardsList> r;
         Either<String, ListaCartas> respuesta;
@@ -65,20 +116,13 @@ public class DaoCartasImpl implements DaoCartas {
             if (r.isSuccessful()) {
                 CardsList cartas = r.body();
                 if (cartas != null) {
-                    ListaCartas cartitas;
-                    cartitas = new ListaCartas(cartas.getData().stream().map(carta ->
-                            new Carta(carta.getName(), carta.getId(), carta.getLevel(),
-                                    carta.getAtk(), carta.getDef(), carta.getType(), carta.getRace(),
-                                    carta.getAttribute(), carta.getDesc(), carta.getArchetype(),
-                                    carta.getCard_sets(), carta.getCard_prices(), carta.getCard_images())).toList());
-                    respuesta = Either.right(cartitas);
+                    respuesta = getListaCartitas(cartas);
                 } else {
                     respuesta = Either.left(nombre);
                 }
             } else {
                 respuesta = Either.left(r.message());
             }
-
         } catch (IOException e) {
             respuesta = Either.left(e.getMessage());
         }
@@ -87,19 +131,11 @@ public class DaoCartasImpl implements DaoCartas {
 
     @Override
     public Either<String, ListaCartas> verTodasLasCartas() {
-        Response<ListaCartas> r;
+        Response<CardsList> r;
         Either<String, ListaCartas> respuesta;
         try {
             r = api.getTodas().execute();
-            if (r.isSuccessful()) {
-                if (r.body() != null) {
-                    respuesta = Either.right(r.body());
-                } else {
-                    respuesta = Either.left(r.message());
-                }
-            } else {
-                respuesta = Either.left(r.message());
-            }
+            respuesta = rSuccessful(r);
         } catch (IOException e) {
             respuesta = Either.left(e.getMessage());
         }
@@ -107,23 +143,68 @@ public class DaoCartasImpl implements DaoCartas {
     }
 
     @Override
-    public Either<String, ListaCartas> getCardsAtkRace(String nombre, String atk, String race, String sort) {
-        Response<ListaCartas> r;
+    public Either<String, ListaCartas> getCardsAtkRace(String nombre, String atk,
+                                                       String race, String sort) {
+        Response<CardsList> r;
         Either<String, ListaCartas> respuesta;
         try {
             r = api.getCardsAtkRace(nombre, atk, race, sort).execute();
-            if (r.isSuccessful()) {
-                if (r.body() != null) {
-                    respuesta = Either.right(r.body());
-                } else {
-                    respuesta = Either.left(r.message());
-                }
-            } else {
-                respuesta = Either.left(r.message());
-            }
+            respuesta = rSuccessful(r);
         } catch (IOException e) {
             respuesta = Either.left(e.getMessage());
         }
+        return respuesta;
+    }
+
+    @NotNull
+    private Either<String, ListaCartas> rSuccessful(Response<CardsList> r) {
+        Either<String, ListaCartas> respuesta;
+        if (r.isSuccessful()) {
+            CardsList cartas = r.body();
+            if (r.body() != null && cartas != null) {
+                respuesta = getListaCartitas(cartas);
+            } else {
+                respuesta = Either.left(r.message());
+            }
+        } else {
+            respuesta = Either.left(r.message());
+        }
+        return respuesta;
+    }
+
+    @NotNull
+    Carta crearCarta(DataItem data) {
+        return new Carta(data.getName(), data.getId(), data.getLevel(),
+                data.getAtk(), data.getDef(), data.getType(), data.getRace(),
+                data.getAttribute(), data.getDesc(), data.getArchetype(),
+                data.getCard_prices().stream().map(cardPricesItem ->
+                        new ListaPreciosCarta(
+                                data.getCard_prices().stream().map(cardPricesItem1 ->
+                                        cardPricesItem.getCoolstuffinc_price()).toString(),
+                                data.getCard_prices().stream().map(cardPricesItem1 ->
+                                        cardPricesItem.getTcgplayer_price()).toString(),
+                                data.getCard_prices().stream().map(cardPricesItem1 ->
+                                        cardPricesItem.getAmazon_price()).toString(),
+                                data.getCard_prices().stream().map(cardPricesItem1 ->
+                                        cardPricesItem.getEbay_price()).toString(),
+                                data.getCard_prices().stream().map(cardPricesItem1 ->
+                                        cardPricesItem.getCardmarket_price()).toString()
+                        )).toList(),
+                data.getCard_images().stream().map(cardImagesItem ->
+                        new ListaImgCarta(
+                                data.getCard_images().stream().map(cardImagesItem1 ->
+                                        cardImagesItem.getImage_url()).toString()
+                        )).toList()
+        );
+    }
+
+    @NotNull
+    private Either<String, ListaCartas> getListaCartitas(CardsList cartas) {
+        Either<String, ListaCartas> respuesta;
+        ListaCartas cartitas;
+        cartitas = new ListaCartas(cartas.getData().stream().map(this::crearCarta).toList());
+        respuesta = Either.right(cartitas);
+
         return respuesta;
     }
 
