@@ -1,0 +1,8 @@
+
+]	java:S107"BConstructor has 12 parameters, which is greater than 7 authorized.(Éî#8¢ÉŸ¼0
+[
+java:S1128">Remove this unused import 'dao.retrofit.cards.CardImagesItem'.(¶ñÒ³8¥ÉŸ¼0
+`
+java:S1128">Remove this unused import 'dao.retrofit.cards.CardPricesItem'.(ôÉ¹ƒşÿÿÿÿ8¥ÉŸ¼0
+Y
+java:S1128"<Remove this unused import 'dao.retrofit.cards.CardSetsItem'.(¦ÍÎ8¥ÉŸ¼0

@@ -1,12 +1,0 @@
-
-X	java:S125"<This block of commented-out lines of code should be removed.(ú¾°ü8€à¦áµ0
-]	java:S125("<This block of commented-out lines of code should be removed.(á«‘¬üÿÿÿÿ8„à¦áµ0
-X	java:S125*"<This block of commented-out lines of code should be removed.(úşÆ×8„à¦áµ0
-U	java:S106B"9Replace this use of System.out or System.err by a logger.(Í…Ö”8‡à¦áµ0
-]	java:S125D"<This block of commented-out lines of code should be removed.(¿¿±¤ùÿÿÿÿ8ˆà¦áµ0
-]	java:S125P"<This block of commented-out lines of code should be removed.(¢ºù‡şÿÿÿÿ8ˆà¦áµ0
-X	java:S125U"<This block of commented-out lines of code should be removed.(õºè°8ˆà¦áµ0
-;
-java:S1128"Remove this duplicated import.(¶»ú¢8‰à¦áµ0
-M
-java:S1128"0Remove this unused import 'modelo.RespuestaAPI'.(¤µ™‡8‰à¦áµ0

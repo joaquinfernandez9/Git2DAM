@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <entry key="urlDB">jdbc:mysql://dam2.mysql.iesquevedo.es:3335/JoaquinFernandez_NewspaperDB</entry>
+  <entry key="user_name">root</entry>
+  <entry key="password">quevedo2dam</entry>
+  
+</properties>
+

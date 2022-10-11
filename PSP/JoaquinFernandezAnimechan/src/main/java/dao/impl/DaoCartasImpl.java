@@ -13,9 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import retrofit2.Response;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Log4j2
@@ -58,14 +56,14 @@ public class DaoCartasImpl implements DaoCartas {
     @Override
     public Either<String, Carta> verUnaCarta(String nombre) {
         Either<String, Carta> respuesta;
-        Response<DataItem> r;
+        Response<CardsList> r;
         try {
             r = api.getCardName(nombre).execute();
             if (r.isSuccessful()) {
-                DataItem cartas = r.body();
+                CardsList cartas = r.body();
                 if (cartas != null) {
                     Carta cartita;
-                    cartita = crearCarta(cartas);
+                    cartita = crearCarta(cartas.getData().get(0));
                     respuesta = Either.right(cartita);
                 } else {
                     respuesta = Either.left(nombre);
@@ -85,14 +83,14 @@ public class DaoCartasImpl implements DaoCartas {
         Either<String, List<ListaSetsCarta>> respuesta = null;
         try {
             r = api.getAllSets().execute();
-            if (r.isSuccessful()){
+            if (r.isSuccessful()) {
                 List<CardSetsItem> setsItem = r.body();
-                if (setsItem!=null){
+                if (setsItem != null) {
                     List<ListaSetsCarta> listaSetsCarta;
                     listaSetsCarta = setsItem.stream().map(cardSetsItem ->
                             new ListaSetsCarta(cardSetsItem.getSet_code(),
                                     cardSetsItem.getSet_name()
-                                    )).toList();
+                            )).toList();
                     respuesta = Either.right(listaSetsCarta);
                 } else {
                     respuesta = Either.left("Error");
@@ -173,7 +171,7 @@ public class DaoCartasImpl implements DaoCartas {
     }
 
     @NotNull
-    Carta crearCarta(DataItem data) {
+    private Carta crearCarta(DataItem data) {
         return new Carta(data.getName(), data.getId(), data.getLevel(),
                 data.getAtk(), data.getDef(), data.getType(), data.getRace(),
                 data.getAttribute(), data.getDesc(), data.getArchetype(),

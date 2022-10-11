@@ -19,7 +19,7 @@ public interface YuGiOhApi {
     Call<CardsList> getTodas();
 
     @GET("cardinfo.php")
-    Call<DataItem> getCardName(@Query("name") String name);
+    Call<CardsList> getCardName(@Query("name") String name);
 
     @GET("randomcard.php")
     Call<DataItem> getRandomCard();
