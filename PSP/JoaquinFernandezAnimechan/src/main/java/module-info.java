@@ -30,6 +30,11 @@ module JoaquinFernandezAnimechan {
     exports dao.retrofit.cards;
     exports ui.pantallas.filtro;
 
+    //llamadas asincronas
+    requires io.reactivex.rxjava3;
+    requires org.pdfsam.rxjavafx;
+    requires retrofit2.adapter.rxjava3;
+
     opens dao.retrofit.cards;
     opens ui.pantallas.filtro;
     opens ui.main;

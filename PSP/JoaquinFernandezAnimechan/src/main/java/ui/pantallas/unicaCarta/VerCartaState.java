@@ -1,6 +1,6 @@
 package ui.pantallas.unicaCarta;
 
 
-import dao.retrofit.cards.CardsList;
+import domain.modelo.Carta;
 
-public record VerCartaState(String error, boolean cambio, CardsList cardsList) {}
+public record VerCartaState(String error, boolean cambio, Carta carta) {}

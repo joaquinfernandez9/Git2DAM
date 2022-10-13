@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.pantallas.newspaper.list.NewsListController">
+    <children>
+        <TableView fx:id="tableNews" layoutX="66.0" layoutY="57.0" prefHeight="386.0" prefWidth="406.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID"/>
+                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name"/>
+                <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price"/>
+                <TableColumn fx:id="directorColumn" prefWidth="75.0" text="Director"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

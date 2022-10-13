@@ -5,6 +5,7 @@ import domain.modelo.Carta;
 import domain.modelo.ListaCartas;
 import domain.modelo.ListaSetsCarta;
 import domain.servicios.ServiciosCartas;
+import io.reactivex.rxjava3.core.Single;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 
@@ -20,7 +21,7 @@ public class ServiciosCartasImpl implements ServiciosCartas {
     }
 
     @Override
-    public Either<String, Carta> verUnaCarta(String nombreCarta){
+    public Single<Either<String, Carta>> verUnaCarta(String nombreCarta){
         return daoCartas.verUnaCarta(nombreCarta);
     }
 
@@ -35,8 +36,8 @@ public class ServiciosCartasImpl implements ServiciosCartas {
     }
 
     @Override
-    public void verCartasName(String nombre){
-        daoCartas.verCartasConNombre(nombre);
+    public Either<String, ListaCartas> verCartasName(String nombre){
+        return daoCartas.verCartasConNombre(nombre);
     }
 
     @Override

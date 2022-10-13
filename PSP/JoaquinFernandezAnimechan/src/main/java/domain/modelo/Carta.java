@@ -1,8 +1,5 @@
 package domain.modelo;
 
-import dao.retrofit.cards.CardImagesItem;
-import dao.retrofit.cards.CardPricesItem;
-import dao.retrofit.cards.CardSetsItem;
 import lombok.Data;
 
 import java.util.List;
@@ -39,5 +36,22 @@ public class Carta {
         this.archetype = archetype;
         this.preciosCartas = preciosCartas;
         this.listaImgCartas = listaImgCartas;
+    }
+
+    @Override
+    public String toString() {
+        return "Name= " + name + ','+
+                "ID= " + id +','+
+                "Level= " + level +','+'\n'+
+                "ATK= " + atk +','+
+                "DEF= " + def +','+'\n'+
+                "Type= " + type + ','+
+                "Race= " + race + ','+
+                "Attribute= " + attribute + ','+'\n'+
+                "Desc= " + desc + '\n' +
+                "Archetype= "+ archetype+','+'\n'+
+                "Prices= "+ preciosCartas+','+'\n'+
+                "Card Images= "+ listaImgCartas+'\n'+
+                '}';
     }
 }

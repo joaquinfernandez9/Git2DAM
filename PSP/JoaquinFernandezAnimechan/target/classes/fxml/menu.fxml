@@ -4,7 +4,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.menu.MenuController">
+<AnchorPane prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.menu.MenuController">
    <children>
       <Button layoutX="104.0" layoutY="287.0" mnemonicParsing="false" onAction="#moverCartas" prefHeight="43.0" prefWidth="94.0" text="Ver Cartas" />
       <Button layoutX="303.0" layoutY="287.0" mnemonicParsing="false" onAction="#moverMazos" prefHeight="43.0" prefWidth="94.0" text="Ver Mazos" />

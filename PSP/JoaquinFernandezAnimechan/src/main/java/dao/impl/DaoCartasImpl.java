@@ -6,6 +6,8 @@ import dao.retrofit.cards.CardsList;
 import dao.retrofit.cards.DataItem;
 import dao.retrofit.llamada.YuGiOhApi;
 import domain.modelo.*;
+import io.reactivex.rxjava3.core.Single;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
@@ -14,6 +16,7 @@ import retrofit2.Response;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 
 @Log4j2
@@ -54,31 +57,54 @@ public class DaoCartasImpl implements DaoCartas {
     }
 
     @Override
-    public Either<String, Carta> verUnaCarta(String nombre) {
-        Either<String, Carta> respuesta;
-        Response<CardsList> r;
-        try {
-            r = api.getCardName(nombre).execute();
-            if (r.isSuccessful()) {
-                CardsList cartas = r.body();
-                if (cartas != null) {
+    public Single<Either<String, Carta>> verUnaCarta(String nombre) {
+//        Single<String, Carta> respuesta;
+//        Response<CardsList> r;
+//        try {
+//            r = api.getCardName(nombre).execute();
+//            if (r.isSuccessful()) {
+//                CardsList cartas = r.body();
+//                if (cartas != null) {
+//                    Carta cartita;
+//                    cartita = crearCarta(cartas.getData().get(0));
+//                    respuesta = Either.right(cartita);
+//                } else {
+//                    respuesta = Either.left(nombre);
+//                }
+//            } else {
+//                respuesta = Either.left(r.message());
+//            }
+//        } catch (IOException e) {
+//            respuesta = Either.left(e.getMessage());
+//        }
+//        return respuesta;
+        return api.getCardName(nombre)
+                .map(card -> {
                     Carta cartita;
-                    cartita = crearCarta(cartas.getData().get(0));
-                    respuesta = Either.right(cartita);
-                } else {
-                    respuesta = Either.left(nombre);
-                }
-            } else {
-                respuesta = Either.left(r.message());
-            }
-        } catch (IOException e) {
-            respuesta = Either.left(e.getMessage());
-        }
-        return respuesta;
+                    cartita = crearCarta(card.getData().get(0));
+                    //el mapper devuelve nulo
+                    return Either.right(cartita)
+                            .mapLeft(Object::toString);
+                })
+                .subscribeOn(Schedulers.io())
+                .onErrorReturn(throwable -> Either.left("Error de comunicacion"));
     }
+
+//    @Override
+//    public Single<Carta> verUnaCarta(String nombre) {
+//        return api.getCardName(nombre)
+//                .map(card -> {
+//                    Carta cartita;
+//                    cartita = crearCarta(card.getData().get(0));
+//                    el mapper devuelve nulo
+//                    return cartita;
+//                })
+//                .subscribeOn(Schedulers.io());
+//    }
 
     @Override
     public Either<String, List<ListaSetsCarta>> getAllCardSets() {
+
         Response<List<CardSetsItem>> r;
         Either<String, List<ListaSetsCarta>> respuesta = null;
         try {

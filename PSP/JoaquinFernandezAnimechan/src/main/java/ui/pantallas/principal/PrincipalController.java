@@ -25,9 +25,8 @@ public class PrincipalController {
 
     Instance<Object> instance;
 
-    //cambio pantalla
     @FXML
-    private BorderPane root;
+    public BorderPane root;
     @FXML
     private MenuBar options;
     @FXML

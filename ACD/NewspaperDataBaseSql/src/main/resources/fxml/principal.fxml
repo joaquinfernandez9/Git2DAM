@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" prefHeight="500.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.pantallas.principal.PrincipalController">
+    <top>
+        <MenuBar fx:id="options">
+            <Menu mnemonicParsing="false" text="Options">
+                <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#menuClick"
+                          text="Logout"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Newspaper">
+                <MenuItem fx:id="npList" mnemonicParsing="false" onAction="#menuClick"
+                          text="List"/>
+                <MenuItem fx:id="npAdd" mnemonicParsing="false" onAction="#menuClick"
+                          text="Add"/>
+                <MenuItem fx:id="npUpdate" mnemonicParsing="false" onAction="#menuClick"
+                          text="Update"/>
+                <MenuItem fx:id="npDelete" mnemonicParsing="false" onAction="#menuClick"
+                          text="Delete"/>
+
+            </Menu>
+            <Menu mnemonicParsing="false" text="Reader">
+                <MenuItem fx:id="rListSubscription" mnemonicParsing="false" onAction="#menuClick"
+                          text="List of Readers (news subscription)"/>
+                <MenuItem fx:id="rAppendReadArticle" mnemonicParsing="false" onAction="#menuClick"
+                          text="Append Article"/>
+                <MenuItem fx:id="rListType" mnemonicParsing="false" onAction="#menuClick"
+                          text="List of Readers (Specific type)"/>
+                <MenuItem fx:id="rDelete" mnemonicParsing="false" onAction="#menuClick"
+                          text="Delete"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Article">
+                <MenuItem fx:id="artList" mnemonicParsing="false" onAction="#menuClick"
+                          text="List"/>
+                <MenuItem fx:id="artAdd" mnemonicParsing="false" onAction="#menuClick"
+                          text="Add"/>
+                <MenuItem fx:id="artUpdate" mnemonicParsing="false" onAction="#menuClick"
+                          text="Update"/>
+                <MenuItem fx:id="artDelete" mnemonicParsing="false" onAction="#menuClick"
+                          text="Delete"/>
+            </Menu>
+
+        </MenuBar>
+    </top>
+</BorderPane>

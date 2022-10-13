@@ -8,6 +8,7 @@ import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 
 public class ProducesRetrofit {
 
@@ -34,10 +35,10 @@ public class ProducesRetrofit {
                         java.util.concurrent.TimeUnit.SECONDS))
                 .build();
 
-
         return new Retrofit.Builder()
                 .baseUrl(config.getPath())
                 .addConverterFactory(retrofit2.converter.moshi.MoshiConverterFactory.create(moshi))
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .client(clientOK)
                 .build();
     }

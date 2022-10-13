@@ -21,21 +21,5 @@ public class DataItem {
     private List<CardImagesItem> card_images;
 
 
-    @Override
-    public String toString() {
-        return "Name= " + name + ','+
-                "ID= " + id +','+
-                "Level= " + level +','+'\n'+
-                "ATK= " + atk +','+
-                "DEF= " + def +','+'\n'+
-                "Type= " + type + ','+
-                "Race= " + race + ','+
-                "Attribute= " + attribute + ','+'\n'+
-                "Desc= " + desc + '\n' +
-                "Archetype= "+ archetype+','+'\n'+
-                "Sets item= "+ card_sets +','+'\n'+
-                "Prices= "+ card_prices+','+'\n'+
-                "Card Images= "+ card_images+'\n'+
-                '}';
-    }
+
 }

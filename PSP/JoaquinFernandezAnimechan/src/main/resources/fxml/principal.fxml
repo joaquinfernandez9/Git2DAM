@@ -7,7 +7,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <BorderPane fx:id="root" prefHeight="450.0" prefWidth="750.0"
-            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns="http://javafx.com/javafx/6"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ui.pantallas.principal.PrincipalController">
 

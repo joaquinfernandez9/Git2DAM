@@ -5,12 +5,13 @@ import dao.retrofit.cards.DataItem;
 import domain.modelo.Carta;
 import domain.modelo.ListaCartas;
 import domain.modelo.ListaSetsCarta;
+import io.reactivex.rxjava3.core.Single;
 import io.vavr.control.Either;
 
 import java.util.List;
 
 public interface DaoCartas {
-    Either<String, Carta> verUnaCarta(String nombre);
+    Single<Either<String, Carta>> verUnaCarta(String nombre);
 
     Either<String, Carta> cartaRandom();
 
