@@ -55,8 +55,8 @@ public class ReaderListSubscriptionController extends BasePantallaController {
     private  void search(ActionEvent actionEvent) {
         if (idNewspaper.getText().isEmpty()){
             getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
-        }else {
-            viewmodel.search(Integer.parseInt(idNewspaper.getText()));
+//        }else {
+//            viewmodel.search(Integer.parseInt(idNewspaper.getText()));
         }
     }
 }

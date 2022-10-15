@@ -1,6 +1,5 @@
 package domain.modelo;
 
-import dao.retrofit.cards.DataItem;
 import lombok.Data;
 
 import java.util.List;

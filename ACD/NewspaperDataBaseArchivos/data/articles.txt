@@ -1,5 +1,5 @@
 2;aaa;a;1;2
-3;22;Manquito;2;21;yocosa;tumas;2;2
 7;gersio;Sergio El palacio;4;1
 5;hola;hola;4;1
 6;6;6;4;2
+7;euei;yo;4;2

@@ -1,7 +1,5 @@
 package dao;
 
-import dao.retrofit.cards.CardsList;
-import dao.retrofit.cards.DataItem;
 import domain.modelo.Carta;
 import domain.modelo.ListaCartas;
 import domain.modelo.ListaSetsCarta;

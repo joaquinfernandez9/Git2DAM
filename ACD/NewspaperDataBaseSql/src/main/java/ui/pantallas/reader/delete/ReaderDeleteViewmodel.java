@@ -38,7 +38,7 @@ public class ReaderDeleteViewmodel {
     }
 
     public void deleteReader(int idReader){
-        readerServImpl.ñdeleteReader(idReader);
+        readerServImpl.deleteReader(idReader);
     }
 
 

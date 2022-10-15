@@ -13,10 +13,10 @@ import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Response;
+import ui.common.Constantes;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 
 @Log4j2
@@ -45,10 +45,10 @@ public class DaoCartasImpl implements DaoCartas {
                     cartita = crearCarta(cartas);
                     respuesta = Either.right(cartita);
                 } else {
-                    respuesta = Either.left("Error");
+                    respuesta = Either.left(Constantes.ERROR);
                 }
             } else {
-                respuesta = Either.left("Error");
+                respuesta = Either.left(Constantes.ERROR);
             }
         } catch (IOException e) {
             log.error(e.getMessage());
@@ -58,26 +58,6 @@ public class DaoCartasImpl implements DaoCartas {
 
     @Override
     public Single<Either<String, Carta>> verUnaCarta(String nombre) {
-//        Single<String, Carta> respuesta;
-//        Response<CardsList> r;
-//        try {
-//            r = api.getCardName(nombre).execute();
-//            if (r.isSuccessful()) {
-//                CardsList cartas = r.body();
-//                if (cartas != null) {
-//                    Carta cartita;
-//                    cartita = crearCarta(cartas.getData().get(0));
-//                    respuesta = Either.right(cartita);
-//                } else {
-//                    respuesta = Either.left(nombre);
-//                }
-//            } else {
-//                respuesta = Either.left(r.message());
-//            }
-//        } catch (IOException e) {
-//            respuesta = Either.left(e.getMessage());
-//        }
-//        return respuesta;
         return api.getCardName(nombre)
                 .map(card -> {
                     Carta cartita;
@@ -87,20 +67,9 @@ public class DaoCartasImpl implements DaoCartas {
                             .mapLeft(Object::toString);
                 })
                 .subscribeOn(Schedulers.io())
-                .onErrorReturn(throwable -> Either.left("Error de comunicacion"));
+                .onErrorReturn(throwable -> Either.left(Constantes.ERROR_DE_COMUNICACION));
     }
 
-//    @Override
-//    public Single<Carta> verUnaCarta(String nombre) {
-//        return api.getCardName(nombre)
-//                .map(card -> {
-//                    Carta cartita;
-//                    cartita = crearCarta(card.getData().get(0));
-//                    el mapper devuelve nulo
-//                    return cartita;
-//                })
-//                .subscribeOn(Schedulers.io());
-//    }
 
     @Override
     public Either<String, List<ListaSetsCarta>> getAllCardSets() {

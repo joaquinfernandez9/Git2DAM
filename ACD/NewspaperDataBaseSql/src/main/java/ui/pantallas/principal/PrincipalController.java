@@ -105,6 +105,10 @@ public class PrincipalController {
     public MenuItem artUpdate;
     @FXML
     public MenuItem artDelete;
+    @FXML
+    public MenuItem rUpdate;
+    @FXML
+    public MenuItem rAdd;
 
 
     public void menuClick(javafx.event.ActionEvent actionEvent) {
@@ -124,6 +128,12 @@ public class PrincipalController {
                 break;
             case "rDelete":
                 cargarPantalla(Pantallas.READER_DELETE);
+                break;
+            case "rAdd":
+                cargarPantalla(Pantallas.READER_ADD);
+                break;
+            case "rUpdate":
+                cargarPantalla(Pantallas.READER_UPDATE);
                 break;
             case "rListSubscription":
                 cargarPantalla(Pantallas.READER_LIST_SUBSCRIPTION);

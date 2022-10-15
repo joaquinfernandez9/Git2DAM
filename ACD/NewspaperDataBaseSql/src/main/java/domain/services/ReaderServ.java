@@ -14,7 +14,7 @@ public interface ReaderServ {
 
     int deleteReader(int id);
 
-    boolean update(int id, String name, LocalDate date);
+    boolean update(int id, String name);
 
     int add(int id, String name, LocalDate date);
 

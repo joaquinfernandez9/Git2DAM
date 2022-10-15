@@ -82,34 +82,36 @@ public class DaoReaderImpl implements DaoReader {
     }
 
     @Override
-    public boolean update(int id, String name, LocalDate date) {
+    public boolean update(int id, String name) {
         boolean response = false;
         try (Connection connection = db.getConnection()) {
             if (name != null) {
                 //cambiar name
                 try (PreparedStatement preparedStatement =
                              connection.prepareStatement(
-                        "UPDATE reader set name_reader =? where id = ?")){
+                                     "UPDATE reader set name_reader =? where id = ?")) {
 
                     preparedStatement.setString(1, name);
                     preparedStatement.setInt(2, id);
 
-                } catch (SQLException e){
+                    preparedStatement.executeUpdate();
+
+                } catch (SQLException e) {
                     Logger.getLogger(DaoReaderImpl.class.getName())
                             .log(Level.SEVERE, null, e);
                 }
-            } else {
-                try (PreparedStatement preparedStatement = connection.prepareStatement(
-                        "UPDATE reader set birth_date = ? where id = ?");){
-
-                    preparedStatement.setDate(1, Date.valueOf(date));
-                    preparedStatement.setInt(2, id);
-
-                } catch (SQLException e){
-                    Logger.getLogger(DaoReaderImpl.class.getName())
-                            .log(Level.SEVERE, null, e);
-                }
-                //cambiar fecha
+//            } else {
+//                cambiar fecha
+//                try (PreparedStatement preparedStatement = connection.prepareStatement(
+//                        "UPDATE reader set birth_date = ? where id = ?");){
+//
+//                    preparedStatement.setDate(1, Date.valueOf(date));
+//                    preparedStatement.setInt(2, id);
+//
+//                } catch (SQLException e){
+//                    Logger.getLogger(DaoReaderImpl.class.getName())
+//                            .log(Level.SEVERE, null, e);
+//                }
 
             }
             response = true;
@@ -135,7 +137,8 @@ public class DaoReaderImpl implements DaoReader {
             response = preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            System.err.format("SQL State: %s%n%s", e.getSQLState(), e.getMessage());
+            log.error(e.getMessage());
+//            System.err.format("SQL State: %s%n%s", e.getSQLState(), e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
         }

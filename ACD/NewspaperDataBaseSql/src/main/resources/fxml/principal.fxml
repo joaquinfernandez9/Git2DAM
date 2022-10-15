@@ -33,6 +33,10 @@
                           text="List of Readers (Specific type)"/>
                 <MenuItem fx:id="rDelete" mnemonicParsing="false" onAction="#menuClick"
                           text="Delete"/>
+                <MenuItem fx:id="rUpdate" mnemonicParsing="false" onAction="#menuClick"
+                          text="Update"/>
+                <MenuItem fx:id="rAdd" mnemonicParsing="false" onAction="#menuClick"
+                          text="Add"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Article">
                 <MenuItem fx:id="artList" mnemonicParsing="false" onAction="#menuClick"

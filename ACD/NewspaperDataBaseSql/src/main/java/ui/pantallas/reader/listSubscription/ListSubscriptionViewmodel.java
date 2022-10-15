@@ -34,8 +34,8 @@ public class ListSubscriptionViewmodel {
 //        return readerServ.getAll().get();
 //    }
 
-    public void search(int id){
-        state.setValue(new ListSubscriptionState(null, !state.get().isChange(), readerServImpl.readersSubscribed(id)));
-    }
+//    public void search(int id){
+//        state.setValue(new ListSubscriptionState(null, !state.get().isChange(), readerServImpl.readersSubscribed(id)));
+//    }
 
 }

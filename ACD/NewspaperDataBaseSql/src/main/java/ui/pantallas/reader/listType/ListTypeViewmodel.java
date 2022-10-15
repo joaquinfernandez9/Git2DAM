@@ -30,7 +30,7 @@ public class ListTypeViewmodel {
     }
 
 
-    public void getByDesc(String desc){
-        state.setValue(new ListTypeState(null, !state.get().isChange(), readerServImpl.getReadersFromArticleType(desc)));
-    }
+//    public void getByDesc(String desc){
+//        state.setValue(new ListTypeState(null, !state.get().isChange(), readerServImpl.getReadersFromArticleType(desc)));
+//    }
 }

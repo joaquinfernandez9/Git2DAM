@@ -11,7 +11,6 @@ module javafx {
     opens domain.services.strings;
     opens dao.strings;
     opens ui.pantallas.common;
-    requires com.fasterxml.jackson.databind;
 
     requires jakarta.cdi;
     requires jakarta.inject;
@@ -23,6 +22,8 @@ module javafx {
     exports ui.pantallas.common;
     exports ui.pantallas.login;
     exports ui.pantallas.principal;
+    opens ui.pantallas.reader.addReader;
+    opens ui.pantallas.reader.updateReader;
     exports dao;
     exports domain.services;
     exports domain.modelo;
@@ -31,6 +32,8 @@ module javafx {
     exports ui.pantallas.reader.listSubscription;
     exports ui.pantallas.reader.delete;
     exports ui.pantallas.reader.listType;
+    exports ui.pantallas.reader.addReader;
+    exports ui.pantallas.reader.updateReader;
 
     exports ui.pantallas.newspaper.add;
     exports ui.pantallas.newspaper.list;
@@ -41,6 +44,7 @@ module javafx {
     exports ui.pantallas.article.list;
     exports ui.pantallas.article.delete;
     exports ui.pantallas.article.update;
+
 
 
     exports config;

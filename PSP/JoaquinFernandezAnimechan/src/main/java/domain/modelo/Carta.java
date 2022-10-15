@@ -19,6 +19,8 @@ public class Carta {
     private List<ListaPreciosCarta> preciosCartas;
     private List<ListaImgCarta> listaImgCartas;
 
+
+    //no tengo ni idea de este, es la primera vez que me sale
     public Carta(String name, int id, int level, String atk,
                  int def, String type, String race, String attribute,
                  String desc, String archetype,

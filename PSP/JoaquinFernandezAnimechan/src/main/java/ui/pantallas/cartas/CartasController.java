@@ -1,6 +1,5 @@
 package ui.pantallas.cartas;
 
-import dao.retrofit.cards.DataItem;
 import domain.modelo.Carta;
 import domain.modelo.ListaCartas;
 import io.vavr.control.Either;
@@ -12,12 +11,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import lombok.extern.log4j.Log4j2;
 import ui.common.BasePantallaController;
 import ui.common.Constantes;
 
-import java.util.List;
-
-
+@Log4j2
 public class CartasController extends BasePantallaController {
 
 
@@ -69,9 +67,9 @@ public class CartasController extends BasePantallaController {
                 .addListener((observable, oldValue, newValue) -> {
                     if (tablaCartas.getSelectionModel().getSelectedItem() != null) {
                         lvPrecio.setText(tablaCartas.getSelectionModel().getSelectedItem().getPreciosCartas().toString());
-                        // no se por que peta esto, es una imagen, si no lo consigo me sudala polla en vd
-                        imageView.setImage(new Image(String.valueOf(tablaCartas.getSelectionModel().getSelectedItem()
-                                .getListaImgCartas().get(0).getUrlImg())));
+                        // no se por que peta esto, pilla algo raro en el url
+                        imageView.setImage(new Image(tablaCartas.getSelectionModel().getSelectedItem()
+                                .getListaImgCartas().get(0).getUrlImg()));
                     }
                 });
         cartasViewModel.load();
@@ -83,8 +81,6 @@ public class CartasController extends BasePantallaController {
             getPrincipalController().sacarAlertError(Constantes.NO_SE_HA_PROPORCIONADO_UN_NOMBRE);
         } else {
             asyncTask();
-//            cartasViewModel.verCartasName(cardName.getText());
-//            cartasViewModel.load();
         }
     }
 
@@ -94,7 +90,7 @@ public class CartasController extends BasePantallaController {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e){
-            e.getMessage();
+         log.error(e.getMessage());
         }
         var task = new Task<Either<String, ListaCartas>>() {
             @Override
@@ -111,7 +107,6 @@ public class CartasController extends BasePantallaController {
             }).peekLeft(error -> getPrincipalController().sacarAlertError("error"));
         });
         task.setOnFailed(workerStateEvent -> {
-            //workerStateEvent.getSource().getException().getMessage()
             getPrincipalController().sacarAlertError(task.getException().getMessage());
             getPrincipalController().root.setCursor(Cursor.DEFAULT);
         });

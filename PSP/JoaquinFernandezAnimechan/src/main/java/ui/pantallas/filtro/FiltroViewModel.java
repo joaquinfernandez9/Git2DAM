@@ -1,9 +1,6 @@
 package ui.pantallas.filtro;
 
-import dao.retrofit.cards.CardsList;
-import domain.modelo.ListaCartas;
 import domain.servicios.ServiciosCartas;
-import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -23,7 +20,6 @@ public class FiltroViewModel {
     }
 
     public void load() {
-        //no se que tan vien ta esto pero lo he puesto dos veces y es un porro
         state.setValue(new FiltroState(null, !state.get().cambio(),
                 serviciosCartas.verTodasLasCartas().get()));
     }
@@ -33,12 +29,11 @@ public class FiltroViewModel {
     }
 
 
-    public boolean getCardsAtkRace(String nombre, String attack, String race, String sort){
+    public void getCardsAtkRace(String nombre, String attack, String race, String sort){
         if (serviciosCartas.getCardsAtkRace(nombre, Constantes.GT +attack, race, sort).isRight()){
             state.setValue(new FiltroState(null, !state.get().cambio(),
                     serviciosCartas.getCardsAtkRace(nombre, Constantes.GT +attack, race, sort).get()));
-            return true;
-        } else return false;
+        }
     }
 
 

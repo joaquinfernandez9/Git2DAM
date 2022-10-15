@@ -8,16 +8,19 @@ import ui.common.BasePantallaController;
 import ui.common.Constantes;
 import ui.common.Pantallas;
 
+import java.util.Objects;
+
 public class MenuController extends BasePantallaController {
 
 
     @FXML private ImageView imageView;
 
+    @Override
     public void principalCargado(){
         super.principalCargado();
 
         try {
-            imageView.setImage(new Image(getClass().getResourceAsStream(Constantes.IMG_DUEL_TIME_GIF)));
+            imageView.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(Constantes.IMG_DUEL_TIME_GIF))));
         }catch (Exception e) {
             e.printStackTrace();
         }

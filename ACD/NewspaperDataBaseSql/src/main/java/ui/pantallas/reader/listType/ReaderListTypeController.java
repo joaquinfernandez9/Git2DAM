@@ -55,8 +55,8 @@ public class ReaderListTypeController extends BasePantallaController {
     private void search(ActionEvent actionEvent) {
         if (description.getText().isEmpty()){
             getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
-        } else {
-            viewmodel.getByDesc(description.getText());
+//        } else {
+//            viewmodel.getByDesc(description.getText());
         }
     }
 }

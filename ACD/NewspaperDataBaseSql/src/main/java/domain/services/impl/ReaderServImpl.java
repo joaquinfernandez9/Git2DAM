@@ -122,8 +122,8 @@ public class ReaderServImpl implements ReaderServ {
     }
 
     @Override
-    public boolean update(int id, String name, LocalDate date) {
-        return daoReaderImpl.update(id, name, date);
+    public boolean update(int id, String name) {
+        return daoReaderImpl.update(id, name);
     }
 
     @Override

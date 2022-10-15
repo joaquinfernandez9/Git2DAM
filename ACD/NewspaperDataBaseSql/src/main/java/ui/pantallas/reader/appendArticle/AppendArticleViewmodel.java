@@ -37,8 +37,8 @@ public class AppendArticleViewmodel {
         return readerServImpl.getAll().get();
     }
 
-    public boolean appendArticle(int id, int idArticle, int rating) {
-        return readerServImpl.appendReadArticle(id, idArticle, rating);
-    }
+//    public boolean appendArticle(int id, int idArticle, int rating) {
+//        return readerServImpl.appendReadArticle(id, idArticle, rating);
+//    }
 
 }
