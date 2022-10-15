@@ -125,16 +125,10 @@ N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 {
 Ksrc/main/java/ui/pantallas/reader/appendArticle/AppendArticleViewmodel.java,1\c\1c27b0a151645ba141e92fe41db7f7db30209be7
-Y
-)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
-f
-6src/main/java/domain/services/impl/ReaderServImpl.java,6\5\651ca3638d3534f59cf9f2a858b45111e2cb4cc8
 s
 Csrc/main/java/ui/pantallas/reader/delete/ReaderDeleteViewmodel.java,1\5\15a3d7e8017d63923ed644539b4536940b180b65
 ]
 -src/main/java/domain/services/ReaderServ.java,d\6\d6afef25e905b347d490ca78840d02c53c82addc
-P
- src/main/java/dao/DaoReader.java,5\9\5999387cee3ad3dccac589b30ed8c3e70124e7ed
 ?
 data/reader.xml,c\3\c31a441f93991a8f17d7731dfd1568a03356ebe0
 g
@@ -149,3 +143,9 @@ A
 data/articles.txt,e\b\eba3ccb9beb9883b0df9fcda7ca192f5623a5ea4
 ^
 .src/main/java/dao/impl/DaoReadArticleImpl.java,c\7\c74859bdd94066f6fdfbd820cae9e3d4f94e998e
+P
+ src/main/java/dao/DaoReader.java,5\9\5999387cee3ad3dccac589b30ed8c3e70124e7ed
+Y
+)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
+f
+6src/main/java/domain/services/impl/ReaderServImpl.java,6\5\651ca3638d3534f59cf9f2a858b45111e2cb4cc8

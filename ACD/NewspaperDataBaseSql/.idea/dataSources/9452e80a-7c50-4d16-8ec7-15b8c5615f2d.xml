@@ -1153,323 +1153,536 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="323" parent="313" name="id">
+    <table id="323" parent="300" name="article">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="324" parent="300" name="newspaper">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="325" parent="300" name="readarticle">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="326" parent="300" name="reader">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="327" parent="300" name="subscribe">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="328" parent="300" name="type">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="329" parent="313" name="id">
       <AutoIncrement>4</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="324" parent="313" name="name_article">
+    <column id="330" parent="313" name="name_article">
       <DataType>varchar(50)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="325" parent="313" name="id_type">
+    <column id="331" parent="313" name="id_type">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="326" parent="313" name="id_newspaper">
+    <column id="332" parent="313" name="id_newspaper">
       <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <foreign-key id="327" parent="313" name="id_article_type_FK">
+    <foreign-key id="333" parent="313" name="id_article_type_FK">
       <ColNames>id_type</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>type</RefTableName>
     </foreign-key>
-    <foreign-key id="328" parent="313" name="id_newspaper_article_FK">
+    <foreign-key id="334" parent="313" name="id_newspaper_article_FK">
       <ColNames>id_newspaper</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>newspaper</RefTableName>
     </foreign-key>
-    <index id="329" parent="313" name="PRIMARY">
+    <index id="335" parent="313" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="330" parent="313" name="id_article_type_FK">
+    <index id="336" parent="313" name="id_article_type_FK">
       <ColNames>id_type</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="331" parent="313" name="id_newspaper_article_FK">
+    <index id="337" parent="313" name="id_newspaper_article_FK">
       <ColNames>id_newspaper</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="332" parent="313" name="PRIMARY">
+    <key id="338" parent="313" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="333" parent="314" name="id">
+    <column id="339" parent="314" name="id">
       <AutoIncrement>4</AutoIncrement>
       <Comment>ID NEWSPAPER</Comment>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="334" parent="314" name="name_newspaper">
+    <column id="340" parent="314" name="name_newspaper">
       <DataType>varchar(20)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="335" parent="314" name="release_date">
+    <column id="341" parent="314" name="release_date">
       <DataType>date|0s</DataType>
       <Position>3</Position>
     </column>
-    <index id="336" parent="314" name="PRIMARY">
+    <index id="342" parent="314" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="337" parent="314" name="PRIMARY">
+    <key id="343" parent="314" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="338" parent="315" name="id_article">
+    <column id="344" parent="315" name="id_article">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="339" parent="315" name="id_reader">
+    <column id="345" parent="315" name="id_reader">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="340" parent="315" name="ranking">
+    <column id="346" parent="315" name="ranking">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="341" parent="315" name="id_article_readarticle_FK">
+    <foreign-key id="347" parent="315" name="id_article_readarticle_FK">
       <ColNames>id_article</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>article</RefTableName>
     </foreign-key>
-    <foreign-key id="342" parent="315" name="id_reader_readarticle_FK">
+    <foreign-key id="348" parent="315" name="id_reader_readarticle_FK">
       <ColNames>id_reader</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>reader</RefTableName>
     </foreign-key>
-    <index id="343" parent="315" name="PRIMARY">
+    <index id="349" parent="315" name="PRIMARY">
       <ColNames>id_article
 id_reader</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="344" parent="315" name="id_reader_readarticle_FK">
+    <index id="350" parent="315" name="id_reader_readarticle_FK">
       <ColNames>id_reader</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="345" parent="315" name="PRIMARY">
+    <key id="351" parent="315" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="346" parent="316" name="id">
+    <column id="352" parent="316" name="id">
       <AutoIncrement>4</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="347" parent="316" name="name_reader">
+    <column id="353" parent="316" name="name_reader">
       <DataType>varchar(30)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="348" parent="316" name="birth_reader">
+    <column id="354" parent="316" name="birth_reader">
       <DataType>date|0s</DataType>
       <Position>3</Position>
     </column>
-    <index id="349" parent="316" name="PRIMARY">
+    <index id="355" parent="316" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="350" parent="316" name="PRIMARY">
+    <key id="356" parent="316" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="351" parent="317" name="id_newspaper">
+    <column id="357" parent="317" name="id_newspaper">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="352" parent="317" name="id_reader">
+    <column id="358" parent="317" name="id_reader">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="353" parent="317" name="id_subscribe_newspaper_FK">
+    <foreign-key id="359" parent="317" name="id_subscribe_newspaper_FK">
       <ColNames>id_newspaper</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>newspaper</RefTableName>
     </foreign-key>
-    <foreign-key id="354" parent="317" name="id_reader_subscribe_FK">
+    <foreign-key id="360" parent="317" name="id_reader_subscribe_FK">
       <ColNames>id_reader</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>reader</RefTableName>
     </foreign-key>
-    <index id="355" parent="317" name="PRIMARY">
+    <index id="361" parent="317" name="PRIMARY">
       <ColNames>id_newspaper
 id_reader</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="356" parent="317" name="id_reader_subscribe_FK">
+    <index id="362" parent="317" name="id_reader_subscribe_FK">
       <ColNames>id_reader</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="357" parent="317" name="PRIMARY">
+    <key id="363" parent="317" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="358" parent="318" name="id">
+    <column id="364" parent="318" name="id">
       <AutoIncrement>4</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="359" parent="318" name="description">
+    <column id="365" parent="318" name="description">
       <DataType>varchar(50)|0s</DataType>
       <Position>2</Position>
     </column>
-    <index id="360" parent="318" name="PRIMARY">
+    <index id="366" parent="318" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="361" parent="318" name="PRIMARY">
+    <key id="367" parent="318" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="362" parent="319" name="id_prod">
+    <column id="368" parent="319" name="id_prod">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="363" parent="319" name="COF_NAME">
+    <column id="369" parent="319" name="COF_NAME">
       <DataType>varchar(32)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="364" parent="319" name="SUPP_ID">
+    <column id="370" parent="319" name="SUPP_ID">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="365" parent="319" name="PRICE">
+    <column id="371" parent="319" name="PRICE">
       <DataType>decimal(10,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="366" parent="319" name="SALES">
+    <column id="372" parent="319" name="SALES">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="367" parent="319" name="TOTAL">
+    <column id="373" parent="319" name="TOTAL">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="368" parent="319" name="coffees_ibfk_1">
+    <foreign-key id="374" parent="319" name="coffees_ibfk_1">
       <ColNames>SUPP_ID</ColNames>
       <RefColNames>SUPP_ID</RefColNames>
       <RefTableName>suppliers</RefTableName>
     </foreign-key>
-    <index id="369" parent="319" name="PRIMARY">
+    <index id="375" parent="319" name="PRIMARY">
       <ColNames>id_prod</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="370" parent="319" name="SUPP_ID">
+    <index id="376" parent="319" name="SUPP_ID">
       <ColNames>SUPP_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="371" parent="319" name="PRIMARY">
+    <key id="377" parent="319" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="372" parent="320" name="FirstDig">
+    <column id="378" parent="320" name="FirstDig">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="373" parent="320" name="SecondDig">
+    <column id="379" parent="320" name="SecondDig">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="374" parent="320" name="ThirdDig">
+    <column id="380" parent="320" name="ThirdDig">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="375" parent="320" name="PRIMARY">
+    <index id="381" parent="320" name="PRIMARY">
       <ColNames>FirstDig</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="376" parent="320" name="PRIMARY">
+    <key id="382" parent="320" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="377" parent="321" name="id_prod">
+    <column id="383" parent="321" name="id_prod">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="378" parent="321" name="country">
+    <column id="384" parent="321" name="country">
       <DataType>varchar(15)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="379" parent="321" name="FirstDig">
+    <column id="385" parent="321" name="FirstDig">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="380" parent="321" name="PRIMARY">
+    <index id="386" parent="321" name="PRIMARY">
       <ColNames>id_prod</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="381" parent="321" name="PRIMARY">
+    <key id="387" parent="321" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="382" parent="322" name="SUPP_ID">
+    <column id="388" parent="322" name="SUPP_ID">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="383" parent="322" name="SUPP_NAME">
+    <column id="389" parent="322" name="SUPP_NAME">
       <DataType>varchar(40)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="384" parent="322" name="STREET">
+    <column id="390" parent="322" name="STREET">
       <DataType>varchar(40)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="385" parent="322" name="TOWN">
+    <column id="391" parent="322" name="TOWN">
       <DataType>varchar(20)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="386" parent="322" name="COUNTRY">
+    <column id="392" parent="322" name="COUNTRY">
       <DataType>varchar(2)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="387" parent="322" name="PCODE">
+    <column id="393" parent="322" name="PCODE">
       <DataType>varchar(5)|0s</DataType>
       <Position>6</Position>
     </column>
-    <index id="388" parent="322" name="PRIMARY">
+    <index id="394" parent="322" name="PRIMARY">
       <ColNames>SUPP_ID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="389" parent="322" name="PRIMARY">
+    <key id="395" parent="322" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="396" parent="323" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="397" parent="323" name="name_article">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="398" parent="323" name="id_type">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="399" parent="323" name="id_newspaper">
+      <DataType>int|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="400" parent="323" name="id_article_type_FK">
+      <ColNames>id_type</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>type</RefTableName>
+    </foreign-key>
+    <foreign-key id="401" parent="323" name="id_newspaper_article_FK">
+      <ColNames>id_newspaper</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>newspaper</RefTableName>
+    </foreign-key>
+    <index id="402" parent="323" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="403" parent="323" name="id_article_type_FK">
+      <ColNames>id_type</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="404" parent="323" name="id_newspaper_article_FK">
+      <ColNames>id_newspaper</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="405" parent="323" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="406" parent="324" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <Comment>ID NEWSPAPER</Comment>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="407" parent="324" name="name_newspaper">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="408" parent="324" name="release_date">
+      <DataType>date|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="409" parent="324" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="410" parent="324" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="411" parent="325" name="id_article">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="412" parent="325" name="id_reader">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="413" parent="325" name="ranking">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="414" parent="325" name="id_article_readarticle_FK">
+      <ColNames>id_article</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>article</RefTableName>
+    </foreign-key>
+    <foreign-key id="415" parent="325" name="id_reader_readarticle_FK">
+      <ColNames>id_reader</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>reader</RefTableName>
+    </foreign-key>
+    <index id="416" parent="325" name="PRIMARY">
+      <ColNames>id_article
+id_reader</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="417" parent="325" name="id_reader_readarticle_FK">
+      <ColNames>id_reader</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="418" parent="325" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="419" parent="326" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="420" parent="326" name="name_reader">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="421" parent="326" name="birth_reader">
+      <DataType>date|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="422" parent="326" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="423" parent="326" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="424" parent="327" name="id_newspaper">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="425" parent="327" name="id_reader">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="426" parent="327" name="id_subscribe_newspaper_FK">
+      <ColNames>id_newspaper</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>newspaper</RefTableName>
+    </foreign-key>
+    <foreign-key id="427" parent="327" name="id_reader_subscribe_FK">
+      <ColNames>id_reader</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>reader</RefTableName>
+    </foreign-key>
+    <index id="428" parent="327" name="PRIMARY">
+      <ColNames>id_newspaper
+id_reader</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="429" parent="327" name="id_reader_subscribe_FK">
+      <ColNames>id_reader</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="430" parent="327" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="431" parent="328" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="432" parent="328" name="description">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <index id="433" parent="328" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="434" parent="328" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

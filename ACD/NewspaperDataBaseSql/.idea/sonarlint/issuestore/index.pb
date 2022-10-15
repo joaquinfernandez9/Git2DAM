@@ -61,8 +61,6 @@ Dsrc/main/java/ui/pantallas/newspaper/delete/NewsDeleteViewModel.java,e\2\e23a8
 +src/main/java/dao/strings/DaoConstants.java,2\6\266ebb578d492b464d44e02bd135373fb1e2bf72
 Q
 !src/main/java/dao/DaoArticle.java,6\4\647b58ebd945f7ef08da1bf964677993759ad06e
-S
-#src/main/java/dao/DaoNewspaper.java,6\9\69233f23518fc63b3ae3be899879ab135784027c
 h
 8src/main/java/domain/services/strings/ServConstants.java,0\0\002ea9cc0004704b6de0fe23b46318169c4377fd
 w

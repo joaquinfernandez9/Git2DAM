@@ -3,7 +3,6 @@ package domain.services.impl;
 import dao.*;
 import domain.modelo.Reader;
 import domain.services.ReaderServ;
-import domain.services.strings.ServConstants;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 
@@ -19,9 +18,7 @@ public class ReaderServImpl implements ReaderServ {
     private final DaoReadArticle daoReadArticleImpl;
 
     @Inject
-    public ReaderServImpl(DaoNewspaper daoNewspaperImpl, DaoReader daoReaderImpl,
-                          DaoArticle daoArticleImpl, DaoType daoTypeImpl,
-                          DaoReadArticle daoReadArticleImpl) {
+    public ReaderServImpl(DaoNewspaper daoNewspaperImpl, DaoReader daoReaderImpl, DaoArticle daoArticleImpl, DaoType daoTypeImpl, DaoReadArticle daoReadArticleImpl) {
         this.daoNewspaperImpl = daoNewspaperImpl;
         this.daoReaderImpl = daoReaderImpl;
         this.daoArticleImpl = daoArticleImpl;
@@ -35,7 +32,7 @@ public class ReaderServImpl implements ReaderServ {
     }
 
     @Override
-    public Either<String, Reader> get(int id){
+    public Either<String, Reader> get(int id) {
         return daoReaderImpl.get(id);
     }
 //    @Override public List<Reader> readersSubscribed(int idNewspaper) {
@@ -118,7 +115,18 @@ public class ReaderServImpl implements ReaderServ {
 
     @Override
     public int deleteReader(int idReader) {
-        return daoReaderImpl.delete(idReader);
+        int resultado = 0;
+        if (daoReaderImpl.get(idReader).isRight()) {
+//            Reader reader = daoReaderImpl.get(idReader).get();
+            if (daoReadArticleImpl.deleteReader(idReader) == 0) {
+                return resultado;
+            }
+            daoReaderImpl.delete(idReader);
+            resultado =1;
+        }
+
+
+        return resultado;
     }
 
     @Override

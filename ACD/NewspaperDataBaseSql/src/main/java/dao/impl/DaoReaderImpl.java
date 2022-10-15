@@ -48,10 +48,15 @@ public class DaoReaderImpl implements DaoReader {
     public Either<String, Reader> get(int id) {
         Either<String, Reader> response = null;
         try (Connection con = db.getConnection();
-             Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                     ResultSet.CONCUR_READ_ONLY)) {
+            PreparedStatement statement = con.prepareStatement(
+                     "select * from reader where id= ?")) {
 
-            ResultSet rs = statement.executeQuery("select * from reader where id= ?");
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
+
+            //PreparedStatement statement = con.prepareStatement(
+            //                     ) {
+            //            statement.setInt(1, id);
             if (rs != null) {
                 response = Either.right(readRS(rs).get(0));
             } else {
@@ -70,9 +75,10 @@ public class DaoReaderImpl implements DaoReader {
         int response = 0;
         try (Connection con = db.getConnection();
              PreparedStatement preparedStatement = con.prepareStatement(
-                     "delete from reader where id = ?")) {
+                     "delete from reader where id=?")) {
             preparedStatement.setInt(1, id);
             // executeUpdate method for INSERT, UPDATE and DELETE
+            //Cannot delete or update a parent row: a foreign key constraint fails
             response = preparedStatement.executeUpdate();
         } catch (SQLException sqle) {
             Logger.getLogger(DaoReaderImpl.class.getName())
@@ -85,7 +91,6 @@ public class DaoReaderImpl implements DaoReader {
     public boolean update(int id, String name) {
         boolean response = false;
         try (Connection connection = db.getConnection()) {
-            if (name != null) {
                 //cambiar name
                 try (PreparedStatement preparedStatement =
                              connection.prepareStatement(
@@ -113,7 +118,6 @@ public class DaoReaderImpl implements DaoReader {
 //                            .log(Level.SEVERE, null, e);
 //                }
 
-            }
             response = true;
         } catch (SQLException e) {
             Logger.getLogger(DaoReaderImpl.class.getName())
@@ -129,7 +133,7 @@ public class DaoReaderImpl implements DaoReader {
         int response = 0;
         try (Connection con = db.getConnection();
              PreparedStatement preparedStatement = con.prepareStatement(
-                     "INSERT INTO readers (id, name_reader, birth_reader) VALUES (?,?,?)")) {
+                     "INSERT INTO reader (id, name_reader, birth_reader) VALUES (?,?,?)")) {
             preparedStatement.setInt(1, id);
             preparedStatement.setString(2, name);
             preparedStatement.setDate(3, Date.valueOf(date));

@@ -2,8 +2,10 @@ package ui.pantallas.reader.addReader;
 
 import domain.modelo.Reader;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import jakarta.inject.Inject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -37,9 +39,38 @@ public class AddReaderController extends BasePantallaController {
         nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
 
+        viewModel.getState().addListener((observable, oldValue, newValue)->{
+            if (newValue.getReaderList()!=null){
+                readersTable.getItems().clear();
+                readersTable.getItems().addAll(newValue.getReaderList());
+            }
+        });
+
+        viewModel.reloadState();
+
+    }
+
+    private final AddReaderViewModel viewModel;
+
+    @Inject
+    public AddReaderController(AddReaderViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 
     @FXML
-    private void addReader(ActionEvent actionEvent) {
+    private void addReader() {
+        if (idReader.getText().isBlank() || nameReader.getText().isBlank() || dateReader.getValue() == null){
+            getPrincipalController().sacarAlertError("Error, fill all the gaps");
+        } else {
+            viewModel.addReader(Integer.parseInt(idReader.getText()), nameReader.getText(), dateReader.getValue());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Correct");
+            alert.setContentText("Reader added correctly");
+            alert.showAndWait();
+
+            viewModel.reloadState();
+        }
+
     }
 }
