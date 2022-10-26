@@ -1,11 +1,8 @@
 package ui.pantallas.article.list;
 
-import domain.modelo.Article;
-import domain.modelo.ArticleType;
+import model.Article;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
-import io.github.palexdev.materialfx.controls.MFXTextField;
 import jakarta.inject.Inject;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;

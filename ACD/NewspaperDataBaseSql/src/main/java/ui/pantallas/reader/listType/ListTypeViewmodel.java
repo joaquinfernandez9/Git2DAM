@@ -1,32 +1,39 @@
 package ui.pantallas.reader.listType;
 
-import domain.services.ReaderServ;
+import model.Reader;
+import services.ReaderServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
+import java.util.List;
+
 public class ListTypeViewmodel {
     private final ReaderServ readerServImpl;
-    private final ObjectProperty<ListTypeState> state;
+//    private final ObjectProperty<ListTypeState> state;
 
     @Inject
     public ListTypeViewmodel(ReaderServ readerServImpl) {
         this.readerServImpl = readerServImpl;
-        this.state = new SimpleObjectProperty<>(
-                new ListTypeState(null, false,
-                        readerServImpl.getAll().get()));
+//        this.state = new SimpleObjectProperty<>(
+//                new ListTypeState(null, false,
+//                        readerServImpl.getAll().get()));
     }
 
-    public ReadOnlyObjectProperty<ListTypeState> getState() {
-        return state;
-    }
+//    public ReadOnlyObjectProperty<ListTypeState> getState() {
+//        return state;
+//    }
+//
+//    public void reloadState() {
+//        state.setValue(new ListTypeState(
+//                null, !state.get().isChange(),
+//                readerServImpl.getAll().get()
+//        ));
+//    }
 
-    public void reloadState() {
-        state.setValue(new ListTypeState(
-                null, !state.get().isChange(),
-                readerServImpl.getAll().get()
-        ));
+    public List<Reader> getAll(){
+        return readerServImpl.getAll(-1,-1).get();
     }
 
 

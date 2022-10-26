@@ -1,13 +1,15 @@
 package dao;
 
-import domain.modelo.ReadArticle;
 import io.vavr.control.Either;
+import model.ReadArticle;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface DaoReadArticle {
-//    Either<String, Boolean> add(int idReader, ReadArticle readArticle);
-    List<ReadArticle> getReadArticles(int id);
+    Either<Integer, List<ReadArticle>> getAll();
 
-    int deleteReader(int id);
+    int delete(int id);
+
+    int add(ReadArticle readArticle);
 }

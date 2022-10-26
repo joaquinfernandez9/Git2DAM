@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.pantallas.reader.addReader.AddReaderController">
+    <TableView fx:id="readersTable" layoutX="23.0" layoutY="35.0" prefHeight="418.0" prefWidth="400.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="133.3" text="ID"/>
+            <TableColumn fx:id="nameColum" prefWidth="133.3" text="Name"/>
+            <TableColumn fx:id="dateColumn" prefWidth="133.3" text="Date of Birth"/>
+        </columns>
+    </TableView>
+    <Button layoutX="528.0" layoutY="390.0" mnemonicParsing="false" onAction="#addReader" text="Add"/>
+    <MFXTextField fx:id="idReader" layoutX="504.0" layoutY="81.0" promptText="ID"/>
+    <MFXTextField fx:id="nameReader" layoutX="504.0" layoutY="173.0" promptText="Name"/>
+    <DatePicker fx:id="dateReader" layoutX="460.0" layoutY="272.0"/>
+
+</AnchorPane>

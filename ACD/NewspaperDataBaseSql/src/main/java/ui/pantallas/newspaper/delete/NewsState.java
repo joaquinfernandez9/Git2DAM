@@ -1,6 +1,6 @@
 package ui.pantallas.newspaper.delete;
 
-import domain.modelo.Newspaper;
+import model.Newspaper;
 import lombok.Data;
 
 import java.util.List;

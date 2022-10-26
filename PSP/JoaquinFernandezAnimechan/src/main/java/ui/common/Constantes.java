@@ -8,6 +8,8 @@ public class Constantes {
     public static final String GT = "gt";
 
     // no entiendo que hacer con este
+
+
     public static final String[] comboRaceStrings = {"continuous", "zombie", "fiend", "normal", "quick-play", "rock", "warrior",
             "winged beast", "spellcaster", "beast", "fairy", "equip", "field", "fish", "beast-warrior",
             "thunder", "machine", "sea serpent", "aqua", "plant", "dragon", "reptile", "counter", "psychic",

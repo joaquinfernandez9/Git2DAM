@@ -1,6 +1,6 @@
 package ui.pantallas.reader.appendArticle;
 
-import domain.modelo.Reader;
+import model.Reader;
 import lombok.Data;
 
 import java.util.List;

@@ -1,14 +1,15 @@
 package dao.impl;
 
 import dao.DaoReadArticle;
-import domain.modelo.ReadArticle;
-import domain.modelo.Reader;
+import dao.dataBase.DaoDB;
+import model.Article;
+import model.ReadArticle;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
+import model.Reader;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -24,80 +25,60 @@ public class DaoReadArticleImpl implements DaoReadArticle {
         this.db = db;
     }
 
-    //    @Override
-//    public Either<String, Boolean> add(int idReader, ReadArticle readArticle) {
-//        Either<String, Boolean> respuesta;
-//        try {
-//            Path file = Paths.get(ConfigXML.getInstance()
-//                    .getProperty(DaoConstants.XML_READER_PATH));
-//
-//            JAXBContext jaxbContext = JAXBContext.newInstance(Readers.class);
-//            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-//            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-//            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-//
-//            Readers lista = (Readers) unmarshaller.unmarshal(Files.newInputStream(file));
-//
-//            respuesta = Either.right(lista.getReaders().stream().filter(reader ->
-//                    reader.getId() == idReader).peek(reader ->
-//                    reader.getReadArticles()
-//                            .getReadArticlesList().add(readArticle)).findFirst().isPresent());
-//
-//            jaxbMarshaller.marshal(lista,
-//                    Files.newOutputStream(file));
-//
-//
-//        } catch (Exception e) {
-//            respuesta = Either.left(e.getMessage());
-//        }
-//        return respuesta;
-//    }
 
-    public Either<String, List<ReadArticle>> getAll() {
-        Either<String, List<ReadArticle>> response = null;
+    @Override
+    public Either<Integer, List<ReadArticle>> getAll() {
+        Either<Integer, List<ReadArticle>> result = null;
+
         try (Connection con = db.getConnection();
              Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                      ResultSet.CONCUR_READ_ONLY)) {
-                ResultSet rs = statement.executeQuery("select * from readarticle");
+            ResultSet rs = statement.executeQuery("select * from readarticle");
 
-                if (rs!=null){
-                    response = Either.right(readRS(rs));
-                } else {
-                    response = Either.left("error");
-                }
-
-
+            if (rs != null) {
+                result = Either.right(readRS(rs));
+            } else {
+                result = Either.left(-2);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(DaoReaderImpl.class.getName()).log(
                     Level.SEVERE, null, ex);
+            result = Either.left(-3);
         }
 
+        return result;
+    }
+
+    @Override
+    public int add(ReadArticle readArticle){
+        int response;
+        try (Connection con = db.getConnection();
+             PreparedStatement pS = con.prepareStatement("INSERT INTO readarticle" +
+                     "(id_article, id_reader, ranking) VALUES (?,?,?)",
+                     Statement.RETURN_GENERATED_KEYS)
+                ){
+            pS.setInt(1, readArticle.getIdArticle());
+            pS.setInt(2, readArticle.getIdReader());
+            pS.setInt(3, readArticle.getRating());
+
+            response = pS.executeUpdate();
+
+        }catch (SQLException e) {
+            log.error(e.getMessage());
+            response = -3;
+        } catch (Exception e) {
+            e.printStackTrace();
+            response = -2;
+        }
         return response;
     }
 
 
-    @Override
-    public List<ReadArticle> getReadArticles(int idReader) {
-        List<ReadArticle> ra = new ArrayList<>();
-        List<ReadArticle> all = getAll().get();
 
-        all.forEach(readArticle -> {
-            if (readArticle.getIdReader() == idReader){
-                ra.add(readArticle);
-            }
-        });
-
-        return ra;
-    }
 
     @Override
-    public int deleteReader(int id){
-        int response = 0;
-//        all.forEach(readArticle -> {
-//            if (readArticle.getIdReader() == id){
-//                all.remove(readArticle);
-//            }
-//        });
+    public int delete(int id){
+        int response;
         try (Connection con = db.getConnection();
              PreparedStatement preparedStatement = con.prepareStatement(
                      "delete from readarticle where id_reader =?")) {
@@ -108,6 +89,7 @@ public class DaoReadArticleImpl implements DaoReadArticle {
         } catch (SQLException sqle) {
             Logger.getLogger(DaoReadArticleImpl.class.getName())
                     .log(Level.SEVERE, null, sqle);
+            response = -3;
         }
         return response;
     }
@@ -116,10 +98,10 @@ public class DaoReadArticleImpl implements DaoReadArticle {
         List<ReadArticle> response = new ArrayList<>();
         try {
             while (rs.next()) {
-                int id_article = rs.getInt("id_article");
-                int id_reader = rs.getInt("id_reader");
+                int idArticle = rs.getInt("id_article");
+                int idReader = rs.getInt("id_reader");
                 int ranking = rs.getInt("ranking");
-                ReadArticle ra = new ReadArticle(id_article, id_reader,ranking);
+                ReadArticle ra = new ReadArticle(idArticle, idReader,ranking);
                 response.add(ra);
             }
         } catch (SQLException e) {

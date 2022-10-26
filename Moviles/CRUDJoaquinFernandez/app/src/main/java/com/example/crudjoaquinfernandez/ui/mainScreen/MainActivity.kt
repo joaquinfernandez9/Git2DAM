@@ -1,18 +1,23 @@
 package com.example.crudjoaquinfernandez.ui.mainScreen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.example.crudjoaquinfernandez.R
 import com.example.crudjoaquinfernandez.databinding.ActivityMainBinding
 import com.example.crudjoaquinfernandez.domain.model.Headset
 import com.example.crudjoaquinfernandez.domain.usecases.headset.*
+import com.example.crudjoaquinfernandez.ui.recycler.RecyclerActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var temp: Int = 0
 
     //llamar viewmodel
     private val viewModel: MainViewModel by viewModels {
@@ -28,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     //aaaaaaaaa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        temp = 0
 
 
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
@@ -42,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            //mover al viewmodel
             var index = 0
             goRight.setOnClickListener {
                 if (index < viewModel.getAll().size - 1) {
@@ -148,8 +154,27 @@ class MainActivity : AppCompatActivity() {
             }
 
 
+            changeScreen?.setOnClickListener {
+                val intent = Intent(this@MainActivity, RecyclerActivity::class.java)
+                intent.putExtra(getString(R.string.headset), viewModel.getAll().hashCode())
+                startActivity(intent)
+            }
         }
-
-
     }
+
+    override fun onSaveInstanceState(outState: Bundle) { // Here You have to save count value
+        super.onSaveInstanceState(outState)
+        Timber.i("onSaveInstanceState")
+
+        outState.putInt("COUNT_KEY", temp)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) { // Here You have to restore count value
+        super.onRestoreInstanceState(savedInstanceState)
+        Timber.tag("::MyTag").i("onRestoreInstanceState")
+        // Log.i("::MyTag", "onRestoreInstanceState")
+
+        temp = savedInstanceState.getInt("COUNT_KEY")
+    }
+
 }

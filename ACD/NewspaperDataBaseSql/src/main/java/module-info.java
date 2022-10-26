@@ -8,7 +8,7 @@ module javafx {
     requires weld.api;
     requires MaterialFX;
 
-    opens domain.services.strings;
+    opens services.strings;
     opens dao.strings;
     opens ui.pantallas.common;
 
@@ -16,7 +16,7 @@ module javafx {
     requires jakarta.inject;
 
     exports dao.impl;
-    exports domain.services.impl;
+    exports services.impl;
 
     exports ui.main;
     exports ui.pantallas.common;
@@ -25,8 +25,8 @@ module javafx {
     opens ui.pantallas.reader.addReader;
     opens ui.pantallas.reader.updateReader;
     exports dao;
-    exports domain.services;
-    exports domain.modelo;
+    exports services;
+    exports model;
     exports ui.pantallas.welcome;
     exports ui.pantallas.reader.appendArticle;
     exports ui.pantallas.reader.listSubscription;
@@ -52,8 +52,8 @@ module javafx {
 
     opens ui.main;
     opens ui.pantallas.principal;
-    opens domain.modelo;
-    opens domain.services;
+    opens model;
+    opens services;
     opens ui.pantallas.login;
     opens fxml;
     opens config;
@@ -72,10 +72,14 @@ module javafx {
     opens ui.pantallas.reader.listType;
 
     exports dao.strings;
+    exports dao.dataBase;
 
 
     requires jakarta.el;
     requires jakarta.annotation;
     requires jakarta.xml.bind;
     requires java.sql;
+    requires jakarta.persistence;
+    requires com.zaxxer.hikari;
+    requires commons.dbcp2;
 }

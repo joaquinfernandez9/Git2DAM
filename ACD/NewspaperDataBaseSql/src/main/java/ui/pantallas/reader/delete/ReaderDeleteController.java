@@ -1,8 +1,10 @@
 package ui.pantallas.reader.delete;
 
-import domain.modelo.Reader;
+import model.Reader;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -11,8 +13,10 @@ import ui.pantallas.common.UiConstants;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class ReaderDeleteController extends BasePantallaController {
+    private final ReaderDeleteViewmodel viewmodel;
     @FXML
     private TableView<Reader> readersTable;
     @FXML
@@ -21,8 +25,6 @@ public class ReaderDeleteController extends BasePantallaController {
     private TableColumn<String, Reader> nameColum;
     @FXML
     private TableColumn<LocalDate, Reader> dateColumn;
-
-    private final ReaderDeleteViewmodel viewmodel;
 
     @Inject
     public ReaderDeleteController(ReaderDeleteViewmodel viewmodel) {
@@ -37,23 +39,40 @@ public class ReaderDeleteController extends BasePantallaController {
         nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
 
-        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
-            if (newValue.getReaderList() != null) {
-                readersTable.getItems().clear();
-                readersTable.getItems().addAll(newValue.getReaderList());
-            }
-        });
-        viewmodel.reloadState();
+        readersTable.getItems().clear();
+        readersTable.getItems().addAll(viewmodel.getAll());
+
+//        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
+//            if (newValue.getReaderList() != null) {
+//
+//            }
+//        });
+//        viewmodel.reloadState();
 
     }
 
     @FXML
     private void deleteReader() {
         if (readersTable.getSelectionModel()
-                .getSelectedItem()!=null){
-            viewmodel.deleteReader(readersTable.getSelectionModel()
-                    .getSelectedItem().getId());
-            viewmodel.reloadState();
+                .getSelectedItem() != null) {
+            Alert alertDelete = new Alert(Alert.AlertType.INFORMATION);
+            alertDelete.getButtonTypes().remove(ButtonType.OK);
+            alertDelete.getButtonTypes().add(ButtonType.CANCEL);
+            alertDelete.getButtonTypes().add(ButtonType.YES);
+            alertDelete.setTitle("Delete");
+            alertDelete.setContentText("This reader may have articles and subscriptions, delete anyway?");
+            Optional<ButtonType> res = alertDelete.showAndWait();
+
+
+            res.ifPresent(buttonType -> {
+                if (buttonType == ButtonType.YES) {
+                    viewmodel.deleteReader(readersTable.getSelectionModel()
+                            .getSelectedItem().getId());
+                    readersTable.getItems().remove(readersTable.getSelectionModel()
+                            .getSelectedItem());
+                }
+            });
+
         } else {
             getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
         }

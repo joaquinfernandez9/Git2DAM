@@ -17,4 +17,6 @@
     <string name="borrar">Borrar</string>
     <string name="a_adir">Añadir</string>
     <string name="cosas">cosas</string>
+    <string name="cambiar_pantalla">Cambiar Pantalla</string>
+    <string name="headset">headset</string>
 </resources>

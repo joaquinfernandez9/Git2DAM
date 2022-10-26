@@ -1,6 +1,6 @@
 package ui.pantallas.newspaper.list;
 
-import domain.modelo.Newspaper;
+import model.Newspaper;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;

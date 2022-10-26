@@ -15,6 +15,8 @@ import lombok.extern.log4j.Log4j2;
 import ui.common.BasePantallaController;
 import ui.common.Constantes;
 
+import java.util.Arrays;
+
 @Log4j2
 public class CartasController extends BasePantallaController {
 
@@ -82,6 +84,7 @@ public class CartasController extends BasePantallaController {
         } else {
             asyncTask();
         }
+
     }
 
 

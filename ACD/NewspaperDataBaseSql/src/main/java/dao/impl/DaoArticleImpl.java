@@ -3,7 +3,7 @@ package dao.impl;
 import config.ConfigProperties;
 import dao.DaoArticle;
 import dao.strings.DaoConstants;
-import domain.modelo.Article;
+import model.Article;
 import io.vavr.control.Either;
 import lombok.extern.log4j.Log4j2;
 

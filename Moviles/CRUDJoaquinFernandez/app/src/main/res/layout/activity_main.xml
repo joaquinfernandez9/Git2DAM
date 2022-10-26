@@ -8,7 +8,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idText"
-        android:inputType="number"
+
         android:layout_width="167dp"
         android:layout_height="52dp"
         android:hint="@string/id"
@@ -18,10 +18,9 @@
         app:layout_constraintTop_toTopOf="@id/guidelineHorizontal2"
         app:startIconDrawable="@drawable/baseline_perm_identity_24"
         >
-
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:inputType="number"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -123,20 +122,36 @@
         android:backgroundTint="@color/teal_200"
         />
 
+
+    <Button
+        android:id="@+id/changeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cambiar_pantalla"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal4"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal4"
+        app:layout_constraintEnd_toStartOf="@+id/idSearching"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVert1"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idSearching"
         android:layout_width="50dp"
         android:layout_height="52dp"
         android:hint="@string/id"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
+        app:layout_constraintStart_toEndOf="@+id/changeScreen"
         app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal4"
         app:layout_constraintTop_toTopOf="@id/guidelineHorizontal4">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

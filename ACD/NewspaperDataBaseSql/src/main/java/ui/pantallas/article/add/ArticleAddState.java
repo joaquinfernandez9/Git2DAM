@@ -1,6 +1,6 @@
 package ui.pantallas.article.add;
 
-import domain.modelo.Article;
+import model.Article;
 import lombok.Data;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package ui.pantallas.article.add;
 
-import domain.modelo.Article;
-import domain.services.ArticleServ;
+import model.Article;
+import services.ArticleServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;

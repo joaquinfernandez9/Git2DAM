@@ -21,7 +21,7 @@ public class ConfigProperties {
         try {
             p = new Properties();
             p.load(ConfigProperties.class.getClassLoader()
-                    .getResourceAsStream("config.txt"));
+                    .getResourceAsStream("config.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

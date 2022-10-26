@@ -1,6 +1,6 @@
 package dao;
 
-import domain.modelo.Newspaper;
+import model.Newspaper;
 import io.vavr.control.Either;
 
 import java.util.List;

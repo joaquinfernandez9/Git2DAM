@@ -1,7 +1,7 @@
 package ui.pantallas.newspaper.delete;
 
-import domain.modelo.Newspaper;
-import domain.services.NewspaperServ;
+import model.Newspaper;
+import services.NewspaperServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;

@@ -1,6 +1,6 @@
 package dao;
 
-import domain.modelo.ArticleType;
+import model.ArticleType;
 
 import java.util.List;
 

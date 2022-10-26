@@ -1,6 +1,6 @@
 package dao;
 
-import domain.modelo.Article;
+import model.Article;
 import io.vavr.control.Either;
 
 import java.util.List;

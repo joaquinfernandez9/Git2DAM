@@ -1,6 +1,6 @@
 package ui.pantallas.article.add;
 
-import domain.modelo.Article;
+import model.Article;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import jakarta.inject.Inject;
 import javafx.event.ActionEvent;

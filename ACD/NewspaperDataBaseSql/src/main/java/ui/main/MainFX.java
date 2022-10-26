@@ -19,7 +19,8 @@ public class MainFX {
         Parent fxmlParent = loader.load(getClass()
                 .getResourceAsStream("/fxml/principal.fxml"));
 
-
+        PrincipalController controller  = loader.getController();
+        controller.setStage(stage);
         stage.setScene(new Scene(fxmlParent));
         stage.setTitle("Newspaper");
         stage.show();

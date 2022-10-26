@@ -1,6 +1,6 @@
 package ui.pantallas.login;
 
-import domain.services.LoginServ;
+import services.LoginServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;

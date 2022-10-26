@@ -1,21 +1,17 @@
 package ui.pantallas.newspaper.delete;
 
-import domain.modelo.Newspaper;
+import model.Newspaper;
 import jakarta.inject.Inject;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.WindowEvent;
 import ui.pantallas.common.BasePantallaController;
 
 import java.io.IOException;
 import java.util.Optional;
-
-import static java.awt.SystemColor.window;
 
 public class NewsDeleteController extends BasePantallaController {
 

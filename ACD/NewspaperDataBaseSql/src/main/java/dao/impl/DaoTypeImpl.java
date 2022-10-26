@@ -3,7 +3,7 @@ package dao.impl;
 import config.ConfigProperties;
 import dao.DaoType;
 import dao.strings.DaoConstants;
-import domain.modelo.ArticleType;
+import model.ArticleType;
 import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;

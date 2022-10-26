@@ -47,12 +47,6 @@ c
 3src/main/java/ui/common/BasePantallaController.java,3\4\34ae09156d6b8050dc208554c41dabdb93fa8119
 c
 3src/main/java/domain/servicios/ServiciosCartas.java,c\e\ce68f1971995dd0bc4c3c38fe2a7c814d2858c93
-V
-&src/main/java/ui/common/Pantallas.java,3\9\396fad0c74cb139778b752b985a5d5b7522d506e
-W
-'src/main/java/ui/common/Constantes.java,2\9\293eb34e44341f86d222ad0b9b1b89a875e7131a
-g
-7src/main/java/ui/pantallas/cartas/CartasController.java,c\c\ccd87e276b67365b26103877f230523f1fd6aa65
 b
 2src/main/java/ui/pantallas/filtro/FiltroState.java,2\9\29cb398ffd30781f214702f4ac5491df59b5dd9d
 g
@@ -81,3 +75,9 @@ b
 2src/main/java/ui/pantallas/sets/SetsViewModel.java,4\c\4c89e781bc3ef444cae8706e84da062721f5c65c
 V
 &src/main/java/domain/modelo/Carta.java,3\6\36d0a04c82f40208e5a9537bff6c7086886f1564
+V
+&src/main/java/ui/common/Pantallas.java,3\9\396fad0c74cb139778b752b985a5d5b7522d506e
+W
+'src/main/java/ui/common/Constantes.java,2\9\293eb34e44341f86d222ad0b9b1b89a875e7131a
+g
+7src/main/java/ui/pantallas/cartas/CartasController.java,c\c\ccd87e276b67365b26103877f230523f1fd6aa65

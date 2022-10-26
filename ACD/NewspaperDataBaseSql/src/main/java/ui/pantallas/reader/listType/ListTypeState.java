@@ -1,6 +1,6 @@
 package ui.pantallas.reader.listType;
 
-import domain.modelo.Reader;
+import model.Reader;
 import lombok.Data;
 
 import java.util.List;

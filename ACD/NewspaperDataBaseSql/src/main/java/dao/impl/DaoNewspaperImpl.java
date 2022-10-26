@@ -3,7 +3,7 @@ package dao.impl;
 import config.ConfigProperties;
 import dao.DaoNewspaper;
 import dao.strings.DaoConstants;
-import domain.modelo.Newspaper;
+import model.Newspaper;
 import io.vavr.control.Either;
 import lombok.extern.log4j.Log4j2;
 
@@ -20,7 +20,7 @@ public class DaoNewspaperImpl implements DaoNewspaper {
 
     @Override public List<Newspaper> getAll() {
         Path file = Paths.get(ConfigProperties
-                .getInstance().getProperty(DaoConstants.PATH_NEWSPAPER));
+                .getInstance().getProperty("pathNewspapers"));
         List<Newspaper> newspaperList = new ArrayList<>();
         try {
             List<String> newspapers = Files.readAllLines(file);
@@ -36,7 +36,7 @@ public class DaoNewspaperImpl implements DaoNewspaper {
     @Override public Either<String, Boolean> delete(int id) {
         Either<String, Boolean> respuesta;
         Path file = Paths.get(ConfigProperties.getInstance()
-                .getProperty(DaoConstants.PATH_NEWSPAPER));
+                .getProperty("pathNewspapers"));
         List<Newspaper> newspaperList = getAll();
         try {
             List<String> newspapers = Files.readAllLines(file);

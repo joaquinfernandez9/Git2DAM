@@ -30,7 +30,6 @@ class MainViewModel(
 
     fun removeHeadset(id: Int) {
         removeHeadset.removeHeadset(id)
-
     }
 
     fun get(id: Int): Headset {

@@ -1,21 +1,28 @@
 package ui.pantallas.reader.listSubscription;
 
-import domain.services.ReaderServ;
+import model.Reader;
+import services.NewspaperServ;
+import services.ReaderServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
+import java.sql.SQLException;
+import java.util.List;
+
 public class ListSubscriptionViewmodel {
     private final ReaderServ readerServImpl;
     private final ObjectProperty<ListSubscriptionState> state;
+    private final NewspaperServ servicesNewspaperImpl;
 
     @Inject
-    public ListSubscriptionViewmodel(ReaderServ readerServImpl) {
+    public ListSubscriptionViewmodel(ReaderServ readerServImpl, NewspaperServ servicesNewspaperImpl) {
         this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ListSubscriptionState(null, false,
-                        readerServImpl.getAll().get()));
+                        readerServImpl.getAll(-1,-1).get(), servicesNewspaperImpl.getAll()));
+        this.servicesNewspaperImpl = servicesNewspaperImpl;
     }
 
     public ReadOnlyObjectProperty<ListSubscriptionState> getState() {
@@ -23,19 +30,17 @@ public class ListSubscriptionViewmodel {
     }
 
 
-    public void reloadState() {
+    public void reloadState(int idNewspaper, int number) {
         state.setValue(new ListSubscriptionState(
                 null, !state.get().isChange(),
-                readerServImpl.getAll().get()
+                readerServImpl.getAll(idNewspaper, number).get(),
+                servicesNewspaperImpl.getAll()
         ));
     }
 
-//    public List<Reader> getAll(){
-//        return readerServ.getAll().get();
-//    }
+    public List<Reader> getAll(){
+        return readerServImpl.getAll(-1,-1).get();
+    }
 
-//    public void search(int id){
-//        state.setValue(new ListSubscriptionState(null, !state.get().isChange(), readerServImpl.readersSubscribed(id)));
-//    }
 
 }
