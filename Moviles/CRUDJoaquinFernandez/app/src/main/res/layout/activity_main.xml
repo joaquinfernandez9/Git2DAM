@@ -15,15 +15,29 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
         app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
         app:layout_constraintBottom_toTopOf="@+id/nameText"
-        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal2"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         app:startIconDrawable="@drawable/baseline_perm_identity_24"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:inputType="number"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLines="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+<!--    poner foto-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/foto_cosas"
+        android:src="@drawable/mapache"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal2"
+        app:layout_constraintBottom_toTopOf="@+id/idText"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameText"
@@ -39,7 +53,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
@@ -177,6 +192,25 @@
         app:srcCompat="@drawable/arrow_right_long_solid"
         android:contentDescription="@string/cosas"
         />
+
+
+<!--    <LinearLayout-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/bottom_navigation"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:menu="@menu/bottom_navigation_menu"-->
+<!--            android:background="#ffbcaf"/>-->
+
+<!--    </LinearLayout>-->
 
 
     <androidx.constraintlayout.widget.Guideline

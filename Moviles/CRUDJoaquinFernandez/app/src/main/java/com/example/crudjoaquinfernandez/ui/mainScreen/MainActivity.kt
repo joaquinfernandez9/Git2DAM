@@ -10,9 +10,11 @@ import com.example.crudjoaquinfernandez.R
 import com.example.crudjoaquinfernandez.databinding.ActivityMainBinding
 import com.example.crudjoaquinfernandez.domain.model.Headset
 import com.example.crudjoaquinfernandez.domain.usecases.headset.*
-import com.example.crudjoaquinfernandez.ui.recycler.RecyclerActivity
+import com.example.crudjoaquinfernandez.ui.recycler.ListActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import timber.log.Timber
+
+private const val s = "id no introducido"
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,17 +35,22 @@ class MainActivity : AppCompatActivity() {
     //aaaaaaaaa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Timber.plant(Timber.DebugTree())
         temp = 0
+
+
 
 
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
 
+            Timber.d("--onCreate")
 
             viewModel.uiState.observe(this@MainActivity) { state ->
                 state.stringError?.let { error ->
                     Toast.makeText(this@MainActivity, error, Toast.LENGTH_SHORT).show()
                     viewModel.showError()
+                    Timber.i("--State")
                 }
             }
 
@@ -82,6 +89,16 @@ class MainActivity : AppCompatActivity() {
             }
 
 
+            viewModel.uiState.observe(this@MainActivity) { state ->
+                state.stringError?.let { error ->
+                    Toast.makeText(this@MainActivity, error, Toast.LENGTH_SHORT).show()
+                    viewModel.showError()
+                }
+                if (state.stringError == null) {
+                    Toast.makeText(this@MainActivity, "Todo correcto", Toast.LENGTH_SHORT).show()
+                    Timber.i("Todo correcto")
+                }
+            }
 
             add?.setOnClickListener {
                 if (nameText.editText?.text.toString().isNotEmpty() &&
@@ -95,6 +112,7 @@ class MainActivity : AppCompatActivity() {
                             bluetooth = bluetooth.isActivated,
                         )
                     )
+
                 } else {
                     Toast.makeText(
                         this@MainActivity,
@@ -126,14 +144,20 @@ class MainActivity : AppCompatActivity() {
 
             search.setOnClickListener {
                 if (idSearching.editText?.text.toString().isNotEmpty()) {
-                    val hola = viewModel.get(idSearching.editText?.text.toString().toInt())
+                    val hola = viewModel.uiState.value?.headset
 
-                    nameText.editText?.setText(hola.name)
-                    idText.editText?.setText(hola.id.toString())
-                    micCheck.isActivated = hola.mic
-                    bluetooth.isActivated = hola.bluetooth
+                    if (hola!=null){
+                        nameText.editText?.setText(hola.name)
+                        idText.editText?.setText(hola.id.toString())
+                        micCheck.isActivated = hola.mic
+                        bluetooth.isActivated = hola.bluetooth
+                    } else{
+                        Toast.makeText(this@MainActivity, "No existe", Toast.LENGTH_SHORT).show()
+                        Timber.i("No existe")
+                    }
                 } else {
                     Toast.makeText(this@MainActivity, "Introduce un id", Toast.LENGTH_SHORT).show()
+                    Timber.i("id no introducido")
                 }
             }
 
@@ -155,23 +179,47 @@ class MainActivity : AppCompatActivity() {
 
 
             changeScreen?.setOnClickListener {
-                val intent = Intent(this@MainActivity, RecyclerActivity::class.java)
+                val intent = Intent(this@MainActivity, ListActivity::class.java)
                 intent.putExtra(getString(R.string.headset), viewModel.getAll().hashCode())
                 startActivity(intent)
             }
+
+            imageView?.setOnClickListener{
+                Timber.i("--Imagen tocada")
+//                Toast.makeText(this@MainActivity, "fotico", Toast.LENGTH_SHORT).show()
+            }
+
+//            BottomNavigationView.OnNavigationItemSelectedListener { item ->
+//                when(item.itemId) {
+//                    R.id.home -> {
+//
+//
+//                        true
+//                    }
+//                    R.id.list -> {
+//                        val intent = Intent(this@MainActivity, MainActivity::class.java)
+//                        intent.putExtra(getString(R.string.headset), viewModel.getAll().hashCode())
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    else -> false
+//                }
+//            }
+
+
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) { // Here You have to save count value
         super.onSaveInstanceState(outState)
-        Timber.i("onSaveInstanceState")
+        Timber.i("--onSaveInstanceState")
 
         outState.putInt("COUNT_KEY", temp)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) { // Here You have to restore count value
         super.onRestoreInstanceState(savedInstanceState)
-        Timber.tag("::MyTag").i("onRestoreInstanceState")
+        Timber.tag("::MyTag").i("--onRestoreInstanceState")
         // Log.i("::MyTag", "onRestoreInstanceState")
 
         temp = savedInstanceState.getInt("COUNT_KEY")

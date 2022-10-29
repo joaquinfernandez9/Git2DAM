@@ -1,0 +1,9 @@
+
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ö‰›Žÿÿÿÿÿ8ñÊÆœÂ0
+V
+java:S1854!";Remove this useless assignment to local variable "session".(ûÝÙ¹þÿÿÿÿ
+G
+java:S1481!",Remove this unused "session" local variable.(ûÝÙ¹þÿÿÿÿ
+4
+java:S2119&"Save and re-use this "Random".(¡Å”¦

@@ -26,6 +26,7 @@ class HeadsetAdapter(
     }
 
 
+
     override fun onBindViewHolder(holder: HeadsetViewHolder, position: Int) {
         //onClickBoton,
         holder.render(headsetList[position],  actions)

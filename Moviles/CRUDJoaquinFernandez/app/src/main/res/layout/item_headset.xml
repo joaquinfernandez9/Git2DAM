@@ -5,20 +5,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-    tools:context=".ui.recycler.RecyclerActivity">
+    tools:context=".ui.recycler.ListActivity">
 
 
     <TextView
         android:id="@+id/tvNombre"
-        android:layout_marginTop="10dp"
-        android:background="@color/purple_200"
         android:textSize="23sp"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/verdeOscuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Name"
         android:layout_marginEnd="10dp"
-        app:layout_constraintStart_toStartOf="@id/tvID"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
         app:layout_constraintEnd_toStartOf="@id/button2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,10 +27,11 @@
         android:id="@+id/tvID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="23sp"
         tools:text="ID"
+        android:textColor="@color/verdeOscuro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tvNombre"
+        app:layout_constraintEnd_toStartOf="@id/guideline4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
@@ -46,6 +45,7 @@
         app:layout_constraintStart_toEndOf="@id/barrier"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/outline_delete_24"
+        android:background="@color/bege"
         android:contentDescription="@string/delete" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -55,5 +55,12 @@
         app:barrierDirection="left"
         tools:layout_editor_absoluteX="241dp"
         tools:layout_editor_absoluteY="48dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

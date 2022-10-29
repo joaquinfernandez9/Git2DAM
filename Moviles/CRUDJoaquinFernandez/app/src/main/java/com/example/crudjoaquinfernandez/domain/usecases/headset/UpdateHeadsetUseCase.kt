@@ -1,8 +1,9 @@
 package com.example.crudjoaquinfernandez.domain.usecases.headset
 
 import com.example.crudjoaquinfernandez.data.DataHeadset
+import com.example.crudjoaquinfernandez.domain.model.Headset
 
 class UpdateHeadsetUseCase {
-    fun updateHeadset(id: Int, name: String, mic: Boolean, bluetooth: Boolean,) =
-        DataHeadset.updateHeadset(id, name, mic, bluetooth)
+    operator fun invoke(headset: Headset) =
+        DataHeadset.updateHeadset(headset)
 }

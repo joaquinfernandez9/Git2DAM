@@ -12,6 +12,18 @@ object DataHeadset {
              true, bluetooth = false,))
         headsetList.add(Headset(3, "HyperX Cloud Flight",
              true, bluetooth = true,))
+        headsetList.add(Headset(4, "HyperX Cloud II",
+                true, bluetooth = false,))
+        headsetList.add(Headset(5, "HyperX Cloud Revolver S",
+                true, bluetooth = false,))
+        headsetList.add(Headset(6, "HyperX Cloud Orbit S",
+                true, bluetooth = true,))
+        headsetList.add(Headset(7, "HyperX Cloud Orbit",
+                true, bluetooth = true,))
+        headsetList.add(Headset(8, "HyperX Cloud Alpha S",
+                true, bluetooth = false,))
+        headsetList.add(Headset(9, "HyperX Cloud Flight S",
+                true, bluetooth = true,))
     }
 
     fun getHeadset(id: Int): Headset {
@@ -24,15 +36,16 @@ object DataHeadset {
 
     fun addHeadset(cascos: Headset) = headsetList.add(cascos)
 
-    fun removeHeadset(id: Int) {
+    fun removeHeadset(id: Int) =
         headsetList.remove(headsetList.find { it.id == id })
-    }
 
-    fun updateHeadset(id: Int, name:String, mic: Boolean, bluetooth: Boolean) {
-        val headset = headsetList.find { it.id == id }
-        headset?.name = name
-        headset?.mic = mic
-        headset?.bluetooth = bluetooth
+
+    fun updateHeadset(headset: Headset) {
+        val headsetLista = headsetList.find { it.id == headset.id }
+        headsetLista?.name = headset.name
+        headsetLista?.mic = headset.mic
+        headsetLista?.bluetooth = headset.bluetooth
+
     }
 
 

@@ -157,8 +157,8 @@ b
 2src/main/java/ui/pantallas/common/UiConstants.java,a\b\ab442be0ec12447162a3b8b587a04068c1d7ec4f
 t
 Dsrc/main/java/ui/pantallas/reader/addReader/AddReaderController.java,1\d\1dfefe12640e0a872771feb7212b19f2a19bc0f2
-X
-(src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153
+Y
+)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
 O
 src/main/java/dao/DaoLogin.java,8\7\87d42a8a6967e707d6c44eb756c4666397d7a7d2
 ^
@@ -167,5 +167,5 @@ d
 4src/main/java/ui/pantallas/login/LoginViewModel.java,e\7\e7d8d195a68c5e0e3b34a11a1a18d22d5e312b65
 e
 5src/main/java/ui/pantallas/login/LoginController.java,0\0\00a168197ce395305c37a33f896012577da7634b
-Y
-)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
+X
+(src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153

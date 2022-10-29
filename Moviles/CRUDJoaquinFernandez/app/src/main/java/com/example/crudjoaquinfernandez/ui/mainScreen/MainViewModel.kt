@@ -20,20 +20,36 @@ class MainViewModel(
     val uiState: LiveData<MainState> get() = _uiState
 
     fun addHeadset(headset: Headset) {
-        if (!addHeadset.invoke(headset)){
+        if (!addHeadset.invoke(headset)) {
             _uiState.value = MainState(
+                stringError = "error al añadir el headset",
+            )
+        } else {
+            _uiState.value = MainState(
+                headset = headset,
                 stringError = null,
             )
-            _uiState.value = _uiState.value?.copy(stringError = Const.s)
         }
     }
 
     fun removeHeadset(id: Int) {
-        removeHeadset.removeHeadset(id)
+        if (!removeHeadset.invoke(id)) {
+            _uiState.value = MainState(
+                stringError = "error al eliminar el headset",
+            )
+        } else {
+            _uiState.value = MainState(
+                stringError = null,
+            )
+        }
     }
 
-    fun get(id: Int): Headset {
-        return getHeadset.getHeadset(id)
+    fun get(id: Int) {
+        val headset = getHeadset.invoke(id)
+        _uiState.value = MainState(
+            headset = headset,
+            stringError = null,
+        )
     }
 
     fun getAll(): List<Headset> {
@@ -41,12 +57,16 @@ class MainViewModel(
     }
 
 
-
     fun updateHeadset(id: Int, name: String, mic: Boolean, bluetooth: Boolean) {
-        updateHeadsetUseCase.updateHeadset(id, name, mic, bluetooth)
+        val headset = Headset(id, name, mic, bluetooth)
+        updateHeadsetUseCase.invoke(headset)
+        _uiState.value = MainState(
+            headset = headset,
+            stringError = null,
+        )
     }
 
-    fun showError(){
+    fun showError() {
         _uiState.value = _uiState.value?.copy(stringError = null)
     }
 
