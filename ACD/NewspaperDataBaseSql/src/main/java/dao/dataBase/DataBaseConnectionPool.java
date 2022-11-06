@@ -64,6 +64,10 @@ public class DataBaseConnectionPool {
         return basicDataSource;
     }
 
+    public DataSource getDataSource() {
+        return hikariDataSource;
+    }
+
 
 
 }

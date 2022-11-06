@@ -1,7 +1,6 @@
 package services.impl;
 
 import dao.DaoArticle;
-import dao.DaoNewspaper;
 import dao.DaoType;
 import model.Article;
 import model.ArticleType;

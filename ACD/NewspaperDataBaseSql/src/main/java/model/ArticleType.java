@@ -18,6 +18,8 @@ public class ArticleType {
                 description;
     }
 
-
-
+    public ArticleType(int typeID, String description) {
+        this.typeID = typeID;
+        this.description = description;
+    }
 }

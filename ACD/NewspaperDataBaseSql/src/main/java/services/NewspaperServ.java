@@ -1,14 +1,17 @@
 package services;
 
 import model.Newspaper;
-import io.vavr.control.Either;
 
 import java.util.List;
 
 public interface NewspaperServ {
     List<Newspaper> getAll();
 
-    Either<String, Boolean> deleteNewspaper(int id);
+    int deleteNewspaper(int id);
 
-    boolean newspaperContainsArticles(int idNewspaper);
+    int newspaperContainsArticles(int idNewspaper);
+
+    int add(Newspaper n);
+
+    int update(Newspaper n);
 }

@@ -37,7 +37,7 @@ public class ListSubscriptionController extends BasePantallaController {
     }
 
     @Override
-    public void principalCargado()throws IOException {
+    public void principalCargado() {
         super.principalCargado();
 
         idNewspaper.getItems().addAll(viewmodel.getState().get().getNewspapersList()
@@ -56,7 +56,7 @@ public class ListSubscriptionController extends BasePantallaController {
                 readersTable.getItems().addAll(newValue.getReaderList());
             }
         });
-        viewmodel.reloadState(-1,-1);
+        viewmodel.reloadState(-1,-1, null);
 
     }
 
@@ -65,7 +65,7 @@ public class ListSubscriptionController extends BasePantallaController {
         if (idNewspaper.getValue()==null){
             getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
         }else {
-            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()), -1);
+            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()), -1, null);
         }
     }
 
@@ -79,7 +79,7 @@ public class ListSubscriptionController extends BasePantallaController {
         if (idNewspaper.getValue()==null){
             getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
         }else {
-            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()), -1);
+            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()), -1, null);
         }
     }
 }

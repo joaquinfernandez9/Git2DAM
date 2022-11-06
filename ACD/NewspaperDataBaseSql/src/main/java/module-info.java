@@ -13,6 +13,7 @@ module javafx {
     opens ui.pantallas.common;
 
     requires jakarta.cdi;
+    opens ui.pantallas.welcome;
     requires jakarta.inject;
 
     exports dao.impl;
@@ -73,6 +74,8 @@ module javafx {
 
     exports dao.strings;
     exports dao.dataBase;
+    exports model.querys;
+    opens model.querys;
 
 
     requires jakarta.el;
@@ -82,4 +85,6 @@ module javafx {
     requires jakarta.persistence;
     requires com.zaxxer.hikari;
     requires commons.dbcp2;
+    requires spring.jdbc;
+    requires spring.tx;
 }

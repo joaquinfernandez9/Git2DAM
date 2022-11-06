@@ -1,14 +1,20 @@
 package dao;
 
 import model.Newspaper;
-import io.vavr.control.Either;
 
 import java.util.List;
 
 public interface DaoNewspaper {
     List<Newspaper> getAll();
 
-    Either<String, Boolean> delete(int id);
-
     Newspaper get(int id);
+
+    int add(Newspaper n);
+
+    int delete(int id);
+
+    //delete with articles
+    int deleteWithArticles(int id);
+
+    int update(Newspaper n);
 }

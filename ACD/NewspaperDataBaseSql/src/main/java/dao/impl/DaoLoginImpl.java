@@ -22,10 +22,6 @@ import java.util.List;
 @Log4j2
 public class DaoLoginImpl implements DaoLogin {
 
-    @Override public boolean login(Reader r){
-
-    }
-
     private final DataBaseConnectionPool pool;
 
     @Inject
@@ -33,39 +29,50 @@ public class DaoLoginImpl implements DaoLogin {
         this.pool = pool;
     }
 
-//    public Either<Integer, List<Login>> getAll() {
-//        Either<Integer, List<Login>> response;
-//        try (Connection con =pool.getConnection();
-//             PreparedStatement statement = con.prepareStatement(
-//                     "select * from login"
-//             )) {
-//            ResultSet rs = statement.executeQuery();
-//            response = Either.right(readRS(rs));
-//
-//        } catch (SQLException ex){
-//            log.error(ex.getMessage());
-//            response = Either.left(-3);
-//        }
-//        return response;
-//    }
+    @Override
+    public int login(String username, String password) {
+        int response;
+        try (Connection con = pool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement(
+                    "Select id_reader from login where user=? and password =?"
+            );
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                response = rs.getInt("id_reader");
+            } else {
+                response = 0;
+            }
 
-    public Either<Integer, Login> get(int idReader) {
-        Either<Integer, Login> response;
+
+        } catch (SQLException sql) {
+            response = -3;
+        }
+        return response;
+
+    }
+
+
+    @Override
+    public int get(String username, String password) {
+        int response;
         try (Connection con =pool.getConnection();
              PreparedStatement statement = con.prepareStatement(
-                     "select * from login where id_reader = ?"
+                     "select id_reader from login where user=? and password =?"
              )) {
-            statement.setInt(1, idReader);
+            statement.setString(1, username);
+            statement.setString(2, password);
             ResultSet rs = statement.executeQuery();
-            if (rs!=null){
-                response = Either.right(readRS(rs).get(0));
+            if (rs.next()){
+                response = rs.getInt("id_reader");
             } else {
-                response = Either.left(-5);
+                response = -5;
             }
 
         } catch (SQLException ex){
             log.error(ex.getMessage());
-            response = Either.left(-3);
+            response = -3;
         }
         return response;
     }

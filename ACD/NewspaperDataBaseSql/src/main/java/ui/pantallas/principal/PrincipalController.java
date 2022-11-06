@@ -14,8 +14,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.extern.log4j.Log4j2;
+import model.Reader;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.Pantallas;
+import ui.pantallas.login.LoginState;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -26,45 +28,48 @@ public class PrincipalController {
     @FXML
     private final Alert alert;
     private final DaoDB db;
+    public boolean isAdmin;
+    public Reader r;
+    Instance<Object> instance;
     @FXML
-    public MenuItem logout;
+    private MenuItem logout;
     @FXML
-    public MenuItem npList;
+    private MenuItem npList;
     @FXML
-    public MenuItem npAdd;
+    private MenuItem npAdd;
     @FXML
-    public MenuItem npUpdate;
+    private MenuItem npUpdate;
     @FXML
-    public MenuItem npDelete;
+    private MenuItem npDelete;
     @FXML
-    public MenuItem rListSubscription;
+    private MenuItem rListSubscription;
     @FXML
-    public MenuItem rAppendReadArticle;
+    private MenuItem rAppendReadArticle;
     @FXML
-    public MenuItem rListType;
+    private MenuItem rListType;
     @FXML
-    public MenuItem rDelete;
+    private MenuItem rDelete;
     @FXML
-    public MenuItem artList;
+    private MenuItem artList;
     @FXML
-    public MenuItem artAdd;
+    private MenuItem artAdd;
     @FXML
-    public MenuItem artUpdate;
+    private MenuItem artUpdate;
     @FXML
-    public MenuItem artDelete;
-
-
+    private MenuItem artDelete;
     //change screen menu
     @FXML
-    public MenuItem rUpdate;
+    private MenuItem rUpdate;
     @FXML
-    public MenuItem rAdd;
-    Instance<Object> instance;
+    private MenuItem rAdd;
+    @FXML
+    private MenuItem logoutUser;
     @FXML
     private BorderPane root;
     @FXML
-    private MenuBar options;
+    private MenuBar menuBar;
     private Stage primaryStage;
+
     @Inject
     public PrincipalController(Instance<Object> instance, DaoDB db) {
         this.instance = instance;
@@ -78,7 +83,7 @@ public class PrincipalController {
 
     public void initialize() {
         cargarPantalla(Pantallas.LOGIN);
-        options.setVisible(false);
+        menuBar.setVisible(false);
     }
 
     private Pane cargarPantalla(String ruta) {
@@ -110,8 +115,35 @@ public class PrincipalController {
         alert.showAndWait();
     }
 
+    public void adminVisible(boolean admin) {
+        npAdd.setVisible(admin);
+        npDelete.setVisible(admin);
+        npList.setVisible(admin);
+        npUpdate.setVisible(admin);
+        rListSubscription.setVisible(admin);
+
+        rListType.setVisible(admin);
+        rUpdate.setVisible(admin);
+        rAdd.setVisible(admin);
+        artAdd.setVisible(admin);
+        artList.setVisible(admin);
+        artDelete.setVisible(admin);
+        artUpdate.setVisible(admin);
+    }
+
     public void onLoginAdmin() {
-        options.setVisible(true);
+        isAdmin = true;
+        menuBar.setVisible(true);
+        adminVisible(true);
+        cargarPantalla(Pantallas.WELCOME_SCREEN);
+    }
+
+    public void onLoginUser() {
+        isAdmin = false;
+        adminVisible(false);
+        menuBar.setVisible(true);
+        rAppendReadArticle.setVisible(true);
+
         cargarPantalla(Pantallas.WELCOME_SCREEN);
     }
 
@@ -172,6 +204,17 @@ public class PrincipalController {
             case "rAppendReadArticle":
                 cargarPantalla(Pantallas.READER_ADD_READARTICLE);
                 break;
+            case "logout":
+                logout();
+                break;
+
         }
+    }
+
+    public void logout() {
+        isAdmin = false;
+        r = null;
+        menuBar.setVisible(false);
+        cargarPantalla(Pantallas.LOGIN);
     }
 }

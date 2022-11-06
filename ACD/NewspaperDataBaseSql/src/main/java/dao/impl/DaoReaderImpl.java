@@ -23,29 +23,25 @@ import java.util.logging.Logger;
 @Log4j2
 public class DaoReaderImpl implements DaoReader {
 
-    private final DaoDB db;
     private final DataBaseConnectionPool pool;
-    private final DaoSubscriptions daoSubscriptions;
-    private final DaoReadArticle daoReadArticle;
 
     @Inject
-    public DaoReaderImpl(DaoDB db, DataBaseConnectionPool pool, DaoSubscriptions daoSubscriptions, DaoReadArticle daoReadArticle) {
-        this.db = db;
+    public DaoReaderImpl(DataBaseConnectionPool pool) {
         this.pool = pool;
-        this.daoSubscriptions = daoSubscriptions;
-        this.daoReadArticle = daoReadArticle;
     }
 
     @Override
-    public Either<Integer, List<Reader>> getAll(int idNews, int num) {
-        Either<Integer, List<Reader>> response;
+    public Either<Integer, List<Reader>> getAll(int idNews, int num, String description) {
+        Either<Integer, List<Reader>> response = null;
         try (Connection con = pool.getConnection();
              Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                      ResultSet.CONCUR_READ_ONLY)) {
             if (idNews == -1) {
+                //get all
                 ResultSet rs = statement.executeQuery("select * from reader where id_reader> 0");
                 response = Either.right(readRS(rs));
             } else if (num == -1) {
+                //Get information about the readers subscribed to a specific newspaper
                 PreparedStatement pS = con.prepareStatement(
                         "select reader.id, name_reader, birth_reader\n" +
                                 "from reader,\n" +
@@ -58,7 +54,8 @@ public class DaoReaderImpl implements DaoReader {
                 pS.setInt(1, idNews);
                 ResultSet rs = pS.executeQuery();
                 response = Either.right(readRS(rs));
-            } else {
+            } else if (num == -2) {
+                //Get the name of the 100 oldest subscriptors of newspaper Tempo
                 PreparedStatement pS = con.prepareStatement("select name_reader\n" +
                         "from reader,\n" +
                         "     subscribe,\n" +
@@ -66,13 +63,30 @@ public class DaoReaderImpl implements DaoReader {
                         "where newspaper.id = subscribe.id_newspaper\n" +
                         "  and subscribe.id_reader = reader.id\n" +
                         "  and newspaper.id = ?\n" +
-                        "and subscribe.sing_date is not null\n" +
+                        "and subscribe.sing_date is null\n" +
                         "and subscribe.sing_date in\n" +
                         "    (select min(subscribe.sing_date) from subscribe)\n" +
                         "and id_reader > 0" +
                         "LIMIT 5");
                 pS.setInt(1, idNews);
                 ResultSet rs = pS.executeQuery();
+                response = Either.right(readRS(rs));
+            } else if (description!=null) {
+                //Get the readers of articles of a specific type
+                PreparedStatement ps = con.prepareStatement("select reader.id, reader.name_reader, reader.birth_reader,\n" +
+                        "from reader,\n" +
+                        "     article,\n" +
+                        "     type,\n" +
+                        "     subscribe,\n" +
+                        "     newspaper\n" +
+                        "where reader.id = subscribe.id_reader\n" +
+                        "  and subscribe.cancellation_date IS NULL\n" +
+                        "  and subscribe.id_newspaper = newspaper.id\n" +
+                        "  and newspaper.id = article.id_newspaper\n" +
+                        "  and article.id_type = type.id\n" +
+                        "  and description = ?");
+                ps.setString(1, description);
+                ResultSet rs = ps.executeQuery();
                 response = Either.right(readRS(rs));
             }
         } catch (SQLException ex) {
@@ -107,7 +121,6 @@ public class DaoReaderImpl implements DaoReader {
     }
 
     @Override
-    //deleteByID
     public int delete(int id) {
         int response;
         try (Connection con = pool.getConnection()) {
@@ -144,7 +157,6 @@ public class DaoReaderImpl implements DaoReader {
         }
         return response;
     }
-
 
     @Override
     public int update(Reader r) {

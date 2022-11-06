@@ -1,5 +1,6 @@
 package ui.pantallas.reader.appendArticle;
 
+import javafx.scene.control.Alert;
 import model.Reader;
 import model.Subscription;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -47,7 +48,7 @@ public class AppendArticleController extends BasePantallaController {
     }
 
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado() {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -85,17 +86,17 @@ public class AppendArticleController extends BasePantallaController {
         if (readersTable.getSelectionModel().getSelectedItem() == null || idArticleText.getText().isEmpty()
                 || ratingText.getText().isEmpty()) {
             getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
-//        } else {
-//            if (!viewmodel.appendArticle(readersTable.getSelectionModel().getSelectedItem().getId(),
-//                    Integer.parseInt(idArticleText.getText()), Integer.parseInt(ratingText.getText()))) {
-//                getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
-//            } else {
-//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                alert.setTitle(UiConstants.CORRECT);
-//                alert.setContentText(UiConstants.THE_ACTION_ENDED_CORRECTLY);
-//                alert.showAndWait();
-//            }
-//            viewmodel.reloadState();
+        } else {
+            if (viewmodel.appendArticle(readersTable.getSelectionModel().getSelectedItem(),
+                    Integer.parseInt(idArticleText.getText()), Integer.parseInt(ratingText.getText())) == 1) {
+                getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle(UiConstants.CORRECT);
+                alert.setContentText(UiConstants.THE_ACTION_ENDED_CORRECTLY);
+                alert.showAndWait();
+            }
+            viewmodel.reloadState();
         }
     }
 }

@@ -28,18 +28,32 @@ public class LoginController extends BasePantallaController {
 
 
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado()  {
         super.principalCargado();
+
+        viewModel.getState().addListener((observable, oldState, newState) -> {
+            if (newState.getMensaje() != null) {
+                this.getPrincipalController().sacarAlertError(newState.getMensaje());
+            }
+            if (newState.isLoginAdmin() && newState.isLoginCorrecto()) {
+                //cambiar pantalla
+                this.getPrincipalController().sacarAlertError("Logged as admin");
+                this.getPrincipalController().onLoginAdmin();
+            }
+            if (!newState.isLoginAdmin() && newState.isLoginCorrecto()) {
+                this.getPrincipalController().sacarAlertError("Logged as user");
+                this.getPrincipalController().r = newState.getReader();
+                this.getPrincipalController().onLoginUser();
+            }
+        });
     }
 
     @FXML
     private void login() {
         if (txtUserName.getText().isEmpty() || txtPass.getText().isEmpty()) {
             this.getPrincipalController().sacarAlertError("Error");
-        } else if (viewModel.login(txtUserName.getText(), txtPass.getText())){
-            this.getPrincipalController().onLoginAdmin();
         } else {
-            this.getPrincipalController().sacarAlertError("Error");
+            viewModel.login(txtUserName.getText(), txtPass.getText());
         }
     }
 

@@ -13,8 +13,14 @@ public class LoginServImpl implements LoginServ {
         this.daoLoginImpl = daoLoginImpl;
     }
 
-    @Override public boolean login(String userName, String password){
+    @Override
+    public int login(String userName, String password) {
         return daoLoginImpl.login(userName, password);
+    }
+
+    @Override
+    public int get(String userName, String password){
+        return daoLoginImpl.get(userName, password);
     }
 
 }

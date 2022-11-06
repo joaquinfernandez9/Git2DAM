@@ -35,7 +35,7 @@ public class UpdateViewModel {
 //    }
 
     public List<Reader> getAll(){
-        return readerServImpl.getAll(-1,-1).get();
+        return readerServImpl.getAll(-1,-1, null).get();
     }
 
     public void updateReader(Reader reader){

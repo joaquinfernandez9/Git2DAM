@@ -1,20 +1,26 @@
 package com.example.crudjoaquinfernandez.ui.mainScreen
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.widget.Toast
 import androidx.activity.viewModels
+import coil.load
 import com.example.crudjoaquinfernandez.R
 import com.example.crudjoaquinfernandez.databinding.ActivityMainBinding
 import com.example.crudjoaquinfernandez.domain.model.Headset
 import com.example.crudjoaquinfernandez.domain.usecases.headset.*
 import com.example.crudjoaquinfernandez.ui.recycler.ListActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.squareup.picasso.Picasso
 import timber.log.Timber
 
 private const val s = "id no introducido"
+
+private const val s1 =
+    "https://images.ecestaticos.com/FPDLmoNTTTzZeuuEMqvGze2X41A=/0x0:1183x665/1200x675/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F5e5%2F157%2F764%2F5e5157764ad17f8e7ae6ead0618c5fdb.jpg"
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,10 +47,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
 
             Timber.d("--onCreate")
+
+            Picasso.get()
+                .load("https://images.ecestaticos.com/FPDLmoNTTTzZeuuEMqvGze2X41A=/0x0:1183x665/1200x675/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F5e5%2F157%2F764%2F5e5157764ad17f8e7ae6ead0618c5fdb.jpg")
+                .into(imageView)
 
             viewModel.uiState.observe(this@MainActivity) { state ->
                 state.stringError?.let { error ->
@@ -67,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                     micCheck.isChecked = headset.mic
                     bluetooth.isChecked = headset.bluetooth
                 } else {
-                    Toast.makeText(this@MainActivity, "No hay más elementos", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@MainActivity, R.string.noElements, Toast.LENGTH_SHORT)
                         .show()
                 }
             }
@@ -83,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                     micCheck.isChecked = headset.mic
                     bluetooth.isChecked = headset.bluetooth
                 } else {
-                    Toast.makeText(this@MainActivity, "No hay más elementos", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@MainActivity, R.string.noElements, Toast.LENGTH_SHORT)
                         .show()
                 }
             }
@@ -95,8 +106,8 @@ class MainActivity : AppCompatActivity() {
                     viewModel.showError()
                 }
                 if (state.stringError == null) {
-                    Toast.makeText(this@MainActivity, "Todo correcto", Toast.LENGTH_SHORT).show()
-                    Timber.i("Todo correcto")
+                    Toast.makeText(this@MainActivity, R.string.correct, Toast.LENGTH_SHORT).show()
+                    Timber.i(R.string.correct.toString())
                 }
             }
 
@@ -116,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@MainActivity,
-                        "Rellena todos los campos",
+                        R.string.fillAllTheFields,
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -124,19 +135,16 @@ class MainActivity : AppCompatActivity() {
             remove?.setOnClickListener {
                 if (idSearching.editText?.text.toString().isNotEmpty()) {
                     MaterialAlertDialogBuilder(this@MainActivity)
-                        .setTitle("Eliminar")
-                        .setMessage("Seguro que quieres borrarlo?")
-                        .setNegativeButton("Cancelar") { _, _ ->
-                            // Respond to negative button press
-                        }
-                        .setPositiveButton("Borrar") { _, _ ->
+                        .setTitle(R.string.deleteActivity)
+                        .setMessage(R.string.deleteQuestion)
+                        .setPositiveButton(R.string.deleteActivity) { _, _ ->
                             viewModel.removeHeadset(idSearching.editText?.text.toString().toInt())
                         }
                         .show()
                 } else {
                     Toast.makeText(
                         this@MainActivity,
-                        "Rellena todos los campos",
+                        R.string.fillAllTheFields,
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -146,18 +154,19 @@ class MainActivity : AppCompatActivity() {
                 if (idSearching.editText?.text.toString().isNotEmpty()) {
                     val hola = viewModel.uiState.value?.headset
 
-                    if (hola!=null){
+                    if (hola != null) {
                         nameText.editText?.setText(hola.name)
                         idText.editText?.setText(hola.id.toString())
                         micCheck.isActivated = hola.mic
                         bluetooth.isActivated = hola.bluetooth
-                    } else{
-                        Toast.makeText(this@MainActivity, "No existe", Toast.LENGTH_SHORT).show()
-                        Timber.i("No existe")
+                    } else {
+                        Toast.makeText(this@MainActivity, R.string.notFound, Toast.LENGTH_SHORT)
+                            .show()
+                        Timber.i(R.string.notFound.toString())
                     }
                 } else {
-                    Toast.makeText(this@MainActivity, "Introduce un id", Toast.LENGTH_SHORT).show()
-                    Timber.i("id no introducido")
+                    Toast.makeText(this@MainActivity, R.string.setID, Toast.LENGTH_SHORT).show()
+                    Timber.i(R.string.idNotSet.toString())
                 }
             }
 
@@ -173,7 +182,7 @@ class MainActivity : AppCompatActivity() {
                         bluetooth.isActivated,
                     )
                 } else {
-                    Toast.makeText(this@MainActivity, "Introduce un id", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, R.string.setID, Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -184,7 +193,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            imageView?.setOnClickListener{
+
+            imageView?.setOnClickListener {
                 Timber.i("--Imagen tocada")
 //                Toast.makeText(this@MainActivity, "fotico", Toast.LENGTH_SHORT).show()
             }

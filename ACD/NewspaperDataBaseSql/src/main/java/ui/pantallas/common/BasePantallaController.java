@@ -17,7 +17,7 @@ public class BasePantallaController {
         this.principalController = principalController;
     }
 
-    public void principalCargado() throws IOException {
+    public void principalCargado(){
 
     }
 

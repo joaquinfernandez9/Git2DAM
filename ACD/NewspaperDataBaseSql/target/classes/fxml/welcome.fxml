@@ -12,5 +12,10 @@
             <Font size="36.0" />
          </font>
       </Label>
+      <Label fx:id="labelWelcome" layoutX="217.0" layoutY="180.0" prefHeight="0.0" prefWidth="166.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

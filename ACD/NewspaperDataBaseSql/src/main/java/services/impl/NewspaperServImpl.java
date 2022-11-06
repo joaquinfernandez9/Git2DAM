@@ -2,57 +2,45 @@ package services.impl;
 
 import dao.DaoArticle;
 import dao.DaoNewspaper;
-import model.Article;
 import model.Newspaper;
-import services.NewspaperServ;
-import services.strings.ServConstants;
-import io.vavr.control.Either;
 import jakarta.inject.Inject;
+import services.NewspaperServ;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class NewspaperServImpl implements NewspaperServ {
 
-    private final DaoNewspaper daoNewspaperImpl;
-    private final DaoArticle daoArticleImpl;
+    private final DaoNewspaper daoNewspaper;
 
     @Inject
-    public NewspaperServImpl(DaoNewspaper daoNewspaperImpl,
-                         DaoArticle daoArticleImpl) {
-        this.daoNewspaperImpl = daoNewspaperImpl;
-        this.daoArticleImpl = daoArticleImpl;
+    public NewspaperServImpl(DaoNewspaper daoNewspaper) {
+        this.daoNewspaper = daoNewspaper;
     }
 
-    @Override public List<Newspaper> getAll() {
-        return daoNewspaperImpl.getAll();
+    @Override
+    public List<Newspaper> getAll() {
+        return daoNewspaper.getAll();
     }
 
 
-    @Override public Either<String, Boolean> deleteNewspaper(int id) {
-        List<Article> articles = daoArticleImpl.getAll();
-        Either<String, Boolean> respuesta;
-        articles.forEach(article -> {
-            if (article.getNewspaperID() == id){
-                daoArticleImpl.delete(article.getArticleID());
-
-            }
-        });
-        if (daoNewspaperImpl.delete(id).isRight()){
-            respuesta = Either.right(true);
-        } else {
-            respuesta = Either.left(ServConstants.CANT_OPERATE);
-        }
-        return respuesta;
+    @Override
+    public int deleteNewspaper(int id) {
+        return daoNewspaper.delete(id);
     }
 
-    @Override public boolean newspaperContainsArticles(int idNewspaper) {
-        List<Article> articles = daoArticleImpl.getAll();
-        Newspaper np = daoNewspaperImpl.get(idNewspaper);
-        List<Article> articlesContian = articles.stream().filter(article ->
-                article.getNewspaperID() == np.getNewspaperID())
-                .collect(Collectors.toList());
-        return !articlesContian.isEmpty();
+    @Override
+    public int newspaperContainsArticles(int idNewspaper) {
+        return daoNewspaper.deleteWithArticles(idNewspaper);
+    }
+
+    @Override
+    public int add(Newspaper n) {
+        return daoNewspaper.add(n);
+    }
+
+    @Override
+    public int update(Newspaper n) {
+        return daoNewspaper.update(n);
     }
 
 

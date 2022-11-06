@@ -1,6 +1,8 @@
 package services.impl;
 
 import dao.*;
+import model.Article;
+import model.ReadArticle;
 import model.Reader;
 import services.ReaderServ;
 import io.vavr.control.Either;
@@ -29,8 +31,8 @@ public class ReaderServImpl implements ReaderServ {
     }
 
     @Override
-    public Either<Integer, List<Reader>> getAll(int idNews, int num) {
-        return daoReaderImpl.getAll(idNews, num);
+    public Either<Integer, List<Reader>> getAll(int idNews, int num, String description) {
+        return daoReaderImpl.getAll(idNews, num, description);
     }
 
     @Override
@@ -46,7 +48,7 @@ public class ReaderServImpl implements ReaderServ {
             daoReadArticleImpl.delete(idReader);
             daoSubscriptions.deleteSubscriptions(idReader);
             daoReaderImpl.delete(idReader);
-            restult =1;
+            restult = 1;
         }
 
 
@@ -63,5 +65,19 @@ public class ReaderServImpl implements ReaderServ {
         return daoReaderImpl.add(r);
     }
 
+    @Override
+    public int appendReadArticle(Reader reader, int article, int rating) {
+        int response;
+        if (!daoArticleImpl.getAll().contains(article)) {
+            //not found
+            response = -5;
+        } else {
+            ReadArticle readArticle = new ReadArticle(reader.getId(),
+                    article, rating);
+            daoReadArticleImpl.add(readArticle);
+            response = 1;
+        }
+        return response;
+    }
 
 }

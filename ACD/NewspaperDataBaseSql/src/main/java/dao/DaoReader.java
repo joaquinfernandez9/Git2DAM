@@ -6,7 +6,7 @@ import io.vavr.control.Either;
 import java.util.List;
 
 public interface DaoReader {
-    Either<Integer, List<Reader>> getAll(int idNews, int num);
+    Either<Integer, List<Reader>> getAll(int idNews, int num, String description);
 
     Either<Integer, Reader> get(int id);
 

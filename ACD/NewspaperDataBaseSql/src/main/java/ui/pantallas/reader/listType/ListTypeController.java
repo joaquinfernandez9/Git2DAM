@@ -32,7 +32,8 @@ public class ListTypeController extends BasePantallaController {
         this.viewmodel = viewmodel;
     }
 
-    public void principalCargado() throws IOException {
+    @Override
+    public void principalCargado() {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -42,23 +43,23 @@ public class ListTypeController extends BasePantallaController {
         readersTable.getItems().clear();
         readersTable.getItems().addAll(viewmodel.getAll());
 
-//        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
-//            if (newValue.getReaderList() != null) {
-//                readersTable.getItems().clear();
-//                readersTable.getItems().addAll(newValue.getReaderList());
-//            }
-//        });
-//
-//        viewmodel.reloadState();
+        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
+            if (newValue.getReaderList() != null) {
+                readersTable.getItems().clear();
+                readersTable.getItems().addAll(newValue.getReaderList());
+            }
+        });
+
+        viewmodel.reloadState();
 
     }
 
     @FXML
-    private void search(ActionEvent actionEvent) {
+    private void search() {
         if (description.getText().isEmpty()){
             getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
-//        } else {
-//            viewmodel.getByDesc(description.getText());
+        } else {
+            viewmodel.getByDesc(description.getText());
         }
     }
 }

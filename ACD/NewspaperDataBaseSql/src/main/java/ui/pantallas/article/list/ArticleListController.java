@@ -39,7 +39,7 @@ public class ArticleListController extends BasePantallaController {
     }
 
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado() {
         combo.getItems().addAll("Sports", "Science");
 
 

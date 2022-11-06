@@ -35,7 +35,7 @@ public class UpdateController extends BasePantallaController {
     }
 
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado() {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));

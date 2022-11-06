@@ -9,6 +9,6 @@ import java.util.List;
 public interface DaoSubscriptions {
     int deleteSubscriptions(int id);
 
-    Either<Integer, List<Subscription>> getAll() throws SQLException;
+    Either<Integer, List<Subscription>> getAll();
 
 }

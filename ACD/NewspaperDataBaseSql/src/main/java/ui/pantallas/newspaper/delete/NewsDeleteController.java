@@ -35,7 +35,7 @@ public class NewsDeleteController extends BasePantallaController {
 
 
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado()  {
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperID"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperName"));

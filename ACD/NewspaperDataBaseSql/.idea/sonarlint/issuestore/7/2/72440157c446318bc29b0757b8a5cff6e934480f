@@ -1,11 +1,0 @@
-
-e
-java:S2095>"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‚†ÑÑ
-j
-java:S20951"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(—ÏŸ‹øÿÿÿÿ
-<
-java:S1068"&Remove this unused "db" private field.(íôÀ
-J
-java:S1068"4Remove this unused "daoSubscriptions" private field.(Û½¶¾
-M
-java:S1068"2Remove this unused "daoReadArticle" private field.(ÃÖÊÒûÿÿÿÿ

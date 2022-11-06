@@ -36,7 +36,7 @@ public class ArticleAddController extends BasePantallaController {
     }
 
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado() {
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("articleID"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));

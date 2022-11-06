@@ -20,4 +20,12 @@
     <string name="cambiar_pantalla">Cambiar Pantalla</string>
     <string name="headset">headset</string>
     <string name="foto_cosas">foto cosas</string>
+    <string name="noElements">No hay más elementos</string>
+    <string name="correct">Todo correcto</string>
+    <string name="setID">Introduce un id</string>
+    <string name="idNotSet">ID no introducido</string>
+    <string name="notFound">No encontrado</string>
+    <string name="fillAllTheFields">Rellena todos los campos</string>
+    <string name="deleteActivity">Eliminar</string>
+    <string name="deleteQuestion">Seguro que quieres borrarlo?</string>
 </resources>

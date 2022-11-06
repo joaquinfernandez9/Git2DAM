@@ -2,6 +2,7 @@ package dao.impl;
 
 import dao.DaoReadArticle;
 import dao.dataBase.DaoDB;
+import dao.dataBase.DataBaseConnectionPool;
 import model.Article;
 import model.ReadArticle;
 import io.vavr.control.Either;
@@ -18,17 +19,17 @@ import java.util.logging.Logger;
 @Log4j2
 public class DaoReadArticleImpl implements DaoReadArticle {
 
-    private final DaoDB db;
+    private final DataBaseConnectionPool db;
 
     @Inject
-    public DaoReadArticleImpl(DaoDB db) {
+    public DaoReadArticleImpl(DataBaseConnectionPool db) {
         this.db = db;
     }
 
 
     @Override
     public Either<Integer, List<ReadArticle>> getAll() {
-        Either<Integer, List<ReadArticle>> result = null;
+        Either<Integer, List<ReadArticle>> result;
 
         try (Connection con = db.getConnection();
              Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -49,6 +50,7 @@ public class DaoReadArticleImpl implements DaoReadArticle {
         return result;
     }
 
+    //Append a new ReadArticle: Check for integrity first
     @Override
     public int add(ReadArticle readArticle){
         int response;
@@ -72,9 +74,6 @@ public class DaoReadArticleImpl implements DaoReadArticle {
         }
         return response;
     }
-
-
-
 
     @Override
     public int delete(int id){

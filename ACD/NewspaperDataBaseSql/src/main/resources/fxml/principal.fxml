@@ -8,7 +8,7 @@
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ui.pantallas.principal.PrincipalController">
     <top>
-        <MenuBar fx:id="options">
+        <MenuBar fx:id="menuBar">
             <Menu mnemonicParsing="false" text="Options">
                 <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#menuClick"
                           text="Logout"/>
@@ -50,5 +50,8 @@
             </Menu>
 
         </MenuBar>
+
+
+
     </top>
 </BorderPane>

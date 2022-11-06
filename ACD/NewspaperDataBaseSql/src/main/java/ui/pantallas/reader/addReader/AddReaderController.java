@@ -31,7 +31,7 @@ public class AddReaderController extends BasePantallaController {
     private DatePicker dateReader;
 
     @Override
-    public void principalCargado() throws IOException {
+    public void principalCargado() {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));

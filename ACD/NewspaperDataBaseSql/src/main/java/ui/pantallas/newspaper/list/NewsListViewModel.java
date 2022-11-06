@@ -1,6 +1,5 @@
 package ui.pantallas.newspaper.list;
 
-import services.NewspaperServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;

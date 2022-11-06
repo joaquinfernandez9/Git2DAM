@@ -5,6 +5,3 @@ java:S3923*"[Remove this conditional structure or edit its code blocks so that 
 >	java:S108*")Either remove or fill this block of code.(˜õÃÁ
 =	java:S108,")Either remove or fill this block of code.(¿¯
 >	java:S108.")Either remove or fill this block of code.(å¥ž‡
-K
-java:S1128
-"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿ
