@@ -36,59 +36,10 @@ public class DaoReaderImpl implements DaoReader {
         try (Connection con = pool.getConnection();
              Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                      ResultSet.CONCUR_READ_ONLY)) {
-            if (idNews == -1) {
-                //get all
-                ResultSet rs = statement.executeQuery("select * from reader where id_reader> 0");
-                response = Either.right(readRS(rs));
-            } else if (num == -1) {
-                //Get information about the readers subscribed to a specific newspaper
-                PreparedStatement pS = con.prepareStatement(
-                        "select reader.id, name_reader, birth_reader\n" +
-                                "from reader,\n" +
-                                "     newspaper,\n" +
-                                "     subscribe\n" +
-                                "where reader.id = subscribe.id_reader\n" +
-                                "  and newspaper.id = subscribe.id_newspaper\n" +
-                                "    and newspaper.id = ?" +
-                                "and id_reader> 0");
-                pS.setInt(1, idNews);
-                ResultSet rs = pS.executeQuery();
-                response = Either.right(readRS(rs));
-            } else if (num == -2) {
-                //Get the name of the 100 oldest subscriptors of newspaper Tempo
-                PreparedStatement pS = con.prepareStatement("select name_reader\n" +
-                        "from reader,\n" +
-                        "     subscribe,\n" +
-                        "     newspaper\n" +
-                        "where newspaper.id = subscribe.id_newspaper\n" +
-                        "  and subscribe.id_reader = reader.id\n" +
-                        "  and newspaper.id = ?\n" +
-                        "and subscribe.sing_date is null\n" +
-                        "and subscribe.sing_date in\n" +
-                        "    (select min(subscribe.sing_date) from subscribe)\n" +
-                        "and id_reader > 0" +
-                        "LIMIT 5");
-                pS.setInt(1, idNews);
-                ResultSet rs = pS.executeQuery();
-                response = Either.right(readRS(rs));
-            } else if (description!=null) {
-                //Get the readers of articles of a specific type
-                PreparedStatement ps = con.prepareStatement("select reader.id, reader.name_reader, reader.birth_reader,\n" +
-                        "from reader,\n" +
-                        "     article,\n" +
-                        "     type,\n" +
-                        "     subscribe,\n" +
-                        "     newspaper\n" +
-                        "where reader.id = subscribe.id_reader\n" +
-                        "  and subscribe.cancellation_date IS NULL\n" +
-                        "  and subscribe.id_newspaper = newspaper.id\n" +
-                        "  and newspaper.id = article.id_newspaper\n" +
-                        "  and article.id_type = type.id\n" +
-                        "  and description = ?");
-                ps.setString(1, description);
-                ResultSet rs = ps.executeQuery();
-                response = Either.right(readRS(rs));
-            }
+            //get all
+            ResultSet rs = statement.executeQuery("select * from reader where id_reader> 0");
+            response = Either.right(readRS(rs));
+
         } catch (SQLException ex) {
             Logger.getLogger(DaoReaderImpl.class.getName()).log(
                     Level.SEVERE, null, ex);
@@ -136,11 +87,9 @@ public class DaoReaderImpl implements DaoReader {
 
     private int deleteQuery(Connection con, int id) throws SQLException {
         int response;
-        try (
-                PreparedStatement preparedStatement = con.prepareStatement("delete from reader where id=?");
+        try (PreparedStatement preparedStatement = con.prepareStatement("delete from reader where id=?");
                 PreparedStatement preparedStatement1 = con.prepareStatement("delete from readarticle where id_reader =?");
-                PreparedStatement preparedStatement2 = con.prepareStatement("delete from subscribe where id_reader =?")
-        ) {
+                PreparedStatement preparedStatement2 = con.prepareStatement("delete from subscribe where id_reader =?")) {
             con.setAutoCommit(false);
             preparedStatement1.setInt(1, id);
             preparedStatement1.executeUpdate();
@@ -160,7 +109,7 @@ public class DaoReaderImpl implements DaoReader {
 
     @Override
     public int update(Reader r) {
-        int response = 1;
+        int response;
         Reader real = get(r.getId()).get();
         try (Connection connection = pool.getConnection()) {
             response = updateQuery(connection, real, r);
@@ -175,8 +124,7 @@ public class DaoReaderImpl implements DaoReader {
 
     private int updateQuery(Connection connection, Reader real, Reader r) {
         int response = 1;
-        try (
-                PreparedStatement preparedStatement =
+        try (PreparedStatement preparedStatement =
                         connection.prepareStatement(
                                 "UPDATE reader set name_reader =?, birth_reader=? where id = ?");
                 PreparedStatement pS = connection.prepareStatement(

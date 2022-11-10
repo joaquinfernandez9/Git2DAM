@@ -37,6 +37,7 @@ public class ArticleAddViewModel {
     }
 
     public void add(Article article){
+        //esto es int comprender errores
         articleServImpl.addArticle(article);
         state.setValue(new ArticleAddState(null, !state.get().isChange(), articleServImpl.getAll()));
     }

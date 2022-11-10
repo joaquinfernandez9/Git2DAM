@@ -13,8 +13,6 @@ public interface DaoNewspaper {
 
     int delete(int id);
 
-    //delete with articles
-    int deleteWithArticles(int id);
 
     int update(Newspaper n);
 }

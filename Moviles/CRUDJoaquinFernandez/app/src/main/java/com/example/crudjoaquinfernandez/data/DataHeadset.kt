@@ -27,7 +27,7 @@ object DataHeadset {
     }
 
     fun getHeadset(id: Int): Headset {
-        return this.headsetList[id]
+        return this.headsetList.find { it.id == id }!!
     }
 
     fun getAllHeadsets(): List<Headset> {

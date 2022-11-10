@@ -1,74 +1,99 @@
 package dao.impl;
 
-import config.ConfigProperties;
 import dao.DaoArticle;
-import dao.strings.DaoConstants;
+import dao.DaoNewspaper;
+import dao.dataBase.DataBaseConnectionPool;
+import jakarta.inject.Inject;
 import model.Article;
-import io.vavr.control.Either;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Log4j2
 public class DaoArticleImpl implements DaoArticle {
 
-    @Override public List<Article> getAll() {
-        Path file = Paths.get(ConfigProperties.getInstance()
-                .getProperty(DaoConstants.PATH_ARTICLES));
-        List<Article> articlesList = new ArrayList<>();
 
-        try {
-            List<String> articles = Files.readAllLines(file);
-            articles.forEach(article ->
-                    articlesList.add(new Article(article)));
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
-        return articlesList;
+    private final DataBaseConnectionPool db;
+
+    @Inject
+    public DaoArticleImpl(DataBaseConnectionPool db) {
+        this.db = db;
+    }
+
+    @Override
+    public List<Article> getAll() {
+        List<Article> response;
+        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+        response = jtm.query("select * from article",
+                BeanPropertyRowMapper.newInstance(Article.class));
+        return response;
+    }
+
+    @Override
+    public List<Article> getAll(int idType) {
+        List<Article> response;
+        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+        response = jtm.query("select * from article where id_type=?",
+                BeanPropertyRowMapper.newInstance(Article.class), idType);
+        return response;
+    }
+
+    @Override
+    public Article get(int id){
+        List<Article> response;
+        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+        response = jtm.query("select * from article where id=?",
+                BeanPropertyRowMapper.newInstance(Article.class), id);
+        return response.get(0);
+
     }
 
 
+    @Override
+    public int save(Article a) {
+        SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
+                db.getDataSource()).withTableName("article");
+        Map<String, Object> param = new HashMap<>();
+        param.put("name_article", a.getTitle());
+        param.put("id_type", a.getTypeID());
+        param.put("id_newspaper", a.getNewspaperID());
 
-    @Override public void save(Article a) {
-        Path file = Paths.get(ConfigProperties.getInstance()
-                .getProperty(DaoConstants.PATH_ARTICLES));
-        try {
-            Files.write(file, a.toStringTextFile().getBytes(), StandardOpenOption.APPEND);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
+        a.setArticleID((int) jdbcInsert.executeAndReturnKey(param).longValue());
+        return jdbcInsert.execute(param);
+
+
     }
 
-    @Override public Either<String, Boolean> delete(int id) {
-        Either<String, Boolean> respuesta;
-        Path file = Paths.get(ConfigProperties.getInstance()
-                .getProperty(DaoConstants.PATH_ARTICLES));
-        List<Article> articles = getAll();
+    @Override
+    public int delete(int id) {
+        int response;
         try {
-            List<String> articlesData = Files.readAllLines(file);
-            Article art = articles.stream().filter(article ->
-                            article.getArticleID() == id)
-                    .findFirst().orElse(null);
-            if (art!=null){
-                articles.remove(art);
-                articlesData.remove(art.toStringTextFile());
-                Files.write(file, articlesData);
-                respuesta = Either.right(true);
+            JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+            response = jtm.update("delete from article where id=?", id);
+        }catch (DataIntegrityViolationException e) {
+            if (Objects.requireNonNull(e.getMessage()).contains("IntegrityConstraintViolation")) {
+                response = -2;
             } else {
-                respuesta = Either.left(DaoConstants.ERROR_THERE_ARE_NOT_ANY_ARTICLES_WITH_THAT_ID);
+                response = -3;
             }
-
-
-        } catch (IOException e) {
-            respuesta = Either.left(e.getMessage());
+        } catch (Exception ex) {
+            Logger.getLogger(DaoNewspaper.class.getName())
+                    .log(Level.SEVERE, null, ex);
+            response = -4;
         }
-        return respuesta;
+        return response;
+    }
+
+    @Override public int update(Article a){
+        JdbcTemplate jdbcTemplate =  new JdbcTemplate(db.getDataSource());
+        return jdbcTemplate.update("update article set name_article=? where id=?",
+                a.getTitle(), a.getArticleID());
     }
 
 

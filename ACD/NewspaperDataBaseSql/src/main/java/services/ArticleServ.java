@@ -9,5 +9,5 @@ public interface ArticleServ {
 
     List<Article> getArticlesFilter(String description);
 
-    void addArticle(Article a);
+    int addArticle(Article a);
 }

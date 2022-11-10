@@ -1,14 +1,19 @@
 package dao;
 
 import model.Article;
-import io.vavr.control.Either;
 
 import java.util.List;
 
 public interface DaoArticle {
     List<Article> getAll();
 
-    void save(Article a);
+    List<Article> getAll(int idType);
 
-    Either<String, Boolean> delete(int id);
+    Article get(int id);
+
+    int save(Article a);
+
+    int delete(int id);
+
+    int update(Article a);
 }

@@ -1,9 +1,10 @@
 package com.example.crudjoaquinfernandez.domain.usecases.headset
 
 import com.example.crudjoaquinfernandez.data.DataHeadset
+import com.example.crudjoaquinfernandez.data.HeadsetRepository
 import com.example.crudjoaquinfernandez.domain.model.Headset
 
-class RemoveHeadsetUsecase {
+class RemoveHeadsetUsecase(val repo: HeadsetRepository) {
     operator fun invoke(id: Int) =
-        DataHeadset.removeHeadset(id)
+        repo.removeHeadset(id)
 }

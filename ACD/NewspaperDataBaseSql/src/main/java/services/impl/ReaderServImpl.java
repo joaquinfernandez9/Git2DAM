@@ -1,6 +1,7 @@
 package services.impl;
 
 import dao.*;
+import dao.impl.DaoTypeImpl;
 import model.Article;
 import model.ReadArticle;
 import model.Reader;
@@ -8,7 +9,6 @@ import services.ReaderServ;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class ReaderServImpl implements ReaderServ {
@@ -16,12 +16,12 @@ public class ReaderServImpl implements ReaderServ {
     private final DaoNewspaper daoNewspaperImpl;
     private final DaoReader daoReaderImpl;
     private final DaoArticle daoArticleImpl;
-    private final DaoType daoTypeImpl;
+    private final DaoTypeImpl daoTypeImpl;
     private final DaoReadArticle daoReadArticleImpl;
     private final DaoSubscriptions daoSubscriptions;
 
     @Inject
-    public ReaderServImpl(DaoNewspaper daoNewspaperImpl, DaoSubscriptions daoSubscriptions, DaoReader daoReaderImpl, DaoArticle daoArticleImpl, DaoType daoTypeImpl, DaoReadArticle daoReadArticleImpl) {
+    public ReaderServImpl(DaoNewspaper daoNewspaperImpl, DaoSubscriptions daoSubscriptions, DaoReader daoReaderImpl, DaoArticle daoArticleImpl, DaoTypeImpl daoTypeImpl, DaoReadArticle daoReadArticleImpl) {
         this.daoNewspaperImpl = daoNewspaperImpl;
         this.daoReaderImpl = daoReaderImpl;
         this.daoArticleImpl = daoArticleImpl;
@@ -68,7 +68,9 @@ public class ReaderServImpl implements ReaderServ {
     @Override
     public int appendReadArticle(Reader reader, int article, int rating) {
         int response;
-        if (!daoArticleImpl.getAll().contains(article)) {
+        Article art = daoArticleImpl.getAll().stream().filter(article1 ->
+                article1.getArticleID() == article).findFirst().orElse(null);
+        if (!daoArticleImpl.getAll().contains(art)) {
             //not found
             response = -5;
         } else {

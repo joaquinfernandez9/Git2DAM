@@ -15,6 +15,7 @@ import java.util.Optional;
 
 public class NewsDeleteController extends BasePantallaController {
 
+    private final NewsDeleteViewModel newsDeleteViewModel;
     @FXML
     public TableView<Newspaper> tableNews;
     @FXML
@@ -26,8 +27,6 @@ public class NewsDeleteController extends BasePantallaController {
     @FXML
     public TableColumn<String, Newspaper> directorColumn;
 
-    private final NewsDeleteViewModel newsDeleteViewModel;
-
     @Inject
     public NewsDeleteController(NewsDeleteViewModel newsDeleteViewModel) {
         this.newsDeleteViewModel = newsDeleteViewModel;
@@ -35,7 +34,7 @@ public class NewsDeleteController extends BasePantallaController {
 
 
     @Override
-    public void principalCargado()  {
+    public void principalCargado() {
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperID"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperName"));
@@ -59,25 +58,21 @@ public class NewsDeleteController extends BasePantallaController {
         if (tableNews.getSelectionModel().getSelectedItem() == null) {
             getPrincipalController().sacarAlertError("Error, nothing selected.");
         } else {
-            if (newsDeleteViewModel.containsArticels(
-                    tableNews.getSelectionModel().getSelectedItem().getNewspaperID())){
-                Alert alertDelete = new Alert(Alert.AlertType.INFORMATION);
-                alertDelete.getButtonTypes().remove(ButtonType.OK);
-                alertDelete.getButtonTypes().add(ButtonType.CANCEL);
-                alertDelete.getButtonTypes().add(ButtonType.YES);
-                alertDelete.setTitle("Delete");
-                alertDelete.setContentText("This newspaper contains articles, delete anyway?");
-                Optional<ButtonType> res = alertDelete.showAndWait();
+            Alert alertDelete = new Alert(Alert.AlertType.INFORMATION);
+            alertDelete.getButtonTypes().remove(ButtonType.OK);
+            alertDelete.getButtonTypes().add(ButtonType.CANCEL);
+            alertDelete.getButtonTypes().add(ButtonType.YES);
+            alertDelete.setTitle("Delete");
+            alertDelete.setContentText("This newspaper may contains articles, delete anyway?");
+            Optional<ButtonType> res = alertDelete.showAndWait();
 
 
-                res.ifPresent(buttonType -> {
-                    if (buttonType == ButtonType.YES) {
-                        newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getNewspaperID());
-                    }
-                });
-            } else {
-                newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getNewspaperID());
-            }
+            res.ifPresent(buttonType -> {
+                if (buttonType == ButtonType.YES) {
+                    newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getNewspaperID());
+                }
+            });
         }
     }
 }
+

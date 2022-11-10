@@ -3,9 +3,11 @@ package com.example.crudjoaquinfernandez.ui.recycler
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.crudjoaquinfernandez.domain.model.Headset
+import androidx.lifecycle.viewModelScope
 import com.example.crudjoaquinfernandez.domain.usecases.headset.GetAllUseCase
+import com.example.crudjoaquinfernandez.domain.usecases.headset.GetHeadsetUsecase
 import com.example.crudjoaquinfernandez.domain.usecases.headset.RemoveHeadsetUsecase
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class RecyclerViewModel(
@@ -21,32 +23,58 @@ class RecyclerViewModel(
         getAllHeadsets()
     }
 
-    fun deleteHeadset(id: Int) {
-        if (!removeHeadset.invoke(id)) {
-            _state.value = ListState(
-                error = "Error al eliminar el headset",
-            )
-            Timber.i("Error al eliminar")
-        } else {
-            _state.value = ListState(
-                error = null,
-                list = getAll.invoke()
-            )
+    fun handleEvent(event: RecyclerEvent) {
+        when (event) {
+            is RecyclerEvent.DeleteHeadset -> {
+                deleteHeadset(event.id)
+            }
+            RecyclerEvent.GetAll -> {
+                getAllHeadsets()
+            }
         }
+    }
+
+    private fun deleteHeadset(id: Int) {
+        viewModelScope.launch {
+            try {
+                removeHeadset(id)
+                getAllHeadsets()
+            } catch (e: Exception) {
+                Timber.e(e)
+            }
+        }
+
+        /*
+        * if (!removeHeadset.invoke(id)) {
+                _state.value = ListState(
+                    error = "Error al eliminar el headset",
+                )
+                Timber.i(state.value?.error)
+            } else {
+                _state.value = ListState(
+                    error = null,
+                    list = getAll.invoke()
+                )
+            }
+            * */
     }
 
 
     private fun getAllHeadsets() {
-        if (getAll.invoke().isEmpty()) {
-            _state.value = ListState(
-                error = "No hay headsets",
-            )
-            Timber.i("No hay headsets")
-        } else {
-            _state.value = ListState(
-                list = getAll.invoke(),
-            )
+        viewModelScope.launch {
+            if (getAll.invoke().isEmpty()) {
+                _state.value = ListState(
+                    error = "No hay headsets",
+                )
+                Timber.i(state.value?.error)
+            } else {
+                _state.value = ListState(
+                    error = null,
+                    list = getAll.invoke()
+                )
+            }
         }
+
     }
 
 }

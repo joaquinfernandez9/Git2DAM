@@ -16,10 +16,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 @Log4j2
 public class DaoNewspaperImpl implements DaoNewspaper {
@@ -57,9 +53,9 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         Map<String, Object> param = new HashMap<>();
         param.put("name_newspaper", n.getNewspaperName());
         param.put("release_date", n.getReleaseDate());
-        //no se si esto ultimo hace falta
         n.setNewspaperID((int) jdbcInsert.executeAndReturnKey(param)
                 .longValue());
+        //returns the number of affected rows
         return jdbcInsert.execute(param);
     }
 
@@ -69,6 +65,7 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         int response;
         try {
             JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+            jtm.update("delete from articles where id_newspaper=?", id);
             response = jtm.update("delete from newspaper where id=?", id);
         } catch (DataIntegrityViolationException e) {
             if (e.getMessage().contains("IntegrityConstraintViolation")) {
@@ -84,25 +81,7 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         return response;
     }
 
-    //delete with articles
-    @Override
-    public int deleteWithArticles(int id) {
-        int response;
-        TransactionDefinition txDef = new DefaultTransactionDefinition();
-        DataSourceTransactionManager transactionManager = new
-                DataSourceTransactionManager(db.getDataSource());
-        TransactionStatus txStatus = transactionManager.getTransaction(txDef);
-        try {
-            JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
-            jtm.update("delete from articles where id_newspaper=?", id);
-            response = jtm.update("delete from newspaper where id=?", id);
-        } catch (Exception e){
-            transactionManager.rollback(txStatus);
-            log.error(e.getMessage());
-            response = -3;
-        }
-        return response;
-    }
+
 
     @Override
     public int update(Newspaper n) {

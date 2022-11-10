@@ -1,6 +1,7 @@
 package services.impl;
 
 import dao.DaoArticle;
+import dao.DaoNewspaper;
 import dao.DaoType;
 import model.Article;
 import model.ArticleType;
@@ -20,37 +21,42 @@ public class ArticleServImpl implements ArticleServ {
 
     @Inject
     public ArticleServImpl(DaoArticle daoArticleImpl, DaoType daoTypeImpl,
-                       DaoNewspaper daoNewspaperImpl) {
+                           DaoNewspaper daoNewspaperImpl) {
         this.daoArticleImpl = daoArticleImpl;
         this.daoTypeImpl = daoTypeImpl;
         this.daoNewspaperImpl = daoNewspaperImpl;
     }
 
-    @Override public List<Article> getAll() {
+    @Override
+    public List<Article> getAll() {
         return daoArticleImpl.getAll();
     }
 
-    @Override public List<Article> getArticlesFilter(String description) {
-        List<Article> articlesList = getAll();
-        ArticleType articleTypes = daoTypeImpl.get(null, description);
-        if (articleTypes == null) {
-            return Collections.emptyList();
-        } else {
-            return articlesList.stream()
-                    .filter(article ->
-                            article.getTypeID() == articleTypes.getTypeID())
-                    .collect(Collectors.toList());
-        }
+    //show articles by type
+    @Override
+    public List<Article> getArticlesFilter(String description) {
+        ArticleType type = daoTypeImpl.getAll().stream().filter(articleType ->
+                articleType.getDescription().equals(description)).collect(Collectors.toList()).get(0);
+        return daoArticleImpl.getAll(type.getTypeID());
     }
 
-    @Override public void addArticle(Article a) {
+
+    @Override
+    public int addArticle(Article a) {
         List<Article> articles = getAll();
-        ArticleType art = daoTypeImpl.get(a.getTypeID(), null);
+        int response;
+        ArticleType art = daoTypeImpl.getAll().stream().filter(
+                articleType -> articleType.getTypeID() == a.getTypeID()
+        ).findFirst().orElse(null);
         Newspaper np = daoNewspaperImpl.get(a.getNewspaperID());
         if (!articles.contains(a) && np != null && art != null) {
-            daoArticleImpl.save(a);
+            response = daoArticleImpl.save(a);
+        } else {
+            response = -1;
         }
+        return response;
     }
+
 
 }
 

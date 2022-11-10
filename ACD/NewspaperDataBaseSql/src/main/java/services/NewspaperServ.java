@@ -9,8 +9,6 @@ public interface NewspaperServ {
 
     int deleteNewspaper(int id);
 
-    int newspaperContainsArticles(int idNewspaper);
-
     int add(Newspaper n);
 
     int update(Newspaper n);

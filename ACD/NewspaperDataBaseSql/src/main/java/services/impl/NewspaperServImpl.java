@@ -1,6 +1,5 @@
 package services.impl;
 
-import dao.DaoArticle;
 import dao.DaoNewspaper;
 import model.Newspaper;
 import jakarta.inject.Inject;
@@ -28,10 +27,6 @@ public class NewspaperServImpl implements NewspaperServ {
         return daoNewspaper.delete(id);
     }
 
-    @Override
-    public int newspaperContainsArticles(int idNewspaper) {
-        return daoNewspaper.deleteWithArticles(idNewspaper);
-    }
 
     @Override
     public int add(Newspaper n) {

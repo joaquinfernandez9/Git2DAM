@@ -19,7 +19,29 @@ class MainViewModel(
     private val _uiState = MutableLiveData<MainState>()
     val uiState: LiveData<MainState> get() = _uiState
 
-    fun addHeadset(headset: Headset) {
+
+    fun handleEvent(event: MainEvent){
+        when(event){
+            MainEvent.GetAll -> {
+                allUseCase.invoke()
+            }
+            is MainEvent.GetHeadset -> {
+                get(event.id)
+            }
+            is MainEvent.AddHeadset -> {
+                addHeadset(event.headset)
+            }
+            is MainEvent.RemoveHeadset -> {
+                removeHeadset(event.id)
+            }
+            is MainEvent.UpdateHeadset -> {
+                updateHeadsetUseCase(event.headset)
+            }
+        }
+    }
+
+    private fun addHeadset(headset: Headset) {
+
         if (!addHeadset.invoke(headset)) {
             _uiState.value = MainState(
                 stringError = "error al añadir el headset",
@@ -32,7 +54,7 @@ class MainViewModel(
         }
     }
 
-    fun removeHeadset(id: Int) {
+    private fun removeHeadset(id: Int) {
         if (!removeHeadset.invoke(id)) {
             _uiState.value = MainState(
                 stringError = "error al eliminar el headset",
@@ -44,7 +66,9 @@ class MainViewModel(
         }
     }
 
-    fun get(id: Int) {
+
+
+    private fun get(id: Int) {
         val headset = getHeadset.invoke(id)
         _uiState.value = MainState(
             headset = headset,
@@ -52,13 +76,8 @@ class MainViewModel(
         )
     }
 
-    fun getAll(): List<Headset> {
-        return allUseCase.invoke()
-    }
 
-
-    fun updateHeadset(id: Int, name: String, mic: Boolean, bluetooth: Boolean) {
-        val headset = Headset(id, name, mic, bluetooth)
+    private fun updateHeadset(headset: Headset) {
         updateHeadsetUseCase.invoke(headset)
         _uiState.value = MainState(
             headset = headset,

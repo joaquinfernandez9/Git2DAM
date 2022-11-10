@@ -20,6 +20,4 @@ public class TypeServImpl implements TypeServ {
         return daoTypeImpl.getAll();
     }
 
-
-
 }

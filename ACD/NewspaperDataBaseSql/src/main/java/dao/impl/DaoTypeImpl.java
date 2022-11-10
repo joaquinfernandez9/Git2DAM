@@ -1,25 +1,21 @@
 package dao.impl;
 
-import config.ConfigProperties;
+import dao.DaoNewspaper;
 import dao.DaoType;
 import dao.dataBase.DataBaseConnectionPool;
-import dao.strings.DaoConstants;
-import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import model.ArticleType;
 import lombok.extern.log4j.Log4j2;
-import model.ReadArticle;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Log4j2
 public class DaoTypeImpl implements DaoType {
@@ -31,87 +27,62 @@ public class DaoTypeImpl implements DaoType {
         this.pool = pool;
     }
 
-    @Override public List<ArticleType> getAll(){
-        Path file= Paths.get(ConfigProperties
-                .getInstance().getProperty(DaoConstants.PATH_TYPE));
-        List<ArticleType> articlesList = new ArrayList<>();
-
-        try{
-            List<String> articles = Files.readAllLines(file);
-            articles.forEach(article -> articlesList.add(new ArticleType(article)));
-        } catch (IOException e){
-            log.error(e.getMessage());
-        }
-        return articlesList;
+    @Override
+    public List<ArticleType> getAll() {
+        List<ArticleType> response;
+        JdbcTemplate jtm = new JdbcTemplate(pool.getDataSource());
+        response = jtm.query("select * from type",
+                BeanPropertyRowMapper.newInstance(ArticleType.class));
+        return response;
     }
 
-    @Override public ArticleType get(Integer id, String description){
-        List<ArticleType> articleTypes = getAll();
-        if (id == null){
-            return articleTypes.stream()
-                    .filter(linea -> linea.getDescription().equals(description))
-                    .findFirst().orElse(null);
-        } else {
-            return articleTypes.stream()
-                    .filter(type ->
-                            type.getTypeID() == id)
-                    .findFirst().orElse(null);
-        }
+    @Override
+    public ArticleType get(int id) {
+        List<ArticleType> response;
+        JdbcTemplate jtm = new JdbcTemplate(pool.getDataSource());
+        response = jtm.query("select * from type where id=?",
+                BeanPropertyRowMapper.newInstance(ArticleType.class), id);
+        return response.get(0);
     }
 
-//    @Override
-//    public Either<Integer, List<ArticleType>> getAll() {
-//        Either<Integer, List<ArticleType>> response;
-//        try (Connection con = pool.getConnection()){
-//            PreparedStatement ps = con.prepareStatement("select * from type");
-//            ResultSet rs = ps.executeQuery();
-//            if (rs != null){
-//                response = Either.right(readRS(rs));
-//            } else {
-//                response = Either.left(-2);
-//            }
-//        } catch (SQLException sql){
-//            response = Either.left(-3);
-//            log.error(sql.getMessage());
-//        }
-//
-//        return response;
-//    }
-//
-//    @Override
-//    public Either<Integer, ArticleType> get(Integer id, String description) {
-//        Either<Integer, ArticleType> response;
-//        try (Connection con = pool.getConnection()) {
-//            PreparedStatement ps = con.prepareStatement("select id from type where description=?");
-//            ps.setString(1, description);
-//            ResultSet rs = ps.executeQuery();
-//            if (rs !=null){
-//                response = Either.right(readRS(rs).get(0));
-//            } else {
-//                response = Either.left(-2);
-//            }
-//        } catch (SQLException e) {
-//            response = Either.left(-3);
-//            log.error(e.getMessage());
-//        }
-//        return response;
-//    }
-//
-//
-//    private List<ArticleType> readRS(ResultSet rs) {
-//        List<ArticleType> response = new ArrayList<>();
-//        try {
-//            while (rs.next()) {
-//                int id = rs.getInt("id");
-//                String description = rs.getString("description");
-//                ArticleType type = new ArticleType(id, description);
-//                response.add(type);
-//            }
-//        } catch (SQLException e) {
-//            log.error(e.getMessage());
-//        }
-//        return response;
-//    }
+    @Override
+    public int add(ArticleType a){
+        SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
+                pool.getDataSource()).withTableName("type");
+        Map<String, Object> param = new HashMap<>();
+        param.put("description", a.getDescription());
+        //no se si esto ultimo hace falta
+        a.setTypeID((int) jdbcInsert.executeAndReturnKey(param)
+                .longValue());
+        //returns the number of affected rows
+        return jdbcInsert.execute(param);
+    }
 
+    @Override
+    public int delete(int id){
+        int response;
+        try {
+            JdbcTemplate jtm = new JdbcTemplate(pool.getDataSource());
+            response = jtm.update("delete from type where id=?", id);
+        } catch (DataIntegrityViolationException e) {
+            if (e.getMessage().contains("IntegrityConstraintViolation")) {
+                response = -2;
+            } else {
+                response = -3;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(DaoNewspaper.class.getName())
+                    .log(Level.SEVERE, null, ex);
+            response = -4;
+        }
+        return response;
+    }
+
+    @Override
+    public int update(ArticleType type){
+        JdbcTemplate template = new JdbcTemplate(pool.getDataSource());
+        return template.update("update type set description=? where id=?",
+                type.getDescription(), type.getTypeID());
+    }
 
 }

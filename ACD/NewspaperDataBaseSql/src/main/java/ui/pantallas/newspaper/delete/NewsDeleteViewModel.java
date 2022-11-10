@@ -34,14 +34,9 @@ public class NewsDeleteViewModel {
     }
 
     public void deleteNewspaper(int news){
-        if (newspaperServImpl.deleteNewspaper(news).isRight()){
-            state.setValue(new NewsState(null, !state.get().isChange(), newspaperServImpl.getAll()));
-        }
+        newspaperServImpl.deleteNewspaper(news);
     }
 
-    public boolean containsArticels(int id){
-        return newspaperServImpl.newspaperContainsArticles(id);
-    }
 
 
 }

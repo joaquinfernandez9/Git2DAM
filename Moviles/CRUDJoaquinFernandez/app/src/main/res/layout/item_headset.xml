@@ -17,7 +17,7 @@
         tools:text="Name"
         android:layout_marginEnd="10dp"
         app:layout_constraintStart_toStartOf="@id/guideline4"
-        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
@@ -42,19 +42,32 @@
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintStart_toEndOf="@id/detail"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/outline_delete_24"
         android:background="@color/bege"
         android:contentDescription="@string/delete" />
 
-    <androidx.constraintlayout.widget.Barrier
+    <ImageButton
+        android:id="@+id/detail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_detail"
+        android:background="@color/bege"
+        android:contentDescription="@string/delete" />
+
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="left"
-        tools:layout_editor_absoluteX="241dp"
-        tools:layout_editor_absoluteY="48dp" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.750" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"

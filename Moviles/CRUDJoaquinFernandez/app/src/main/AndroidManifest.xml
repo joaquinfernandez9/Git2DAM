@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
 
     <application
 
@@ -17,7 +16,7 @@
     android:theme="@style/Theme.CRUDJoaquinFernandez"
     tools:targetApi="31">
         <activity
-        android:name=".ui.mainScreen.MainActivity"
+        android:name=".ui.recycler.ListActivity"
         android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +30,9 @@
         </activity>
 
         <activity
-        android:name=".ui.recycler.ListActivity"
-        android:parentActivityName=".ui.mainScreen.MainActivity" />
+        android:name=".ui.mainScreen.MainActivity"
+        android:parentActivityName=".ui.recycler.ListActivity" />
+
 
 
     </application>

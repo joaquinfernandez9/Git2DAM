@@ -7,6 +7,6 @@ import kotlinx.android.parcel.Parcelize
 data class Headset(
     val id: Int,
     var name: String,
-    var mic: Boolean,
-    var bluetooth: Boolean,
+    var mic: Int,
+    var bluetooth: Int,
 ) : Parcelable
