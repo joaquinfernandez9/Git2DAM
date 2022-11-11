@@ -21,14 +21,29 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var temp: Int = 0
 
     private val viewModel: MainViewModel by viewModels {
         MainViewModelFactory(
-            AddHeadsetUsecase(HeadsetRepository(HeadsetRoomDataBase.getDatabase(this).headsetDao())),
-            GetHeadsetUsecase(HeadsetRepository(HeadsetRoomDataBase.getDatabase(this).headsetDao())),
-            UpdateHeadsetUseCase(HeadsetRepository(HeadsetRoomDataBase.getDatabase(this).headsetDao())),
-            RemoveHeadsetUsecase(HeadsetRepository(HeadsetRoomDataBase.getDatabase(this).headsetDao())),
+            AddHeadsetUsecase(
+                HeadsetRepository(
+                    HeadsetRoomDataBase.getDatabase(this).headsetDao()
+                )
+            ),
+            GetHeadsetUsecase(
+                HeadsetRepository(
+                    HeadsetRoomDataBase.getDatabase(this).headsetDao()
+                )
+            ),
+            UpdateHeadsetUseCase(
+                HeadsetRepository(
+                    HeadsetRoomDataBase.getDatabase(this).headsetDao()
+                )
+            ),
+            RemoveHeadsetUsecase(
+                HeadsetRepository(
+                    HeadsetRoomDataBase.getDatabase(this).headsetDao()
+                )
+            ),
             GetAllUseCase(HeadsetRepository(HeadsetRoomDataBase.getDatabase(this).headsetDao())),
         )
     }
@@ -36,13 +51,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Timber.plant(Timber.DebugTree())
-        temp = 0
 
 
+        val ola = intent.getIntExtra("id", 0)
 
         viewModel.handleEvent(
             MainEvent.GetHeadset(
-                intent.getIntExtra("id", 0)
+                if (ola == 0) {
+                    0
+                } else {
+                    ola
+                }
             )
         )
 
@@ -56,11 +75,22 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 state.headset?.let {
-                    nameText.editText?.text = Editable.Factory.getInstance().newEditable(it.name)
-                    idText.editText?.text =
-                        Editable.Factory.getInstance().newEditable(it.id.toString())
-                    micCheck.isChecked = it.mic
-                    bluetooth.isChecked = it.bluetooth
+                    if (it.id == 0) {
+                        nameText.editText?.text =
+                            Editable.Factory.getInstance().newEditable("")
+                        idText.editText?.text =
+                            Editable.Factory.getInstance().newEditable("")
+                        micCheck.isChecked = true
+                        bluetooth.isChecked = true
+                    } else {
+                        nameText.editText?.text =
+                            Editable.Factory.getInstance().newEditable(it.name)
+                        idText.editText?.text =
+                            Editable.Factory.getInstance().newEditable(it.id.toString())
+                        micCheck.isChecked = it.mic == 1
+                        bluetooth.isChecked = it.bluetooth == 1
+                    }
+
                 }
             }
 
@@ -97,9 +127,9 @@ class MainActivity : AppCompatActivity() {
                             Headset(
                                 name = nameText.editText?.text.toString(),
                                 id = Integer.parseInt(idText.editText?.text.toString()),
-                                mic = micCheck.isActivated,
-                                bluetooth = bluetooth.isActivated,
-                            )
+                                mic = if (micCheck.isActivated) 1 else 0,
+                                bluetooth = if (bluetooth.isActivated) 1 else 0
+                            ),
                         )
                     )
 
@@ -142,8 +172,8 @@ class MainActivity : AppCompatActivity() {
                     if (headset != null) {
                         nameText.editText?.setText(headset.name)
                         idText.editText?.setText(headset.id.toString())
-                        micCheck.isActivated = headset.mic
-                        bluetooth.isActivated = headset.bluetooth
+                        micCheck.isActivated = headset.mic == 1
+                        bluetooth.isActivated = headset.bluetooth == 1
                     } else {
                         Toast.makeText(this@MainActivity, R.string.notFound, Toast.LENGTH_SHORT)
                             .show()
@@ -160,8 +190,8 @@ class MainActivity : AppCompatActivity() {
                     val headset = Headset(
                         idText.editText?.text.toString().toInt(),
                         nameText.toString(),
-                        micCheck.isActivated,
-                        bluetooth.isActivated,
+                        mic = if (micCheck.isActivated) 1 else 0,
+                        bluetooth = if (bluetooth.isActivated) 1 else 0,
                     )
                     viewModel.handleEvent(
                         MainEvent.UpdateHeadset(

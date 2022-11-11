@@ -5,18 +5,18 @@ import com.example.crudjoaquinfernandez.data.modelo.HeadsetEntity
 
 @Dao
 interface HeadsetDao {
-    @Query("SELECT * FROM headsets")
-    fun getAll(): List<HeadsetEntity>
+    @Query("SELECT * FROM cascos")
+    suspend fun getAll(): List<HeadsetEntity>
 
-    @Query("SELECT * FROM headsets WHERE id = :id")
-    fun getById(id: Int): HeadsetEntity
+    @Query("SELECT * FROM cascos WHERE id = :id")
+    suspend fun getById(id: Int): HeadsetEntity?
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    fun insert(headset: HeadsetEntity)
+    suspend fun insert(headset: HeadsetEntity)
 
     @Update
-    fun update(headset: HeadsetEntity)
+    suspend fun update(headset: HeadsetEntity)
 
-    @Delete
-    fun delete(id: Int)
+    @Query("DELETE FROM cascos WHERE id = :id")
+    suspend fun delete(id: Int)
 }

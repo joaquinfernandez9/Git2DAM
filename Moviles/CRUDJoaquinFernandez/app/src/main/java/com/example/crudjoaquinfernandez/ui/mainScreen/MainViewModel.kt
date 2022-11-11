@@ -1,11 +1,10 @@
 package com.example.crudjoaquinfernandez.ui.mainScreen
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.example.crudjoaquinfernandez.domain.model.Headset
 import com.example.crudjoaquinfernandez.domain.usecases.headset.*
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 class MainViewModel(
@@ -20,10 +19,10 @@ class MainViewModel(
     val uiState: LiveData<MainState> get() = _uiState
 
 
-    fun handleEvent(event: MainEvent){
-        when(event){
+    fun handleEvent(event: MainEvent) {
+        when (event) {
             MainEvent.GetAll -> {
-                allUseCase.invoke()
+                getAll()
             }
             is MainEvent.GetHeadset -> {
                 get(event.id)
@@ -35,54 +34,64 @@ class MainViewModel(
                 removeHeadset(event.id)
             }
             is MainEvent.UpdateHeadset -> {
-                updateHeadsetUseCase(event.headset)
+                updateHeadset(event.headset)
             }
         }
     }
 
     private fun addHeadset(headset: Headset) {
-
-        if (!addHeadset.invoke(headset)) {
-            _uiState.value = MainState(
-                stringError = "error al añadir el headset",
-            )
-        } else {
-            _uiState.value = MainState(
-                headset = headset,
-                stringError = null,
-            )
+        viewModelScope.launch {
+            try {
+                addHeadset.invoke(headset)
+                _uiState.value = _uiState.value?.copy(stringError = null)
+            } catch (e: Exception) {
+                _uiState.value = _uiState.value?.copy(stringError = e.message)
+            }
         }
     }
 
     private fun removeHeadset(id: Int) {
-        if (!removeHeadset.invoke(id)) {
-            _uiState.value = MainState(
-                stringError = "error al eliminar el headset",
-            )
-        } else {
-            _uiState.value = MainState(
-                stringError = null,
-            )
+        viewModelScope.launch {
+            try {
+                removeHeadset(id)
+            } catch (e: Exception) {
+                Timber.e(e)
+            }
         }
     }
 
 
-
     private fun get(id: Int) {
-        val headset = getHeadset.invoke(id)
-        _uiState.value = MainState(
-            headset = headset,
-            stringError = null,
-        )
+        viewModelScope.launch {
+            try {
+                val headset = getHeadset.invoke(id)
+                _uiState.value = MainState(
+                    headset = headset,
+                    stringError = null,
+                )
+            } catch (e: Exception) {
+                _uiState.value = _uiState.value?.copy(stringError = e.message)
+            }
+
+        }
+    }
+
+    private fun getAll(){
+        viewModelScope.launch {
+            allUseCase.invoke()
+        }
     }
 
 
     private fun updateHeadset(headset: Headset) {
-        updateHeadsetUseCase.invoke(headset)
-        _uiState.value = MainState(
-            headset = headset,
-            stringError = null,
-        )
+        viewModelScope.launch {
+            try {
+                updateHeadsetUseCase.invoke(headset)
+                _uiState.value = _uiState.value?.copy(stringError = null)
+            } catch (e: Exception) {
+                _uiState.value = _uiState.value?.copy(stringError = e.message)
+            }
+        }
     }
 
     fun showError() {

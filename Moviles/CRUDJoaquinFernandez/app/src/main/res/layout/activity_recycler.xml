@@ -8,6 +8,19 @@
     tools:context=".ui.recycler.ListActivity">
 
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="si"
+        app:srcCompat="@drawable/ic_detail"
+        tools:ignore="RtlHardcoded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHeadsets"
         android:layout_width="match_parent"

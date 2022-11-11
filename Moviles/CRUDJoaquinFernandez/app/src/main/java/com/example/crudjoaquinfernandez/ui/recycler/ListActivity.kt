@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.crudjoaquinfernandez.R
 import com.example.crudjoaquinfernandez.data.HeadsetRepository
 import com.example.crudjoaquinfernandez.data.HeadsetRoomDataBase
 import com.example.crudjoaquinfernandez.databinding.ActivityRecyclerBinding
@@ -19,7 +20,11 @@ class ListActivity : AppCompatActivity() {
 
     private val viewModel: RecyclerViewModel by viewModels {
         RecyclerViewModelFactory(
-            RemoveHeadsetUsecase(HeadsetRepository(HeadsetRoomDataBase.getDatabase(this).headsetDao())),
+            RemoveHeadsetUsecase(
+                HeadsetRepository(
+                    HeadsetRoomDataBase.getDatabase(this).headsetDao()
+                )
+            ),
             GetAllUseCase(HeadsetRepository(HeadsetRoomDataBase.getDatabase(this).headsetDao())),
         )
     }
@@ -32,6 +37,15 @@ class ListActivity : AppCompatActivity() {
         with(binding) {
             setContentView(root)
 
+            viewModel.handleEvent(
+                RecyclerEvent.GetAll
+            )
+
+            floatingActionButton.setOnClickListener {
+                val intent = Intent(this@ListActivity, MainActivity::class.java)
+                startActivity(intent)
+            }
+
             val headsetList = viewModel.state.value?.list ?: emptyList()
 
             val adapter = HeadsetAdapter(
@@ -42,6 +56,7 @@ class ListActivity : AppCompatActivity() {
                             RecyclerEvent.DeleteHeadset(id)
                         )
                     }
+
                     override fun onClickDetail(id: Int) {
                         val intent = Intent(
                             this@ListActivity,
@@ -61,8 +76,11 @@ class ListActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+                state.list.let {
+                    adapter.cambiarLista(it)
+                }
 
-                adapter.cambiarLista(headsetList)
+//                adapter.cambiarLista(headsetList)
             }
 
             headsetList.let {
@@ -71,8 +89,6 @@ class ListActivity : AppCompatActivity() {
                     LinearLayoutManager(this@ListActivity)
             }
         }
-
-
 
 
 //        onBackPressed()

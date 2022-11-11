@@ -38,41 +38,20 @@ class RecyclerViewModel(
         viewModelScope.launch {
             try {
                 removeHeadset(id)
-                getAllHeadsets()
+                _state.value = ListState(getAll.invoke())
             } catch (e: Exception) {
                 Timber.e(e)
             }
         }
 
-        /*
-        * if (!removeHeadset.invoke(id)) {
-                _state.value = ListState(
-                    error = "Error al eliminar el headset",
-                )
-                Timber.i(state.value?.error)
-            } else {
-                _state.value = ListState(
-                    error = null,
-                    list = getAll.invoke()
-                )
-            }
-            * */
     }
-
 
     private fun getAllHeadsets() {
         viewModelScope.launch {
-            if (getAll.invoke().isEmpty()) {
-                _state.value = ListState(
-                    error = "No hay headsets",
-                )
-                Timber.i(state.value?.error)
-            } else {
-                _state.value = ListState(
-                    error = null,
-                    list = getAll.invoke()
-                )
-            }
+            _state.value = ListState(
+                error = null,
+                list = getAll.invoke()
+            )
         }
 
     }

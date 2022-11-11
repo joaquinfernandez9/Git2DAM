@@ -7,7 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [HeadsetEntity::class], version = 1, exportSchema = false)
+@Database(entities = [HeadsetEntity::class], version = 10, exportSchema = true)
 //@TypeConverters(Converters::class) <- para pasar a date y tal
 abstract class HeadsetRoomDataBase: RoomDatabase(){
 
@@ -22,8 +22,10 @@ abstract class HeadsetRoomDataBase: RoomDatabase(){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     HeadsetRoomDataBase::class.java,
-                    "headset_database"
-                ).build()
+                    "cascos_database"
+                ).createFromAsset("database/cascos.db")
+                    .fallbackToDestructiveMigrationFrom(1)
+                    .build()
                 INSTANCE = instance
                 instance
             }

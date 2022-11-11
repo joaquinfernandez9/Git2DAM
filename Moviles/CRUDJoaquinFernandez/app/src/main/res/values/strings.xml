@@ -28,4 +28,5 @@
     <string name="fillAllTheFields">Rellena todos los campos</string>
     <string name="deleteActivity">Eliminar</string>
     <string name="deleteQuestion">Seguro que quieres borrarlo?</string>
+    <string name="menu">menu</string>
 </resources>

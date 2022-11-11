@@ -7,4 +7,4 @@ fun HeadsetEntity.toHeadset(): Headset {
 }
 
 fun Headset.toHeadsetEntity(): HeadsetEntity =
-    HeadsetEntity(this.id, this.name, this.mic, this.bluetooth)
+    HeadsetEntity(this.id, this.bluetooth, this.name, this.mic)
