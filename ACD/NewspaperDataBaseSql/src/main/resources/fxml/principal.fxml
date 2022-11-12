@@ -37,6 +37,8 @@
                           text="Update"/>
                 <MenuItem fx:id="rAdd" mnemonicParsing="false" onAction="#menuClick"
                           text="Add"/>
+                <MenuItem fx:id="rSubscribe" mnemonicParsing="false" onAction="#menuClick"
+                          text="Subscribe"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Article">
                 <MenuItem fx:id="artList" mnemonicParsing="false" onAction="#menuClick"
@@ -50,7 +52,6 @@
             </Menu>
 
         </MenuBar>
-
 
 
     </top>

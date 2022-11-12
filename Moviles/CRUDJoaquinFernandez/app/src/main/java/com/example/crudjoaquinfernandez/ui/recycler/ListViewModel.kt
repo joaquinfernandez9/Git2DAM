@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.crudjoaquinfernandez.domain.usecases.headset.GetAllUseCase
-import com.example.crudjoaquinfernandez.domain.usecases.headset.GetHeadsetUsecase
 import com.example.crudjoaquinfernandez.domain.usecases.headset.RemoveHeadsetUsecase
+import com.example.crudjoaquinfernandez.ui.mainScreen.Const
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -17,7 +17,6 @@ class RecyclerViewModel(
 
     private val _state = MutableLiveData<ListState>()
     val state: MutableLiveData<ListState> = _state
-
 
     init {
         getAllHeadsets()
@@ -47,6 +46,7 @@ class RecyclerViewModel(
     }
 
     private fun getAllHeadsets() {
+        //haciendo el debug esto se llama 3 veces antes de funcionar
         viewModelScope.launch {
             _state.value = ListState(
                 error = null,
@@ -67,13 +67,13 @@ class RecyclerViewModelFactory(
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(RecyclerViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
+            @Suppress(Const.uncheckedCast)
             return RecyclerViewModel(
                 removeHeadset,
                 getAll,
             ) as T
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
+        throw IllegalArgumentException(Const.unknownvmc)
     }
 
 }

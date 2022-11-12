@@ -29,6 +29,11 @@ class ListActivity : AppCompatActivity() {
         )
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.handleEvent(RecyclerEvent.GetAll)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -56,11 +61,9 @@ class ListActivity : AppCompatActivity() {
                             RecyclerEvent.DeleteHeadset(id)
                         )
                     }
-
                     override fun onClickDetail(id: Int) {
                         val intent = Intent(
-                            this@ListActivity,
-                            MainActivity::class.java
+                            this@ListActivity, MainActivity::class.java
                         )
                         intent.putExtra("id", id)
                         startActivity(intent)
@@ -72,26 +75,20 @@ class ListActivity : AppCompatActivity() {
                 state.error?.let {
                     Timber.e(it)
                     Toast.makeText(
-                        this@ListActivity, it,
-                        Toast.LENGTH_SHORT
+                        this@ListActivity, it, Toast.LENGTH_SHORT
                     ).show()
                 }
                 state.list.let {
                     adapter.cambiarLista(it)
                 }
-
-//                adapter.cambiarLista(headsetList)
             }
 
             headsetList.let {
                 rvHeadsets.adapter = adapter
-                rvHeadsets.layoutManager =
-                    LinearLayoutManager(this@ListActivity)
+                rvHeadsets.layoutManager = LinearLayoutManager(this@ListActivity)
             }
         }
 
-
-//        onBackPressed()
 
     }
 

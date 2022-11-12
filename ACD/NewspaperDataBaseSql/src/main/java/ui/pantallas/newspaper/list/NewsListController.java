@@ -8,7 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 
-import java.io.IOException;
+import java.util.Date;
 
 public class NewsListController extends BasePantallaController {
 
@@ -16,8 +16,7 @@ public class NewsListController extends BasePantallaController {
     @FXML public TableView<Newspaper> tableNews;
     @FXML public TableColumn<Integer, Newspaper> idColumn;
     @FXML public TableColumn<String, Newspaper> nameColumn;
-    @FXML public TableColumn<Double, Newspaper> priceColumn;
-    @FXML public TableColumn<String, Newspaper> directorColumn;
+    @FXML public TableColumn<Date, Newspaper> dateColumn;
 
     private final NewsListViewModel newsListViewModel;
 
@@ -26,15 +25,12 @@ public class NewsListController extends BasePantallaController {
         this.newsListViewModel = newsListViewModel;
     }
 
-
-
     @Override
     public void principalCargado() {
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperID"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperName"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        directorColumn.setCellValueFactory(new PropertyValueFactory<>("director"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name_newspaper"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("release_date"));
 
         super.principalCargado();
 
@@ -44,11 +40,7 @@ public class NewsListController extends BasePantallaController {
                 tableNews.getItems().addAll(newValue.getNewspaperList());
             }
         });
-
         newsListViewModel.load();
     }
-
-
-
 
 }

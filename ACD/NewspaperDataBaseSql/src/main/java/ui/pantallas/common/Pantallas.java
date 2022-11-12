@@ -15,6 +15,7 @@ public enum Pantallas {
     READER_LIST_TYPE("/fxml/reader/readerListType.fxml"),
     READER_ADD("/fxml/reader/addReader.fxml"),
     READER_UPDATE("/fxml/reader/updateReader.fxml"),
+    READER_SUBSCRIBE("/fxml/reader/subscribeReader.fxml"),
     NEWS_LIST("/fxml/newspaper/npList.fxml"),
     NEWS_ADD("/fxml/newspaper/npAdd.fxml"),
     NEWS_DELETE("/fxml/newspaper/npDelete.fxml"),

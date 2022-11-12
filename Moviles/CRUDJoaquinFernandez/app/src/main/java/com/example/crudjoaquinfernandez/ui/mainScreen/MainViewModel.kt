@@ -31,7 +31,7 @@ class MainViewModel(
                 addHeadset(event.headset)
             }
             is MainEvent.RemoveHeadset -> {
-                removeHeadset(event.id)
+                remove(event.id)
             }
             is MainEvent.UpdateHeadset -> {
                 updateHeadset(event.headset)
@@ -50,7 +50,7 @@ class MainViewModel(
         }
     }
 
-    private fun removeHeadset(id: Int) {
+    private fun remove(id: Int) {
         viewModelScope.launch {
             try {
                 removeHeadset(id)
@@ -100,6 +100,8 @@ class MainViewModel(
 
 }
 
+
+
 /**
  * Factory class to instantiate the [ViewModel] instance.
  */
@@ -113,7 +115,7 @@ class MainViewModelFactory(
     ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
+            @Suppress(Const.uncheckedCast)
             return MainViewModel(
                 addHeadset,
                 removeHeadset,
@@ -122,7 +124,7 @@ class MainViewModelFactory(
                 allUseCase,
             ) as T
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
+        throw IllegalArgumentException(Const.unknownvmc)
     }
 }
 

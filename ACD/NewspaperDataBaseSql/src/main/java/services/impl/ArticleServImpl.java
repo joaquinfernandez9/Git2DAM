@@ -8,8 +8,6 @@ import model.ArticleType;
 import model.Newspaper;
 import services.ArticleServ;
 import jakarta.inject.Inject;
-
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,23 +30,29 @@ public class ArticleServImpl implements ArticleServ {
         return daoArticleImpl.getAll();
     }
 
+    @Override
+    public List<Article> getArticlesOfAReader(int idReader) {
+        return daoArticleImpl.getArticlesOfAReader(idReader);
+    }
+
     //show articles by type
     @Override
     public List<Article> getArticlesFilter(String description) {
-        ArticleType type = daoTypeImpl.getAll().stream().filter(articleType ->
-                articleType.getDescription().equals(description)).collect(Collectors.toList()).get(0);
-        return daoArticleImpl.getAll(type.getTypeID());
+        ArticleType type = daoTypeImpl.getAll().stream()
+                .filter(articleType ->
+                        articleType.getDescription().equals(description))
+                .collect(Collectors.toList()).get(0);
+        return daoArticleImpl.getAll(type.getId());
     }
-
 
     @Override
     public int addArticle(Article a) {
         List<Article> articles = getAll();
         int response;
         ArticleType art = daoTypeImpl.getAll().stream().filter(
-                articleType -> articleType.getTypeID() == a.getTypeID()
+                articleType -> articleType.getId() == a.getId_type()
         ).findFirst().orElse(null);
-        Newspaper np = daoNewspaperImpl.get(a.getNewspaperID());
+        Newspaper np = daoNewspaperImpl.get(a.getId_newspaper());
         if (!articles.contains(a) && np != null && art != null) {
             response = daoArticleImpl.save(a);
         } else {

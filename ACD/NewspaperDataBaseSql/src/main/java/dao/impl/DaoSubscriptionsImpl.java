@@ -26,7 +26,7 @@ public class DaoSubscriptionsImpl implements DaoSubscriptions {
     }
 
     @Override
-    public int deleteSubscriptions(int id) {
+    public int delete(int id) {
         int response = 0;
         try (Connection con = db.getConnection(); PreparedStatement preparedStatement = con.prepareStatement("delete from subscribe where id_reader=?")) {
             preparedStatement.setInt(1, id);
@@ -41,8 +41,8 @@ public class DaoSubscriptionsImpl implements DaoSubscriptions {
         int response;
         try (Connection con = db.getConnection();
              PreparedStatement ps = con.prepareStatement("insert into subscribe (id_newspaper, id_reader, sing_date) values (?,?,?)");) {
-            ps.setInt(1, subscription.getIdNewspaper());
-            ps.setInt(2, subscription.getIdReader());
+            ps.setInt(1, subscription.getId_newspaper());
+            ps.setInt(2, subscription.getId_reader());
             LocalDate date = LocalDate.now();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             ps.setDate(3, Date.valueOf(dateFormat.format(date)));
@@ -74,13 +74,42 @@ public class DaoSubscriptionsImpl implements DaoSubscriptions {
         return result;
     }
 
+    @Override
+    public Either<Integer, List<Subscription>> getAll(int id) {
+        Either<Integer, List<Subscription>> result;
+        Connection con = db.getConnection();
+        try (con; PreparedStatement ps = con.prepareStatement("select * from subscribe where id_reader=?")) {
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs != null) {
+                result = Either.right(readRS(rs));
+            } else {
+                result = Either.left(-2);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoReaderImpl.class.getName()).log(Level.SEVERE, null, ex);
+            result = Either.left(-3);
+        }
+        return result;
+    }
+
+
     private List<Subscription> readRS(ResultSet rs) {
         List<Subscription> result = new ArrayList<>();
         try {
             while (rs.next()) {
                 int id_newspaper = rs.getInt("id_newspaper");
                 int id_reader = rs.getInt("id_reader");
-                Subscription subscription = new Subscription(id_reader, id_newspaper);
+                LocalDate sing_date = rs.getDate("sing_date").toLocalDate();
+                Date cancellation_date = rs.getDate("cancellation_date");
+                Subscription subscription;
+                if (cancellation_date != null) {
+                    subscription = new Subscription(id_reader, id_newspaper,
+                            sing_date, cancellation_date.toLocalDate());
+                } else {
+                    subscription = new Subscription(id_reader, id_newspaper, sing_date);
+                }
                 result.add(subscription);
             }
         } catch (SQLException e) {
@@ -88,5 +117,6 @@ public class DaoSubscriptionsImpl implements DaoSubscriptions {
         }
         return result;
     }
+
 
 }

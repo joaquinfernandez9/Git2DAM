@@ -53,15 +53,11 @@ class MainActivity : AppCompatActivity() {
         Timber.plant(Timber.DebugTree())
 
 
-        val ola = intent.getIntExtra("id", 0)
+
 
         viewModel.handleEvent(
             MainEvent.GetHeadset(
-                if (ola == 0) {
-                    0
-                } else {
-                    ola
-                }
+                intent.getIntExtra(Const.id, 0)
             )
         )
 
@@ -75,141 +71,125 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 state.headset?.let {
-                    if (it.id == 0) {
-                        nameText.editText?.text =
-                            Editable.Factory.getInstance().newEditable("")
-                        idText.editText?.text =
-                            Editable.Factory.getInstance().newEditable("")
-                        micCheck.isChecked = true
-                        bluetooth.isChecked = true
-                    } else {
-                        nameText.editText?.text =
-                            Editable.Factory.getInstance().newEditable(it.name)
-                        idText.editText?.text =
-                            Editable.Factory.getInstance().newEditable(it.id.toString())
-                        micCheck.isChecked = it.mic == 1
-                        bluetooth.isChecked = it.bluetooth == 1
-                    }
-
+                    nameText.editText?.text =
+                        Editable.Factory.getInstance().newEditable(it.name)
+                    idText.editText?.text =
+                        Editable.Factory.getInstance().newEditable(it.id.toString())
+                    micCheck.isChecked = it.mic == 1
+                    bluetooth.isChecked = it.bluetooth == 1
                 }
+
             }
 
+        Picasso.get()
+            .load(Const.picURL)
+            .into(imageView)
 
-
-            Picasso.get()
-                .load("https://images.ecestaticos.com/FPDLmoNTTTzZeuuEMqvGze2X41A=/0x0:1183x665/1200x675/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F5e5%2F157%2F764%2F5e5157764ad17f8e7ae6ead0618c5fdb.jpg")
-                .into(imageView)
-
-            viewModel.uiState.observe(this@MainActivity) { state ->
-                state.stringError?.let { error ->
-                    Toast.makeText(this@MainActivity, error, Toast.LENGTH_SHORT).show()
-                    viewModel.showError()
-                }
+        viewModel.uiState.observe(this@MainActivity) { state ->
+            state.stringError?.let { error ->
+                Toast.makeText(this@MainActivity, error, Toast.LENGTH_SHORT).show()
+                viewModel.showError()
             }
-
-            viewModel.uiState.observe(this@MainActivity) { state ->
-                state.stringError?.let { error ->
-                    Toast.makeText(this@MainActivity, error, Toast.LENGTH_SHORT).show()
-                    viewModel.showError()
-                }
-                if (state.stringError == null) {
-                    Toast.makeText(this@MainActivity, R.string.correct, Toast.LENGTH_SHORT).show()
-                    Timber.i(R.string.correct.toString())
-                }
-            }
-
-            add?.setOnClickListener {
-                if (nameText.editText?.text.toString().isNotEmpty() &&
-                    idText.editText?.text.toString().isNotEmpty()
-                ) {
-                    viewModel.handleEvent(
-                        MainEvent.AddHeadset(
-                            Headset(
-                                name = nameText.editText?.text.toString(),
-                                id = Integer.parseInt(idText.editText?.text.toString()),
-                                mic = if (micCheck.isActivated) 1 else 0,
-                                bluetooth = if (bluetooth.isActivated) 1 else 0
-                            ),
-                        )
-                    )
-
-
-                } else {
-                    Toast.makeText(
-                        this@MainActivity,
-                        R.string.fillAllTheFields,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-            remove?.setOnClickListener {
-                if (idSearching.editText?.text.toString().isNotEmpty()) {
-                    MaterialAlertDialogBuilder(this@MainActivity)
-                        .setTitle(R.string.deleteActivity)
-                        .setMessage(R.string.deleteQuestion)
-                        .setPositiveButton(R.string.deleteActivity) { _, _ ->
-                            viewModel.handleEvent(
-                                MainEvent.RemoveHeadset(
-                                    idSearching.editText?.text.toString().toInt()
-                                )
-                            )
-
-                        }
-                        .show()
-                } else {
-                    Toast.makeText(
-                        this@MainActivity,
-                        R.string.fillAllTheFields,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-
-            search.setOnClickListener {
-                if (idSearching.editText?.text.toString().isNotEmpty()) {
-                    val headset = viewModel.uiState.value?.headset
-
-                    if (headset != null) {
-                        nameText.editText?.setText(headset.name)
-                        idText.editText?.setText(headset.id.toString())
-                        micCheck.isActivated = headset.mic == 1
-                        bluetooth.isActivated = headset.bluetooth == 1
-                    } else {
-                        Toast.makeText(this@MainActivity, R.string.notFound, Toast.LENGTH_SHORT)
-                            .show()
-                        Timber.i(R.string.notFound.toString())
-                    }
-                } else {
-                    Toast.makeText(this@MainActivity, R.string.setID, Toast.LENGTH_SHORT).show()
-                    Timber.i(R.string.idNotSet.toString())
-                }
-            }
-
-            update.setOnClickListener {
-                if (idText.editText?.text.toString().isNotEmpty()) {
-                    val headset = Headset(
-                        idText.editText?.text.toString().toInt(),
-                        nameText.toString(),
-                        mic = if (micCheck.isActivated) 1 else 0,
-                        bluetooth = if (bluetooth.isActivated) 1 else 0,
-                    )
-                    viewModel.handleEvent(
-                        MainEvent.UpdateHeadset(
-                            headset
-                        )
-                    )
-                } else {
-                    Toast.makeText(this@MainActivity, R.string.setID, Toast.LENGTH_SHORT).show()
-                }
-            }
-
-
-            changeScreen?.setOnClickListener {
-                val intent = Intent(this@MainActivity, ListActivity::class.java)
-                startActivity(intent)
-            }
-
-
         }
+
+        viewModel.uiState.observe(this@MainActivity) { state ->
+            state.stringError?.let { error ->
+                Toast.makeText(this@MainActivity, error, Toast.LENGTH_SHORT).show()
+                viewModel.showError()
+            }
+            if (state.stringError == null) {
+                Toast.makeText(this@MainActivity, R.string.correct, Toast.LENGTH_SHORT).show()
+                Timber.i(R.string.correct.toString())
+            }
+        }
+
+        add?.setOnClickListener {
+            if (nameText.editText?.text.toString().isNotEmpty() &&
+                idText.editText?.text.toString().isNotEmpty()
+            ) {
+                viewModel.handleEvent(
+                    MainEvent.AddHeadset(
+                        Headset(
+                            name = nameText.editText?.text.toString(),
+                            id = Integer.parseInt(idText.editText?.text.toString()),
+                            mic = if (micCheck.isActivated) 1 else 0,
+                            bluetooth = if (bluetooth.isActivated) 1 else 0
+                        ),
+                    )
+                )
+
+
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    R.string.fillAllTheFields,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+        remove?.setOnClickListener {
+            if (idSearching.editText?.text.toString().isNotEmpty()) {
+                MaterialAlertDialogBuilder(this@MainActivity)
+                    .setTitle(R.string.deleteActivity)
+                    .setMessage(R.string.deleteQuestion)
+                    .setPositiveButton(R.string.deleteActivity) { _, _ ->
+                        viewModel.handleEvent(
+                            MainEvent.RemoveHeadset(
+                                idSearching.editText?.text.toString().toInt()
+                            )
+                        )
+
+                    }
+                    .show()
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    R.string.fillAllTheFields,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        search.setOnClickListener {
+            if (idSearching.editText?.text.toString().isNotEmpty()) {
+                val headset = viewModel.uiState.value?.headset
+
+                if (headset != null) {
+                    nameText.editText?.setText(headset.name)
+                    idText.editText?.setText(headset.id.toString())
+                    micCheck.isActivated = headset.mic == 1
+                    bluetooth.isActivated = headset.bluetooth == 1
+                } else {
+                    Toast.makeText(this@MainActivity, R.string.notFound, Toast.LENGTH_SHORT)
+                        .show()
+                    Timber.i(R.string.notFound.toString())
+                }
+            } else {
+                Toast.makeText(this@MainActivity, R.string.setID, Toast.LENGTH_SHORT).show()
+                Timber.i(R.string.idNotSet.toString())
+            }
+        }
+
+        update.setOnClickListener {
+            if (idText.editText?.text.toString().isNotEmpty()) {
+                val headset = Headset(
+                    idText.editText?.text.toString().toInt(),
+                    nameText.toString(),
+                    mic = if (micCheck.isActivated) 1 else 0,
+                    bluetooth = if (bluetooth.isActivated) 1 else 0,
+                )
+                viewModel.handleEvent(
+                    MainEvent.UpdateHeadset(
+                        headset
+                    )
+                )
+            } else {
+                Toast.makeText(this@MainActivity, R.string.setID, Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+
     }
+}
 }

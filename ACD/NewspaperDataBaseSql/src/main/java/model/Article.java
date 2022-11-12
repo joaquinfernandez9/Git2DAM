@@ -4,22 +4,18 @@ import lombok.Data;
 
 @Data
 public class Article {
-    private int articleID;
-    private String title;
-    private int newspaperID;
-    private int typeID;
+    private int id;
+    private String name_article;
+    private int id_newspaper;
+    private int id_type;
 
-    public Article(String linea) {
-        String[] charArray = linea.split(";");
-        this.articleID = Integer.parseInt(charArray[0]);
-        this.title = charArray[1];
-        this.newspaperID = Integer.parseInt(charArray[2]);
-        this.typeID = Integer.parseInt(charArray[3]);
+    public Article() {
     }
 
-    public String toStringTextFile() {
-        return articleID + ";" + title
-                + ";" + newspaperID + ";" + typeID;
+    public Article(int id, String name_article, int id_newspaper, int id_type) {
+        this.id = id;
+        this.name_article = name_article;
+        this.id_newspaper = id_newspaper;
+        this.id_type = id_type;
     }
-
 }

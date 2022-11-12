@@ -10,6 +10,10 @@ module javafx {
 
     opens services.strings;
     opens dao.strings;
+    opens ui.pantallas.newspaper.add;
+    opens ui.pantallas.newspaper.list;
+    opens ui.pantallas.newspaper.update;
+
     opens ui.pantallas.common;
 
     requires jakarta.cdi;
@@ -17,11 +21,13 @@ module javafx {
     requires jakarta.inject;
 
     exports dao.impl;
+    exports ui.pantallas.reader.subscribe;
+    opens ui.pantallas.reader.subscribe;
     exports services.impl;
 
     exports ui.main;
     exports ui.pantallas.common;
-    exports ui.pantallas.login;
+    exports ui.pantallas.newspaper.login;
     exports ui.pantallas.principal;
     opens ui.pantallas.reader.addReader;
     opens ui.pantallas.reader.updateReader;
@@ -55,7 +61,7 @@ module javafx {
     opens ui.pantallas.principal;
     opens model;
     opens services;
-    opens ui.pantallas.login;
+    opens ui.pantallas.newspaper.login;
     opens fxml;
     opens config;
     opens ui.pantallas.newspaper.delete;

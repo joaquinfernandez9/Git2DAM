@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface ReaderServ {
-    Either<Integer, List<Reader>> getAll(int idNews, int num, String description);
+    Either<Integer, List<Reader>> getAll(int idNews, String description);
 
     Either<Integer, Reader> get(int id);
 

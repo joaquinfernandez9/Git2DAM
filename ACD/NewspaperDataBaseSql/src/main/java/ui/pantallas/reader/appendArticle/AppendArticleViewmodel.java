@@ -1,25 +1,36 @@
 package ui.pantallas.reader.appendArticle;
 
 import model.Article;
+import model.ReadArticle;
 import model.Reader;
+import services.ArticleServ;
+import services.ReadArticleServ;
 import services.ReaderServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import ui.pantallas.principal.PrincipalController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppendArticleViewmodel {
-    private final ReaderServ readerServImpl;
+    private final ReadArticleServ readArticleServ;
+    private final ArticleServ articleServ;
     private final ObjectProperty<AppendArticleState> state;
 
+
     @Inject
-    public AppendArticleViewmodel(ReaderServ readerServImpl) {
-        this.readerServImpl = readerServImpl;
+    public AppendArticleViewmodel(ReadArticleServ readArticleServ,
+                                  ArticleServ articleServ) {
+        this.readArticleServ = readArticleServ;
+        this.articleServ = articleServ;
         this.state = new SimpleObjectProperty<>(
                 new AppendArticleState(null, false,
-                        readerServImpl.getAll(-1,-1,null).get()));
+                        new ArrayList<>(),
+                        new ArrayList<>()));
+
     }
 
     public ReadOnlyObjectProperty<AppendArticleState> getState() {
@@ -27,19 +38,19 @@ public class AppendArticleViewmodel {
     }
 
 
-    public void reloadState() {
+    public void reloadState(int id) {
         state.setValue(new AppendArticleState(
-                null, !state.get().isChange(),
-                readerServImpl.getAll(-1,-1,null).get()
+                null,
+                !state.get().isChange(),
+                readArticleServ.getAll(id),
+                articleServ.getArticlesOfAReader(id)
         ));
     }
 
-    public List<Reader> getAll(){
-        return readerServImpl.getAll(-1,-1, null).get();
-    }
 
     public int appendArticle(Reader r, int article, int rating) {
-        return readerServImpl.appendReadArticle(r, article, rating);
+        ReadArticle ra = new ReadArticle(r.getId(), article, rating);
+        return readArticleServ.appendReadArticle(ra);
     }
 
 }

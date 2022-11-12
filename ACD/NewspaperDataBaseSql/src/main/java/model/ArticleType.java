@@ -4,22 +4,30 @@ import lombok.Data;
 
 @Data
 public class ArticleType {
-    private int typeID;
+    private int id;
     private String description;
 
     public ArticleType(String linea) {
         String[] charArray = linea.split(";");
-        this.typeID = Integer.parseInt(charArray[0]);
+        this.id = Integer.parseInt(charArray[0]);
         this.description = charArray[1];
     }
 
     public String toStringTextFile() {
-        return typeID + ";" +
+        return id + ";" +
                 description;
     }
 
-    public ArticleType(int typeID, String description) {
-        this.typeID = typeID;
+    public ArticleType(int id, String description) {
+        this.id = id;
         this.description = description;
+    }
+
+    public ArticleType() {
+    }
+
+    @Override
+    public String toString() {
+        return description;
     }
 }

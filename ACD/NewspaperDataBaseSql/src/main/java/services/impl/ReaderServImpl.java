@@ -31,8 +31,8 @@ public class ReaderServImpl implements ReaderServ {
     }
 
     @Override
-    public Either<Integer, List<Reader>> getAll(int idNews, int num, String description) {
-        return daoReaderImpl.getAll(idNews, num, description);
+    public Either<Integer, List<Reader>> getAll(int idNews, String description) {
+        return daoReaderImpl.getAll(idNews, description);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class ReaderServImpl implements ReaderServ {
         int restult = 0;
         if (daoReaderImpl.get(idReader).isRight()) {
             daoReadArticleImpl.delete(idReader);
-            daoSubscriptions.deleteSubscriptions(idReader);
+            daoSubscriptions.delete(idReader);
             daoReaderImpl.delete(idReader);
             restult = 1;
         }
@@ -69,7 +69,7 @@ public class ReaderServImpl implements ReaderServ {
     public int appendReadArticle(Reader reader, int article, int rating) {
         int response;
         Article art = daoArticleImpl.getAll().stream().filter(article1 ->
-                article1.getArticleID() == article).findFirst().orElse(null);
+                article1.getId() == article).findFirst().orElse(null);
         if (!daoArticleImpl.getAll().contains(art)) {
             //not found
             response = -5;

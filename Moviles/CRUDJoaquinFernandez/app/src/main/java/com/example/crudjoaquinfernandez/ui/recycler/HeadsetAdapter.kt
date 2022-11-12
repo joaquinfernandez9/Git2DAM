@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.crudjoaquinfernandez.R
 import com.example.crudjoaquinfernandez.domain.model.Headset
@@ -41,6 +40,7 @@ class HeadsetAdapter(
 }
 
 class HeadsetViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+
     fun render(
         headset: Headset,
         actions: HeadsetAdapter.Actions,
@@ -50,11 +50,8 @@ class HeadsetViewHolder(private val view: View) : RecyclerView.ViewHolder(view) 
         view.findViewById<ImageButton>(R.id.button2).setOnClickListener {
             actions.onClickDelete(view.findViewById<TextView>(R.id.tvID).text.toString().toInt())
         }
-
         view.findViewById<ImageButton>(R.id.detail).setOnClickListener {
             actions.onClickDetail(view.findViewById<TextView>(R.id.tvID).text.toString().toInt())
         }
-
-
     }
 }

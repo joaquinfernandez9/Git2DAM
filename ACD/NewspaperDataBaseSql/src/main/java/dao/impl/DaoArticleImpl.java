@@ -36,6 +36,26 @@ public class DaoArticleImpl implements DaoArticle {
     }
 
     @Override
+    public List<Article> getArticlesOfAReader(int idReader) {
+        List<Article> response;
+        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+        response = jtm.query("select article.*\n" +
+                        "from article,\n" +
+                        "     subscribe,\n" +
+                        "     reader,\n" +
+                        "     newspaper\n" +
+                        "where reader.id = subscribe.id_reader\n" +
+                        "  and subscribe.id_newspaper = newspaper.id\n" +
+                        "  and newspaper.id = article.id_newspaper\n" +
+                        "  and reader.id = ?\n" +
+                        "    and article.id not in (select id_article from readarticle where id_reader = ?)\n" +
+                        "order by article.id_newspaper, article.id",
+                BeanPropertyRowMapper.newInstance(Article.class), idReader, idReader);
+        return response;
+    }
+
+    //1b2 Show articles by type
+    @Override
     public List<Article> getAll(int idType) {
         List<Article> response;
         JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
@@ -45,7 +65,7 @@ public class DaoArticleImpl implements DaoArticle {
     }
 
     @Override
-    public Article get(int id){
+    public Article get(int id) {
         List<Article> response;
         JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
         response = jtm.query("select * from article where id=?",
@@ -58,13 +78,14 @@ public class DaoArticleImpl implements DaoArticle {
     @Override
     public int save(Article a) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
-                db.getDataSource()).withTableName("article");
+                db.getDataSource()).withTableName("article").usingGeneratedKeyColumns("id");
         Map<String, Object> param = new HashMap<>();
-        param.put("name_article", a.getTitle());
-        param.put("id_type", a.getTypeID());
-        param.put("id_newspaper", a.getNewspaperID());
+        param.put("name_article", a.getName_article());
+        param.put("id_type", a.getId_type());
+        param.put("id_newspaper", a.getId_newspaper());
 
-        a.setArticleID((int) jdbcInsert.executeAndReturnKey(param).longValue());
+        //if we keep this, it adds the article twice
+        //a.setArticleID((int) jdbcInsert.executeAndReturnKey(param).longValue());
         return jdbcInsert.execute(param);
 
 
@@ -76,7 +97,7 @@ public class DaoArticleImpl implements DaoArticle {
         try {
             JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
             response = jtm.update("delete from article where id=?", id);
-        }catch (DataIntegrityViolationException e) {
+        } catch (DataIntegrityViolationException e) {
             if (Objects.requireNonNull(e.getMessage()).contains("IntegrityConstraintViolation")) {
                 response = -2;
             } else {
@@ -90,10 +111,11 @@ public class DaoArticleImpl implements DaoArticle {
         return response;
     }
 
-    @Override public int update(Article a){
-        JdbcTemplate jdbcTemplate =  new JdbcTemplate(db.getDataSource());
+    @Override
+    public int update(Article a) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(db.getDataSource());
         return jdbcTemplate.update("update article set name_article=? where id=?",
-                a.getTitle(), a.getArticleID());
+                a.getName_article(), a.getId());
     }
 
 

@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 
-import java.io.IOException;
+import java.util.Date;
 import java.util.Optional;
 
 public class NewsDeleteController extends BasePantallaController {
@@ -18,14 +18,9 @@ public class NewsDeleteController extends BasePantallaController {
     private final NewsDeleteViewModel newsDeleteViewModel;
     @FXML
     public TableView<Newspaper> tableNews;
-    @FXML
-    public TableColumn<Integer, Newspaper> idColumn;
-    @FXML
-    public TableColumn<String, Newspaper> nameColumn;
-    @FXML
-    public TableColumn<Double, Newspaper> priceColumn;
-    @FXML
-    public TableColumn<String, Newspaper> directorColumn;
+    @FXML public TableColumn<Integer, Newspaper> idColumn;
+    @FXML public TableColumn<String, Newspaper> nameColumn;
+    @FXML public TableColumn<Date, Newspaper> dateColumn;
 
     @Inject
     public NewsDeleteController(NewsDeleteViewModel newsDeleteViewModel) {
@@ -36,10 +31,9 @@ public class NewsDeleteController extends BasePantallaController {
     @Override
     public void principalCargado() {
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperID"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperName"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        directorColumn.setCellValueFactory(new PropertyValueFactory<>("director"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name_newspaper"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("release_date"));
 
         super.principalCargado();
 
@@ -56,22 +50,24 @@ public class NewsDeleteController extends BasePantallaController {
     @FXML
     private void delete() {
         if (tableNews.getSelectionModel().getSelectedItem() == null) {
-            getPrincipalController().sacarAlertError("Error, nothing selected.");
+            getPrincipalController().errorAlert("Error, nothing selected.");
         } else {
-            Alert alertDelete = new Alert(Alert.AlertType.INFORMATION);
-            alertDelete.getButtonTypes().remove(ButtonType.OK);
-            alertDelete.getButtonTypes().add(ButtonType.CANCEL);
-            alertDelete.getButtonTypes().add(ButtonType.YES);
-            alertDelete.setTitle("Delete");
-            alertDelete.setContentText("This newspaper may contains articles, delete anyway?");
-            Optional<ButtonType> res = alertDelete.showAndWait();
+            if (newsDeleteViewModel.containsArticels(tableNews.getSelectionModel().getSelectedItem().getId())) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Delete");
+                alert.setHeaderText("This newspaper contains articles.");
+                alert.setContentText("Are you ok with this?");
 
-
-            res.ifPresent(buttonType -> {
-                if (buttonType == ButtonType.YES) {
-                    newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getNewspaperID());
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK) {
+                    newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getId());
+                    getPrincipalController().infoAlert("Newspaper deleted.");
+                    newsDeleteViewModel.load();
                 }
-            });
+            } else {
+                newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getId());
+                getPrincipalController().infoAlert("Newspaper deleted.");
+            }
         }
     }
 }

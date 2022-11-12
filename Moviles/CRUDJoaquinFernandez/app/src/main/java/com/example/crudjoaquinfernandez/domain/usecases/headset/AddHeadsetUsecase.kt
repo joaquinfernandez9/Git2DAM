@@ -4,7 +4,7 @@ import com.example.crudjoaquinfernandez.data.HeadsetRepository
 import com.example.crudjoaquinfernandez.data.modelo.toHeadsetEntity
 import com.example.crudjoaquinfernandez.domain.model.Headset
 
-class AddHeadsetUsecase(val repo: HeadsetRepository) {
+class AddHeadsetUsecase(private val repo: HeadsetRepository) {
     suspend fun invoke(headset: Headset) =
         repo.addHeadset(headset.toHeadsetEntity())
 }

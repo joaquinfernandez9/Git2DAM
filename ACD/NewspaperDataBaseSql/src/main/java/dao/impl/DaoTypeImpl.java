@@ -52,8 +52,8 @@ public class DaoTypeImpl implements DaoType {
         Map<String, Object> param = new HashMap<>();
         param.put("description", a.getDescription());
         //no se si esto ultimo hace falta
-        a.setTypeID((int) jdbcInsert.executeAndReturnKey(param)
-                .longValue());
+//        a.setId((int) jdbcInsert.executeAndReturnKey(param)
+//                .longValue());
         //returns the number of affected rows
         return jdbcInsert.execute(param);
     }
@@ -82,7 +82,7 @@ public class DaoTypeImpl implements DaoType {
     public int update(ArticleType type){
         JdbcTemplate template = new JdbcTemplate(pool.getDataSource());
         return template.update("update type set description=? where id=?",
-                type.getDescription(), type.getTypeID());
+                type.getDescription(), type.getId());
     }
 
 }

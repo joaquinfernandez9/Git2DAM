@@ -91,7 +91,7 @@ public class DaoQuerysImpl implements DaoQuerys {
                     "where newspaper.id = subscribe.id_newspaper\n" +
                     "  and subscribe.id_reader = reader.id\n" +
                     "  and newspaper.id = ?\n" +
-                    "and subscribe.sing_date is null\n" +
+                    "and subscribe.cancellation_date is null\n" +
                     "and subscribe.sing_date in\n" +
                     "    (select min(subscribe.sing_date) from subscribe)\n" +
                     "and id_reader > 0" +
@@ -106,32 +106,6 @@ public class DaoQuerysImpl implements DaoQuerys {
         return response;
     }
 
-    //Get the readers of articles of a specific type
-    @Override
-    public Either<Integer, List<Reader>> getReadersByType(String description) {
-        Either<Integer, List<Reader>> response;
-        try (Connection con = pool.getConnection()) {
-            PreparedStatement ps = con.prepareStatement("select reader.id, reader.name_reader, reader.birth_reader,\n" +
-                    "from reader,\n" +
-                    "     article,\n" +
-                    "     type,\n" +
-                    "     subscribe,\n" +
-                    "     newspaper\n" +
-                    "where reader.id = subscribe.id_reader\n" +
-                    "  and subscribe.cancellation_date IS NULL\n" +
-                    "  and subscribe.id_newspaper = newspaper.id\n" +
-                    "  and newspaper.id = article.id_newspaper\n" +
-                    "  and article.id_type = type.id\n" +
-                    "  and description = ?");
-            ps.setString(1, description);
-            ResultSet rs = ps.executeQuery();
-            response = Either.right(readRSReader(rs));
-        } catch (SQLException e) {
-            log.error(e.getMessage());
-            response = Either.left(-3);
-        }
-        return response;
-    }
 
     private List<Reader> readRSReader(ResultSet rs) {
         List<Reader> response = new ArrayList<>();

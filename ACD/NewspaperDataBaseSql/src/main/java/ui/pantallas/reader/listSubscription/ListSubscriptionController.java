@@ -3,7 +3,6 @@ package ui.pantallas.reader.listSubscription;
 import javafx.scene.control.ComboBox;
 import model.Newspaper;
 import model.Reader;
-import io.github.palexdev.materialfx.controls.MFXTextField;
 import jakarta.inject.Inject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,8 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.UiConstants;
 
-import java.io.IOException;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.stream.Collectors;
 
 public class ListSubscriptionController extends BasePantallaController {
@@ -25,7 +23,7 @@ public class ListSubscriptionController extends BasePantallaController {
     @FXML
     private TableColumn<String, Reader> nameColum;
     @FXML
-    private  TableColumn<LocalDate, Reader> dateColumn;
+    private  TableColumn<Date, Reader> dateColumn;
     @FXML
     private ComboBox<String> idNewspaper;
 
@@ -41,11 +39,11 @@ public class ListSubscriptionController extends BasePantallaController {
         super.principalCargado();
 
         idNewspaper.getItems().addAll(viewmodel.getState().get().getNewspapersList()
-                .stream().map(Newspaper::getNewspaperName).collect(Collectors.toList()));
+                .stream().map(Newspaper::getName_newspaper).collect(Collectors.toList()));
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
 
         readersTable.getItems().clear();
         readersTable.getItems().addAll(viewmodel.getAll());
@@ -56,30 +54,30 @@ public class ListSubscriptionController extends BasePantallaController {
                 readersTable.getItems().addAll(newValue.getReaderList());
             }
         });
-        viewmodel.reloadState(-1,-1, null);
+        viewmodel.reloadState(-1, null);
 
     }
 
     @FXML
     private  void search(ActionEvent actionEvent) {
         if (idNewspaper.getValue()==null){
-            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+            getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         }else {
-            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()), -1, null);
+            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()),  null);
         }
     }
 
     private int getNewspaperId(String name) {
         return viewmodel.getState().get().getNewspapersList()
-                .stream().filter(n -> n.getNewspaperName().equals(name)).findFirst().get().getNewspaperID();
+                .stream().filter(n -> n.getName_newspaper().equals(name)).findFirst().get().getId();
     }
 
     @FXML
     private void searchOldest() {
         if (idNewspaper.getValue()==null){
-            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+            getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         }else {
-            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()), -1, null);
+            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()),  null);
         }
     }
 }

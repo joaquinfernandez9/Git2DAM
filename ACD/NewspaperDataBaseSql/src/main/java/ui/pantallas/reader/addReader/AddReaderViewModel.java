@@ -19,7 +19,7 @@ public class AddReaderViewModel {
         this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new AddReaderState(null, false,
-                        readerServImpl.getAll(-1,-1, null).get()));
+                        readerServImpl.getAll(-1, null).get()));
     }
 
     public ReadOnlyObjectProperty<AddReaderState> getState() {
@@ -34,7 +34,7 @@ public class AddReaderViewModel {
 //    }
 
     public List<Reader> getAll() {
-        return readerServImpl.getAll(-1, -1, null).get();
+        return readerServImpl.getAll(-1,  null).get();
     }
 
     public void addReader(Reader reader) {

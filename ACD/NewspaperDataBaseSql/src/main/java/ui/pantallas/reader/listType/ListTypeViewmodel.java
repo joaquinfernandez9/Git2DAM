@@ -18,7 +18,7 @@ public class ListTypeViewmodel {
         this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ListTypeState(null, false,
-                        readerServImpl.getAll(-1,-1,null).get()));
+                        readerServImpl.getAll(-1,null).get()));
     }
 
     public ReadOnlyObjectProperty<ListTypeState> getState() {
@@ -28,16 +28,16 @@ public class ListTypeViewmodel {
     public void reloadState() {
         state.setValue(new ListTypeState(
                 null, !state.get().isChange(),
-                readerServImpl.getAll(-1,-1,null).get()
+                readerServImpl.getAll(-1,null).get()
         ));
     }
 
     public List<Reader> getAll(){
-        return readerServImpl.getAll(-1,-1, null).get();
+        return readerServImpl.getAll(-1, null).get();
     }
 
 
     public void getByDesc(String desc){
-        state.setValue(new ListTypeState(null, !state.get().isChange(), readerServImpl.getAll(-1,-1 ,desc).get()));
+        state.setValue(new ListTypeState(null, !state.get().isChange(), readerServImpl.getAll(0,desc).get()));
     }
 }

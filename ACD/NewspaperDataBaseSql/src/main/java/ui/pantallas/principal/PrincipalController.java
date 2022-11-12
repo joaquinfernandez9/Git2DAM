@@ -17,7 +17,6 @@ import lombok.extern.log4j.Log4j2;
 import model.Reader;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.Pantallas;
-import ui.pantallas.login.LoginState;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -31,6 +30,8 @@ public class PrincipalController {
     public boolean isAdmin;
     public Reader r;
     Instance<Object> instance;
+    @FXML
+    private MenuItem rSubscribe;
     @FXML
     private MenuItem logout;
     @FXML
@@ -109,8 +110,14 @@ public class PrincipalController {
         root.setCenter(pantallaNueva);
     }
 
-    public void sacarAlertError(String mensaje) {
+    public void errorAlert(String mensaje) {
         alert.setAlertType(Alert.AlertType.ERROR);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
+    public void infoAlert(String mensaje) {
+        alert.setAlertType(Alert.AlertType.INFORMATION);
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
@@ -121,10 +128,10 @@ public class PrincipalController {
         npList.setVisible(admin);
         npUpdate.setVisible(admin);
         rListSubscription.setVisible(admin);
-
         rListType.setVisible(admin);
         rUpdate.setVisible(admin);
         rAdd.setVisible(admin);
+        rDelete.setVisible(admin);
         artAdd.setVisible(admin);
         artList.setVisible(admin);
         artDelete.setVisible(admin);
@@ -135,6 +142,8 @@ public class PrincipalController {
         isAdmin = true;
         menuBar.setVisible(true);
         adminVisible(true);
+        rAppendReadArticle.setVisible(false);
+        rSubscribe.setVisible(false);
         cargarPantalla(Pantallas.WELCOME_SCREEN);
     }
 
@@ -143,7 +152,7 @@ public class PrincipalController {
         adminVisible(false);
         menuBar.setVisible(true);
         rAppendReadArticle.setVisible(true);
-
+        rSubscribe.setVisible(true);
         cargarPantalla(Pantallas.WELCOME_SCREEN);
     }
 
@@ -177,6 +186,12 @@ public class PrincipalController {
             case "npList":
                 cargarPantalla(Pantallas.NEWS_LIST);
                 break;
+            case "npAdd":
+                cargarPantalla(Pantallas.NEWS_ADD);
+                break;
+            case "npUpdate":
+                cargarPantalla(Pantallas.NEWS_UPDATE);
+                break;
             case "npDelete":
                 cargarPantalla(Pantallas.NEWS_DELETE);
                 break;
@@ -203,6 +218,9 @@ public class PrincipalController {
                 break;
             case "rAppendReadArticle":
                 cargarPantalla(Pantallas.READER_ADD_READARTICLE);
+                break;
+            case "rSubscribe":
+                cargarPantalla(Pantallas.READER_SUBSCRIBE);
                 break;
             case "logout":
                 logout();

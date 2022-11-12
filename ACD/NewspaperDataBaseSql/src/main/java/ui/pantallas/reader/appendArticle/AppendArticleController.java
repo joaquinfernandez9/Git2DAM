@@ -1,8 +1,8 @@
 package ui.pantallas.reader.appendArticle;
 
 import javafx.scene.control.Alert;
-import model.Reader;
-import model.Subscription;
+import model.Article;
+import model.ReadArticle;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
@@ -12,35 +12,29 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.UiConstants;
 
-import java.io.IOException;
-import java.time.LocalDate;
-
 public class AppendArticleController extends BasePantallaController {
     private final AppendArticleViewmodel viewmodel;
     @FXML
-    private MFXTextField idArticleText;
-    @FXML
     private MFXTextField ratingText;
+
+
+    //aqui empieza lo bueno
     @FXML
-    private TableView<Reader> readersTable;
+    private TableView<Article> tableArticle;
     @FXML
-    private TableColumn<Integer, Reader> idColumn;
+    private TableColumn<Integer, Article> idArticle;
     @FXML
-    private TableColumn<String, Reader> nameColum;
+    private TableColumn<String, Article> nameArticle;
     @FXML
-    private TableColumn<LocalDate, Reader> dateColumn;
+    private TableColumn<Integer, Article> typeID;
     @FXML
-    private TableView<Subscription> subscriptionsTable;
+    private TableColumn<Integer, Article> newspaperID;
     @FXML
-    private TableColumn<Integer, Subscription> idSubscription;
+    private TableView<ReadArticle> tableReadArticle;
     @FXML
-    private TableColumn<Integer, Subscription> idReader;
+    private TableColumn<Integer, ReadArticle> articleID;
     @FXML
-    private TableColumn<Integer, Subscription> idNewspaper;
-    @FXML
-    private TableColumn<LocalDate, Subscription> singDate;
-    @FXML
-    private TableColumn<LocalDate, Subscription> cancellationDate;
+    private TableColumn<Integer, ReadArticle> ranking;
 
     @Inject
     public AppendArticleController(AppendArticleViewmodel viewmodel) {
@@ -51,52 +45,48 @@ public class AppendArticleController extends BasePantallaController {
     public void principalCargado() {
         super.principalCargado();
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+       idArticle.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameArticle.setCellValueFactory(new PropertyValueFactory<>("name_article"));
+        typeID.setCellValueFactory(new PropertyValueFactory<>("id_type"));
+        newspaperID.setCellValueFactory(new PropertyValueFactory<>("id_newspaper"));
 
-        idReader.setCellValueFactory(new PropertyValueFactory<>("idReader"));
-        idSubscription.setCellValueFactory(new PropertyValueFactory<>("idSubscription"));
-        idNewspaper.setCellValueFactory(new PropertyValueFactory<>("idNewspaper"));
-        singDate.setCellValueFactory(new PropertyValueFactory<>("singDate"));
-        cancellationDate.setCellValueFactory(new PropertyValueFactory<>("cancellationDate"));
 
-        readersTable.getItems().clear();
-        readersTable.getItems().addAll(viewmodel.getAll());
+        articleID.setCellValueFactory(new PropertyValueFactory<>("id_article"));
+        ranking.setCellValueFactory(new PropertyValueFactory<>("ranking"));
 
-//        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
-//            if (newValue.getReaderList() != null) {
-//                readersTable.getItems().clear();
-//                readersTable.getItems().addAll(newValue.getReaderList());
-//            }
-//        });
-//
-//        readersTable.getSelectionModel().selectedItemProperty()
-//                .addListener((observable, oldValue, newValue) -> {
-//                    if (readersTable.getSelectionModel().getSelectedItem() != null) {
-//                        subscriptionsTable.getItems().clear();
-//                        subscriptionsTable.getItems().addAll(newValue.getSubscriptions().getSubscriptionsList());
-//                    }
-//                });
-//        viewmodel.reloadState();
+
+
+        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
+            if (newValue.getArticleList() != null) {
+                tableArticle.getItems().clear();
+                tableArticle.getItems().addAll(newValue.getArticleList());
+            }
+            if (newValue.getReadArticleList() != null) {
+                tableReadArticle.getItems().clear();
+                tableReadArticle.getItems().addAll(newValue.getReadArticleList());
+            }
+        });
+
+        viewmodel.reloadState(getPrincipalController().r.getId());
     }
 
     @FXML
     private void addReadArticle() {
-        if (readersTable.getSelectionModel().getSelectedItem() == null || idArticleText.getText().isEmpty()
-                || ratingText.getText().isEmpty()) {
-            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+        if (tableArticle.getSelectionModel().getSelectedItem() == null ||  ratingText.getText().isEmpty()) {
+            getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         } else {
-            if (viewmodel.appendArticle(readersTable.getSelectionModel().getSelectedItem(),
-                    Integer.parseInt(idArticleText.getText()), Integer.parseInt(ratingText.getText())) == 1) {
-                getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+            //pillar reader
+            if (viewmodel.appendArticle(getPrincipalController().r,
+                    tableArticle.getSelectionModel().getSelectedItem().getId(),
+                    Integer.parseInt(ratingText.getText())) != 1) {
+                getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle(UiConstants.CORRECT);
                 alert.setContentText(UiConstants.THE_ACTION_ENDED_CORRECTLY);
                 alert.showAndWait();
             }
-            viewmodel.reloadState();
+            viewmodel.reloadState(getPrincipalController().r.getId());
         }
     }
 }

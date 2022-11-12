@@ -1,6 +1,7 @@
 package ui.pantallas.reader.appendArticle;
 
-import model.Reader;
+import model.Article;
+import model.ReadArticle;
 import lombok.Data;
 
 import java.util.List;
@@ -9,5 +10,6 @@ import java.util.List;
 public class AppendArticleState {
     private final String error;
     private final boolean change;
-    private final List<Reader> readerList;
+    private final List<ReadArticle> readArticleList;
+    private final List<Article> articleList;
 }

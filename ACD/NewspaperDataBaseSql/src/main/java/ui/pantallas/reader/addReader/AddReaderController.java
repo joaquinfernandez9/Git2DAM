@@ -11,7 +11,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
 public class AddReaderController extends BasePantallaController {
@@ -35,8 +34,8 @@ public class AddReaderController extends BasePantallaController {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
 
         readersTable.getItems().clear();
         readersTable.getItems().addAll(viewModel.getAll());
@@ -62,7 +61,7 @@ public class AddReaderController extends BasePantallaController {
     @FXML
     private void addReader() {
         if (nameReader.getText().isBlank() || dateReader.getValue() == null){
-            getPrincipalController().sacarAlertError("Error, fill all the gaps");
+            getPrincipalController().errorAlert("Error, fill all the gaps");
         } else {
             Reader reader = new Reader(nameReader.getText(), dateReader.getValue());
             viewModel.addReader(reader);

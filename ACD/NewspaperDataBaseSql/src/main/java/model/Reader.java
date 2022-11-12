@@ -6,26 +6,26 @@ import java.time.LocalDate;
 @Data
 public class Reader {
     private int id;
-    private String name;
-    private LocalDate dateOfBirth;
+    private String name_reader;
+    private LocalDate birth_reader;
     private Login login;
 
-    public Reader(int id, String name, LocalDate dateOfBirth, Login login) {
+    public Reader(int id, String name_reader, LocalDate birth_reader, Login login) {
         this.id = id;
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
+        this.name_reader = name_reader;
+        this.birth_reader = birth_reader;
         this.login = login;
     }
 
-    public Reader(int id, String name, LocalDate dateOfBirth) {
+    public Reader(int id, String name_reader, LocalDate birth_reader) {
         this.id = id;
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
+        this.name_reader = name_reader;
+        this.birth_reader = birth_reader;
     }
 
-    public Reader(String name, LocalDate dateOfBirth) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
+    public Reader(String name_reader, LocalDate birth_reader) {
+        this.name_reader = name_reader;
+        this.birth_reader = birth_reader;
     }
 
     public Reader() {

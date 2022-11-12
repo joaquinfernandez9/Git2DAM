@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/17.0.2-ea"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ui.pantallas.login.LoginController">
+            fx:controller="ui.pantallas.newspaper.login.LoginController">
     <MFXTextField fx:id="txtUserName" floatMode="BORDER" layoutX="225.0" layoutY="151.0" prefHeight="50.0"
                   prefWidth="150.0" promptText="Username"/>
     <MFXPasswordField fx:id="txtPass" floatMode="BORDER" layoutX="225.0" layoutY="225.0" prefHeight="50.0"

@@ -4,8 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import ui.pantallas.common.BasePantallaController;
 
-import java.io.IOException;
-
 public class WelcomeController extends BasePantallaController {
 
     @FXML
@@ -17,7 +15,7 @@ public class WelcomeController extends BasePantallaController {
 
         if (!getPrincipalController().isAdmin){
             labelWelcome.setVisible(true);
-            labelWelcome.setText("User:" + getPrincipalController().r.getName());
+            labelWelcome.setText("User " + getPrincipalController().r.getName_reader());
         } else {
             labelWelcome.setVisible(false);
         }

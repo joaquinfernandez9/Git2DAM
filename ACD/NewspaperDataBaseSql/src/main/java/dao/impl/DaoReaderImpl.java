@@ -1,17 +1,12 @@
 package dao.impl;
 
-import dao.DaoReadArticle;
 import dao.DaoReader;
-import dao.DaoSubscriptions;
-import dao.dataBase.DaoDB;
 import dao.dataBase.DataBaseConnectionPool;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 import model.Login;
-import model.ReadArticle;
 import model.Reader;
-import model.Subscription;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -31,14 +26,29 @@ public class DaoReaderImpl implements DaoReader {
     }
 
     @Override
-    public Either<Integer, List<Reader>> getAll(int idNews, int num, String description) {
-        Either<Integer, List<Reader>> response = null;
+    public Either<Integer, List<Reader>> getAll(int idNews, String description) {
+        Either<Integer, List<Reader>> response;
         try (Connection con = pool.getConnection();
              Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                      ResultSet.CONCUR_READ_ONLY)) {
-            //get all
-            ResultSet rs = statement.executeQuery("select * from reader where id_reader> 0");
-            response = Either.right(readRS(rs));
+            if (idNews == -1) {
+                //get all
+                ResultSet rs = statement.executeQuery("select * from reader inner join login l on reader.id = l.id_reader where id> 0");
+                response = Either.right(readRS(rs));
+            }  else if (description ==null) {
+                //1a2 Get information about the readers subscribed to a specific newspaper
+                PreparedStatement pS = con.prepareStatement(
+                        "select * from reader inner join login on reader.id = login.id_reader inner join subscribe on reader.id = subscribe.id_reader inner join newspaper on newspaper.id = subscribe.id_newspaper where reader.id = subscribe.id_reader and newspaper.id = subscribe.id_newspaper and newspaper.id = ?");
+                pS.setInt(1, idNews);
+                ResultSet rs = pS.executeQuery();
+                response = Either.right(readRS(rs));
+            } else {
+                //1a3 Get the readers of articles of a specific type
+                PreparedStatement ps = con.prepareStatement("select * from reader inner join login on reader.id = login.id_reader inner join subscribe on reader.id = subscribe.id_reader inner join newspaper on newspaper.id = subscribe.id_newspaper inner join article on newspaper.id = article.id_newspaper inner join type on article.id_type = type.id where subscribe.cancellation_date IS NULL and description = ?");
+                ps.setString(1, description);
+                ResultSet rs = ps.executeQuery();
+                response = Either.right(readRS(rs));
+            }
 
         } catch (SQLException ex) {
             Logger.getLogger(DaoReaderImpl.class.getName()).log(
@@ -53,8 +63,7 @@ public class DaoReaderImpl implements DaoReader {
         Either<Integer, Reader> response;
         try (Connection con = pool.getConnection();
              PreparedStatement statement = con.prepareStatement(
-                     "select * from reader where id= ?")) {
-
+                     "select * from reader inner join login on reader.id = login.id_reader where reader.id = ?")) {
             statement.setInt(1, id);
             ResultSet rs = statement.executeQuery();
             if (rs != null) {
@@ -62,7 +71,6 @@ public class DaoReaderImpl implements DaoReader {
             } else {
                 response = Either.left(-5);
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(DaoReaderImpl.class.getName()).log(
                     Level.SEVERE, null, ex);
@@ -88,8 +96,8 @@ public class DaoReaderImpl implements DaoReader {
     private int deleteQuery(Connection con, int id) throws SQLException {
         int response;
         try (PreparedStatement preparedStatement = con.prepareStatement("delete from reader where id=?");
-                PreparedStatement preparedStatement1 = con.prepareStatement("delete from readarticle where id_reader =?");
-                PreparedStatement preparedStatement2 = con.prepareStatement("delete from subscribe where id_reader =?")) {
+             PreparedStatement preparedStatement1 = con.prepareStatement("delete from readarticle where id_reader =?");
+             PreparedStatement preparedStatement2 = con.prepareStatement("delete from subscribe where id_reader =?")) {
             con.setAutoCommit(false);
             preparedStatement1.setInt(1, id);
             preparedStatement1.executeUpdate();
@@ -125,21 +133,21 @@ public class DaoReaderImpl implements DaoReader {
     private int updateQuery(Connection connection, Reader real, Reader r) {
         int response = 1;
         try (PreparedStatement preparedStatement =
-                        connection.prepareStatement(
-                                "UPDATE reader set name_reader =?, birth_reader=? where id = ?");
-                PreparedStatement pS = connection.prepareStatement(
-                        "UPDATE  login set username = ?, password=? where id_reader= ?"
-                )) {
+                     connection.prepareStatement(
+                             "UPDATE reader set name_reader =?, birth_reader=? where id = ?");
+             PreparedStatement pS = connection.prepareStatement(
+                     "UPDATE  login set username = ?, password=? where id_reader= ?"
+             )) {
             //reader
-            if (r.getDateOfBirth() == null) {
-                preparedStatement.setDate(2, Date.valueOf(real.getDateOfBirth()));
+            if (r.getBirth_reader() == null) {
+                preparedStatement.setDate(2, Date.valueOf(real.getBirth_reader()));
             } else {
-                preparedStatement.setDate(2, Date.valueOf(r.getDateOfBirth()));
+                preparedStatement.setDate(2, Date.valueOf(r.getBirth_reader()));
             }
-            if (r.getName() == null) {
-                preparedStatement.setString(1, real.getName());
+            if (r.getName_reader() == null) {
+                preparedStatement.setString(1, real.getName_reader());
             } else {
-                preparedStatement.setString(1, r.getName());
+                preparedStatement.setString(1, r.getName_reader());
             }
             preparedStatement.setInt(3, r.getId());
 
@@ -177,7 +185,7 @@ public class DaoReaderImpl implements DaoReader {
         return response;
     }
 
-    private int addQuery(Connection con, Reader r) throws SQLException {
+    private int addQuery(Connection con, Reader r) {
         int response;
         try (
                 PreparedStatement preparedStatement = con.prepareStatement(
@@ -185,19 +193,23 @@ public class DaoReaderImpl implements DaoReader {
                         Statement.RETURN_GENERATED_KEYS);
                 PreparedStatement pS = con.prepareStatement(
                         "INSERT INTO login (username, password) VALUES (?,?)",
-                        Statement.RETURN_GENERATED_KEYS);) {
+                        Statement.RETURN_GENERATED_KEYS)) {
 
             con.setAutoCommit(false);
 
-            preparedStatement.setString(1, r.getName());
-            preparedStatement.setDate(2, Date.valueOf(r.getDateOfBirth()));
+            preparedStatement.setString(1, r.getName_reader());
+            preparedStatement.setDate(2, Date.valueOf(r.getBirth_reader()));
             pS.setString(1, r.getLogin().getUsername());
             pS.setString(2, r.getLogin().getPassword());
 
             response = preparedStatement.executeUpdate();
             con.commit();
         } catch (SQLException e) {
-            con.rollback();
+            try {
+                con.rollback();
+            } catch (SQLException exception) {
+                log.error(exception.getMessage());
+            }
             e.printStackTrace();
             response = -2;
         }
@@ -212,7 +224,10 @@ public class DaoReaderImpl implements DaoReader {
                 String name = rs.getString("name_reader");
                 LocalDate date = rs.getDate("birth_reader")
                         .toLocalDate();
-                Reader r = new Reader(id, name, date);
+                String username = rs.getString("user");
+                String password = rs.getString("password");
+                Login login = new Login(username, password);
+                Reader r = new Reader(id, name, date, login);
                 response.add(r);
             }
         } catch (SQLException e) {

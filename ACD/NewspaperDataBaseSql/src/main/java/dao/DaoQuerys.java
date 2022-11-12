@@ -19,7 +19,6 @@ public interface DaoQuerys {
     Either<Integer, List<Reader>> getOldest(int idNewspaper);
 
     //Get the readers of articles of a specific type
-    Either<Integer, List<Reader>> getReadersByType(String description);
 
 
     //Get the articles of a given type, together with the name of the newspaper

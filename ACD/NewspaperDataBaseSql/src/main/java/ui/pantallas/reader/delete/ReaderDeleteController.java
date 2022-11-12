@@ -11,7 +11,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.UiConstants;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -36,8 +35,8 @@ public class ReaderDeleteController extends BasePantallaController {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
 
         readersTable.getItems().clear();
         readersTable.getItems().addAll(viewmodel.getAll());
@@ -74,7 +73,7 @@ public class ReaderDeleteController extends BasePantallaController {
             });
 
         } else {
-            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+            getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         }
 
     }

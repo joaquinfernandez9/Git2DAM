@@ -8,14 +8,18 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.Login;
 import model.Reader;
 import ui.pantallas.common.BasePantallaController;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
 public class UpdateController extends BasePantallaController {
     private final UpdateViewModel viewModel;
+    @FXML
+    private MFXTextField username;
+    @FXML
+    private MFXTextField password;
     @FXML
     private TableView<Reader> readersTable;
     @FXML
@@ -39,8 +43,8 @@ public class UpdateController extends BasePantallaController {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
 
         readersTable.getItems().clear();
         readersTable.getItems().addAll(viewModel.getAll());
@@ -56,16 +60,29 @@ public class UpdateController extends BasePantallaController {
 
     @FXML
     private void updateReader() {
-        if (readersTable.getSelectionModel().getSelectedItem() == null || nameReader.getText().isBlank()) {
-            getPrincipalController().sacarAlertError("Error, fill all the gaps");
+        if (readersTable.getSelectionModel().getSelectedItem() == null) {
+            getPrincipalController().errorAlert("Error, select a reader");
         } else {
+            Login login = new Login();
+            if (username.getText().isEmpty()) {
+                login.setUsername(null);
+            } else {
+                login.setUsername(username.getText());
+            }
+            if (password.getText().isEmpty()) {
+                login.setPassword(null);
+            } else {
+                login.setPassword(password.getText());
+            }
+
             Reader reader = new Reader(
                     readersTable.getSelectionModel().getSelectedItem().getId(),
                     nameReader.getText(),
-                    dateReader.getValue());
+                    dateReader.getValue(),
+                    login);
             viewModel.updateReader(reader);
             readersTable.getItems().remove(readersTable.getSelectionModel().getFocusedIndex());
-            readersTable.getItems().add(readersTable.getSelectionModel().getFocusedIndex()+1, reader);
+            readersTable.getItems().add(readersTable.getSelectionModel().getFocusedIndex() + 1, reader);
 //            viewModel.reloadState();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correct");

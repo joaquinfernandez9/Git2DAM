@@ -24,7 +24,7 @@ public class ReaderDeleteViewmodel {
 //    }
 //
     public List<Reader> getAll(){
-        return readerServImpl.getAll(-1,-1, null).get();
+        return readerServImpl.getAll(-1, null).get();
     }
 
 //    public void reloadState(){

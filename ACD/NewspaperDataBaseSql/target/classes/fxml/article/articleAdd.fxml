@@ -13,7 +13,6 @@
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID"/>
                 <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title"/>
-                <TableColumn fx:id="authorColumn" prefWidth="75.0" text="Author"/>
                 <TableColumn fx:id="npIDColumn" prefWidth="75.0" text="Newspaper ID"/>
                 <TableColumn fx:id="typeIDColumn" prefWidth="75.0" text="Type ID"/>
             </columns>

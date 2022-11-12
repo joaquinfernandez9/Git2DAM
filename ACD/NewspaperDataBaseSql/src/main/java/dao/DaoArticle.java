@@ -7,6 +7,8 @@ import java.util.List;
 public interface DaoArticle {
     List<Article> getAll();
 
+    List<Article> getArticlesOfAReader(int idReader);
+
     List<Article> getAll(int idType);
 
     Article get(int id);

@@ -3,15 +3,12 @@ package ui.pantallas.article.add;
 import model.Article;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import jakarta.inject.Inject;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.UiConstants;
-
-import java.io.IOException;
 
 public class ArticleAddController extends BasePantallaController {
 
@@ -21,8 +18,6 @@ public class ArticleAddController extends BasePantallaController {
     private TableColumn<Integer, Article> idColumn;
     @FXML
     private TableColumn<String, Article> titleColumn;
-    @FXML
-    private TableColumn<String, Article> authorColumn;
     @FXML
     private TableColumn<Integer, Article> npIDColumn;
     @FXML
@@ -38,11 +33,10 @@ public class ArticleAddController extends BasePantallaController {
     @Override
     public void principalCargado() {
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("articleID"));
-        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
-        npIDColumn.setCellValueFactory(new PropertyValueFactory<>("newspaperID"));
-        typeIDColumn.setCellValueFactory(new PropertyValueFactory<>("typeID"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("name_article"));
+        npIDColumn.setCellValueFactory(new PropertyValueFactory<>("id_newspaper"));
+        typeIDColumn.setCellValueFactory(new PropertyValueFactory<>("id_type"));
 
         super.principalCargado();
 
@@ -69,16 +63,13 @@ public class ArticleAddController extends BasePantallaController {
     private MFXTextField typeID;
 
     @FXML
-    private void add(ActionEvent actionEvent) {
+    private void add() {
         if (articleID.getText().isEmpty() || title.getText().isEmpty()||
-        author.getText().isEmpty()||newspaperID.getText().isEmpty() ||
+        newspaperID.getText().isEmpty() ||
         typeID.getText().isEmpty()){
-            getPrincipalController().sacarAlertError(UiConstants.ERROR_COMPLETE_ALL_THE_FIELDS);
+            getPrincipalController().errorAlert(UiConstants.ERROR_COMPLETE_ALL_THE_FIELDS);
         } else {
-            Article a  = new Article(Integer.parseInt(articleID.getText())+ UiConstants.DOT_COMMA
-                    +title.getText()+ UiConstants.DOT_COMMA +author.getText()+ UiConstants.DOT_COMMA
-                    +Integer.parseInt(newspaperID.getText())+ UiConstants.DOT_COMMA
-                    +Integer.parseInt(typeID.getText()));
+            Article a  = new Article(Integer.parseInt(articleID.getText()), title.getText(), Integer.parseInt(newspaperID.getText()), Integer.parseInt(typeID.getText()));
             articleAddViewModel.add(a);
         }
 

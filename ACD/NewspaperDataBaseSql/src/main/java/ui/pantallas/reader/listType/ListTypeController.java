@@ -3,7 +3,6 @@ package ui.pantallas.reader.listType;
 import model.Reader;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import jakarta.inject.Inject;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -11,7 +10,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.UiConstants;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
 public class ListTypeController extends BasePantallaController {
@@ -37,8 +35,8 @@ public class ListTypeController extends BasePantallaController {
         super.principalCargado();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
 
         readersTable.getItems().clear();
         readersTable.getItems().addAll(viewmodel.getAll());
@@ -57,7 +55,7 @@ public class ListTypeController extends BasePantallaController {
     @FXML
     private void search() {
         if (description.getText().isEmpty()){
-            getPrincipalController().sacarAlertError(UiConstants.NOT_FOUND);
+            getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         } else {
             viewmodel.getByDesc(description.getText());
         }
