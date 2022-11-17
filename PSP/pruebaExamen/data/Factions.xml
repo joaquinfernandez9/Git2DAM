@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<factions>
+    <faction>
+        <name>Bounty hunter’s guild,</name>
+        <contact>Mr. Torn</contact>
+		<planet>Mustafar</planet>
+		<numberCS>2</numberCS>
+		<dateLastPurchase>1607-09-15</dateLastPurchase>
+    </faction>
+    <faction>
+        <name>Empire</name>
+        <contact>Mrs. Sanz</contact>
+		<planet>Hoth</planet>
+		<numberCS>5</numberCS>
+		<dateLastPurchase>1591-01-19</dateLastPurchase>
+		<weapons>
+			<weapon>
+				<name>DH-17 blaster pistol</name>
+				<price>6000</price>
+			</weapon>
+			<weapon>
+				<name>Java ionization blaster</name>
+				<price>7500</price>
+			</weapon>
+		</weapons>
+    </faction>
+    <faction>
+        <name>New order</name>
+        <contact>Mr. Santos</contact>
+		<planet>Geonosis</planet>
+		<numberCS>3</numberCS>
+		<dateLastPurchase>1627-11-21</dateLastPurchase>
+        <weapons>
+			<weapon>
+				<name>Bowcaster</name>
+				<price>2500</price>
+			</weapon>
+		</weapons>
+    </faction>
+    <faction>
+        <name>Rebels</name>
+        <contact>Mrs Thomas</contact>
+		<planet>Mygeeto</planet>
+		<numberCS>7</numberCS>
+		<dateLastPurchase>1525-03-02</dateLastPurchase>
+        <weapons>
+			<weapon>
+				<name>Heavy blaster pistol</name>
+				<price>4000</price>
+			</weapon>
+			<weapon>
+				<name>Blaster rifle</name>
+				<price>2900</price>
+			</weapon>
+			<weapon>
+				<name>E-Web repeating blaster</name>
+				<price>8500</price>
+			</weapon>
+		</weapons>
+    </faction>
+</factions>

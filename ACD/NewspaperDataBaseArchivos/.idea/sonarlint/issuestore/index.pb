@@ -41,8 +41,6 @@ p
 @src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java,b\9\b994ab04d25534c8ea2a17f872b34b5e053b3e4c
 Q
 !src/main/java/ui/main/MainFX.java,2\e\2e7801e75bc7d7b888b07031d0746a50f31ff377
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 j
 :src/main/java/ui/pantallas/newspaper/delete/NewsState.java,1\7\171715ec360793390b87c216ba812c75a375fa9a
 u
@@ -79,8 +77,6 @@ t
 Dsrc/main/java/ui/pantallas/newspaper/delete/NewsDeleteViewModel.java,e\2\e23a83a56683fbac0dffbbba4784668fa61ea383
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-[
-+src/main/java/dao/strings/DaoConstants.java,2\6\266ebb578d492b464d44e02bd135373fb1e2bf72
 Q
 !src/main/java/dao/DaoArticle.java,6\4\647b58ebd945f7ef08da1bf964677993759ad06e
 S
@@ -107,20 +103,6 @@ p
 @src/main/java/ui/pantallas/article/add/ArticleAddController.java,6\f\6f65008c4429282c115106bd65c0c1e5e6d88c95
 r
 Bsrc/main/java/ui/pantallas/article/list/ArticleListController.java,2\9\29d4be5d284d65b0729e0bc26fc2a01f29333efb
-S
-#src/main/java/config/ConfigXML.java,f\8\f8cf743cfc27e77d7e17630e54adbdc4785e1cc5
-a
-1src/main/java/dao/localDate/LocalDateAdapter.java,f\2\f2d540a46a409f0ba92be1d79d35954f1a7ebf81
-^
-.src/main/java/domain/modelo/Subscriptions.java,f\5\f544242bcc59364340f427eaaa6f5ef078ab7962
-]
--src/main/java/domain/modelo/Subscription.java,8\5\85da6f48031fb3ee1522b939779c4c35ab4e0193
-]
--src/main/java/domain/modelo/ReadArticles.java,3\7\371f8cc4f35e4c9f4afb1dc79688edbf16f9ce7b
-\
-,src/main/java/domain/modelo/ReadArticle.java,1\e\1ecc68f267745af0eafaeef9497fecfcac1a52a5
-X
-(src/main/java/domain/modelo/Readers.java,9\f\9f48b122001e771f17df782c369e07396b8d7670
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 {
@@ -129,8 +111,6 @@ s
 Csrc/main/java/ui/pantallas/reader/delete/ReaderDeleteViewmodel.java,1\5\15a3d7e8017d63923ed644539b4536940b180b65
 ]
 -src/main/java/domain/services/ReaderServ.java,d\6\d6afef25e905b347d490ca78840d02c53c82addc
-?
-data/reader.xml,c\3\c31a441f93991a8f17d7731dfd1568a03356ebe0
 g
 7src/main/java/domain/services/impl/ArticleServImpl.java,1\7\1707398b07512f51a8f3ab647d8ea577429b5117
 Z
@@ -145,7 +125,15 @@ A
 .src/main/java/dao/impl/DaoReadArticleImpl.java,c\7\c74859bdd94066f6fdfbd820cae9e3d4f94e998e
 P
  src/main/java/dao/DaoReader.java,5\9\5999387cee3ad3dccac589b30ed8c3e70124e7ed
-Y
-)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
 f
 6src/main/java/domain/services/impl/ReaderServImpl.java,6\5\651ca3638d3534f59cf9f2a858b45111e2cb4cc8
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+W
+'src/main/java/domain/modelo/Reader.java,3\8\3806eef425a706598647d984db378fde15aa19a7
+^
+.src/main/java/domain/modelo/Subscriptions.java,f\5\f544242bcc59364340f427eaaa6f5ef078ab7962
+]
+-src/main/java/domain/modelo/Subscription.java,8\5\85da6f48031fb3ee1522b939779c4c35ab4e0193
+X
+(src/main/java/domain/modelo/Readers.java,9\f\9f48b122001e771f17df782c369e07396b8d7670

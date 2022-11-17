@@ -29,4 +29,8 @@
     <string name="deleteActivity">Eliminar</string>
     <string name="deleteQuestion">Seguro que quieres borrarlo?</string>
     <string name="menu">menu</string>
+    <string name="button_to_detail_screen">Button to detail screen</string>
+    <string name="about_info">about_info</string>
+    <string name="lista_de_modelos">Lista de Modelos</string>
+    <string name="a_adir_modelos">añadir modelos</string>
 </resources>

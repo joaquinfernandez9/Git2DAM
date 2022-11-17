@@ -29,7 +29,6 @@ public class ProducesRetrofit {
     @Produces
     @Singleton
     public Retrofit retrofit(Moshi moshi) {
-
         OkHttpClient clientOK = new OkHttpClient.Builder()
                 .connectionPool(new okhttp3.ConnectionPool(1, 5,
                         java.util.concurrent.TimeUnit.SECONDS))

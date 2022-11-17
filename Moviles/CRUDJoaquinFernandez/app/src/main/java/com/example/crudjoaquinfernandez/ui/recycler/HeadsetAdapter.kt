@@ -5,53 +5,65 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.crudjoaquinfernandez.R
+import com.example.crudjoaquinfernandez.databinding.ItemHeadsetBinding
 import com.example.crudjoaquinfernandez.domain.model.Headset
 
 class HeadsetAdapter(
-    private var headsetList: List<Headset>,
-    private val actions: Actions,
-) : RecyclerView.Adapter<HeadsetViewHolder>() {
+    private val actions: Actions
+) : ListAdapter<Headset, HeadsetAdapter.HeadsetViewHolder>(DiffCallBack()) {
 
-    interface Actions {
-        fun onClickDelete(id: Int)
-        fun onClickDetail(id: Int)
-    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadsetViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_headset, parent, false)
-        return HeadsetViewHolder(view)
+        return HeadsetViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_headset, parent, false), actions
+        )
     }
 
-    override fun onBindViewHolder(holder: HeadsetViewHolder, position: Int) {
-        holder.render(headsetList[position], actions)
+    override fun onBindViewHolder(holder: HeadsetViewHolder, position: Int) = with(holder) {
+        val item = getItem(position)
+        bind(item)
+    }
+
+    class HeadsetViewHolder(private val headsetView : View, private val actions: Actions) : RecyclerView.ViewHolder(headsetView) {
+        private val binding = ItemHeadsetBinding.bind(headsetView)
+
+        fun bind(headset: Headset) = with(binding) {
+
+            tvNombre.text = headset.name
+            tvID.text = headset.id.toString()
+
+            button2.setOnClickListener {
+                actions.onClickDelete(headset.id)
+            }
+
+            detail.setOnClickListener {
+                actions.onClickDetail(headset.id)
+            }
+
+        }
 
     }
 
-    override fun getItemCount(): Int = headsetList.size
+    class DiffCallBack : DiffUtil.ItemCallback<Headset>() {
+        override fun areItemsTheSame(oldItem: Headset, newItem: Headset): Boolean {
+            return oldItem.id == newItem.id
+        }
 
-    fun cambiarLista(nuevaLista: List<Headset>) {
-        headsetList = nuevaLista
-        notifyDataSetChanged()
+        override fun areContentsTheSame(oldItem: Headset, newItem: Headset): Boolean {
+            return oldItem == newItem
+        }
     }
 
 }
 
-class HeadsetViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
-    fun render(
-        headset: Headset,
-        actions: HeadsetAdapter.Actions,
-    ) {
-        view.findViewById<TextView>(R.id.tvNombre).text = headset.name
-        view.findViewById<TextView>(R.id.tvID).text = headset.id.toString()
-        view.findViewById<ImageButton>(R.id.button2).setOnClickListener {
-            actions.onClickDelete(view.findViewById<TextView>(R.id.tvID).text.toString().toInt())
-        }
-        view.findViewById<ImageButton>(R.id.detail).setOnClickListener {
-            actions.onClickDetail(view.findViewById<TextView>(R.id.tvID).text.toString().toInt())
-        }
-    }
-}
+
+
+
+
+

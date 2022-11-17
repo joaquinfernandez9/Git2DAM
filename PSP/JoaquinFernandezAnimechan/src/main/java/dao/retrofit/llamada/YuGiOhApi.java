@@ -35,8 +35,4 @@ public interface YuGiOhApi {
     Call<CardsList> getCardsAtkRace(@Query("fname") String name, @Query("atk") String atk,
                                    @Query("race") String race, @Query("sort") String sort);
 
-
-
-
-
 }

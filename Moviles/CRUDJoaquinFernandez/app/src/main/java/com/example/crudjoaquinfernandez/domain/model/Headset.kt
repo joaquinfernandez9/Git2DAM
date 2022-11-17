@@ -1,12 +1,9 @@
 package com.example.crudjoaquinfernandez.domain.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.*
-
-@Parcelize
 data class Headset(
     val id: Int,
     var name: String,
     var mic: Int,
     var bluetooth: Int,
-) : Parcelable
+    val models: List<Model>?,
+)

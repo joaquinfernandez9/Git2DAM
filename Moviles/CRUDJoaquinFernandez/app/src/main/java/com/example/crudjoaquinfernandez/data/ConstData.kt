@@ -7,6 +7,7 @@ object ConstData {
     const val bluetooth ="bluetooth"
     const val name ="name"
     const val mic ="mic"
+    const val id = "id"
 
     //querys
     const val getAll = "SELECT * FROM cascos"

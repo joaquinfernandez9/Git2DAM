@@ -8,12 +8,9 @@ import com.example.crudjoaquinfernandez.data.ConstData
 
 @Entity(
     tableName = ConstData.tableName,
-    indices = [Index(value = ["id"], unique = true)]
+    indices = [Index(value = [ConstData.id], unique = true)]
 )
-
 data class HeadsetEntity(
-
-
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     @ColumnInfo(name = ConstData.bluetooth)

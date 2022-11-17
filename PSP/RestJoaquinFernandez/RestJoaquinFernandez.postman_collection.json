@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "e2ce17d1-cc28-4fac-9ca4-ab0d30d219d3",
+		"name": "RestJoaquinFernandez",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23796033"
+	},
+	"item": [
+		{
+			"name": "Newspapers",
+			"item": [
+				{
+					"name": "Get all newspapers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/newspapers",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"newspapers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add newspaper",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name_newspaper\": \"prueba\",\r\n        \"release_date\": \"2021-02-13\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/newspapers",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"newspapers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get newspaper id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/newspapers/:id",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"newspapers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete newspaper",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/newspapers/:id",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"newspapers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update newspaper",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 10,\r\n        \"name_newspaper\": \"prueba_cambiar\",\r\n        \"release_date\": \"2021-02-12\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/newspapers/:id",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"newspapers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Querys",
+			"item": [
+				{
+					"name": "Get query 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/querys/query1",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"querys",
+								"query1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get query 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/querys/query2/:idNewspaper",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"querys",
+								"query2",
+								":idNewspaper"
+							],
+							"variable": [
+								{
+									"key": "idNewspaper",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get query 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/querys/query3/:description",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"querys",
+								"query3",
+								":description"
+							],
+							"variable": [
+								{
+									"key": "description",
+									"value": "science"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Query 4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/querys/query4/:id",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"querys",
+								"query4",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reader",
+			"item": [
+				{
+					"name": "Get all Readers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/readers",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"readers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reader",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/readers/:id",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"readers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reader",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/readers/:id",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"readers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "22244"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add reader",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"22241\",\r\n        \"birth_reader\": \"2019-11-02\",\r\n        \"login\": {\r\n            \"password\": \"eraduplicateporesto\",\r\n            \"user\": \"comoqueduplicate\"\r\n        },\r\n        \"name_reader\": \"cliente_prueba\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/readers",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"readers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update reader",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"birth_reader\": \"2002-10-26\",\r\n    \"id\": 22244,\r\n    \"login\": {\r\n        \"password\": \"apapapapapap\",\r\n        \"user\": \"apapapapapap\"\r\n    },\r\n    \"name_reader\": \"Nuevo nombre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/readers",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"readers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Append read article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"birth_reader\": \"2018-08-15\",\r\n    \"id\": 2,\r\n    \"login\": {\r\n        \"password\": \"2\",\r\n        \"user\": \"2\"\r\n    },\r\n    \"name_reader\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/readers/appendArticle?:idArticle=1&:rating=10",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"readers",
+								"appendArticle"
+							],
+							"query": [
+								{
+									"key": ":idArticle",
+									"value": "1"
+								},
+								{
+									"key": ":rating",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url-base",
+			"value": "http://localhost:8080/RestJoaquinFernandez-1.0-SNAPSHOT/api\n"
+		}
+	]
+}

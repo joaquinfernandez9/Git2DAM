@@ -2,15 +2,16 @@ package com.example.crudjoaquinfernandez.ui.recycler
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.crudjoaquinfernandez.domain.usecases.headset.GetAllUseCase
 import com.example.crudjoaquinfernandez.domain.usecases.headset.RemoveHeadsetUsecase
-import com.example.crudjoaquinfernandez.ui.mainScreen.Const
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class RecyclerViewModel(
+@HiltViewModel
+class RecyclerViewModel @Inject constructor(
     private val removeHeadset: RemoveHeadsetUsecase,
     private val getAll: GetAllUseCase,
 ) : ViewModel() {
@@ -57,24 +58,3 @@ class RecyclerViewModel(
     }
 
 }
-
-/**
- * Factory class to instantiate the [ViewModel] instance.
- */
-class RecyclerViewModelFactory(
-    private val removeHeadset: RemoveHeadsetUsecase,
-    private val getAll: GetAllUseCase,
-) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(RecyclerViewModel::class.java)) {
-            @Suppress(Const.uncheckedCast)
-            return RecyclerViewModel(
-                removeHeadset,
-                getAll,
-            ) as T
-        }
-        throw IllegalArgumentException(Const.unknownvmc)
-    }
-
-}
-

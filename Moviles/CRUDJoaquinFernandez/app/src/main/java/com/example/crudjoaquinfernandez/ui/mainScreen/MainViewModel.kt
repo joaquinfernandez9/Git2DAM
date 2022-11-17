@@ -3,11 +3,14 @@ package com.example.crudjoaquinfernandez.ui.mainScreen
 import androidx.lifecycle.*
 import com.example.crudjoaquinfernandez.domain.model.Headset
 import com.example.crudjoaquinfernandez.domain.usecases.headset.*
+import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-
-class MainViewModel(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val addHeadset: AddHeadsetUsecase,
     private val removeHeadset: RemoveHeadsetUsecase,
     private val updateHeadsetUseCase: UpdateHeadsetUseCase,
@@ -76,7 +79,7 @@ class MainViewModel(
         }
     }
 
-    private fun getAll(){
+    private fun getAll() {
         viewModelScope.launch {
             allUseCase.invoke()
         }
@@ -94,37 +97,10 @@ class MainViewModel(
         }
     }
 
-    fun showError() {
-        _uiState.value = _uiState.value?.copy(stringError = null)
-    }
 
 }
 
 
 
-/**
- * Factory class to instantiate the [ViewModel] instance.
- */
-class MainViewModelFactory(
-    private val addHeadset: AddHeadsetUsecase,
-    private val getHeadset: GetHeadsetUsecase,
-    private val updateHeadsetUseCase: UpdateHeadsetUseCase,
-    private val removeHeadset: RemoveHeadsetUsecase,
-    private val allUseCase: GetAllUseCase,
 
-    ) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-            @Suppress(Const.uncheckedCast)
-            return MainViewModel(
-                addHeadset,
-                removeHeadset,
-                updateHeadsetUseCase,
-                getHeadset,
-                allUseCase,
-            ) as T
-        }
-        throw IllegalArgumentException(Const.unknownvmc)
-    }
-}
 

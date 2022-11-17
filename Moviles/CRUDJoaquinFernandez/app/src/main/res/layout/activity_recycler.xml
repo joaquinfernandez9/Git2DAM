@@ -14,11 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:contentDescription="si"
         app:srcCompat="@drawable/ic_detail"
         tools:ignore="RtlHardcoded"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/button_to_detail_screen" />
 
 
     <androidx.recyclerview.widget.RecyclerView
