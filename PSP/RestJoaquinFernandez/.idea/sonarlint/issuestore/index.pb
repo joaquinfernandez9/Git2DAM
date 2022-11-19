@@ -97,3 +97,15 @@ Z
 *src/main/java/jakarta/rest/RestQuerys.java,c\8\c8667cd549905416e3a9f1ed5988ee93733a7428
 S
 #src/main/java/dao/DaoNewspaper.java,6\9\69233f23518fc63b3ae3be899879ab135784027c
+^
+.src/main/java/jakarta/rest/RestNewspapers.java,3\a\3a54a8c80507be4216fc826977b2620c9c32ca47
+\
+,src/main/java/dao/impl/DaoNewspaperImpl.java,d\9\d940e9b1c3e290c9f863007602bcf03aebd211cd
+b
+2src/main/java/services/impl/NewspaperServImpl.java,1\3\139bbde76232a7d0e91c1a45a6aae8bcbce3460d
+Y
+)src/main/java/services/NewspaperServ.java,a\0\a00506b5ee672f4186c32a098cc1684c22850589
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+Z
+*src/main/java/jakarta/rest/RestReader.java,b\c\bcd5b666a7df4e35babfeb22f0825a121147bb98

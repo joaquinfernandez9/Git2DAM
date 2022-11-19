@@ -5,5 +5,5 @@ data class Headset(
     var name: String,
     var mic: Int,
     var bluetooth: Int,
-    val models: List<Model>?,
+    var models: List<Model>,
 )

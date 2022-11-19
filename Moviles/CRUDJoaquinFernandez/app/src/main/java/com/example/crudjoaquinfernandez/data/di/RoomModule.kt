@@ -17,14 +17,14 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RoomModule {
     @Provides
-    @Named("headsetDB")
-    fun getHeadsetDB() = "database/cascos.db"
+    @Named(ConstData.headsetDB)
+    fun getHeadsetDB() = ConstData.getHeadsetDB
 
     @Provides
     @Singleton
     fun provideDatabase(
         @ApplicationContext context: Context,
-        @Named("headsetDB") dataPath: String
+        @Named(ConstData.headsetDB) dataPath: String
     ): HeadsetRoomDataBase =
         Room.databaseBuilder(context, HeadsetRoomDataBase::class.java, ConstData.databaseName)
             .createFromAsset(dataPath).fallbackToDestructiveMigration().build()

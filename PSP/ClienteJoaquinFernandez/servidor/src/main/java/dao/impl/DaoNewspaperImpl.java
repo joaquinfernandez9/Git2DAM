@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.DaoNewspaper;
+import domain.modelo.CommonException;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 import dao.Const;
@@ -12,14 +13,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @Log4j2
 public class DaoNewspaperImpl implements DaoNewspaper {
@@ -36,7 +35,8 @@ public class DaoNewspaperImpl implements DaoNewspaper {
     public List<Newspaper> getAll() {
         List<Newspaper> response;
         JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
-        response = jtm.query(Const.getAllNewspaper, BeanPropertyRowMapper.newInstance(Newspaper.class));
+        response = jtm.query(Const.getAllNewspaper,
+                BeanPropertyRowMapper.newInstance(Newspaper.class));
         return response;
     }
 
@@ -54,24 +54,28 @@ public class DaoNewspaperImpl implements DaoNewspaper {
     }
 
     @Override
-    public int add(Newspaper n) {
+    public Newspaper add(Newspaper n) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
                 db.getDataSource()).withTableName(Const.NEWSPAPER)
                 .usingGeneratedKeyColumns(Const.ID);
         Map<String, Object> param = new HashMap<>();
-
+        List<Newspaper> response;
         param.put(Const.NAME_NEWSPAPER, n.getName_newspaper());
         param.put(Const.RELEASE_DATE, n.getRelease_date());
-        return jdbcInsert.execute(param);
+        jdbcInsert.execute(param);
+        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+        response = jtm.query(Const.getNewspaper,
+                BeanPropertyRowMapper.newInstance(Newspaper.class), n.getId());
+        return response.get(0);
     }
-
 
     @Override
     public int delete(int id) {
         int response;
         TransactionDefinition txDef = new DefaultTransactionDefinition();
-        DataSourceTransactionManager txManager = new DataSourceTransactionManager(db.getDataSource());
-        org.springframework.transaction.TransactionStatus txStatus = txManager.getTransaction(txDef);
+        DataSourceTransactionManager txManager =
+                new DataSourceTransactionManager(db.getDataSource());
+        TransactionStatus txStatus = txManager.getTransaction(txDef);
         try {
             JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
 
@@ -87,30 +91,29 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         } catch (DataIntegrityViolationException e) {
             try {
                 txManager.rollback(txStatus);
-                response = 1;
+                throw new DataIntegrityViolationException("Newspaper is used");
             } catch (Exception ex) {
                 log.error(Const.ERROR_IN_ROLLBACK, ex);
-                response = -2;
-            }
-            if (Objects.requireNonNull(e.getMessage()).contains(Const.INTEGRITY_CONSTRAINT_VIOLATION)) {
-                response = -6;
+                throw new CommonException(ex.getMessage());
             }
         } catch (Exception ex) {
-            Logger.getLogger(DaoNewspaper.class.getName())
-                    .log(Level.SEVERE, null, ex);
-            response = -4;
+            log.error(ex.getMessage());
+            throw new CommonException(ex.getMessage());
         }
         return response;
     }
 
-//    private
-
-
     @Override
-    public int update(Newspaper n) {
+    public Newspaper update(Newspaper n) {
+        List<Newspaper> response;
         JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
-        return jtm.update(Const.updateNewspaper,
+        jtm.update(Const.updateNewspaper,
+                BeanPropertyRowMapper.newInstance(Newspaper.class),
                 n.getName_newspaper(), n.getRelease_date(), n.getId());
+
+        response = jtm.query(Const.getNewspaper,
+                BeanPropertyRowMapper.newInstance(Newspaper.class), n.getId());
+        return response.get(0);
     }
 
 

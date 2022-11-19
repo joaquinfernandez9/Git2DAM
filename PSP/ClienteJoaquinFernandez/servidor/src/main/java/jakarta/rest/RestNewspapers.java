@@ -6,7 +6,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import model.Newspaper;
-import services.NewspaperServ;
+import domain.services.NewspaperServ;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -54,9 +54,6 @@ public class RestNewspapers {
                 r.set(Response.ok().entity(newspaper).build());
             }
         });
-        if (r.get() == null) {
-            logError(r);
-        }
         return r.get();
     }
 
@@ -70,16 +67,10 @@ public class RestNewspapers {
                 r.set(Response.ok().entity(newspaper).build());
             }
         });
-        if (r.get() == null) {
-            logError(r);
-        }
         return r.get();
     }
 
-    private void logError(AtomicReference<Response> r){
-        LogError apiError = new LogError(Const.NO_NEWSPAPER_FOUND, LocalDateTime.now());
-        r.set(Response.status(Response.Status.NOT_FOUND).entity(apiError).build());
-    }
+
 
 
 

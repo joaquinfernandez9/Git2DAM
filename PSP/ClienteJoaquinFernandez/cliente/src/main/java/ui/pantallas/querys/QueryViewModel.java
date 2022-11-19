@@ -3,7 +3,7 @@ package ui.pantallas.querys;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import services.QuerysServ;
+import domain.services.QuerysServ;
 
 public class QueryViewModel {
 

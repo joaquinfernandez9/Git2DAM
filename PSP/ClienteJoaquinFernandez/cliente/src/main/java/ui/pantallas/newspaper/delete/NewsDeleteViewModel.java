@@ -5,8 +5,8 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Newspaper;
-import services.ArticleServ;
-import services.NewspaperServ;
+import domain.services.ArticleServ;
+import domain.services.NewspaperServ;
 import ui.pantallas.newspaper.list.NewsState;
 
 import java.util.List;

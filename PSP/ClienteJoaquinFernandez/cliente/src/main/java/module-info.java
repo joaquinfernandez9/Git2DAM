@@ -7,5 +7,7 @@ module cliente {
     requires domain;
     requires jakarta.cdi;
     requires lombok;
+    requires org.apache.logging.log4j;
+    requires servidor;
 
 }

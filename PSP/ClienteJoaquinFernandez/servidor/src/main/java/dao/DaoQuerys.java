@@ -11,11 +11,11 @@ import java.util.List;
 
 public interface DaoQuerys {
     //Get the description and the number of readers of each article
-    Either<Integer, List<QueryDescNumber>> getAll();
+    List<QueryDescNumber> getAll();
 
 
     //Get the name of the 100 oldest subscriptors of newspaper
-    Either<Integer, List<Reader>> getOldest(int idNewspaper);
+    List<Reader> getOldest(int idNewspaper);
 
     //Get the readers of articles of a specific type
 

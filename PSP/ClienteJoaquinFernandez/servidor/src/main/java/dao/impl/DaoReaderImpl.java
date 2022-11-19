@@ -1,6 +1,9 @@
 package dao.impl;
 
-import io.vavr.control.Either;
+import domain.modelo.DatabaseException;
+import domain.modelo.DatabaseIntegrityViolation;
+import domain.modelo.DatabaseRollbackException;
+import domain.modelo.NotFoundException;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 import dao.Const;
@@ -8,7 +11,6 @@ import dao.DaoReader;
 import dao.dataBase.DataBaseConnectionPool;
 import model.Login;
 import model.Reader;
-
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -28,8 +30,8 @@ public class DaoReaderImpl implements DaoReader {
     }
 
     @Override
-    public Either<Integer, List<Reader>> getAll(int idNews, String description) {
-        Either<Integer, List<Reader>> response;
+    public List<Reader> getAll(int idNews, String description) {
+        List<Reader> response;
         try (Connection con = pool.getConnection();
              Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                      ResultSet.CONCUR_READ_ONLY);
@@ -39,43 +41,42 @@ public class DaoReaderImpl implements DaoReader {
             if (idNews == -1) {
                 //get all
                 ResultSet rs = statement.executeQuery(Const.getAllReaders);
-                response = Either.right(readRS(rs));
+                response = readRS(rs);
             } else if (description == null) {
                 //1a2 Get information about the readers subscribed to a specific newspaper
                 getAllSubToNewspaper.setInt(1, idNews);
                 ResultSet rs = getAllSubToNewspaper.executeQuery();
-                response = Either.right(readRS(rs));
+                response = readRS(rs);
             } else {
                 //1a3 Get the readers of articles of a specific type
                 getAllOfType.setString(1, description);
                 ResultSet rs = getAllOfType.executeQuery();
-                response = Either.right(readRS(rs));
+                response = readRS(rs);
             }
         } catch (SQLException ex) {
             Logger.getLogger(DaoReaderImpl.class.getName()).log(
                     Level.SEVERE, null, ex);
-            response = Either.left(-3);
+            throw new DatabaseException(ex.getMessage());
         }
         return response;
     }
 
     @Override
-    public Either<Integer, Reader> get(int id) {
-        Either<Integer, Reader> response;
+    public Reader get(int id) {
+        Reader response;
         try (Connection con = pool.getConnection();
              PreparedStatement statement = con.prepareStatement(
                      Const.getReader)) {
             statement.setInt(1, id);
             ResultSet rs = statement.executeQuery();
             if (rs != null) {
-                response = Either.right(readRS(rs).get(0));
+                response = readRS(rs).get(0);
             } else {
-                response = Either.left(-5);
+                throw new NotFoundException("No reader with id " + id);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoReaderImpl.class.getName()).log(
-                    Level.SEVERE, null, ex);
-            response = Either.left(-3);
+            log.error(ex.getMessage());
+            throw new DatabaseException(ex.getMessage());
         }
         return response;
     }
@@ -122,7 +123,7 @@ public class DaoReaderImpl implements DaoReader {
     @Override
     public int update(Reader r) {
         int response;
-        Reader real = get(r.getId()).get();
+        Reader real = get(r.getId());
         try (Connection connection = pool.getConnection()) {
             response = updateQuery(connection, real, r);
         } catch (SQLException e) {
@@ -166,8 +167,7 @@ public class DaoReaderImpl implements DaoReader {
             pS.setInt(3, r.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            Logger.getLogger(DaoReaderImpl.class.getName())
-                    .log(Level.SEVERE, null, e);
+            log.error(e.getMessage());
             response = -3;
         }
         return response;
@@ -182,7 +182,6 @@ public class DaoReaderImpl implements DaoReader {
             log.error(e.getMessage());
             response = -3;
         }
-
         return response;
     }
 
@@ -190,38 +189,41 @@ public class DaoReaderImpl implements DaoReader {
         int response;
         try (PreparedStatement preparedStatement = con.prepareStatement(Const.addReader, Statement.RETURN_GENERATED_KEYS);
              PreparedStatement pS = con.prepareStatement(Const.addLogin, Statement.RETURN_GENERATED_KEYS)) {
-
             con.setAutoCommit(false);
-
             preparedStatement.setString(1, r.getName_reader());
             preparedStatement.setDate(2, Date.valueOf(r.getBirth_reader()));
             pS.setString(1, r.getLogin().getUser());
             pS.setString(2, r.getLogin().getPassword());
 
-
-            response = preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
             ResultSet rs = preparedStatement.getGeneratedKeys();
             if (rs.next()) {
                 r.setId(rs.getInt(1));
             }
             pS.setInt(3, r.getId());
-            try {
-                pS.executeUpdate();
-                con.commit();
-            } catch (SQLIntegrityConstraintViolationException e) {
-                con.rollback();
-                log.error(e.getMessage());
-                response = -1;
-            }
+            response = addCommit(pS, con, r);
         } catch (SQLException e) {
             try {
                 con.rollback();
-                response = -3;
+                throw new DatabaseException(e.getMessage());
             } catch (SQLException exception) {
                 log.error(exception.getMessage());
-                response = -7;
+                throw new DatabaseRollbackException(exception.getMessage());
             }
-            e.printStackTrace();
+        }
+        return response;
+    }
+
+    private int addCommit(PreparedStatement pS, Connection con, Reader r) throws SQLException {
+        int response;
+        try {
+            pS.executeUpdate();
+            response = r.getId();
+            con.commit();
+        } catch (SQLIntegrityConstraintViolationException e) {
+            con.rollback();
+            log.error(e.getMessage());
+            throw new DatabaseIntegrityViolation("User already exists");
         }
         return response;
     }

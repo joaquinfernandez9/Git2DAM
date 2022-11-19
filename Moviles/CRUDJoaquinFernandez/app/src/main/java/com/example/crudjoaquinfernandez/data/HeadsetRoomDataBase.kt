@@ -10,5 +10,4 @@ import com.example.crudjoaquinfernandez.data.modelo.ModelEntity
 @Database(entities = [HeadsetEntity::class, ModelEntity::class], version = 13, exportSchema = true)
 abstract class HeadsetRoomDataBase: RoomDatabase(){
     abstract fun headsetDao(): HeadsetDao
-
 }

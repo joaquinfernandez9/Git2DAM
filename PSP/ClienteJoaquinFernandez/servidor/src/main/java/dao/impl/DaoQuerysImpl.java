@@ -1,7 +1,7 @@
 package dao.impl;
 
 import dao.DaoQuerys;
-import io.vavr.control.Either;
+import domain.modelo.DatabaseException;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 import model.querys.QueryArticleRating;
@@ -12,7 +12,6 @@ import model.Reader;
 import model.querys.QueryArticlesNewspaper;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,14 +34,15 @@ public class DaoQuerysImpl implements DaoQuerys {
 
     //Get the description and the number of readers of each article
     @Override
-    public Either<Integer, List<QueryDescNumber>> getAll() {
-        Either<Integer, List<QueryDescNumber>> response = null;
+    public List<QueryDescNumber> getAll() {
+        List<QueryDescNumber> response;
         try (Connection con = pool.getConnection();
              PreparedStatement ps = con.prepareStatement(Const.firstQuery)) {
             ResultSet rs = ps.executeQuery();
-            response = Either.right(readRS(rs));
+            response = readRS(rs);
         } catch (SQLException e) {
             log.error(e.getMessage());
+            throw new DatabaseException(e.getMessage());
         }
         return response;
     }
@@ -65,16 +65,16 @@ public class DaoQuerysImpl implements DaoQuerys {
 
     //Get the name of the 100 oldest subscriptors of newspaper
     @Override
-    public Either<Integer, List<Reader>> getOldest(int idNewspaper) {
-        Either<Integer, List<Reader>> response;
+    public List<Reader> getOldest(int idNewspaper) {
+        List<Reader> response;
         try (Connection con = pool.getConnection();
              PreparedStatement ps = con.prepareStatement(Const.secondQuery)) {
             ps.setInt(1, idNewspaper);
             ResultSet rs = ps.executeQuery();
-            response = Either.right(readRSReader(rs));
+            response = readRSReader(rs);
         } catch (SQLException e) {
             log.error(e.getMessage());
-            response = Either.left(-3);
+            throw new DatabaseException(e.getMessage());
         }
         return response;
     }

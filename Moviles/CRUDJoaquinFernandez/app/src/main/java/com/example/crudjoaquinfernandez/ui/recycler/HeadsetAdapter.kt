@@ -29,18 +29,16 @@ class HeadsetAdapter(
         bind(item)
     }
 
-    class HeadsetViewHolder(private val headsetView : View, private val actions: Actions) : RecyclerView.ViewHolder(headsetView) {
+    inner class HeadsetViewHolder(headsetView : View, private val actions: Actions) : RecyclerView.ViewHolder(headsetView) {
         private val binding = ItemHeadsetBinding.bind(headsetView)
 
         fun bind(headset: Headset) = with(binding) {
 
             tvNombre.text = headset.name
             tvID.text = headset.id.toString()
-
-            button2.setOnClickListener {
+            deleteBtn.setOnClickListener {
                 actions.onClickDelete(headset.id)
             }
-
             detail.setOnClickListener {
                 actions.onClickDetail(headset.id)
             }

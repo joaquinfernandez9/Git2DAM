@@ -1,4 +1,5 @@
 module servidor {
+    exports domain.services;
     requires jakarta.jakartaee.web.api;
     requires lombok;
     requires org.yaml.snakeyaml;

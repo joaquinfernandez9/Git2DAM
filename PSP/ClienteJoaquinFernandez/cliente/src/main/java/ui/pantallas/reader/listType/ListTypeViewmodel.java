@@ -5,7 +5,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Reader;
-import services.ReaderServ;
+import domain.services.ReaderServ;
 
 import java.util.List;
 

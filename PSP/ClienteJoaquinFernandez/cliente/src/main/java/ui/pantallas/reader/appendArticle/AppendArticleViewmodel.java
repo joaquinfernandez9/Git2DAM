@@ -6,8 +6,8 @@ import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.ReadArticle;
 import model.Reader;
-import services.ArticleServ;
-import services.ReadArticleServ;
+import domain.services.ArticleServ;
+import domain.services.ReadArticleServ;
 
 import java.util.ArrayList;
 

@@ -33,17 +33,7 @@ class ListActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.about -> {
-                MaterialAlertDialogBuilder(this@ListActivity)
-                    .setMessage("app_info.txt")
-                    .show()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+
 
     inner class Imple : Actions {
         override fun onClickDelete(id: Int) {
@@ -98,6 +88,7 @@ class ListActivity : AppCompatActivity() {
                 rvHeadsets.adapter = adapter
                 rvHeadsets.layoutManager = LinearLayoutManager(this@ListActivity)
             }
+
         }
 
 

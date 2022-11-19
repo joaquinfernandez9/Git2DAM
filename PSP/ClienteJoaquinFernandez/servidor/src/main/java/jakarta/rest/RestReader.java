@@ -1,12 +1,14 @@
 package jakarta.rest;
 
+import jakarta.errores.CommonExceptionMapper;
+import jakarta.errores.DatabaseExceptionMapper;
 import jakarta.errores.LogError;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import model.Reader;
-import services.ReaderServ;
+import domain.services.ReaderServ;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,22 +18,23 @@ import java.util.concurrent.atomic.AtomicReference;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class RestReader {
-    private final ReaderServ readerServ;
 
+    private final ReaderServ readerServ;
+    private final DatabaseExceptionMapper databaseExceptionMapper;
 
     @Inject
-    public RestReader(ReaderServ readerServ) {
+    public RestReader(ReaderServ readerServ, DatabaseExceptionMapper databaseExceptionMapper) {
         this.readerServ = readerServ;
+        this.databaseExceptionMapper = databaseExceptionMapper;
     }
 
     @GET
     public List<Reader> getReaders() {
         List<Reader> readers = readerServ
-                .getAll(-1, null)
-                .getOrElseGet(throwable -> null);
-        if (readers == null) {
-            logError();
-        }
+                .getAll(-1, null);
+//        if (readers.isEmpty()) {
+//            databaseExceptionMapper.toResponse();
+//        }
         return readers;
     }
 
@@ -40,7 +43,7 @@ public class RestReader {
     public Response getReader(@PathParam(Const.ID) int id) {
 
         AtomicReference<Response> r = new AtomicReference<>();
-        Reader reader = readerServ.get(id).getOrNull();
+        Reader reader = readerServ.get(id);
         if (reader != null) {
             r.set(Response.ok().entity(reader).build());
         } else {
@@ -54,7 +57,7 @@ public class RestReader {
     @Path(Const.ID_PARAM)
     public Response deleteReader(@PathParam(Const.ID) int id) {
         AtomicReference<Response> r = new AtomicReference<>();
-        Reader reader = readerServ.get(id).getOrNull();
+        Reader reader = readerServ.get(id);
         if (reader != null) {
             int response = readerServ.deleteReader(id);
             if (response == 1) {

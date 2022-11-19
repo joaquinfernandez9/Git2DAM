@@ -4,7 +4,7 @@ import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import services.NewspaperServ;
+import domain.services.NewspaperServ;
 
 
 public class NewsListViewModel {

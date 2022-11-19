@@ -1,0 +1,8 @@
+
+|
+java:S1488!"_Immediately return this expression instead of assigning it to the temporary variable "readers".(üËÄß8èçî·È0
+]	java:S125#"<This block of commented-out lines of code should be removed.(›­ÿ¨ÿÿÿÿÿ8ôçî·È0
+]
+java:S1068";Remove this unused "databaseExceptionMapper" private field.(§¾Õ»ÿÿÿÿÿ8ûçî·È0
+C
+java:S1144p"-Remove this unused private "logError" method.(‰°ˆÛ

@@ -57,3 +57,27 @@ N
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 b
 2src/main/java/ui/pantallas/sets/SetsViewModel.java,4\c\4c89e781bc3ef444cae8706e84da062721f5c65c
+V
+&src/main/java/ui/common/Pantallas.java,3\9\396fad0c74cb139778b752b985a5d5b7522d506e
+W
+'src/main/java/ui/common/Constantes.java,2\9\293eb34e44341f86d222ad0b9b1b89a875e7131a
+g
+7src/main/java/ui/pantallas/cartas/CartasController.java,c\c\ccd87e276b67365b26103877f230523f1fd6aa65
+d
+4src/main/java/dao/retrofit/cards/CardImagesItem.java,b\1\b1c3cf56a409ef6930ed9c0870c70ab5bb63d270
+P
+ src/main/java/dao/DaoCartas.java,1\4\14de995be55feeb347f7601a10161e6251456f17
+Y
+)src/main/java/dao/impl/DaoCartasImpl.java,1\7\176094307074ff38d88458e44702dd92f278093c
+a
+1src/main/java/dao/retrofit/llamada/YuGiOhApi.java,e\1\e136e3415eeb186982f8bcf0e5e4bc3e0024fd36
+d
+4src/main/java/dao/retrofit/cards/CardPricesItem.java,6\6\662dd789ef89171667c8516ca7d6edbcb93542cc
+b
+2src/main/java/dao/retrofit/cards/CardSetsItem.java,a\a\aa113ef3fdb852f7b962fff9244717e296739981
+V
+&src/main/java/domain/modelo/Carta.java,3\6\36d0a04c82f40208e5a9537bff6c7086886f1564
+^
+.src/main/java/dao/retrofit/cards/DataItem.java,0\0\00bb5df90ea2dd20a20d8bcbb212ca1fcc3d331f
+`
+0src/main/java/dao/retrofit/ProducesRetrofit.java,4\0\4070be6784772f662f3d578d59b9a40234f87106

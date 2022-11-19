@@ -4,7 +4,7 @@ import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Newspaper;
-import services.NewspaperServ;
+import domain.services.NewspaperServ;
 
 import java.time.LocalDate;
 

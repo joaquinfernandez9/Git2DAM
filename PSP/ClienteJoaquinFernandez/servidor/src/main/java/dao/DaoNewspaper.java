@@ -9,9 +9,9 @@ public interface DaoNewspaper {
 
     Newspaper get(int id);
 
-    int add(Newspaper n);
+    Newspaper add(Newspaper n);
 
     int delete(int id);
 
-    int update(Newspaper n);
+    Newspaper update(Newspaper n);
 }

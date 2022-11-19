@@ -5,8 +5,8 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Subscription;
-import services.NewspaperServ;
-import services.SubscriptionServ;
+import domain.services.NewspaperServ;
+import domain.services.SubscriptionServ;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,0 +1,26 @@
+package domain.services.impl;
+
+import domain.services.LoginServ;
+import jakarta.inject.Inject;
+import dao.DaoLogin;
+
+public class LoginServImpl implements LoginServ {
+
+    private final DaoLogin daoLoginImpl;
+
+    @Inject
+    public LoginServImpl(DaoLogin daoLoginImpl) {
+        this.daoLoginImpl = daoLoginImpl;
+    }
+
+    @Override
+    public int login(String userName, String password) {
+        return daoLoginImpl.login(userName, password);
+    }
+
+    @Override
+    public int get(String userName, String password){
+        return daoLoginImpl.get(userName, password);
+    }
+
+}

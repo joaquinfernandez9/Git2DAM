@@ -19,10 +19,6 @@ class RecyclerViewModel @Inject constructor(
     private val _state = MutableLiveData<ListState>()
     val state: MutableLiveData<ListState> = _state
 
-    init {
-        getAllHeadsets()
-    }
-
     fun handleEvent(event: RecyclerEvent) {
         when (event) {
             is RecyclerEvent.DeleteHeadset -> {

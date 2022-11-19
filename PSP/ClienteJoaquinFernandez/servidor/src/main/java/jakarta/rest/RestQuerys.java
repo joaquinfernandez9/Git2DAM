@@ -10,7 +10,7 @@ import model.Reader;
 import model.querys.QueryArticleRating;
 import model.querys.QueryArticlesNewspaper;
 import model.querys.QueryDescNumber;
-import services.QuerysServ;
+import domain.services.QuerysServ;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -32,7 +32,7 @@ public class RestQuerys {
     @GET
     @Path(Const.QUERY_1)
     public List<QueryDescNumber> query1(){
-        List<QueryDescNumber> list = querysServ.getAll().getOrNull();
+        List<QueryDescNumber> list = querysServ.getAll();
         if (list == null) {
             throwError();
             return Collections.emptyList();
@@ -44,8 +44,7 @@ public class RestQuerys {
     @GET
     @Path(Const.QUERY_2_ID)
     public List<Reader> query2(@PathParam(Const.ID) int id){
-        List<Reader> readersList = querysServ.getOldest(id)
-                .getOrElseGet(throwable -> null);
+        List<Reader> readersList = querysServ.getOldest(id);
         if (readersList == null){
             throwError();
             return Collections.emptyList();

@@ -3,6 +3,8 @@ package com.example.crudjoaquinfernandez.data.dao
 import androidx.room.*
 import com.example.crudjoaquinfernandez.data.ConstData
 import com.example.crudjoaquinfernandez.data.modelo.HeadsetEntity
+import com.example.crudjoaquinfernandez.data.modelo.ModelEntity
+import com.example.crudjoaquinfernandez.ui.mainScreen.Const
 
 @Dao
 interface HeadsetDao {
@@ -10,7 +12,7 @@ interface HeadsetDao {
     suspend fun getAll(): List<HeadsetEntity>
 
     @Query(ConstData.getById)
-    suspend fun getById(id: Int): HeadsetEntity?
+    suspend fun getById(id: Int): HeadsetEntity
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insert(headset: HeadsetEntity)
@@ -19,7 +21,20 @@ interface HeadsetDao {
     suspend fun update(headset: HeadsetEntity)
 
     @Query(ConstData.delete)
-    suspend fun delete(id: Int)
+    suspend fun deleteHeadset(id: Int)
+
+
+    @Query(ConstData.getAllModels)
+    suspend fun getAll(id: Int): List<ModelEntity>
+
+    @Insert(onConflict = OnConflictStrategy.ABORT)
+    suspend fun insert(item: ModelEntity)
+
+    @Delete
+    suspend fun deleteModel(model: ModelEntity)
+
+    @Query(ConstData.getModel)
+    suspend fun get(id: Int): ModelEntity
 
 
 }
