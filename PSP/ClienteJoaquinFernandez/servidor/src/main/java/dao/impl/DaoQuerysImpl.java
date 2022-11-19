@@ -2,6 +2,7 @@ package dao.impl;
 
 import dao.DaoQuerys;
 import domain.modelo.DatabaseException;
+import domain.modelo.NotFoundException;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 import model.querys.QueryArticleRating;
@@ -30,7 +31,6 @@ public class DaoQuerysImpl implements DaoQuerys {
     public DaoQuerysImpl(DataBaseConnectionPool pool) {
         this.pool = pool;
     }
-
 
     //Get the description and the number of readers of each article
     @Override
@@ -79,7 +79,6 @@ public class DaoQuerysImpl implements DaoQuerys {
         return response;
     }
 
-
     private List<Reader> readRSReader(ResultSet rs) {
         List<Reader> response = new ArrayList<>();
         try {
@@ -96,7 +95,6 @@ public class DaoQuerysImpl implements DaoQuerys {
         }
         return response;
     }
-
 
 //    Get the articles of a given type, together with the name of the newspaper
     @Override
@@ -119,6 +117,9 @@ public class DaoQuerysImpl implements DaoQuerys {
         List<QueryArticleRating> response;
         response = jtm.query(Const.fourthQuery,
                 BeanPropertyRowMapper.newInstance(QueryArticleRating.class), idNewspaper);
+        if (response.isEmpty()){
+            throw new NotFoundException("No data found for this query");
+        }
         return response;
     }
 

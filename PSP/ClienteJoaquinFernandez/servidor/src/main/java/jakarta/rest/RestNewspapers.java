@@ -1,16 +1,12 @@
 package jakarta.rest;
 
-import jakarta.errores.LogError;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import model.Newspaper;
 import domain.services.NewspaperServ;
-
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 @Path(Const.NEWSPAPERS)
 @Produces(MediaType.APPLICATION_JSON)
@@ -37,41 +33,21 @@ public class RestNewspapers {
 
     @POST
     public Response addNewspaper(Newspaper newspaper) {
-        int response = newspaperServ.add(newspaper);
-        if (response == 1) {
-            return Response.status(Response.Status.CREATED).build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
+        Newspaper np = newspaperServ.add(newspaper);
+        return Response.ok(np).build();
     }
 
     @PUT
     public Response updateNewspaper(Newspaper newspaper) {
-        AtomicReference<Response> r = new AtomicReference<>();
-        newspaperServ.getAll().forEach(newspaper1 -> {
-            if (newspaper1.getId() == newspaper.getId()) {
-                newspaperServ.update(newspaper);
-                r.set(Response.ok().entity(newspaper).build());
-            }
-        });
-        return r.get();
+        Newspaper np = newspaperServ.update(newspaper);
+        return Response.ok(np).build();
     }
 
     @DELETE
     @Path(Const.ID)
     public Response deleteNewspaper(@PathParam(Const.ID) int id) {
-        AtomicReference<Response> r = new AtomicReference<>();
-        newspaperServ.getAll().forEach(newspaper -> {
-            if (newspaper.getId() == id) {
-                newspaperServ.deleteNewspaper(id);
-                r.set(Response.ok().entity(newspaper).build());
-            }
-        });
-        return r.get();
+        newspaperServ.deleteNewspaper(id);
+        return Response.noContent().build();
     }
-
-
-
-
 
 }

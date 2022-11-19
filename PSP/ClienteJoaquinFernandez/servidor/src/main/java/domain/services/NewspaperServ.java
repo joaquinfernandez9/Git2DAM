@@ -7,7 +7,7 @@ import java.util.List;
 public interface NewspaperServ {
     List<Newspaper> getAll();
 
-    int deleteNewspaper(int id);
+    void deleteNewspaper(int id);
 
     Newspaper add(Newspaper n);
 

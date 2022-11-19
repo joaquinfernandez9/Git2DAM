@@ -54,8 +54,6 @@ public class DaoReaderImpl implements DaoReader {
                 response = readRS(rs);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DaoReaderImpl.class.getName()).log(
-                    Level.SEVERE, null, ex);
             throw new DatabaseException(ex.getMessage());
         }
         return response;
@@ -82,21 +80,17 @@ public class DaoReaderImpl implements DaoReader {
     }
 
     @Override
-    public int delete(int id) {
-        int response;
+    public void delete(int id) {
         try (Connection con = pool.getConnection()) {
-            response = deleteQuery(con, id);
+            deleteQuery(con, id);
         } catch (SQLException sqle) {
             Logger.getLogger(DaoReaderImpl.class.getName())
                     .log(Level.SEVERE, null, sqle);
-            response = -3;
         }
 
-        return response;
     }
 
-    private int deleteQuery(Connection con, int id) throws SQLException {
-        int response;
+    private void deleteQuery(Connection con, int id) throws SQLException {
         try (PreparedStatement preparedStatement = con.prepareStatement(Const.DELETE_FROM_READER_WHERE_ID);
              PreparedStatement preparedStatement1 = con.prepareStatement(Const.DELETE_FROM_READARTICLE_WHERE_ID_READER);
              PreparedStatement preparedStatement2 = con.prepareStatement(Const.DELETE_FROM_SUBSCRIBE_WHERE_ID_READER);
@@ -110,32 +104,27 @@ public class DaoReaderImpl implements DaoReader {
             preparedStatement3.executeUpdate();
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
-            response = preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
             con.commit();
         } catch (SQLException exec) {
-            log.error(exec.getMessage());
             con.rollback();
-            response = -3;
+            throw new DatabaseException("No reader could be deleted");
         }
-        return response;
     }
 
     @Override
-    public int update(Reader r) {
-        int response;
+    public Reader update(Reader r) {
+        Reader response;
         Reader real = get(r.getId());
         try (Connection connection = pool.getConnection()) {
             response = updateQuery(connection, real, r);
         } catch (SQLException e) {
-            Logger.getLogger(DaoReaderImpl.class.getName())
-                    .log(Level.SEVERE, null, e);
-            response = -3;
+            throw new DatabaseException("Nothing could be done");
         }
         return response;
     }
 
-    private int updateQuery(Connection connection, Reader real, Reader r) {
-        int response = 1;
+    private Reader updateQuery(Connection connection, Reader real, Reader r) {
         try (PreparedStatement preparedStatement =
                      connection.prepareStatement(Const.updateReader);
              PreparedStatement pS = connection.prepareStatement(Const.updateLogin
@@ -166,27 +155,25 @@ public class DaoReaderImpl implements DaoReader {
             }
             pS.setInt(3, r.getId());
             preparedStatement.executeUpdate();
+            return get(r.getId());
         } catch (SQLException e) {
-            log.error(e.getMessage());
-            response = -3;
+            throw new DatabaseIntegrityViolation("No reader could be updated");
         }
-        return response;
     }
 
     @Override
-    public int add(Reader r) {
-        int response;
+    public Reader add(Reader r) {
+        Reader response;
         try (Connection con = pool.getConnection()) {
             response = addQuery(con, r);
         } catch (SQLException e) {
-            log.error(e.getMessage());
-            response = -3;
+            throw new DatabaseIntegrityViolation("No reader could be added");
         }
         return response;
     }
 
-    private int addQuery(Connection con, Reader r) {
-        int response;
+    private Reader addQuery(Connection con, Reader r) {
+        Reader response;
         try (PreparedStatement preparedStatement = con.prepareStatement(Const.addReader, Statement.RETURN_GENERATED_KEYS);
              PreparedStatement pS = con.prepareStatement(Const.addLogin, Statement.RETURN_GENERATED_KEYS)) {
             con.setAutoCommit(false);
@@ -214,11 +201,11 @@ public class DaoReaderImpl implements DaoReader {
         return response;
     }
 
-    private int addCommit(PreparedStatement pS, Connection con, Reader r) throws SQLException {
-        int response;
+    private Reader addCommit(PreparedStatement pS, Connection con, Reader r) throws SQLException {
+        Reader response;
         try {
             pS.executeUpdate();
-            response = r.getId();
+            response = r;
             con.commit();
         } catch (SQLIntegrityConstraintViolationException e) {
             con.rollback();

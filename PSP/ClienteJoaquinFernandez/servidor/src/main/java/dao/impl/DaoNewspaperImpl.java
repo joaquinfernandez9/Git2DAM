@@ -1,12 +1,14 @@
 package dao.impl;
 
 import dao.DaoNewspaper;
-import domain.modelo.CommonException;
+import domain.modelo.*;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.core.Response;
 import lombok.extern.log4j.Log4j2;
 import dao.Const;
 import dao.dataBase.DataBaseConnectionPool;
 import model.Newspaper;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,7 +39,12 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
         response = jtm.query(Const.getAllNewspaper,
                 BeanPropertyRowMapper.newInstance(Newspaper.class));
-        return response;
+        if (response.isEmpty()) {
+            throw new NotFoundException("No newspaper found");
+        } else {
+            return response;
+        }
+
     }
 
     @Override
@@ -47,7 +54,7 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         n = jtm.query(Const.getNewspaper,
                 BeanPropertyRowMapper.newInstance(Newspaper.class), id);
         if (n.isEmpty()) {
-            return null;
+            throw new NotFoundException("No newspaper found");
         } else {
             return n.get(0);
         }
@@ -55,23 +62,27 @@ public class DaoNewspaperImpl implements DaoNewspaper {
 
     @Override
     public Newspaper add(Newspaper n) {
-        SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
-                db.getDataSource()).withTableName(Const.NEWSPAPER)
-                .usingGeneratedKeyColumns(Const.ID);
-        Map<String, Object> param = new HashMap<>();
-        List<Newspaper> response;
-        param.put(Const.NAME_NEWSPAPER, n.getName_newspaper());
-        param.put(Const.RELEASE_DATE, n.getRelease_date());
-        jdbcInsert.execute(param);
-        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
-        response = jtm.query(Const.getNewspaper,
-                BeanPropertyRowMapper.newInstance(Newspaper.class), n.getId());
-        return response.get(0);
+        try {
+            SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
+                    db.getDataSource()).withTableName(Const.NEWSPAPER)
+                    .usingGeneratedKeyColumns(Const.ID);
+            Map<String, Object> param = new HashMap<>();
+            List<Newspaper> response;
+            param.put(Const.NAME_NEWSPAPER, n.getName_newspaper());
+            param.put(Const.RELEASE_DATE, n.getRelease_date());
+            jdbcInsert.execute(param);
+            JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+            response = jtm.query(Const.getNewspaper,
+                    BeanPropertyRowMapper.newInstance(Newspaper.class), n.getId());
+            return response.get(0);
+        } catch (IndexOutOfBoundsException e){
+            //si falla el get salta esta excepcion, por lo que entendemos que no se añade
+            throw new DatabaseException("Newspaper not added correctly");
+        }
     }
 
     @Override
-    public int delete(int id) {
-        int response;
+    public void delete(int id) {
         TransactionDefinition txDef = new DefaultTransactionDefinition();
         DataSourceTransactionManager txManager =
                 new DataSourceTransactionManager(db.getDataSource());
@@ -85,7 +96,7 @@ public class DaoNewspaperImpl implements DaoNewspaper {
 
             jtm.update(Const.deleteFromSubscribe, id);
 
-            response = jtm.update(Const.DELETE_FROM_NEWSPAPER_WHERE_ID, id);
+            jtm.update(Const.DELETE_FROM_NEWSPAPER_WHERE_ID, id);
 
             txManager.commit(txStatus);
         } catch (DataIntegrityViolationException e) {
@@ -94,26 +105,29 @@ public class DaoNewspaperImpl implements DaoNewspaper {
                 throw new DataIntegrityViolationException("Newspaper is used");
             } catch (Exception ex) {
                 log.error(Const.ERROR_IN_ROLLBACK, ex);
-                throw new CommonException(ex.getMessage());
+                throw new DatabaseRollbackException("Rollback Failed");
             }
         } catch (Exception ex) {
             log.error(ex.getMessage());
             throw new CommonException(ex.getMessage());
         }
-        return response;
     }
 
     @Override
     public Newspaper update(Newspaper n) {
-        List<Newspaper> response;
-        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
-        jtm.update(Const.updateNewspaper,
-                BeanPropertyRowMapper.newInstance(Newspaper.class),
-                n.getName_newspaper(), n.getRelease_date(), n.getId());
+        try {
+            List<Newspaper> response;
+            JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+            jtm.update(Const.updateNewspaper,
+                    BeanPropertyRowMapper.newInstance(Newspaper.class),
+                    n.getName_newspaper(), n.getRelease_date(), n.getId());
 
-        response = jtm.query(Const.getNewspaper,
-                BeanPropertyRowMapper.newInstance(Newspaper.class), n.getId());
-        return response.get(0);
+            response = jtm.query(Const.getNewspaper,
+                    BeanPropertyRowMapper.newInstance(Newspaper.class), n.getId());
+            return response.get(0);
+        } catch (DataAccessException e){
+            throw new DatabaseIntegrityViolation("Can't access data, nothing updated");
+        }
     }
 
 

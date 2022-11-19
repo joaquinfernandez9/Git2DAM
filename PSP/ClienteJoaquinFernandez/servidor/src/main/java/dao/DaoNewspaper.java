@@ -11,7 +11,7 @@ public interface DaoNewspaper {
 
     Newspaper add(Newspaper n);
 
-    int delete(int id);
+    void delete(int id);
 
     Newspaper update(Newspaper n);
 }

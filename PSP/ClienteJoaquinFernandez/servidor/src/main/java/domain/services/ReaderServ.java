@@ -1,7 +1,5 @@
 package domain.services;
 
-
-import io.vavr.control.Either;
 import model.Reader;
 
 import java.util.List;
@@ -11,11 +9,11 @@ public interface ReaderServ {
 
     Reader get(int id);
 
-    int deleteReader(int id);
+    void deleteReader(int id);
 
-    int update(Reader reader);
+    Reader update(Reader reader);
 
-    int add(Reader reader);
+    Reader add(Reader reader);
 
     int appendReadArticle(Reader reader, int article, int rating);
 }

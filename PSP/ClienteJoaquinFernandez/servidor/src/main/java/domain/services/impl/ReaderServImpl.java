@@ -42,23 +42,20 @@ public class ReaderServImpl implements ReaderServ {
 
 
     @Override
-    public int deleteReader(int idReader) {
-        int restult = 0;
+    public void deleteReader(int idReader) {
         Reader reader = daoReaderImpl.get(idReader);
         if (reader != null) {
             daoReaderImpl.delete(idReader);
-            restult = 1;
         }
-        return restult;
     }
 
     @Override
-    public int update(Reader r) {
+    public Reader update(Reader r) {
         return daoReaderImpl.update(r);
     }
 
     @Override
-    public int add(Reader r) {
+    public Reader add(Reader r) {
         return daoReaderImpl.add(r);
     }
 

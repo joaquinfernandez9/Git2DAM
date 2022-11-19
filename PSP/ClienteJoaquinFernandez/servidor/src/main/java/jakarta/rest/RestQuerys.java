@@ -32,53 +32,25 @@ public class RestQuerys {
     @GET
     @Path(Const.QUERY_1)
     public List<QueryDescNumber> query1(){
-        List<QueryDescNumber> list = querysServ.getAll();
-        if (list == null) {
-            throwError();
-            return Collections.emptyList();
-        } else {
-            return list;
-        }
+        return querysServ.getAll();
     }
 
     @GET
     @Path(Const.QUERY_2_ID)
     public List<Reader> query2(@PathParam(Const.ID) int id){
-        List<Reader> readersList = querysServ.getOldest(id);
-        if (readersList == null){
-            throwError();
-            return Collections.emptyList();
-        } else {
-            return readersList;
-        }
+        return querysServ.getOldest(id);
     }
 
     @GET
     @Path(Const.QUERY_3_DESCRIPTION)
     public List<QueryArticlesNewspaper> query3(@PathParam(Const.DESCRIPTION) String description){
-        List<QueryArticlesNewspaper> list = querysServ.getAll(description);
-        if (list.isEmpty()) {
-            throwError();
-            return Collections.emptyList();
-        } else {
-            return list;
-        }
+        return querysServ.getAll(description);
     }
 
     @GET
     @Path(Const.QUERY_4_ID)
     public List<QueryArticleRating> query4(@PathParam(Const.ID) int id){
-        List<QueryArticleRating> list = querysServ.getArticles(id);
-        if (list.isEmpty()) {
-            throwError();
-            return Collections.emptyList();
-        } else {
-            return list;
-        }
+     return querysServ.getArticles(id);
     }
 
-    private void throwError(){
-        LogError apiError = new LogError(Const.NO_DATA_FOUND, LocalDateTime.now());
-        throw new WebApplicationException(Response.status(Response.Status.NOT_FOUND).entity(apiError).build());
-    }
 }

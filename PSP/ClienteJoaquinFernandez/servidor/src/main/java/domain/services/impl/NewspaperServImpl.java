@@ -23,8 +23,8 @@ public class NewspaperServImpl implements NewspaperServ {
 
 
     @Override
-    public int deleteNewspaper(int id) {
-        return daoNewspaper.delete(id);
+    public void deleteNewspaper(int id) {
+        daoNewspaper.delete(id);
     }
 
 

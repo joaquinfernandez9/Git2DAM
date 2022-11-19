@@ -10,10 +10,10 @@ public interface DaoReader {
 
     Reader get(int id);
 
-    int delete(int id);
+    void delete(int id);
 
-    int update(Reader r);
+    Reader update(Reader r);
 
-    int add(Reader r);
+    Reader add(Reader r);
 
 }

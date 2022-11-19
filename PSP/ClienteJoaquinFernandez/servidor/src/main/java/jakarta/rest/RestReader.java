@@ -20,80 +20,41 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RestReader {
 
     private final ReaderServ readerServ;
-    private final DatabaseExceptionMapper databaseExceptionMapper;
 
     @Inject
-    public RestReader(ReaderServ readerServ, DatabaseExceptionMapper databaseExceptionMapper) {
+    public RestReader(ReaderServ readerServ) {
         this.readerServ = readerServ;
-        this.databaseExceptionMapper = databaseExceptionMapper;
     }
 
     @GET
     public List<Reader> getReaders() {
-        List<Reader> readers = readerServ
-                .getAll(-1, null);
-//        if (readers.isEmpty()) {
-//            databaseExceptionMapper.toResponse();
-//        }
-        return readers;
+        return readerServ.getAll(-1, null);
     }
 
     @GET
     @Path(Const.ID_PARAM)
-    public Response getReader(@PathParam(Const.ID) int id) {
-
-        AtomicReference<Response> r = new AtomicReference<>();
-        Reader reader = readerServ.get(id);
-        if (reader != null) {
-            r.set(Response.ok().entity(reader).build());
-        } else {
-            apiErrorResponse(r);
-        }
-        return r.get();
+    public Reader getReader(@PathParam(Const.ID) int id) {
+        return readerServ.get(id);
     }
 
 
     @DELETE
     @Path(Const.ID_PARAM)
     public Response deleteReader(@PathParam(Const.ID) int id) {
-        AtomicReference<Response> r = new AtomicReference<>();
-        Reader reader = readerServ.get(id);
-        if (reader != null) {
-            int response = readerServ.deleteReader(id);
-            if (response == 1) {
-                r.set(Response.status(Response.Status.OK).build());
-            } else {
-                r.set(Response.status(Response.Status.BAD_REQUEST).build());
-            }
-            r.set(Response.ok().entity(reader).build());
-        } else {
-            apiErrorResponse(r);
-        }
-        return r.get();
+        readerServ.deleteReader(id);
+        return Response.noContent().build();
     }
 
     @POST
     public Response addReader(Reader reader) {
-        AtomicReference<Response> r = new AtomicReference<>();
-        int response = readerServ.add(reader);
-        if (response == 1) {
-            r.set(Response.status(Response.Status.CREATED).build());
-        } else {
-            r.set(Response.status(Response.Status.BAD_REQUEST).build());
-        }
-        return r.get();
+        Reader response = readerServ.add(reader);
+        return Response.ok(response).build();
     }
 
     @PUT
     public Response updateReader(Reader reader) {
-        AtomicReference<Response> r = new AtomicReference<>();
-        int response = readerServ.update(reader);
-        if (response == 1) {
-            r.set(Response.status(Response.Status.OK).build());
-        } else {
-            r.set(Response.status(Response.Status.BAD_REQUEST).build());
-        }
-        return r.get();
+        Reader response = readerServ.update(reader);
+        return Response.ok(response).build();
     }
 
     @POST
@@ -108,16 +69,5 @@ public class RestReader {
         }
         return r.get();
     }
-
-    private void logError() {
-        LogError apiError = new LogError(Const.NO_READERS_FOUND, LocalDateTime.now());
-        throw new WebApplicationException(Response.status(Response.Status.NOT_FOUND).entity(apiError).build());
-    }
-
-    private void apiErrorResponse(AtomicReference<Response> r) {
-        LogError apiError = new LogError(Const.READER_IS_NULL, LocalDateTime.now());
-        r.set(Response.status(Response.Status.NOT_FOUND).entity(apiError).build());
-    }
-
 
 }
