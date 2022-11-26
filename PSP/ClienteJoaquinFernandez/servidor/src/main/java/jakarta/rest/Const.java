@@ -5,7 +5,6 @@ public class Const {
     public static final String QUERY_1 = "/query1";
     public static final String QUERY_2_ID = "/query2/{id}";
     public static final String ID = "id";
-    public static final String ID_DELETE = "/{id}";
     public static final String DESCRIPTION = "description";
     public static final String QUERY_3_DESCRIPTION = "/query3/{description}";
     public static final String QUERY_4_ID = "/query4/{id}";

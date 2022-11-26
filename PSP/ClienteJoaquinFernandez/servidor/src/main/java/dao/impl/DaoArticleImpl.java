@@ -40,6 +40,15 @@ public class DaoArticleImpl implements DaoArticle {
         return response;
     }
 
+    public List<Integer> getAllByNewspaper(int id) {
+        List<Integer> response;
+        JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+        //no such method exception
+        response = jtm.query("select count(*) as 'num' from article where id_newspaper = ?",
+                new IntegerRowMapper(), id);
+        return response;
+    }
+
     @Override
     public List<Article> getArticlesOfAReader(int idReader) {
         List<Article> response;

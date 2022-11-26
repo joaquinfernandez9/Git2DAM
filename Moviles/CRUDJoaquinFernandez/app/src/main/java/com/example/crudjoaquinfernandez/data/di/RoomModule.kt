@@ -26,7 +26,7 @@ object RoomModule {
         @ApplicationContext context: Context,
         @Named(ConstData.headsetDB) dataPath: String
     ): HeadsetRoomDataBase =
-        Room.databaseBuilder(context, HeadsetRoomDataBase::class.java, ConstData.databaseName)
+        Room.databaseBuilder(context, HeadsetRoomDataBase::class.java, ConstData.DATABASE_NAME)
             .createFromAsset(dataPath).fallbackToDestructiveMigration().build()
 
     @Provides

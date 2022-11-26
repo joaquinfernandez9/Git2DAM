@@ -1,64 +1,74 @@
 package ui.pantallas.newspaper.delete;
 
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import model.Newspaper;
-import domain.services.ArticleServ;
-import domain.services.NewspaperServ;
+import javafx.scene.control.Alert;
+import services.NewspaperServ;
 import ui.pantallas.newspaper.list.NewsState;
 
-import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class NewsDeleteViewModel {
 
     private final NewspaperServ newspaperServImpl;
-    private final ArticleServ articleServImpl;
     private final ObjectProperty<NewsState> state;
 
     @Inject
-    public NewsDeleteViewModel(NewspaperServ newspaperServImpl, ArticleServ articleServImpl) {
+    public NewsDeleteViewModel(NewspaperServ newspaperServImpl) {
         this.newspaperServImpl = newspaperServImpl;
-        this.articleServImpl = articleServImpl;
-        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServImpl.getAll()));
+        state = new SimpleObjectProperty<>(new NewsState(null, false, null));
     }
 
-    public void load() {
-        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServImpl.getAll()));
-    }
 
     public ReadOnlyObjectProperty<NewsState> getState() {
         return state;
     }
 
-    public List<Newspaper> getAll(){
-        return newspaperServImpl.getAll();
+    public void getAll(){
+        newspaperServImpl.getNewspapers()
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new NewsState(either.getLeft(), false, null));
+                    else {
+                        state.set(new NewsState(null, true, either.get()));
+                    }
+                });
     }
 
     public void deleteNewspaper(int news){
-        int repsonse = newspaperServImpl.deleteNewspaper(news);
-        if (repsonse == 1) {
-            state.setValue(new NewsState("Newspaper deleted", true, newspaperServImpl.getAll()));
-        } else if (repsonse == -1) {
-            state.setValue(new NewsState("Newspaper doesn't exist", true, newspaperServImpl.getAll()));
-        } else if (repsonse == -2) {
-            state.setValue(new NewsState("Newspaper has articles", true, newspaperServImpl.getAll()));
-        } else if (repsonse == -3) {
-            state.setValue(new NewsState("Database error", true, newspaperServImpl.getAll()));
-        }
+        newspaperServImpl.deleteNewspaper(news)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft()){
+                        state.set(new NewsState(either.getLeft(), false, null));
+                    }
+                    else {
+                        either.get();
+                        state.set(new NewsState(null, true, null));
+                    }
+                    System.out.println(either);
+                });
     }
 
-    public boolean containsArticels(int id) {
-        AtomicBoolean response = new AtomicBoolean(false);
-        newspaperServImpl.getAll().stream().filter(newspaper -> newspaper.getId() == id).findFirst().ifPresent(newspaper -> {
-            if (articleServImpl.getAll().stream().anyMatch(article -> article.getId_newspaper() == newspaper.getId())) {
-                response.set(true);
-            }
-        });
-        return response.get();
+    public void deleteConfirmed(int news){
+        newspaperServImpl.deleteConfirmed(news)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new NewsState(either.getLeft(), false, null));
+                    else {
+                        state.set(new NewsState(null, true, null));
+                    }
+                });
     }
+
+    public void clearState() {
+        state.set(new NewsState(null, false, null));
+    }
+
 
 
 

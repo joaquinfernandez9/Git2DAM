@@ -1,10 +1,9 @@
 package com.example.crudjoaquinfernandez.data
 
 object ConstData {
-    const val databaseName = "cascos_database"
-    const val dataPath = "database/cascos.db"
-    const val tableName = "cascos"
-    const val bluetooth ="bluetooth"
+    const val DATABASE_NAME = "cascos_database"
+    const val TABLE_NAME = "cascos"
+    const val BLUETOOTH ="bluetooth"
     const val name ="name"
     const val mic ="mic"
     const val id = "id"
@@ -21,4 +20,5 @@ object ConstData {
     const val delete = "DELETE FROM cascos WHERE id = :id"
     const val getAllModels = "SELECT * FROM modelos where headsetId = :id"
     const val getModel = "select * from modelos where idModel = :id"
+    const val deleteAllModels = "DELETE FROM MODELOS WHERE headsetId = :idHeadset"
 }

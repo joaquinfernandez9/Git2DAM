@@ -7,16 +7,17 @@ import androidx.room.PrimaryKey
 import com.example.crudjoaquinfernandez.data.ConstData
 
 @Entity(
-    tableName = ConstData.tableName,
+    tableName = ConstData.TABLE_NAME,
     indices = [Index(value = [ConstData.id], unique = true)]
 )
 data class HeadsetEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    @ColumnInfo(name = ConstData.bluetooth)
+    @ColumnInfo(name = ConstData.BLUETOOTH)
     val bluetooth: Int,
     @ColumnInfo(name = ConstData.name)
     val nombre: String,
     @ColumnInfo(name = ConstData.mic)
     val mic: Int,
+
 )

@@ -2,12 +2,12 @@ package model;
 
 import dao.localDateAdapter.LocalDateAdapter;
 import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import lombok.Data;
-
 import java.time.LocalDate;
 
-@XmlRootElement
 @Data
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Faction {
     @XmlElement
@@ -18,12 +18,20 @@ public class Faction {
     private String planet;
     @XmlElement
     private int numberCS;
-    @XmlElement
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate dateLastPurchase;
     @XmlElement
     private Weapons weapons;
 
-    public Faction() {
+    public Faction(String name, String contact, String planet,
+                   int numberCS, LocalDate dateLastPurchase) {
+        this.name = name;
+        this.contact = contact;
+        this.planet = planet;
+        this.numberCS = numberCS;
+        this.dateLastPurchase = dateLastPurchase;
     }
 
+    public Faction() {
+    }
 }

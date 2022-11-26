@@ -1,6 +1,7 @@
 package ui.pantallas.querys;
 
 import jakarta.inject.Inject;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -9,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.querys.QueryArticleRating;
 import model.querys.QueryArticlesNewspaper;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 public class QueryController extends BasePantallaController {
 
@@ -41,31 +43,39 @@ public class QueryController extends BasePantallaController {
     public void principalCargado() {
         super.principalCargado();
 
-        query3Col1.setCellValueFactory(new PropertyValueFactory<>("name_article"));
-        query3Col2.setCellValueFactory(new PropertyValueFactory<>("name_newspaper"));
+        query3Col1.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_ARTICLE));
+        query3Col2.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_NEWSPAPER));
 
-        query4Col1.setCellValueFactory(new PropertyValueFactory<>("name_article"));
-        query4Col2.setCellValueFactory(new PropertyValueFactory<>("id"));
-        query4Col3.setCellValueFactory(new PropertyValueFactory<>("bad_ratings"));
+        query4Col1.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_ARTICLE));
+        query4Col2.setCellValueFactory(new PropertyValueFactory<>(UiConstants.ID));
+        query4Col3.setCellValueFactory(new PropertyValueFactory<>(UiConstants.BAD_RATINGS));
 
-
+        Platform.runLater(viewModel::load);
+        //falla en el errorAlert y no comprendo por que
         viewModel.getState().addListener((observable, oldState, newState) -> {
             if (newState.getThirdQuery() != null) {
-                query3.getItems().clear();
-                query3.getItems().addAll(newState.getThirdQuery());
+                Platform.runLater(()->{
+                    query3.getItems().clear();
+                    query3.getItems().addAll(newState.getThirdQuery());
+                });
             }
             if (newState.getFourthQuery() != null) {
-                query4.getItems().clear();
-                query4.getItems().addAll(newState.getFourthQuery());
+                Platform.runLater(() -> {
+                    query4.getItems().clear();
+                    query4.getItems().addAll(newState.getFourthQuery());
+                });
+            }
+            if (newState.getError() != null) {
+                Platform.runLater(() -> getPrincipalController().errorAlert(newState.getError()));
             }
         });
-        viewModel.load();
+
     }
 
     @FXML
     private void query3() {
         if (queryDescription.getText().isEmpty()) {
-            getPrincipalController().errorAlert("Error, fill the field");
+            getPrincipalController().errorAlert(UiConstants.FILL_FIELD);
         } else {
             viewModel.thirdQuery(queryDescription.getText());
         }
@@ -74,9 +84,10 @@ public class QueryController extends BasePantallaController {
     @FXML
     private void query4() {
         if (queryNewspaper.getText().isEmpty()) {
-            getPrincipalController().errorAlert("Error, fill the field");
+            getPrincipalController().errorAlert(UiConstants.FILL_FIELD);
         } else {
             viewModel.fourthQuery(Integer.parseInt(queryNewspaper.getText()));
         }
     }
+
 }

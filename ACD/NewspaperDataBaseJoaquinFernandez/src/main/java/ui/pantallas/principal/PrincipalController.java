@@ -100,8 +100,6 @@ public class PrincipalController {
             BasePantallaController pantallaController = fxmlLoader.getController();
             pantallaController.setPrincipalController(this);
             pantallaController.principalCargado();
-
-
         } catch (IOException e) {
             log.error(e.getMessage(), e);
         }

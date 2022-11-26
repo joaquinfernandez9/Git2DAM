@@ -1,20 +1,15 @@
 package jakarta.rest;
 
-import jakarta.errores.CommonExceptionMapper;
-import jakarta.errores.DatabaseExceptionMapper;
-import jakarta.errores.LogError;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import model.Reader;
 import domain.services.ReaderServ;
-
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-@Path(Const.READERS)
+@Path(Const.READERS) // /readers
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class RestReader {

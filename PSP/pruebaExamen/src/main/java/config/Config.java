@@ -1,12 +1,11 @@
 package config;
 
+import jakarta.inject.Singleton;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
 
+@Singleton
 public class Config {
     private static Config instance=null;
     private Properties properties;
@@ -14,7 +13,8 @@ public class Config {
     public Config() {
         try {
             properties = new Properties();
-            properties.loadFromXML(Config.class.getClassLoader().getResourceAsStream("properties.xml"));
+            properties.loadFromXML(Config.class
+                    .getClassLoader().getResourceAsStream("properties.xml"));
         }catch (IOException e) {
             e.printStackTrace();
         }

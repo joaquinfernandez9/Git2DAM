@@ -17,12 +17,12 @@ public class MainFX {
 
     public void start(@Observes @StartupScene Stage stage) throws IOException {
         Parent fxmlParent = loader.load(getClass()
-                .getResourceAsStream("/fxml/principal.fxml"));
+                .getResourceAsStream(Common.FXML_PRINCIPAL_FXML));
 
         PrincipalController controller  = loader.getController();
         controller.setStage(stage);
         stage.setScene(new Scene(fxmlParent));
-        stage.setTitle("Newspaper");
+        stage.setTitle(Common.NEWSPAPER);
         stage.show();
     }
 

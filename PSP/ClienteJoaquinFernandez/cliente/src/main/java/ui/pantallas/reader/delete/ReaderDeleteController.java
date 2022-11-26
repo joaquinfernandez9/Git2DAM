@@ -34,19 +34,22 @@ public class ReaderDeleteController extends BasePantallaController {
     public void principalCargado() {
         super.principalCargado();
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.ID));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_READER));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.BIRTH_READER));
 
-        readersTable.getItems().clear();
-        readersTable.getItems().addAll(viewmodel.getAll());
+        viewmodel.getAll();
 
-//        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
-//            if (newValue.getReaderList() != null) {
-//
-//            }
-//        });
-//        viewmodel.reloadState();
+        viewmodel.getState().addListener((observable, oldValue, newValue) -> {
+            if (newValue.getReaderList() != null) {
+                readersTable.getItems().clear();
+                readersTable.getItems().addAll(newValue.getReaderList());
+            }
+            if (newValue.getError() != null) {
+                getPrincipalController().errorAlert(newValue.getError());
+                viewmodel.clearState();
+            }
+        });
 
     }
 
@@ -58,8 +61,8 @@ public class ReaderDeleteController extends BasePantallaController {
             alertDelete.getButtonTypes().remove(ButtonType.OK);
             alertDelete.getButtonTypes().add(ButtonType.CANCEL);
             alertDelete.getButtonTypes().add(ButtonType.YES);
-            alertDelete.setTitle("Delete");
-            alertDelete.setContentText("This reader may have articles and subscriptions, delete anyway?");
+            alertDelete.setTitle(UiConstants.DELETE);
+            alertDelete.setContentText(UiConstants.THIS_READER_MAY_HAVE_ARTICLES_AND_SUBSCRIPTIONS_DELETE_ANYWAY);
             Optional<ButtonType> res = alertDelete.showAndWait();
 
 
@@ -71,7 +74,7 @@ public class ReaderDeleteController extends BasePantallaController {
                             .getSelectedItem());
                 }
             });
-
+            viewmodel.getAll();
         } else {
             getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         }

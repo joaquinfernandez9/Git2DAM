@@ -10,11 +10,15 @@ import java.util.List;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Factions {
-    @XmlList
+    @XmlElement
     private List<Faction> faction;
 
     public Factions() {
-        this.faction = new ArrayList<>();
+        faction=new ArrayList<>();
+    }
+
+    public Factions(List<Faction> faction) {
+        this.faction = faction;
     }
 }
 

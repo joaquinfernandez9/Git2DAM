@@ -7,12 +7,10 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-@XmlRootElement
+@XmlRootElement(name = "weapons")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Weapons {
-    @XmlList
+    @XmlElement(name = "weapon")
     private List<Weapon> weapon;
 
-    public Weapons() {
-    }
 }

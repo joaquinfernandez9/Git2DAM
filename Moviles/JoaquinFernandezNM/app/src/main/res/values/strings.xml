@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="delete_button">delete button</string>
+    <string name="detail_button">detail button</string>
+</resources>

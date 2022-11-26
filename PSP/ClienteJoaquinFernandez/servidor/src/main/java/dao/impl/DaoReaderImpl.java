@@ -61,14 +61,15 @@ public class DaoReaderImpl implements DaoReader {
 
     @Override
     public Reader get(int id) {
-        Reader response;
+        List<Reader> response;
         try (Connection con = pool.getConnection();
              PreparedStatement statement = con.prepareStatement(
                      Const.getReader)) {
             statement.setInt(1, id);
             ResultSet rs = statement.executeQuery();
-            if (rs != null) {
-                response = readRS(rs).get(0);
+            response = readRS(rs);
+            if (!response.isEmpty()) {
+                return response.get(0);
             } else {
                 throw new NotFoundException("No reader with id " + id);
             }
@@ -76,7 +77,6 @@ public class DaoReaderImpl implements DaoReader {
             log.error(ex.getMessage());
             throw new DatabaseException(ex.getMessage());
         }
-        return response;
     }
 
     @Override

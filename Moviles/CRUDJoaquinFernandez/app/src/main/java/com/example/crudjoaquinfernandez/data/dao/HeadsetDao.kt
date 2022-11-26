@@ -4,7 +4,6 @@ import androidx.room.*
 import com.example.crudjoaquinfernandez.data.ConstData
 import com.example.crudjoaquinfernandez.data.modelo.HeadsetEntity
 import com.example.crudjoaquinfernandez.data.modelo.ModelEntity
-import com.example.crudjoaquinfernandez.ui.mainScreen.Const
 
 @Dao
 interface HeadsetDao {
@@ -23,6 +22,14 @@ interface HeadsetDao {
     @Query(ConstData.delete)
     suspend fun deleteHeadset(id: Int)
 
+    @Query(ConstData.deleteAllModels)
+    suspend fun deleteAllModels(idHeadset: Int)
+
+    @Transaction
+    suspend fun borrarHeadsetConModelos(idHeadset: Int){
+        deleteAllModels(idHeadset)
+        deleteHeadset(idHeadset)
+    }
 
     @Query(ConstData.getAllModels)
     suspend fun getAll(id: Int): List<ModelEntity>

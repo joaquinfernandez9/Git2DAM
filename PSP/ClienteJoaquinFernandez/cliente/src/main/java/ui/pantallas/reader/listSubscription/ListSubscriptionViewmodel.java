@@ -5,9 +5,9 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Reader;
-import domain.services.NewspaperServ;
-import domain.services.QuerysServ;
-import domain.services.ReaderServ;
+import services.NewspaperServ;
+import services.QuerysServ;
+import services.ReaderServ;
 
 import java.util.List;
 
@@ -23,7 +23,8 @@ public class ListSubscriptionViewmodel {
         this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ListSubscriptionState(null, false,
-                        readerServImpl.getAll(-1, null).get(), servicesNewspaperImpl.getAll()));
+                        readerServImpl.getReaders().blockingGet().get(),
+                        servicesNewspaperImpl.getNewspapers().blockingGet().get()));
         this.servicesNewspaperImpl = servicesNewspaperImpl;
     }
 
@@ -32,20 +33,30 @@ public class ListSubscriptionViewmodel {
     }
 
 
-    public void reloadState(int idNewspaper, String description) {
-        state.setValue(new ListSubscriptionState(
-                null, !state.get().isChange(),
-                readerServImpl.getAll(idNewspaper,  description).get(),
-                servicesNewspaperImpl.getAll()
-        ));
-    }
 
-    public List<Reader> getAll(){
-        return readerServImpl.getAll(-1,null).get();
+    public void getAll(){
+        readerServImpl.getReaders()
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new ListSubscriptionState(either.getLeft(), false, null, null));
+                    else {
+                        state.set(new ListSubscriptionState(null, true, either.get(), null));
+                    }
+                });
     }
 
     public void getOldest(int idNewspaper){
-        querysServ.getOldest(idNewspaper).get();
+        querysServ.getQuery2(idNewspaper).subscribe(either -> {
+            if (either.isLeft())
+                state.set(new ListSubscriptionState(either.getLeft(), false, null, null));
+            else {
+                state.set(new ListSubscriptionState(null, true, either.get(), null));
+            }
+        });
+    }
+
+    public void clearState() {
+        state.set(new ListSubscriptionState(null, false, null, null));
     }
 
 

@@ -101,28 +101,6 @@ public class DaoCartasImpl implements DaoCartas {
 
 
     @Override
-    public Either<String, ListaCartas> verCartasConNombre(String nombre) {
-        Response<CardsList> r;
-        Either<String, ListaCartas> respuesta;
-        try {
-            r = api.getCardsInfo(nombre).execute();
-            if (r.isSuccessful()) {
-                CardsList cartas = r.body();
-                if (cartas != null) {
-                    respuesta = getListaCartitas(cartas);
-                } else {
-                    respuesta = Either.left(nombre);
-                }
-            } else {
-                respuesta = Either.left(r.message());
-            }
-        } catch (IOException e) {
-            respuesta = Either.left(e.getMessage());
-        }
-        return respuesta;
-    }
-
-    @Override
     public Either<String, ListaCartas> verTodasLasCartas() {
         Response<CardsList> r;
         Either<String, ListaCartas> respuesta;
@@ -201,4 +179,26 @@ public class DaoCartasImpl implements DaoCartas {
         return respuesta;
     }
 
+
+    @Override
+    public Either<String, ListaCartas> verCartasConNombre(String nombre) {
+        Response<CardsList> r;
+        Either<String, ListaCartas> respuesta;
+        try {
+            r = api.getCardsInfo(nombre).execute();
+            if (r.isSuccessful()) {
+                CardsList cartas = r.body();
+                if (cartas != null) {
+                    respuesta = getListaCartitas(cartas);
+                } else {
+                    respuesta = Either.left(nombre);
+                }
+            } else {
+                respuesta = Either.left(r.message());
+            }
+        } catch (IOException e) {
+            respuesta = Either.left(e.getMessage());
+        }
+        return respuesta;
+    }
 }

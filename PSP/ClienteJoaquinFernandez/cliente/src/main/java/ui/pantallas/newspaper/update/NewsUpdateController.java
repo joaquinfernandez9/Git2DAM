@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Newspaper;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 import java.time.LocalDate;
 
@@ -34,17 +35,22 @@ public class NewsUpdateController extends BasePantallaController {
     public void principalCargado() {
         super.principalCargado();
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name_newspaper"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("release_date"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.ID));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_NEWSPAPER));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.RELEASE_DATE));
+
+        newsUpdateViewModel.getAll();
 
         newsUpdateViewModel.getState().addListener((observable, oldValue, newValue) -> {
             if (newValue.getNewspaperList() != null) {
                 tableNews.getItems().clear();
                 tableNews.getItems().addAll(newValue.getNewspaperList());
             }
+            if (newValue.getError() != null) {
+                getPrincipalController().errorAlert(newValue.getError());
+                newsUpdateViewModel.clearState();
+            }
         });
-        newsUpdateViewModel.load();
     }
 
     @FXML

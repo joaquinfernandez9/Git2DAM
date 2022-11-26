@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
-@Path(Const.QUERYS)
+@Path(Const.QUERYS) // /querys
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class RestQuerys {
@@ -30,7 +30,7 @@ public class RestQuerys {
     }
 
     @GET
-    @Path(Const.QUERY_1)
+    @Path(Const.QUERY_1) // /querys/query1
     public List<QueryDescNumber> query1(){
         return querysServ.getAll();
     }

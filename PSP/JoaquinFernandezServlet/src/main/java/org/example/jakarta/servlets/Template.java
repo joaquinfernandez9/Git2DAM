@@ -5,7 +5,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import jakarta.websocket.Session;
 import org.example.jakarta.Const;
 import org.example.jakarta.listeners.ThymeLeafListener;
 import org.thymeleaf.TemplateEngine;
@@ -18,8 +17,6 @@ import java.util.Random;
 
 @WebServlet(name = "Play", value = {"/play"})
 public class Template extends HttpServlet {
-
-
 
 
     @Override

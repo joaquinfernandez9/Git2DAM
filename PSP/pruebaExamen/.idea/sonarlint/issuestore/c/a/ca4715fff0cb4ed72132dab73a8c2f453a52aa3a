@@ -1,4 +1,26 @@
 
-Q	java:S125"<This block of commented-out lines of code should be removed.(òŠ‹î
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+g	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼òõê
+g	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆò¦ì
+o
+java:S1104'"YMake deleteWeapons a static final constant or non-public and provide accessors if needed.(üêÏ«
+e
+java:S2095C"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(øÀÔÃ
+7
+java:S1170"!Make this final field static too.(…ïì­
+<
+java:S1170"!Make this final field static too.(ë½Ãßøÿÿÿÿ
+6
+java:S1170 "!Make this final field static too.(ˆÑƒ
+<
+java:S1170!"!Make this final field static too.(£ş²°ûÿÿÿÿ
+6
+java:S1170""!Make this final field static too.(üµù
+<
+java:S1170#"!Make this final field static too.(šéâıÿÿÿÿ
+<
+java:S1170$"!Make this final field static too.(ßšäÖşÿÿÿÿ
+<
+java:S1170%"!Make this final field static too.(²Î‘ïùÿÿÿÿ
+T	java:S106œ"9Replace this use of System.out or System.err by a logger.(ìÑÑÈÿÿÿÿÿ
+N	java:S106¥"9Replace this use of System.out or System.err by a logger.(€Ë²:
+T	java:S106©"9Replace this use of System.out or System.err by a logger.(Ç‚ş©ÿÿÿÿÿ

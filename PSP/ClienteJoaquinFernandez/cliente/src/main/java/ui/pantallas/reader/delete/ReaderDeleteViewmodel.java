@@ -1,11 +1,12 @@
 package ui.pantallas.reader.delete;
 
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Reader;
-import domain.services.ReaderServ;
+import services.ReaderServ;
 
 import java.util.List;
 
@@ -19,42 +20,41 @@ public class ReaderDeleteViewmodel {
         this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ReaderDeleteState(null, false,
-                        readerServImpl.getAll(-1, null).get()));
+                        null));
     }
 
     public ReadOnlyObjectProperty<ReaderDeleteState> getState() {
         return state;
     }
 
-    public List<Reader> getAll() {
-        return readerServImpl.getAll(-1, null).get();
+    public void getAll() {
+        readerServImpl.getReaders()
+                .observeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new ReaderDeleteState(either.getLeft(), false, null));
+                    else {
+                        state.set(new ReaderDeleteState(null, true, either.get()));
+                    }
+                });
     }
 
-    public void reloadState() {
-        state.setValue(new ReaderDeleteState(
-                null, !state.get().isChange(),
-                readerServImpl.getAll(-1, null).get()
-        ));
-    }
 
     public void deleteReader(int idReader) {
-        int response = readerServImpl.deleteReader(idReader);
-        if (response == 1) {
-            state.setValue(new ReaderDeleteState(
-                    "Reader deleted", true,
-                    readerServImpl.getAll(-1, null).get()
-            ));
-        } else if (response == -1) {
-            state.setValue(new ReaderDeleteState(
-                    "Reader not found", true,
-                    readerServImpl.getAll(-1, null).get()
-            ));
-        } else if (response == -2) {
-            state.setValue(new ReaderDeleteState(
-                    "Database error", true,
-                    readerServImpl.getAll(-1, null).get()
-            ));
-        }
+        readerServImpl.deleteReader(idReader)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new ReaderDeleteState(either.getLeft(), false, null));
+                    else {
+                        state.set(new ReaderDeleteState(null, true, null));
+                    }
+                });
+
+    }
+
+    public void clearState() {
+        state.set(new ReaderDeleteState(null, false, null));
     }
 
 

@@ -38,7 +38,6 @@ public class SetsController extends BasePantallaController {
 
         viewModel.reloadState();
 
-
     }
 
 

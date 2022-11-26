@@ -16,7 +16,7 @@ import ui.pantallas.common.UiConstants;
 import java.time.LocalDate;
 
 public class UpdateController extends BasePantallaController {
-    public static final String READER_UPDATED_CORRECTLY = "Reader updated correctly";
+
     private final UpdateViewModel viewModel;
     @FXML
     private MFXTextField username;
@@ -48,16 +48,19 @@ public class UpdateController extends BasePantallaController {
         nameColum.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_READER));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.BIRTH_READER));
 
-        readersTable.getItems().clear();
-        readersTable.getItems().addAll(viewModel.getAll());
+        viewModel.getAll();
+
 
         viewModel.getState().addListener((observable, oldValue, newValue) -> {
             if (newValue.getReaderList() != null) {
                 readersTable.getItems().clear();
                 readersTable.getItems().addAll(newValue.getReaderList());
             }
+            if (newValue.getError() != null) {
+                getPrincipalController().errorAlert(newValue.getError());
+                viewModel.clearState();
+            }
         });
-        viewModel.reloadState();
     }
 
     @FXML
@@ -88,9 +91,9 @@ public class UpdateController extends BasePantallaController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
             alert.setTitle(UiConstants.CORRECT);
-            alert.setContentText(READER_UPDATED_CORRECTLY);
+            alert.setContentText(UiConstants.READER_UPDATED_CORRECTLY);
             alert.showAndWait();
-
+            viewModel.getAll();
         }
 
     }

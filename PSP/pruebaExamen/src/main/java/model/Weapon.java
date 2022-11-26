@@ -7,15 +7,23 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 
 @Data
-@XmlRootElement
+@XmlRootElement(name = "weapon")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Weapon {
     private int id;
     @XmlElement
-    private String wname;
+    private String name;
     @XmlElement
-    private double wprice;
+    private double price;
 
-    public Weapon() {
+    //auto id
+    public Weapon(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Weapon(int id, double price) {
+        this.id = id;
+        this.price = price;
     }
 }

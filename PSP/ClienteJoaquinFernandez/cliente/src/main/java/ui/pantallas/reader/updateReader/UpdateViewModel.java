@@ -1,11 +1,12 @@
 package ui.pantallas.reader.updateReader;
 
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Reader;
-import domain.services.ReaderServ;
+import services.ReaderServ;
 
 import java.util.List;
 
@@ -19,26 +20,40 @@ public class UpdateViewModel {
         this.readerServImpl = readerServ;
         this.state = new SimpleObjectProperty<>(
                 new UpdateState(null, false,
-                        readerServImpl.getAll(-1, null).get()));
+                        null));
     }
 
     public ReadOnlyObjectProperty<UpdateState> getState() {
         return state;
     }
 
-    public void reloadState(){
-        state.setValue(new UpdateState(
-                null, !state.get().isChange(),
-                readerServImpl.getAll(-1, null).get()
-        ));
+
+    public void getAll() {
+        readerServImpl.getReaders()
+                .observeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new UpdateState(either.getLeft(), false, null));
+                    else {
+                        state.set(new UpdateState(null, true, either.get()));
+                    }
+                });
     }
 
-    public List<Reader> getAll(){
-        return readerServImpl.getAll(-1, null).get();
+    public void updateReader(Reader reader) {
+        readerServImpl.updateReader(reader)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+            if (either.isLeft())
+                state.set(new UpdateState(either.getLeft(), false, null));
+            else {
+                state.set(new UpdateState(null, true, null));
+            }
+        });
     }
 
-    public void updateReader(Reader reader){
-        readerServImpl.update(reader);
+    public void clearState() {
+        state.set(new UpdateState(null, false, null));
     }
 
 }

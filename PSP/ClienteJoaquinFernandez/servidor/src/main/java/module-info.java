@@ -1,9 +1,7 @@
 module servidor {
-    exports domain.services;
     requires jakarta.jakartaee.web.api;
     requires lombok;
     requires org.yaml.snakeyaml;
-    requires domain;
     requires org.apache.logging.log4j;
     requires io.vavr;
     requires spring.tx;
@@ -11,4 +9,8 @@ module servidor {
     requires java.logging;
     requires java.sql;
     requires com.zaxxer.hikari;
+
+    requires domain;
+//    exports domain.services;
+
 }

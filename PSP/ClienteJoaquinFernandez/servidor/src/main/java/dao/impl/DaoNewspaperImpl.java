@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.Response;
 import lombok.extern.log4j.Log4j2;
 import dao.Const;
 import dao.dataBase.DataBaseConnectionPool;
+import model.Article;
 import model.Newspaper;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -27,14 +28,16 @@ public class DaoNewspaperImpl implements DaoNewspaper {
 
 
     private final DataBaseConnectionPool db;
+    private final DaoArticleImpl daoArticle;
 
     @Inject
-    public DaoNewspaperImpl(DataBaseConnectionPool db) {
+    public DaoNewspaperImpl(DataBaseConnectionPool db, DaoArticleImpl daoArticle) {
         this.db = db;
+        this.daoArticle = daoArticle;
     }
 
     @Override
-    public List<Newspaper> getAll() {
+    public List<Newspaper> getAll(){
         List<Newspaper> response;
         JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
         response = jtm.query(Const.getAllNewspaper,
@@ -44,7 +47,6 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         } else {
             return response;
         }
-
     }
 
     @Override
@@ -76,13 +78,12 @@ public class DaoNewspaperImpl implements DaoNewspaper {
                     BeanPropertyRowMapper.newInstance(Newspaper.class), n.getId());
             return response.get(0);
         } catch (IndexOutOfBoundsException e){
-            //si falla el get salta esta excepcion, por lo que entendemos que no se añade
             throw new DatabaseException("Newspaper not added correctly");
         }
     }
 
     @Override
-    public void delete(int id) {
+    public void deleteConfirmed(int id) {
         TransactionDefinition txDef = new DefaultTransactionDefinition();
         DataSourceTransactionManager txManager =
                 new DataSourceTransactionManager(db.getDataSource());
@@ -91,11 +92,8 @@ public class DaoNewspaperImpl implements DaoNewspaper {
             JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
 
             jtm.update(Const.deleteFromReadArticle, id);
-
             jtm.update(Const.DeleteFromArticle, id);
-
             jtm.update(Const.deleteFromSubscribe, id);
-
             jtm.update(Const.DELETE_FROM_NEWSPAPER_WHERE_ID, id);
 
             txManager.commit(txStatus);
@@ -112,6 +110,20 @@ public class DaoNewspaperImpl implements DaoNewspaper {
             throw new CommonException(ex.getMessage());
         }
     }
+
+    @Override
+    public void delete(int id){
+        try {
+            JdbcTemplate jtm = new JdbcTemplate(db.getDataSource());
+            jtm.update(Const.DELETE_FROM_NEWSPAPER_WHERE_ID, id);
+        } catch (Exception e) {
+                List<Integer> articles = daoArticle.getAllByNewspaper(id);
+                throw new ArticlesException("Newspaper is used, it has: " + articles+ " articles.",
+                        articles);
+        }
+    }
+
+
 
     @Override
     public Newspaper update(Newspaper n) {

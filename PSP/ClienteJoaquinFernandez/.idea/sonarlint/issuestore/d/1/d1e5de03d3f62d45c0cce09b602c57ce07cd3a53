@@ -1,0 +1,6 @@
+
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(«ÔíÑ8‘ğºÉ0
+S
+java:S1128"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8’ğºÉ0
+h
+java:S1128"FRemove this unused import 'java.util.concurrent.atomic.AtomicBoolean'.(§­‹¼üÿÿÿÿ8’ğºÉ0

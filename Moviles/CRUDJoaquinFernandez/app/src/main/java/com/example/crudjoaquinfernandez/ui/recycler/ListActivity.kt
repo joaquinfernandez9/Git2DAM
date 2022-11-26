@@ -41,14 +41,15 @@ class ListActivity : AppCompatActivity() {
                 RecyclerEvent.DeleteHeadset(id)
             )
         }
+        override fun onClickDetail(id: Int) = onDetail(id)
+    }
 
-        override fun onClickDetail(id: Int) {
-            val intent = Intent(
-                this@ListActivity, MainActivity::class.java
-            )
-            intent.putExtra(Const.id, id)
-            startActivity(intent)
-        }
+    private fun onDetail(id: Int) {
+        val intent = Intent(
+            this@ListActivity, MainActivity::class.java
+        )
+        intent.putExtra(Const.id, id)
+        startActivity(intent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

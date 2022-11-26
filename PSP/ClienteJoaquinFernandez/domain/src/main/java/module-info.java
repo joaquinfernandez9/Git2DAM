@@ -3,4 +3,7 @@ module domain {
     exports model.querys;
     requires lombok;
 
+    opens model;
+    opens model.querys;
+
 }

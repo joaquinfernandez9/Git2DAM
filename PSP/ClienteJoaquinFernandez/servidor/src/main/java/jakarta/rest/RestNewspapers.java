@@ -8,7 +8,7 @@ import model.Newspaper;
 import domain.services.NewspaperServ;
 import java.util.List;
 
-@Path(Const.NEWSPAPERS)
+@Path(Const.NEWSPAPERS) // /newspapers
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class RestNewspapers {
@@ -44,10 +44,20 @@ public class RestNewspapers {
     }
 
     @DELETE
-    @Path(Const.ID)
+    @Path(Const.ID_PARAM)
     public Response deleteNewspaper(@PathParam(Const.ID) int id) {
         newspaperServ.deleteNewspaper(id);
-        return Response.noContent().build();
+        //igual es por el return este
+        //delete devuelve int
+        return Response.ok().build();
     }
+
+    @DELETE
+    @Path("/confirm"+Const.ID_PARAM)
+    public Response deleteConfirmed(@PathParam(Const.ID) int id) {
+        newspaperServ.deleteConfirmed(id);
+        return Response.status(Response.Status.NOT_FOUND).build();
+    }
+
 
 }

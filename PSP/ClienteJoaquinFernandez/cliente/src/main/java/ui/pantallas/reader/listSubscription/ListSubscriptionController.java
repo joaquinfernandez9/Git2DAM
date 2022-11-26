@@ -37,45 +37,36 @@ public class ListSubscriptionController extends BasePantallaController {
         super.principalCargado();
 
         idNewspaper.getItems().addAll(viewmodel.getState().get().getNewspapersList()
-                .stream().map(Newspaper::getName_newspaper).collect(Collectors.toList()));
+                .stream().map(Newspaper::getName_newspaper).toList());
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.ID));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_READER));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.BIRTH_READER));
 
-        readersTable.getItems().clear();
-        readersTable.getItems().addAll(viewmodel.getAll());
+        viewmodel.getAll();
 
         viewmodel.getState().addListener((observable, oldValue, newValue) -> {
             if (newValue.getReaderList() != null) {
                 readersTable.getItems().clear();
                 readersTable.getItems().addAll(newValue.getReaderList());
             }
+            if (newValue.getError() != null) {
+                getPrincipalController().errorAlert(newValue.getError());
+                viewmodel.clearState();
+            }
         });
-        viewmodel.reloadState(-1, null);
 
     }
 
     @FXML
     private void search() {
-        if (idNewspaper.getValue() == null) {
-            getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
-        } else {
-            viewmodel.reloadState(getNewspaperId(idNewspaper.getValue()), null);
-        }
-    }
-
-    private int getNewspaperId(String name) {
-        return viewmodel.getState().get().getNewspapersList()
-                .stream().filter(n -> n.getName_newspaper().equals(name)).findFirst().get().getId();
+        viewmodel.getAll();
     }
 
     @FXML
-    private void searchOldest() {
-        if (idNewspaper.getValue() == null) {
-            getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
-        } else {
-            viewmodel.getOldest(getNewspaperId(idNewspaper.getValue()));
-        }
+    public void searchOldest() {
+        viewmodel.getOldest(idNewspaper.getSelectionModel().getSelectedIndex());
     }
+
+
 }

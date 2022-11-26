@@ -21,10 +21,15 @@ public class NewspaperServImpl implements NewspaperServ {
         return daoNewspaper.getAll();
     }
 
-
     @Override
     public void deleteNewspaper(int id) {
         daoNewspaper.delete(id);
+    }
+
+
+    @Override
+    public void deleteConfirmed(int id) {
+        daoNewspaper.deleteConfirmed(id);
     }
 
 

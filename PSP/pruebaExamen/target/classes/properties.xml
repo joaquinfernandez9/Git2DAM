@@ -2,5 +2,5 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <comment>XML file</comment>
-    <entry key="xmlFactionsPath">data/Factions.xml</entry>
+    <entry key="xmlFactionsPath">data/factions.xml</entry>
 </properties>

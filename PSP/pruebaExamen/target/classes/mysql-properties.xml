@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <entry key="urlDB">jdbc:mysql://localhost:3306/examenPrueba</entry>
+  <entry key="user_name">root</entry>
+  <entry key="password">thewitcher</entry>
+  <entry key="driver">com.mysql.cj.jdbc.Driver</entry>
+</properties>
+

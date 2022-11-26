@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.Login;
 import model.Reader;
 import ui.pantallas.common.BasePantallaController;
+import ui.pantallas.common.UiConstants;
 
 import java.time.LocalDate;
 
@@ -27,8 +28,7 @@ public class AddReaderController extends BasePantallaController {
     private TableColumn<String, Reader> nameColum;
     @FXML
     private TableColumn<LocalDate, Reader> dateColumn;
-    @FXML
-    private MFXTextField idReader;
+
     @FXML
     private MFXTextField nameReader;
     @FXML
@@ -38,21 +38,23 @@ public class AddReaderController extends BasePantallaController {
     public void principalCargado() {
         super.principalCargado();
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nameColum.setCellValueFactory(new PropertyValueFactory<>("name_reader"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("birth_reader"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.ID));
+        nameColum.setCellValueFactory(new PropertyValueFactory<>(UiConstants.NAME_READER));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>(UiConstants.BIRTH_READER));
 
-        readersTable.getItems().clear();
-        readersTable.getItems().addAll(viewModel.getAll());
+        viewModel.getAll();
 
         viewModel.getState().addListener((observable, oldValue, newValue)->{
             if (newValue.getReaderList()!=null){
                 readersTable.getItems().clear();
                 readersTable.getItems().addAll(newValue.getReaderList());
             }
+            if (newValue.getError()!=null){
+                getPrincipalController().errorAlert(newValue.getError());
+                viewModel.clearState();
+            }
         });
 
-        viewModel.reloadState();
 
     }
 
@@ -66,17 +68,17 @@ public class AddReaderController extends BasePantallaController {
     @FXML
     private void addReader() {
         if (nameReader.getText().isBlank() || dateReader.getValue() == null || username.getText().isBlank() || password.getText().isBlank()) {
-            getPrincipalController().errorAlert("Error, fill all the gaps");
+            getPrincipalController().errorAlert(UiConstants.FILL_FIELD);
         } else {
             Login login = new Login(username.getText(), password.getText());
             Reader reader = new Reader(nameReader.getText(), dateReader.getValue());
             reader.setLogin(login);
             viewModel.addReader(reader);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Correct");
-            alert.setContentText("Reader added correctly");
+            alert.setTitle(UiConstants.CORRECT);
+            alert.setContentText(UiConstants.READER_ADDED_CORRECTLY);
             alert.showAndWait();
         }
-
+        viewModel.getAll();
     }
 }

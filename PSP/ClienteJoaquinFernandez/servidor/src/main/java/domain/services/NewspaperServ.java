@@ -9,6 +9,8 @@ public interface NewspaperServ {
 
     void deleteNewspaper(int id);
 
+    void deleteConfirmed(int id);
+
     Newspaper add(Newspaper n);
 
     Newspaper update(Newspaper n);

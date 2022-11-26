@@ -1,9 +1,10 @@
 package ui.pantallas.querys;
 
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import domain.services.QuerysServ;
+import services.QuerysServ;
 
 public class QueryViewModel {
 
@@ -13,11 +14,29 @@ public class QueryViewModel {
     @Inject
     public QueryViewModel(QuerysServ querysServ) {
         this.querysServ = querysServ;
-        this.state = new SimpleObjectProperty<>(new QueryState(null, false, null, null));
+        this.state = new SimpleObjectProperty<>(new
+                QueryState(null, false, null, null));
     }
 
     public void load() {
-        state.setValue(new QueryState(null, !state.get().isChange(), querysServ.getAll(null), querysServ.getArticles(0)));
+        querysServ.getQuery3(null)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new QueryState(either.getLeft(), false, null, null));
+                    else {
+                        state.set(new QueryState(null, true, either.get(), null));
+                    }
+                });
+        querysServ.getQuery4(0)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new QueryState(either.getLeft(), false, null, null));
+                    else {
+                        state.set(new QueryState(null, true, null, either.get()));
+                    }
+                });
     }
 
     public ObjectProperty<QueryState> getState() {
@@ -25,15 +44,34 @@ public class QueryViewModel {
     }
 
     public void thirdQuery(String description) {
-        state.setValue(new QueryState(null, !state.get().isChange(), querysServ.getAll(description), querysServ.getArticles(0)));
+        querysServ.getQuery3(description)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new QueryState(either.getLeft(), false, null,
+                                state.getValue().getFourthQuery()));
+                    else {
+                        state.set(new QueryState(null, true, either.get(),
+                                state.getValue().getFourthQuery()));
+                    }
+                });
     }
 
     public void fourthQuery(int idNewspaper) {
-        state.setValue(new QueryState(null, !state.get().isChange(), querysServ.getAll(null), querysServ.getArticles(idNewspaper)));
+        querysServ.getQuery4(idNewspaper)
+                .subscribeOn(Schedulers.single())
+                .subscribe(either -> {
+                    if (either.isLeft())
+                        state.set(new QueryState(either.getLeft(), false, state.getValue().getThirdQuery(), null));
+                    else {
+                        state.set(new QueryState(null, true, state.getValue().getThirdQuery(), either.get()));
+                    }
+                });
     }
 
-
-
+    public void clearState() {
+        state.set(new QueryState(null, false, null, null));
+    }
 
 
 }
