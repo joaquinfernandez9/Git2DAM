@@ -1,0 +1,24 @@
+
+w
+java:S1104"\Make tblPelisNoVistas a static final constant or non-public and provide accessors if needed.(‰’ÉÑıÿÿÿÿ
+q
+java:S1104"VMake nombrePeli a static final constant or non-public and provide accessors if needed.(‰¢±şÿÿÿÿ
+m
+java:S1104"WMake actoresPeli a static final constant or non-public and provide accessors if needed.(Ø¯—å
+j
+java:S1104"TMake aÃ±oPeli a static final constant or non-public and provide accessors if needed.(½Á¼È
+y
+java:S1104"^Make tblPeliculasVistas a static final constant or non-public and provide accessors if needed.(ÉÈÿÿÿÿÿ
+x
+java:S1104"]Make nombrePelisVistas a static final constant or non-public and provide accessors if needed.(Şõäûÿÿÿÿ
+q
+java:S1104"[Make aÃ±oPelisVistas a static final constant or non-public and provide accessors if needed.(§¬òè
+|
+java:S1104"aMake puntuacionPelisVistas a static final constant or non-public and provide accessors if needed.(ğ¹Æàøÿÿÿÿ
+q
+java:S1104"VMake puntuacion a static final constant or non-public and provide accessors if needed.(€é×©üÿÿÿÿ
+h	java:S116"SRename this field "aÃ±oPeli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Á¼È
+o	java:S116"ZRename this field "aÃ±oPelisVistas" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¬òè
+c	java:S100F"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ–ßÜ
+P
+java:S1128"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ıÿÿÿÿ

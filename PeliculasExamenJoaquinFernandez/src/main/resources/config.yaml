@@ -1,0 +1,3 @@
+pathUsuarios: data/usuarios.json
+pathPeliculas: data/peliculas.json
+pathSeries: data/series.json

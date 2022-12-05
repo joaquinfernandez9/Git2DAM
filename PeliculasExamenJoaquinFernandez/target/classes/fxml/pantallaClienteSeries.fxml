@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.pantallaClienteSeries.ClienteController">
+   <children>
+      <TableView layoutX="65.0" layoutY="66.0" prefHeight="200.0" prefWidth="261.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="80.0" layoutY="41.0" text="Series" />
+      <TableView layoutX="618.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+         </columns>
+      </TableView>
+      <Label layoutX="663.0" layoutY="50.0" text="Capitulos Vistos" />
+      <TableView layoutX="187.0" layoutY="286.0" prefHeight="200.0" prefWidth="261.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+         </columns>
+      </TableView>
+      <Label layoutX="387.0" layoutY="266.0" text="Capitulos" />
+   </children>
+</AnchorPane>

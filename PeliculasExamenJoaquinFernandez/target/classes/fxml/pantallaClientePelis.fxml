@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.pantallaClientePelis.ClientePelisController">
+   <children>
+      <TableView fx:id="tblPelisNoVistas" layoutX="32.0" layoutY="91.0" prefHeight="200.0" prefWidth="276.0">
+        <columns>
+          <TableColumn fx:id="nombrePeli" prefWidth="75.0" text="nombre" />
+          <TableColumn fx:id="añoPeli" prefWidth="75.0" text="Año" />
+          <TableColumn fx:id="actoresPeli" prefWidth="75.0" text="Actores" />
+        </columns>
+      </TableView>
+      <Label layoutX="118.0" layoutY="58.0" text="Peliculas" />
+      <TableView fx:id="tblPeliculasVistas" layoutX="725.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="nombrePelisVistas" prefWidth="75.0" text="nombre" />
+            <TableColumn fx:id="añoPelisVistas" prefWidth="75.0" text="año" />
+            <TableColumn fx:id="puntuacionPelisVistas" prefWidth="75.0" text="putnuacion" />
+         </columns>
+      </TableView>
+      <Label layoutX="781.0" layoutY="57.0" prefHeight="18.0" prefWidth="99.0" text="Peliculas vistas" />
+      <MFXButton layoutX="445.0" layoutY="216.0" mnemonicParsing="false" onAction="#moverPelicula" text="Añadir a vista" />
+      <MFXButton layoutX="785.0" layoutY="369.0" mnemonicParsing="false" onAction="#añadirPuntuacion" text="poner putnuacion" />
+      <TextField fx:id="puntuacion" layoutX="757.0" layoutY="333.0" />
+   </children>
+</AnchorPane>

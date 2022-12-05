@@ -1,0 +1,31 @@
+
+b
+java:S1192W"GDefine a constant instead of duplicating this literal "nombre" 3 times.(–ÂÅ±şÿÿÿÿ
+s
+java:S1104%"XMake tblPeliculas a static final constant or non-public and provide accessors if needed.(îÍ÷éüÿÿÿÿ
+u
+java:S1104&"ZMake nombrePelicula a static final constant or non-public and provide accessors if needed.(­çÑ©øÿÿÿÿ
+n
+java:S1104'"XMake aÃ±oPelicula a static final constant or non-public and provide accessors if needed.(¸Âôó
+v
+java:S1104("[Make actoresPelicula a static final constant or non-public and provide accessors if needed.(ÈæÍƒÿÿÿÿÿ
+q
+java:S1104+"VMake tblActores a static final constant or non-public and provide accessors if needed.(‚ôÔÈşÿÿÿÿ
+o
+java:S1104,"YMake nombreActores a static final constant or non-public and provide accessors if needed.(ˆ€µé
+t
+java:S1104-"^Make nombreActorAÃ±adir a static final constant or non-public and provide accessors if needed.(ğè¨‹
+s
+java:S1104/"XMake tblCapitulos a static final constant or non-public and provide accessors if needed.(œÒ¼åüÿÿÿÿ
+p
+java:S11040"ZMake nombreCapitulo a static final constant or non-public and provide accessors if needed.(˜Ú•ÿ
+p
+java:S11041"ZMake episoriosSerie a static final constant or non-public and provide accessors if needed.(ô•ô
+t	java:S116"_Rename this field "nombreClienteAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à›à€
+w	java:S116""]Rename this field "nombreSerieAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Ò™™ûÿÿÿÿ
+l	java:S116'"WRename this field "aÃ±oPelicula" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸Âôó
+r	java:S116-"]Rename this field "nombreActorAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğè¨‹
+h	java:S100e"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å¿”ğÿÿÿÿÿ
+h	java:S100k"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×Ì”İüÿÿÿÿ
+W
+java:S1128"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ıÿÿÿÿ8Ú›¢Ş0

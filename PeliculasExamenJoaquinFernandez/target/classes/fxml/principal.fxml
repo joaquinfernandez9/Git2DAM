@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.principal.PrincipalController">
+
+    <top>
+        <MenuBar fx:id="menuPrincipal">
+            <Menu mnemonicParsing="false" text="Cosas">
+                <MenuItem fx:id="menuPrincipalAdmin" mnemonicParsing="false" onAction="#menuClick"
+                          text="Pantalla principal Admin"/>
+                <MenuItem fx:id="menuClientesPeliculas" mnemonicParsing="false" onAction="#menuClick"
+                          text="Menu Peliculas Clientes"/>
+                <MenuItem fx:id="menuClientesSeries" mnemonicParsing="false" onAction="#menuClick"
+                          text="Menu Peliculas Clientes"/>
+                <MenuItem fx:id="menuItemLogout" mnemonicParsing="false" onAction="#menuClick"
+                          text="Logout"/>
+            </Menu>
+        </MenuBar>
+    </top>
+</BorderPane>
