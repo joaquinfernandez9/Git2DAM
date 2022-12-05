@@ -2,6 +2,7 @@ package com.example.crudjoaquinfernandez.ui.recycler
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -12,6 +13,7 @@ import com.example.crudjoaquinfernandez.R
 import com.example.crudjoaquinfernandez.databinding.ActivityRecyclerBinding
 import com.example.crudjoaquinfernandez.ui.mainScreen.Const
 import com.example.crudjoaquinfernandez.ui.mainScreen.MainActivity
+import com.example.crudjoaquinfernandez.ui.storeList.StoresActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -69,6 +71,11 @@ class ListActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            goToStores.setOnClickListener{
+                val intent = Intent(this@ListActivity, StoresActivity::class.java)
+                startActivity(intent)
+            }
+
             val headsetList = viewModel.state.value?.list ?: emptyList()
 
             val adapter = HeadsetAdapter(Imple())
@@ -87,7 +94,11 @@ class ListActivity : AppCompatActivity() {
 
             headsetList.let {
                 rvHeadsets.adapter = adapter
-                rvHeadsets.layoutManager = LinearLayoutManager(this@ListActivity)
+                rvHeadsets.layoutManager = LinearLayoutManager(
+                    this@ListActivity,
+                    LinearLayoutManager.VERTICAL,
+                    false
+                )
             }
 
         }

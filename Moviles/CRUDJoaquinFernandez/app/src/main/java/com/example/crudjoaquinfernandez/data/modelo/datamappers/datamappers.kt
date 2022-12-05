@@ -14,7 +14,7 @@ fun HeadsetEntity.toHeadset(): Headset {
 }
 
 fun Headset.toHeadsetEntity(): HeadsetEntity =
-    HeadsetEntity(this.id, this.bluetooth, this.name, this.mic)
+    HeadsetEntity(this.id, this.bluetooth, this.name, this.mic,)
 
 fun ModelEntity.toModel(): Model = Model(this.idModel, this.model, this.headsetId)
 
@@ -22,7 +22,7 @@ fun Model.toModelEntity(): ModelEntity =
     ModelEntity(this.idModel, this.modelName, this.idHeadset)
 
 fun Store.toStoreEntity(): StoreEntity =
-    StoreEntity(this.name)
+    StoreEntity(this.name,)
 
 fun StoreEntity.toStore(): Store =
     Store(this.storeName, emptyList())

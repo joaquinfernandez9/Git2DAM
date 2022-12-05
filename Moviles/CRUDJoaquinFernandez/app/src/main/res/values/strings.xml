@@ -33,4 +33,8 @@
     <string name="about_info">about_info</string>
     <string name="lista_de_modelos">Lista de Modelos</string>
     <string name="a_adir_modelos">añadir modelos</string>
+    <string name="delete_button">delete button</string>
+    <string name="detail_button">detail button</string>
+    <string name="button_to_store_list">button to store List</string>
+    <string name="add_store">Add Store</string>
 </resources>

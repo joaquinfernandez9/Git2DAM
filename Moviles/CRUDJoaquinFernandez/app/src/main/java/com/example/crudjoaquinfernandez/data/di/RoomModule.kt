@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.crudjoaquinfernandez.data.ConstData
 import com.example.crudjoaquinfernandez.data.dao.HeadsetDao
 import com.example.crudjoaquinfernandez.data.HeadsetRoomDataBase
+import com.example.crudjoaquinfernandez.data.dao.StoresDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,6 +31,11 @@ object RoomModule {
             .createFromAsset(dataPath).fallbackToDestructiveMigration().build()
 
     @Provides
-    fun providesHeadsetDao(headsetDataBase: HeadsetRoomDataBase): HeadsetDao =
+    fun providesHeadsetDao(headsetDataBase: HeadsetRoomDataBase):
+            HeadsetDao =
         headsetDataBase.headsetDao()
+
+    @Provides
+    fun providesStoresDao(headsetDataBase: HeadsetRoomDataBase): StoresDao =
+        headsetDataBase.storesDao()
 }

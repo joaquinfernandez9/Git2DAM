@@ -33,6 +33,14 @@
             android:name=".ui.mainScreen.MainActivity"
             android:parentActivityName=".ui.recycler.ListActivity" />
 
+        <activity
+            android:name=".ui.storeList.StoresActivity"
+            android:parentActivityName=".ui.recycler.ListActivity" />
+
+        <activity
+            android:name=".ui.storeList.storeDetail.DetailActivity"
+            android:parentActivityName=".ui.recycler.ListActivity" />
+
 
     </application>
 
