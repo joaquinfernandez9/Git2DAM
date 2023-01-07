@@ -3,7 +3,6 @@ package dao.impl;
 import dao.Const;
 import dao.DaoNewspaper;
 import dao.DaoType;
-import dao.dataBase.DataBaseConnectionPool;
 import jakarta.inject.Inject;
 import model.ArticleType;
 import lombok.extern.log4j.Log4j2;
@@ -20,62 +19,22 @@ import java.util.logging.Logger;
 
 @Log4j2
 public class DaoTypeImpl implements DaoType {
-    private final DataBaseConnectionPool pool;
-
     @Inject
-    public DaoTypeImpl(DataBaseConnectionPool pool) {
-        this.pool = pool;
+    public DaoTypeImpl() {
     }
 
     @Override
     public List<ArticleType> getAll() {
-        List<ArticleType> response;
-        JdbcTemplate jtm = new JdbcTemplate(pool.getDataSource());
-        response = jtm.query(Const.getAllTypes,
-                BeanPropertyRowMapper.newInstance(ArticleType.class));
+        List<ArticleType> response=null;
+
         return response;
     }
 
     @Override
-    public ArticleType get(int id) {
-        List<ArticleType> response;
-        JdbcTemplate jtm = new JdbcTemplate(pool.getDataSource());
-        response = jtm.query(Const.getType,
-                BeanPropertyRowMapper.newInstance(ArticleType.class), id);
-        return response.get(0);
-    }
+    public ArticleType get(Integer id) {
+        List<ArticleType> n=null;
 
-    @Override
-    public int add(ArticleType a) {
-        SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
-                pool.getDataSource()).withTableName(Const.TYPE);
-        Map<String, Object> param = new HashMap<>();
-        param.put(Const.DESCRIPTION, a.getDescription());
-        return jdbcInsert.execute(param);
-    }
-
-    @Override
-    public int delete(int id) {
-        int response;
-        try {
-            JdbcTemplate jtm = new JdbcTemplate(pool.getDataSource());
-            response = jtm.update(Const.DELETE_FROM_TYPE_WHERE_ID, id);
-        } catch (DataIntegrityViolationException e) {
-            e.getMessage().contains(Const.INTEGRITY_CONSTRAINT_VIOLATION);
-            response = -6;
-        } catch (Exception ex) {
-            Logger.getLogger(DaoNewspaper.class.getName())
-                    .log(Level.SEVERE, null, ex);
-            response = -2;
-        }
-        return response;
-    }
-
-    @Override
-    public int update(ArticleType type) {
-        JdbcTemplate template = new JdbcTemplate(pool.getDataSource());
-        return template.update(Const.updateType,
-                type.getDescription(), type.getId());
+        return (ArticleType) n;
     }
 
 }

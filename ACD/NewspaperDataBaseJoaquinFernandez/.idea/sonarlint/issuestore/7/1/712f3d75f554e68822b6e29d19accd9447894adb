@@ -1,8 +1,7 @@
 
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íëä£8ÖâòİÆ0
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íëä£8ÖâòİÆ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã‰¸ûÿÿÿÿ8ÖâòİÆ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã‰¸ûÿÿÿÿ8ÖâòİÆ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß»éñÿÿÿÿÿ8ìèãâÆ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß»éñÿÿÿÿÿ8ìèãâÆ0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß»éñÿÿÿÿÿ8ìèãâÆ0
+u	java:S116"TRename this field "id_reader" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÔÓùÿÿÿÿ8Øç´úÒ0
+x	java:S116"WRename this field "id_newspaper" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÈşÁşÿÿÿÿ8Øç´úÒ0
+p	java:S116"TRename this field "sing_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š–ªá8Øç´úÒ0
+}	java:S116"\Rename this field "cancellation_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú¼ùûûÿÿÿÿ8Øç´úÒ0
+J
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8´¿¶úÒ0

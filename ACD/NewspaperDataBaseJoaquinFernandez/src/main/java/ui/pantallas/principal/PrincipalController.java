@@ -1,6 +1,5 @@
 package ui.pantallas.principal;
 
-import dao.dataBase.DataBaseConnectionPool;
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;

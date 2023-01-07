@@ -11,6 +11,7 @@ module servidor {
     requires com.zaxxer.hikari;
 
     requires domain;
+    requires jakarta.mail;
 //    exports domain.services;
 
 }

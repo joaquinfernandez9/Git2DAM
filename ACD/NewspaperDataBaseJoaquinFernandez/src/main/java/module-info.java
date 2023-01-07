@@ -16,7 +16,6 @@ module javafx {
     requires jakarta.xml.bind;
     requires java.sql;
     requires jakarta.persistence;
-    requires com.zaxxer.hikari;
     requires commons.dbcp2;
     requires spring.jdbc;
     requires spring.tx;

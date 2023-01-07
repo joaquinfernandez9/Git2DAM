@@ -1,21 +1,27 @@
 package model;
 
-import lombok.Data;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Entity
+@Table(name = "readarticle")
 public class ReadArticle {
+    @Id
     private int id;
+    @Column
     private int id_reader;
+    @Column
     private int id_article;
+    @Column
     private int ranking;
 
-    public ReadArticle(int id_reader, int id_article, int ranking) {
-        this.id_reader = id_reader;
-        this.id_article = id_article;
-        this.ranking = ranking;
-    }
 
-    public ReadArticle() {
-
-    }
 }

@@ -46,49 +46,15 @@ public class DaoGeneric {
                 .onErrorReturn(this::getError);
     }
 
-    public Single<Either<String, Boolean>> safeAPICallToDeleteInt(Single<Response<Object>> apiCall) {
-        return apiCall.map(objectResponse -> objectResponse.isSuccessful() ?
-                        Either.right(true).mapLeft(Object::toString) :
-                        Either.left(getError(new HttpException(objectResponse))
-                                        .getLeft())
-                                .map(objects -> true))
-                .subscribeOn(Schedulers.io())
-                .onErrorReturn(this::getErrorInt);
-    }
-
-    private <T> Either<String, T> getErrorInt(Throwable throwable) {
-        Either<String, T> error = Either.left(Common.COMMUNICATION_ERROR);
-        if (throwable instanceof HttpException httpException) {
-            try (ResponseBody responseBody = Objects.requireNonNull(httpException.response()).errorBody()) {
-                if (Objects.equals(Objects.requireNonNull(responseBody).contentType(),
-                        MediaType.get(APPLICATION_JSON))) {
-                    List<Integer> list = Collections.emptyList();
-                    List<Integer> apierror = gson.fromJson(responseBody.string(), list.getClass());
-                    error = Either.left(apierror.toString());
-                } else {
-                    error = Either.left(Objects.requireNonNull(httpException.response()).message());
-                }
-            } catch (IOException e) {
-                log.error(e.getMessage(), e);
-            }
-        }
-        return error;
-    }
-
-
     private <T> Either<String, T> getError(Throwable throwable) {
-        Either<String, T> error = Either.left(Common.COMMUNICATION_ERROR);
+        Either<String, T> error = Either.left("Error de comunicacion");
         if (throwable instanceof HttpException httpException) {
-            try (ResponseBody responseBody = Objects.requireNonNull(httpException.response()).errorBody()) {
-                if (Objects.equals(Objects.requireNonNull(responseBody).contentType(),
-                        MediaType.get(APPLICATION_JSON))) {
-                    Error apierror = gson.fromJson(responseBody.string(), Error.class);
-                    error = Either.left(apierror.getMessage());
-                } else {
-                    error = Either.left(Objects.requireNonNull(httpException.response()).message());
-                }
-            } catch (IOException e) {
-                log.error(e.getMessage(), e);
+            int code =  httpException.code();
+            if (Objects.equals(Objects.requireNonNull(Objects.requireNonNull(((HttpException) throwable).response()).errorBody()).contentType(), MediaType.get("application/json"))) {
+                Error api = gson.fromJson(Objects.requireNonNull(Objects.requireNonNull(((HttpException) throwable).response()).errorBody()).charStream(), Error.class);
+                error = Either.left(code + api.getMessage());
+            } else {
+                error = Either.left(Objects.requireNonNull(((HttpException) throwable).response()).message());
             }
         }
         return error;

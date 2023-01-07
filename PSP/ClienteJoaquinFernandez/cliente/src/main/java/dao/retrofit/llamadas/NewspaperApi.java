@@ -2,7 +2,6 @@ package dao.retrofit.llamadas;
 
 import dao.Common;
 import io.reactivex.rxjava3.core.Single;
-import model.Article;
 import model.Newspaper;
 import retrofit2.Response;
 import retrofit2.http.*;

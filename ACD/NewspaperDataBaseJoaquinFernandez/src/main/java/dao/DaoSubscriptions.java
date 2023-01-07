@@ -10,9 +10,9 @@ public interface DaoSubscriptions {
 
     int add(Subscription subscription);
 
-    Either<Integer, List<Subscription>> getAll();
+    Either<Object, List<Subscription>> getAll();
 
-    Either<Integer, List<Subscription>> getAll(int id);
+    Either<Object, List<Subscription>> getAll(int id);
 
 
 }

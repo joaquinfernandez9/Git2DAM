@@ -7,11 +7,6 @@ import java.util.List;
 public interface DaoType {
     List<ArticleType> getAll();
 
-    ArticleType get(int id);
+    ArticleType get(Integer id);
 
-    int add(ArticleType a);
-
-    int delete(int id);
-
-    int update(ArticleType type);
 }

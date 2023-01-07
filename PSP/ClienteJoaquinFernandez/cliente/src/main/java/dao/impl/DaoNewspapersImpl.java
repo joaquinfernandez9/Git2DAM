@@ -44,6 +44,6 @@ public class DaoNewspapersImpl extends DaoGeneric implements DaoNewspapers {
 
     @Override
     public Single<Either<String, Boolean>> deleteConfirmed(int id) {
-        return safeAPICallToDeleteInt(newspaperApi.deleteConfirmed(id));
+        return safeAPICallToDelete(newspaperApi.deleteConfirmed(id));
     }
 }

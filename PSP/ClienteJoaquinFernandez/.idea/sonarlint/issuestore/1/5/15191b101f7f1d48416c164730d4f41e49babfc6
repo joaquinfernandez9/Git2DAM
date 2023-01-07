@@ -1,0 +1,11 @@
+
+Q	java:S1257"<This block of commented-out lines of code should be removed.(ûşËÇ
+Q	java:S125T"<This block of commented-out lines of code should be removed.(Øñû­
+x
+java:S1128"]Remove this unused import 'org.springframework.jdbc.datasource.DataSourceTransactionManager'.(ˆµÍıÿÿÿÿ
+h
+java:S1128"RRemove this unused import 'org.springframework.transaction.TransactionDefinition'.(›šĞá
+d
+java:S1128"NRemove this unused import 'org.springframework.transaction.TransactionStatus'.(ŸÙÏ¸
+|
+java:S1128"aRemove this unused import 'org.springframework.transaction.support.DefaultTransactionDefinition'.(¯½„úÿÿÿÿ

@@ -1,7 +1,15 @@
 package domain.services;
 
-public interface LoginServ {
-    int login(String userName, String password);
+import io.vavr.control.Either;
+import model.Code;
+import model.Login;
 
-    int get(String userName, String password);
+public interface LoginServ {
+    Either<String, Login> login(String userName, String password);
+
+    Either<String, Login> register(Login log, Code code);
+
+    Either<String, Code> activarCuenta(Code code);
+
+    Either<String, Login> recuperarContrasena(Login log);
 }

@@ -41,6 +41,8 @@ public class UiConstants {
     public static final String THIS_NEWSPAPER_CONTAINS_ARTICLES = "This newspaper contains articles.";
     public static final String ARE_YOU_OK_WITH_THIS = "Are you ok with this?";
     public static final String NEWSPAPER_DELETED = "Newspaper deleted.";
+    public static final String RELLENA_LOS_CAMPOS = "Rellena los campos";
+    public static final String DEBE_COMPLETAR_TODOS_LOS_CAMPOS = "Debe completar todos los campos";
 
     private UiConstants(){}
 }

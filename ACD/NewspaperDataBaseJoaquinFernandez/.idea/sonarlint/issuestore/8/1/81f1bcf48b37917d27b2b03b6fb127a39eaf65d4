@@ -1,5 +1,5 @@
 
-_
-java:S2259@"IA "NullPointerException" could be thrown; "getMessage()" can return null.(½¯ñ
-I
-java:S2201@",The return value of "contains" must be used.(½¯ñ8©ûÑÇ0
+‚
+java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "response".(‰»›üÿÿÿÿ8½ÜØÚØ0
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ö£®üıÿÿÿÿ8¿ÜØÚØ0

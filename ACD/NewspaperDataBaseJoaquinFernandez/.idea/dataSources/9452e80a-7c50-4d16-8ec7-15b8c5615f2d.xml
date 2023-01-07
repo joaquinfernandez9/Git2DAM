@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@dam2.mysql.iesquevedo.es">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.43">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
     <root id="1"/>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1091,20 +1091,20 @@
     </table>
     <column id="340" parent="316" name="id">
       <AutoIncrement>5</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="341" parent="316" name="name_article">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="342" parent="316" name="id_type">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="343" parent="316" name="id_newspaper">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="344" parent="316" name="id_article_type_FK">
@@ -1136,17 +1136,17 @@
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="350" parent="317" name="user">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="351" parent="317" name="password">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="352" parent="317" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
@@ -1188,16 +1188,16 @@
     <column id="361" parent="318" name="id">
       <AutoIncrement>8</AutoIncrement>
       <Comment>ID NEWSPAPER</Comment>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="362" parent="318" name="name_newspaper">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="363" parent="318" name="release_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="364" parent="318" name="PRIMARY">
@@ -1212,22 +1212,22 @@
     </key>
     <column id="366" parent="319" name="id">
       <AutoIncrement>12</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="367" parent="319" name="id_article">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="368" parent="319" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="369" parent="319" name="ranking">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
@@ -1261,16 +1261,16 @@
     </key>
     <column id="376" parent="320" name="id">
       <AutoIncrement>22236</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="377" parent="320" name="name_reader">
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="378" parent="320" name="birth_reader">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="379" parent="320" name="PRIMARY">
@@ -1284,21 +1284,21 @@
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="381" parent="321" name="id_newspaper">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="382" parent="321" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="383" parent="321" name="sing_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="384" parent="321" name="cancellation_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="385" parent="321" name="id_subscribe_newspaper_FK">
@@ -1328,12 +1328,12 @@ id_reader</ColNames>
     </key>
     <column id="390" parent="322" name="id">
       <AutoIncrement>4</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="391" parent="322" name="description">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <index id="392" parent="322" name="PRIMARY">
@@ -1348,20 +1348,20 @@ id_reader</ColNames>
     </key>
     <column id="394" parent="323" name="id">
       <AutoIncrement>12</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="395" parent="323" name="name_article">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="396" parent="323" name="id_type">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="397" parent="323" name="id_newspaper">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="398" parent="323" name="id_article_type_FK">
@@ -1394,12 +1394,12 @@ id_reader</ColNames>
     </key>
     <column id="404" parent="324" name="id">
       <AutoIncrement>5</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="405" parent="324" name="description">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <index id="406" parent="324" name="PRIMARY">
@@ -1413,16 +1413,16 @@ id_reader</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="408" parent="325" name="username">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="409" parent="325" name="password">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="410" parent="325" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
     <foreign-key id="411" parent="325" name="id_reader">
@@ -1447,16 +1447,16 @@ id_reader</ColNames>
     <column id="415" parent="326" name="id">
       <AutoIncrement>17</AutoIncrement>
       <Comment>ID NEWSPAPER</Comment>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="416" parent="326" name="name_newspaper">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="417" parent="326" name="release_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="418" parent="326" name="PRIMARY">
@@ -1471,22 +1471,22 @@ id_reader</ColNames>
     </key>
     <column id="420" parent="327" name="id">
       <AutoIncrement>19</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="421" parent="327" name="id_article">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="422" parent="327" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="423" parent="327" name="rating">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="424" parent="327" name="id_article_readarticle_FK">
@@ -1528,16 +1528,16 @@ id_reader</ColNames>
     </key>
     <column id="432" parent="328" name="id">
       <AutoIncrement>9</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="433" parent="328" name="name_reader">
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="434" parent="328" name="birth_reader">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="435" parent="328" name="PRIMARY">
@@ -1551,21 +1551,21 @@ id_reader</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="437" parent="329" name="id_newspaper">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="438" parent="329" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="439" parent="329" name="cancellation_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="440" parent="329" name="signing_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
@@ -1595,31 +1595,31 @@ id_reader</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="446" parent="330" name="id_prod">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="447" parent="330" name="COF_NAME">
-      <DataType>varchar(32)|0s</DataType>
+      <DasType>varchar(32)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="448" parent="330" name="SUPP_ID">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="449" parent="330" name="PRICE">
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="450" parent="330" name="SALES">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="451" parent="330" name="TOTAL">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
@@ -1643,17 +1643,17 @@ id_reader</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="456" parent="331" name="FirstDig">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="457" parent="331" name="SecondDig">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="458" parent="331" name="ThirdDig">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
@@ -1668,16 +1668,16 @@ id_reader</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="461" parent="332" name="id_prod">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="462" parent="332" name="country">
-      <DataType>varchar(15)|0s</DataType>
+      <DasType>varchar(15)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="463" parent="332" name="FirstDig">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
@@ -1692,28 +1692,28 @@ id_reader</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="466" parent="333" name="SUPP_ID">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="467" parent="333" name="SUPP_NAME">
-      <DataType>varchar(40)|0s</DataType>
+      <DasType>varchar(40)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="468" parent="333" name="STREET">
-      <DataType>varchar(40)|0s</DataType>
+      <DasType>varchar(40)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="469" parent="333" name="TOWN">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="470" parent="333" name="COUNTRY">
-      <DataType>varchar(2)|0s</DataType>
+      <DasType>varchar(2)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="471" parent="333" name="PCODE">
-      <DataType>varchar(5)|0s</DataType>
+      <DasType>varchar(5)|0s</DasType>
       <Position>6</Position>
     </column>
     <index id="472" parent="333" name="PRIMARY">
@@ -1728,20 +1728,20 @@ id_reader</ColNames>
     </key>
     <column id="474" parent="334" name="id">
       <AutoIncrement>3</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="475" parent="334" name="name_article">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="476" parent="334" name="id_type">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="477" parent="334" name="id_newspaper">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="478" parent="334" name="id_article_type_FK">
@@ -1775,16 +1775,16 @@ id_reader</ColNames>
     <column id="484" parent="335" name="id">
       <AutoIncrement>3</AutoIncrement>
       <Comment>ID NEWSPAPER</Comment>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="485" parent="335" name="name_newspaper">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="486" parent="335" name="release_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="487" parent="335" name="PRIMARY">
@@ -1799,22 +1799,22 @@ id_reader</ColNames>
     </key>
     <column id="489" parent="336" name="id">
       <AutoIncrement>4</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="490" parent="336" name="id_article">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="491" parent="336" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="492" parent="336" name="ranking">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="493" parent="336" name="id_article_readarticle_FK">
@@ -1852,16 +1852,16 @@ id_reader</ColNames>
     </key>
     <column id="500" parent="337" name="id">
       <AutoIncrement>3</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="501" parent="337" name="name_reader">
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="502" parent="337" name="birth_reader">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="503" parent="337" name="PRIMARY">
@@ -1875,22 +1875,22 @@ id_reader</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="505" parent="338" name="id_newspaper">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="506" parent="338" name="id_reader">
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="507" parent="338" name="start_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="508" parent="338" name="cancellation_date">
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="509" parent="338" name="id_subscribe_newspaper_FK">
@@ -1920,12 +1920,12 @@ id_reader</ColNames>
     </key>
     <column id="514" parent="339" name="id">
       <AutoIncrement>3</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="515" parent="339" name="description">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <index id="516" parent="339" name="PRIMARY">

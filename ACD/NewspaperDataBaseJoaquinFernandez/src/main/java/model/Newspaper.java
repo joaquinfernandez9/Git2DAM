@@ -1,23 +1,40 @@
 package model;
 
-import lombok.Data;
-import lombok.Getter;
-
+import jakarta.persistence.*;
+import lombok.*;
 import java.time.LocalDate;
+import java.util.Collection;
 
-@Data
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Entity
+@Table(name = "newspaper")
+@NamedQueries({@NamedQuery(name = "GET_ALL_NEWSPAPERS",
+        query = " from Newspaper ")})
 public class Newspaper {
+    @Id
     private int id;
+    @Column(name = "name_newspaper")
     private String name_newspaper;
+    @Column(name = "release_date")
     private LocalDate release_date;
 
-    public Newspaper(int id, String name_newspaper, LocalDate release_date) {
-        this.id = id;
-        this.name_newspaper = name_newspaper;
-        this.release_date = release_date;
+    @OneToMany(mappedBy = "newspaper", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    private Collection<Article> articles;
+
+    public Newspaper(String nameNewspaper, String dateNewspaper) {
+        this.name_newspaper = nameNewspaper;
+        this.release_date= LocalDate.parse(dateNewspaper);
     }
 
-    public Newspaper() {
+    public Newspaper(int id, String nameNewspaper, String dateNewspaper) {
+        this.id = id;
+        this.name_newspaper = nameNewspaper;
+        this.release_date = LocalDate.parse(dateNewspaper);
     }
+
+
 }

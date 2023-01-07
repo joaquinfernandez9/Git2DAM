@@ -1,27 +1,29 @@
 package model;
 
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
+import java.lang.reflect.Type;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Entity
+@Table(name = "article")
 public class Article {
+    @Id
+    @GeneratedValue
     private int id;
+    @Column
     private String name_article;
-    private int id_newspaper;
-    private int id_type;
+    @ManyToOne
+    @JoinColumn(name = "id_newspaper", nullable = false)
+    private Newspaper newspaper;
+    @OneToOne(cascade=CascadeType.PERSIST)
+    @JoinColumn(name = "id_type", referencedColumnName = "id", nullable = false)
+    private ArticleType type;
 
-    public Article() {
-    }
 
-    public Article(int id, String name_article, int id_newspaper, int id_type) {
-        this.id = id;
-        this.name_article = name_article;
-        this.id_newspaper = id_newspaper;
-        this.id_type = id_type;
-    }
-
-    public Article(String name_article, int id_newspaper, int id_type) {
-        this.name_article = name_article;
-        this.id_newspaper = id_newspaper;
-        this.id_type = id_type;
-    }
 }

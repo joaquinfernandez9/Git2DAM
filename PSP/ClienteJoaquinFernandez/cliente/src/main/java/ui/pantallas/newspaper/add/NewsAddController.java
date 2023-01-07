@@ -54,7 +54,7 @@ public class NewsAddController extends BasePantallaController {
     @FXML
     private void add() {
         if (idLabel.getText().isEmpty() || nameLabel.getText().isEmpty()) {
-            getPrincipalController().errorAlert("Debe completar todos los campos");
+            getPrincipalController().errorAlert(UiConstants.DEBE_COMPLETAR_TODOS_LOS_CAMPOS);
         } else {
             newsAddViewModel.addNewspaper(Integer.parseInt(idLabel.getText()), nameLabel.getText());
         }

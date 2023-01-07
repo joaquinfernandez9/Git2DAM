@@ -1,5 +1,6 @@
 package dao.impl;
 
+import dao.impl.mapper.IntegerRowMapper;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
 import dao.Const;

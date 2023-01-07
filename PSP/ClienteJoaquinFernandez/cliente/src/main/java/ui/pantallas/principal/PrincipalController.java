@@ -80,7 +80,7 @@ public class PrincipalController {
     }
 
     public void initialize() {
-        cargarPantalla(Pantallas.WELCOME_SCREEN);
+        cargarPantalla(Pantallas.LOGIN);
         menuBar.setVisible(true);
     }
 
@@ -139,6 +139,11 @@ public class PrincipalController {
             case "rListSubscription" -> cargarPantalla(Pantallas.READER_LIST_SUBSCRIPTION);
             case "rListType" -> cargarPantalla(Pantallas.READER_LIST_TYPE);
             case "querys" -> cargarPantalla(Pantallas.QUERYS);
+            case "logoutUser" -> logout();
         }
+    }
+
+    public void logout(){
+
     }
 }

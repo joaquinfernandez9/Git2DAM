@@ -9,8 +9,6 @@ import java.util.List;
 public interface DaoReadArticle {
     Either<Integer, List<ReadArticle>> getAll();
 
-    Either<Integer, List<ReadArticle>> getAll(int id);
-
     int delete(int id);
 
     int add(ReadArticle readArticle);

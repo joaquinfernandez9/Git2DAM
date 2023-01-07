@@ -10,7 +10,8 @@
     <top>
         <MenuBar fx:id="menuBar">
             <Menu mnemonicParsing="false" text="Options">
-
+                <MenuItem fx:id="logoutUser" mnemonicParsing="false" onAction="#menuClick"
+                          text="Logout"/>
                 <MenuItem fx:id="querys" mnemonicParsing="false" onAction="#menuClick"
                           text="Querys"/>
             </Menu>

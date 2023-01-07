@@ -17,7 +17,7 @@
     <TableView fx:id="query4" layoutX="375.0" layoutY="100.0" prefHeight="325.0" prefWidth="300.0">
         <columns>
             <TableColumn fx:id="query4Col1" prefWidth="150.0" text="Article name" />
-            <TableColumn fx:id="query4Col2" prefWidth="75.0" text="ID Article" />
+            <TableColumn fx:id="query4Col2" prefWidth="150.0" text="ID Article" />
             <TableColumn fx:id="query4Col3" prefWidth="75.0" text="Bad ratings" />
         </columns>
     </TableView>

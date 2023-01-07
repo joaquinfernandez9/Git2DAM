@@ -13,7 +13,8 @@ public enum Pantallas {
     NEWS_ADD(UiConstants.FXML_NEWSPAPER_NP_ADD_FXML),
     NEWS_DELETE(UiConstants.FXML_NEWSPAPER_NP_DELETE_FXML),
     NEWS_UPDATE(UiConstants.FXML_NEWSPAPER_NP_UPDATE_FXML),
-    QUERYS(UiConstants.FXML_QUERYS_FXML);
+    QUERYS(UiConstants.FXML_QUERYS_FXML),
+    LOGIN("/fxml/login.fxml");
 
     private final String ruta;
 

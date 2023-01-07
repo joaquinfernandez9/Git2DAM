@@ -10,10 +10,6 @@ public interface DaoReader {
 
     Either<Integer, Reader> get(int id);
 
-    int delete(int id);
 
-    int update(Reader r);
-
-    int add(Reader r);
 
 }

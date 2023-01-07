@@ -19,6 +19,8 @@ module cliente {
 
 
     exports ui.pantallas.reader.addReader;
+    exports ui.pantallas.login;
+    exports dao.gson;
     exports ui.pantallas.reader.updateReader;
     exports ui.pantallas.querys;
     exports ui.pantallas.reader.delete;
@@ -49,6 +51,7 @@ module cliente {
     opens ui.pantallas.common;
     opens fxml;
     opens ui.main;
+    opens ui.pantallas.login;
     opens ui.pantallas.principal;
     opens ui.pantallas.querys;
     opens ui.pantallas.reader.addReader;
