@@ -22,7 +22,7 @@ public class Newspaper {
     @Column(name = "release_date")
     private LocalDate release_date;
 
-    @OneToMany(mappedBy = "newspaper", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "newspaper", cascade = {CascadeType.PERSIST})
     private Collection<Article> articles;
 
     public Newspaper(String nameNewspaper, String dateNewspaper) {

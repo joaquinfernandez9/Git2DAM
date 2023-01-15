@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.ArticleType;
+import model.Newspaper;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.UiConstants;
 
@@ -63,7 +65,11 @@ public class ArticleAddController extends BasePantallaController {
                 typeID.getText().isEmpty()) {
             getPrincipalController().errorAlert(UiConstants.ERROR_COMPLETE_ALL_THE_FIELDS);
         } else {
-            Article a = new Article(Integer.parseInt(articleID.getText()), title.getText(), Integer.parseInt(newspaperID.getText()), Integer.parseInt(typeID.getText()));
+            ArticleType type = new ArticleType();
+            type.setId(Integer.parseInt(typeID.getText()));
+            Newspaper newspaper = new Newspaper();
+            newspaper.setId(Integer.parseInt(newspaperID.getText()));
+            Article a = new Article(Integer.parseInt(articleID.getText()), title.getText(), newspaper, type);
             articleAddViewModel.add(a);
         }
 

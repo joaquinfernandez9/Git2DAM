@@ -18,9 +18,12 @@ public class NewsDeleteController extends BasePantallaController {
     private final NewsDeleteViewModel newsDeleteViewModel;
     @FXML
     public TableView<Newspaper> tableNews;
-    @FXML public TableColumn<Integer, Newspaper> idColumn;
-    @FXML public TableColumn<String, Newspaper> nameColumn;
-    @FXML public TableColumn<Date, Newspaper> dateColumn;
+    @FXML
+    public TableColumn<Integer, Newspaper> idColumn;
+    @FXML
+    public TableColumn<String, Newspaper> nameColumn;
+    @FXML
+    public TableColumn<Date, Newspaper> dateColumn;
 
     @Inject
     public NewsDeleteController(NewsDeleteViewModel newsDeleteViewModel) {
@@ -56,14 +59,8 @@ public class NewsDeleteController extends BasePantallaController {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Delete");
                 alert.setHeaderText("This newspaper contains articles.");
-                alert.setContentText("Are you ok with this?");
-
-                Optional<ButtonType> result = alert.showAndWait();
-                if (result.get() == ButtonType.OK) {
-                    newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getId());
-                    getPrincipalController().infoAlert("Newspaper deleted.");
-                    newsDeleteViewModel.load();
-                }
+                alert.setContentText("Can't be deleted");
+                alert.showAndWait();
             } else {
                 newsDeleteViewModel.deleteNewspaper(tableNews.getSelectionModel().getSelectedItem().getId());
                 getPrincipalController().infoAlert("Newspaper deleted.");

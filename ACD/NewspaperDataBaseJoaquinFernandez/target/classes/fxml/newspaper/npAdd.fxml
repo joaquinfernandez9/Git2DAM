@@ -13,5 +13,4 @@
         </TableView>
         <Button layoutX="549.0" layoutY="248.0" mnemonicParsing="false" onAction="#add" text="Add" />
       <TextField fx:id="nameLabel" layoutX="494.0" layoutY="189.0" promptText="Name" />
-      <TextField fx:id="idLabel" layoutX="494.0" layoutY="160.0" promptText="ID" />
 </AnchorPane>

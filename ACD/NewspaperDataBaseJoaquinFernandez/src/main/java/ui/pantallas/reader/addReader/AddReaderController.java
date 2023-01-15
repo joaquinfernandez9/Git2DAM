@@ -69,9 +69,11 @@ public class AddReaderController extends BasePantallaController {
             getPrincipalController().errorAlert("Error, fill all the gaps");
         } else {
             Login login = new Login(username.getText(), password.getText());
+
             Reader reader = new Reader(nameReader.getText(), dateReader.getValue());
-            reader.setLogin(login);
-            viewModel.addReader(reader);
+            login.setReader(reader);
+//            reader.setLogin(login);
+            viewModel.addReader(login);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correct");
             alert.setContentText("Reader added correctly");

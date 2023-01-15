@@ -37,14 +37,19 @@ public class DaoNewspaperImpl implements DaoNewspaper {
         return response;
     }
 
+
+
+
+
     @Override
     public Newspaper get(int id) {
         Newspaper response = null;
+        em = jpaUtil.getEntityManager();
         try {
             response = em.find(Newspaper.class, id);
 
-            if (response == null) {
-                return null;
+            if (response != null) {
+                return response;
             }
         } catch (PersistenceException exception){
             log.error(exception.getMessage());
@@ -74,13 +79,16 @@ public class DaoNewspaperImpl implements DaoNewspaper {
     }
 
 
+    @Override
     public int delete(int id){
+        // TODO: unable to locate persister
         int response;
         em = jpaUtil.getEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            em.remove(em.merge(id));
+            Newspaper np = em.find(Newspaper.class, id);
+            em.remove(em.merge(np));
             tx.commit();
             response = 1;
         } catch (Exception e){

@@ -1,5 +1,23 @@
 
-}
-java:S1488!"`Immediately return this expression instead of assigning it to the temporary variable "response".(İìÇ8º½—ÚØ0
-‚
-java:S1488@"`Immediately return this expression instead of assigning it to the temporary variable "response".(¼Í‡İşÿÿÿÿ8Ê¡ÚØ0
+{
+java:S1488G"`Immediately return this expression instead of assigning it to the temporary variable "response".(¼Í‡İşÿÿÿÿ
+{
+java:S1488M"`Immediately return this expression instead of assigning it to the temporary variable "response".(¼Í‡İşÿÿÿÿ
+J
+java:S1128"-Remove this unused import 'dao.DaoNewspaper'.(˜çÒÓ8ÕÊŞÙ0
+H
+java:S1128"&Remove this unused import 'dao.Const'.(‰õ‡¼ûÿÿÿÿ8ÖÊŞÙ0
+I
+java:S1128",Remove this unused import 'model.Newspaper'.(ÒÚÄŠ8ÖÊŞÙ0
+p
+java:S1128"TRemove this unused import 'org.springframework.dao.DataIntegrityViolationException'.(ÅÔº(8ÖÊŞÙ0
+r
+java:S1128"PRemove this unused import 'org.springframework.jdbc.core.BeanPropertyRowMapper'.(ß©Å´ÿÿÿÿÿ8ÖÊŞÙ0
+i
+java:S1128"GRemove this unused import 'org.springframework.jdbc.core.JdbcTemplate'.(å ê‹ÿÿÿÿÿ8ÖÊŞÙ0
+o
+java:S1128"RRemove this unused import 'org.springframework.jdbc.core.simple.SimpleJdbcInsert'.(ü¾®¤8ÖÊŞÙ0
+Q
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8ÖÊŞÙ0
+R
+java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8ÖÊŞÙ0

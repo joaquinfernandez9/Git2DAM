@@ -1,0 +1,6 @@
+
+v
+java:S1128
+"TRemove this unnecessary import: same package classes are always implicitly imported.(«¯òĞùÿÿÿÿ8ÏÕâ±Û0
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8ĞÕâ±Û0

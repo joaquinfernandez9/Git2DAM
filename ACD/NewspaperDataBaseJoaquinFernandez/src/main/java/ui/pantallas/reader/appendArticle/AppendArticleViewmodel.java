@@ -49,7 +49,9 @@ public class AppendArticleViewmodel {
 
 
     public void appendArticle(Reader r, int article, int rating) {
-        ReadArticle ra = new ReadArticle(r.getId(), article, rating);
+        // TODO: poner que busque bien el article
+        Article art = new Article(article);
+        ReadArticle ra = new ReadArticle(r, art, rating);
         int response = readArticleServ.appendReadArticle(ra);
         if (response == 1) {
             state.setValue(new AppendArticleState(

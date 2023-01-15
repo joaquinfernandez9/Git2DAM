@@ -10,6 +10,11 @@ public interface DaoReader {
 
     Either<Integer, Reader> get(int id);
 
+    int delete(int id);
+
+    Either<Integer, List<Reader>> getAll(String description);
+
+
 
 
 }

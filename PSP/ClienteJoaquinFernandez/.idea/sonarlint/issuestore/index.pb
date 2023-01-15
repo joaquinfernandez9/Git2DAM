@@ -253,8 +253,6 @@ i
 0cliente/src/main/java/dao/impl/DaoLoginImpl.java,c\1\c153fa5d5d9917bf6aa8b83bab57e65b7371ac16
 }
 Mcliente/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteController.java,d\8\d849b836bd4052ca3d6055fa370c0766bc19caf5
-x
-Hcliente/src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java,c\8\c830d91392b16227e286b81f1d6344ff4f10b38b
 |
 Lcliente/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteViewModel.java,d\1\d1e5de03d3f62d45c0cce09b602c57ce07cd3a53
 v
@@ -271,3 +269,5 @@ h
 8cliente/src/main/java/ui/pantallas/login/LoginState.java,0\d\0d4306efd9d396fbadfc90715b1f3807835e2bbb
 u
 Ecliente/src/main/java/ui/pantallas/principal/PrincipalController.java,1\9\19b0ff088229df72e4590510ab35c96caa69ad20
+x
+Hcliente/src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java,c\8\c830d91392b16227e286b81f1d6344ff4f10b38b

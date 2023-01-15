@@ -23,7 +23,7 @@ public class ListSubscriptionViewmodel {
         this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ListSubscriptionState(null, false,
-                        readerServImpl.getAll(-1, null).get(), servicesNewspaperImpl.getAll()));
+                        readerServImpl.getAll(0, null).get(), servicesNewspaperImpl.getAll()));
         this.servicesNewspaperImpl = servicesNewspaperImpl;
     }
 
@@ -41,7 +41,7 @@ public class ListSubscriptionViewmodel {
     }
 
     public List<Reader> getAll(){
-        return readerServImpl.getAll(-1,null).get();
+        return readerServImpl.getAll(0,null).get();
     }
 
     public void getOldest(int idNewspaper){

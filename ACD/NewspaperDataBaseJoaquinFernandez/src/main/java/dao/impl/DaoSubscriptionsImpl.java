@@ -4,6 +4,7 @@ import dao.Const;
 import dao.DaoSubscriptions;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
 import lombok.extern.log4j.Log4j2;
 import model.Subscription;
 
@@ -18,10 +19,15 @@ import java.util.logging.Logger;
 public class DaoSubscriptionsImpl implements DaoSubscriptions {
 
 
+    private JPAUtil jpaUtil;
+    private EntityManager em;
+
     @Inject
-    public DaoSubscriptionsImpl() {
+    public DaoSubscriptionsImpl(JPAUtil jpaUtil) {
+        this.jpaUtil = jpaUtil;
 
     }
+
 
 
     @Override
@@ -46,9 +52,21 @@ public class DaoSubscriptionsImpl implements DaoSubscriptions {
 
     @Override
     public Either<Object, List<Subscription>> getAll(int id) {
-        Either<Object, List<Subscription>> result = null;
-
+        Either<Object, List<Subscription>> result;
+        em = jpaUtil.getEntityManager();
+        try {
+            result = Either.right(em
+                            .createNamedQuery("GET_ALL_SUBSCRIPTIONS_READER", Subscription.class)
+                    .setParameter("idReader", id)
+                    .getResultList());
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = Either.left(-1);
+        } finally {
+            em.close();
+        }
         return result;
+
     }
 
 

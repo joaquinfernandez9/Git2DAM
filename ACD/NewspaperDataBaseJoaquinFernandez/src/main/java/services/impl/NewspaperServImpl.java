@@ -16,6 +16,9 @@ public class NewspaperServImpl implements NewspaperServ {
         this.daoNewspaper = daoNewspaper;
     }
 
+
+
+
     @Override
     public List<Newspaper> getAll() {
         return daoNewspaper.getAll();
@@ -24,7 +27,12 @@ public class NewspaperServImpl implements NewspaperServ {
 
     @Override
     public int deleteNewspaper(int id) {
-        return daoNewspaper.delete(id);
+        if (daoNewspaper.get(id).getArticles().isEmpty()) {
+            return daoNewspaper.delete(id);
+        } else {
+            return 0;
+        }
+
     }
 
 

@@ -53,7 +53,7 @@ public class ListSubscriptionController extends BasePantallaController {
                 readersTable.getItems().addAll(newValue.getReaderList());
             }
         });
-        viewmodel.reloadState(-1, null);
+        viewmodel.reloadState(0, null);
 
     }
 

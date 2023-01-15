@@ -1,8 +1,10 @@
 package services.impl;
 
 import dao.*;
+import dao.impl.DaoLoginImpl;
 import dao.impl.DaoTypeImpl;
 import model.Article;
+import model.Login;
 import model.ReadArticle;
 import model.Reader;
 import services.ReaderServ;
@@ -17,17 +19,20 @@ public class ReaderServImpl implements ReaderServ {
     private final DaoReader daoReaderImpl;
     private final DaoArticle daoArticleImpl;
     private final DaoTypeImpl daoTypeImpl;
+
+    private final DaoLoginImpl daoLoginImpl;
     private final DaoReadArticle daoReadArticleImpl;
     private final DaoSubscriptions daoSubscriptions;
 
     @Inject
-    public ReaderServImpl(DaoNewspaper daoNewspaperImpl, DaoSubscriptions daoSubscriptions, DaoReader daoReaderImpl, DaoArticle daoArticleImpl, DaoTypeImpl daoTypeImpl, DaoReadArticle daoReadArticleImpl) {
+    public ReaderServImpl(DaoLoginImpl daoLoginImpl, DaoNewspaper daoNewspaperImpl, DaoSubscriptions daoSubscriptions, DaoReader daoReaderImpl, DaoArticle daoArticleImpl, DaoTypeImpl daoTypeImpl, DaoReadArticle daoReadArticleImpl) {
         this.daoNewspaperImpl = daoNewspaperImpl;
         this.daoReaderImpl = daoReaderImpl;
         this.daoArticleImpl = daoArticleImpl;
         this.daoTypeImpl = daoTypeImpl;
         this.daoReadArticleImpl = daoReadArticleImpl;
         this.daoSubscriptions = daoSubscriptions;
+        this.daoLoginImpl = daoLoginImpl;
     }
 
     @Override
@@ -52,13 +57,18 @@ public class ReaderServImpl implements ReaderServ {
     }
 
     @Override
-    public int update(Reader r) {
-        return daoReaderImpl.update(r);
+    public Either<Integer, List<Reader>> getAll(String description) {
+        return daoReaderImpl.getAll(description);
     }
 
     @Override
-    public int add(Reader r) {
-        return daoReaderImpl.add(r);
+    public int update(Reader r) {
+        return -1;
+    }
+
+    @Override
+    public int add(Login log) {
+        return daoLoginImpl.add(log);
     }
 
     @Override
@@ -69,8 +79,8 @@ public class ReaderServImpl implements ReaderServ {
         if (!daoArticleImpl.getAll().contains(art)) {
             response = -5;
         } else {
-            ReadArticle readArticle = new ReadArticle(reader.getId(),
-                    article, rating);
+            ReadArticle readArticle = new ReadArticle(reader,
+                    art, rating);
             daoReadArticleImpl.add(readArticle);
             response = 1;
         }

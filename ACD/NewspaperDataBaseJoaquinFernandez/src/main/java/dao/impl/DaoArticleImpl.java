@@ -5,8 +5,10 @@ import dao.DaoNewspaper;
 import dao.Const;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceException;
 import model.Article;
 import lombok.extern.log4j.Log4j2;
+import model.Newspaper;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,29 +32,34 @@ public class DaoArticleImpl implements DaoArticle {
     //??
     @Override
     public List<Article> getAll() {
-        List<Article> response = null;
+        List<Article> response = Collections.emptyList();
+        em = jpautil.getEntityManager();
+        try {
+            response = em
+                    .createQuery("from Article", Article.class)
+                    .getResultList();
+        } catch (PersistenceException e) {
+            e.printStackTrace();
+        }
         return response;
     }
 
-    //getAll articles de X newspaper
-    @Override
-    public List<Article> getAll(int newspaperId) {
 
-        List<Article> list;
+    //get all articles of a newspaper
+    public List<Article> getAll(int idNewspaper) {
+        List<Article> response = Collections.emptyList();
+        em = jpautil.getEntityManager();
         try {
-            em = jpautil.getEntityManager();
-            list = em.createQuery("from Article where newspaper.id = :id", Article.class)
-                    .setParameter("id", newspaperId)
+            response = em
+                    .createQuery("from Article where newspaper.id = ?", Article.class)
+                    .setParameter(1, idNewspaper)
                     .getResultList();
+        } catch (PersistenceException e) {
+            e.printStackTrace();
         }
-        finally {
-            if (em != null)  em.close();
-        }
-
-        return list;
+        return response;
     }
 
-    //get
 
     @Override
     public int save(Article n) {
@@ -61,6 +68,12 @@ public class DaoArticleImpl implements DaoArticle {
 
     @Override
     public int delete(int id) {
+        int response = 1;
+        return response;
+    }
+
+    @Override
+    public int update(Article a) {
         int response = 1;
         return response;
     }

@@ -23,8 +23,8 @@ public class NewsAddViewModel {
         state.setValue(new NewsAddState(null, !state.get().isChange(), serv.getAll()));
     }
 
-    public void addNewspaper(int id, String name) {
-        Newspaper newspaper = new Newspaper(id, name, LocalDate.now());
+    public void addNewspaper(String name) {
+        Newspaper newspaper = new Newspaper(name, LocalDate.now().toString());
         int response = serv.add(newspaper);
         if (response == 1) {
             state.setValue(new NewsAddState("Newspaper added", true, serv.getAll()));

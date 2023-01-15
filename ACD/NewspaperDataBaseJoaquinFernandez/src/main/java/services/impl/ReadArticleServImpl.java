@@ -19,7 +19,7 @@ public class ReadArticleServImpl implements ReadArticleServ {
 
     @Override
     public List<ReadArticle> getAll(int id) {
-        return daoReadArticle.getAll(id).get();
+        return daoReadArticle.getAll().get();
     }
 
     @Override

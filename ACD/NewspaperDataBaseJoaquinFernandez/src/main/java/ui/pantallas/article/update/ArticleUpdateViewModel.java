@@ -4,6 +4,8 @@ import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Article;
+import model.ArticleType;
+import model.Newspaper;
 import services.ArticleServ;
 
 public class ArticleUpdateViewModel {
@@ -31,7 +33,11 @@ public class ArticleUpdateViewModel {
     }
 
     public void update(int id, String nameArticle, int idType, int idNewspaper) {
-        Article art = new Article(id, nameArticle, idNewspaper, idType);
+        ArticleType type = new ArticleType();
+        type.setId(idType);
+        Newspaper newspaper = new Newspaper();
+        newspaper.setId(idNewspaper);
+        Article art = new Article(id, nameArticle, newspaper, type);
         int response = articleServImpl.updateArticle(art);
         if (response == 1) {
             state.setValue(new

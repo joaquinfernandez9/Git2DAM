@@ -21,9 +21,45 @@ public class Article {
     @ManyToOne
     @JoinColumn(name = "id_newspaper", nullable = false)
     private Newspaper newspaper;
-    @OneToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.PERSIST)
     @JoinColumn(name = "id_type", referencedColumnName = "id", nullable = false)
     private ArticleType type;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Article(int id) {
+        this.id = id;
+    }
+
+    public String getName_article() {
+        return name_article;
+    }
+
+    public void setName_article(String name_article) {
+        this.name_article = name_article;
+    }
+
+    public Newspaper getNewspaper() {
+        return newspaper;
+    }
+
+    public void setNewspaper(Newspaper newspaper) {
+        this.newspaper = newspaper;
+    }
+
+    public ArticleType getType() {
+        return type;
+    }
+
+    public void setType(ArticleType type) {
+        this.type = type;
+    }
 
 
 }

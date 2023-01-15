@@ -32,7 +32,24 @@ public class DaoLoginImpl implements DaoLogin {
 
     @Override
     public int login(String user, String password) {
-        int response = -1;
+        int response;
+        em = jpaUtil.getEntityManager();
+        try {
+            Login login = em
+                    .createQuery("from Login where user= :user and password= :password", Login.class)
+                    .setParameter("user", user)
+                    .setParameter("password", password)
+                    .getSingleResult();
+
+            response = login.getReader().getId();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            response = 0;
+
+        } finally {
+            em.close();
+        }
 
         return response;
     }
@@ -60,6 +77,8 @@ public class DaoLoginImpl implements DaoLogin {
         return result;
     }
 
+
+    //UPDATE READER
     @Override
     public int update(Login login) {
         Login login1 = daoReader.get(login.getReader().getId()).get().getLogin();
@@ -98,6 +117,8 @@ public class DaoLoginImpl implements DaoLogin {
         return result;
     }
 
+
+    //ADD READER
     @Override
     public int add(Login login) {
         int response;

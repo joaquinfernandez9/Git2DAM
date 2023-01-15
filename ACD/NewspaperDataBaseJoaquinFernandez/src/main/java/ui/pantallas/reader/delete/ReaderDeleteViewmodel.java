@@ -4,19 +4,24 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Reader;
+import model.Subscription;
 import services.ReaderServ;
 import jakarta.inject.Inject;
+import services.SubscriptionServ;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ReaderDeleteViewmodel {
 
     private final ReaderServ readerServImpl;
+    private final SubscriptionServ subscriptionServImpl;
     private final ObjectProperty<ReaderDeleteState> state;
 
     @Inject
-    public ReaderDeleteViewmodel(ReaderServ readerServImpl) {
+    public ReaderDeleteViewmodel(ReaderServ readerServImpl, SubscriptionServ subscriptionServImpl) {
         this.readerServImpl = readerServImpl;
+        this.subscriptionServImpl = subscriptionServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ReaderDeleteState(null, false,
                         readerServImpl.getAll(-1, null).get()));
@@ -55,6 +60,11 @@ public class ReaderDeleteViewmodel {
                     readerServImpl.getAll(-1, null).get()
             ));
         }
+    }
+
+    public boolean hasSubscriptions(int id) {
+        List<Subscription> result = subscriptionServImpl.getAll(id);
+        return !result.isEmpty();
     }
 
 

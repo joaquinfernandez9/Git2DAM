@@ -54,27 +54,32 @@ public class ReaderDeleteController extends BasePantallaController {
     private void deleteReader() {
         if (readersTable.getSelectionModel()
                 .getSelectedItem() != null) {
-            Alert alertDelete = new Alert(Alert.AlertType.INFORMATION);
-            alertDelete.getButtonTypes().remove(ButtonType.OK);
-            alertDelete.getButtonTypes().add(ButtonType.CANCEL);
-            alertDelete.getButtonTypes().add(ButtonType.YES);
-            alertDelete.setTitle("Delete");
-            alertDelete.setContentText("This reader may have articles and subscriptions, delete anyway?");
-            Optional<ButtonType> res = alertDelete.showAndWait();
+            if (viewmodel.hasSubscriptions(readersTable.getSelectionModel()
+                    .getSelectedItem().getId())) {
+                Alert alertDelete = new Alert(Alert.AlertType.INFORMATION);
+                alertDelete.getButtonTypes().remove(ButtonType.OK);
+                alertDelete.getButtonTypes().add(ButtonType.CANCEL);
+                alertDelete.getButtonTypes().add(ButtonType.YES);
+                alertDelete.setTitle("Delete");
+                alertDelete.setContentText("This reader has articles and subscriptions, delete anyway?");
+                Optional<ButtonType> res = alertDelete.showAndWait();
 
+                res.ifPresent(buttonType -> {
+                    if (buttonType == ButtonType.YES) {
+                        viewmodel.deleteReader(readersTable.getSelectionModel()
+                                .getSelectedItem().getId());
+                        readersTable.getItems().remove(readersTable.getSelectionModel()
+                                .getSelectedItem());
+                    }
+                });
 
-            res.ifPresent(buttonType -> {
-                if (buttonType == ButtonType.YES) {
-                    viewmodel.deleteReader(readersTable.getSelectionModel()
-                            .getSelectedItem().getId());
-                    readersTable.getItems().remove(readersTable.getSelectionModel()
-                            .getSelectedItem());
-                }
-            });
+            } else {
+                viewmodel.deleteReader(readersTable.getSelectionModel()
+                        .getSelectedItem().getId());
+            }
 
         } else {
             getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         }
-
     }
 }

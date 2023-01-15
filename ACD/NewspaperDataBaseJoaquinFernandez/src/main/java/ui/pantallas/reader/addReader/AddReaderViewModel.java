@@ -1,5 +1,6 @@
 package ui.pantallas.reader.addReader;
 
+import model.Login;
 import model.Reader;
 import services.ReaderServ;
 import jakarta.inject.Inject;
@@ -37,8 +38,8 @@ public class AddReaderViewModel {
         return readerServImpl.getAll(-1, null).get();
     }
 
-    public void addReader(Reader reader) {
-        int result = readerServImpl.add(reader);
+    public void addReader(Login log) {
+        int result = readerServImpl.add(log);
         if (result == 1) {
             state.setValue(new AddReaderState(
                     "Reader added", true,

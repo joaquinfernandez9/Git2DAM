@@ -11,14 +11,16 @@ module javafx {
     requires jakarta.inject;
     requires io.vavr;
     requires io.vavr.match;
-    requires jakarta.el;
-    requires jakarta.annotation;
-    requires jakarta.xml.bind;
     requires java.sql;
-    requires jakarta.persistence;
     requires commons.dbcp2;
     requires spring.jdbc;
     requires spring.tx;
+    requires jakarta.transaction;
+    requires com.zaxxer.hikari;
+    requires jakarta.el;
+    requires jakarta.annotation;
+    requires jakarta.xml.bind;
+    requires jakarta.persistence;
 
     opens services.strings;
     opens dao.strings;
@@ -78,7 +80,7 @@ module javafx {
     exports config;
     exports dao.localDate;
     exports dao.strings;
-    exports dao.dataBase;
     exports model.querys;
+
 
 }

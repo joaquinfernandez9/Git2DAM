@@ -24,7 +24,7 @@ public class NewsUpdateViewModel {
     }
 
     public void updateNewspaper(int id, String name) {
-        serv.update(new Newspaper(id, name, LocalDate.now()));
+        serv.update(new Newspaper(id, name, LocalDate.now().toString()));
         load();
     }
 

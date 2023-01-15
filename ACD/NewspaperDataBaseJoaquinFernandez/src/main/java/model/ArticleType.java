@@ -19,4 +19,8 @@ public class ArticleType {
     @Column
     private String description;
 
+    @Override
+    public String toString() {
+        return description;
+    }
 }

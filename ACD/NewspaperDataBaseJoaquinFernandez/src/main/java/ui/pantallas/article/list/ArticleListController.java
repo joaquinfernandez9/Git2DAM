@@ -37,7 +37,7 @@ public class ArticleListController extends BasePantallaController {
 
     @Override
     public void principalCargado() {
-
+        // TODO: because "c" is null
         combo.getItems().addAll(articleListViewModel.getAll());
 
 

@@ -1,9 +1,6 @@
 package model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -17,11 +14,18 @@ public class ReadArticle {
     @Id
     private int id;
     @Column
-    private int id_reader;
-    @Column
-    private int id_article;
-    @Column
     private int ranking;
+    @ManyToOne
+    @JoinColumn(name = "id_reader", referencedColumnName = "id", nullable = false)
+    private Reader reader;
+    @ManyToOne
+    @JoinColumn(name = "id_article", referencedColumnName = "id", nullable = false)
+    private Article article;
 
 
+    public ReadArticle(Reader reader, Article article, int ranking) {
+        this.reader = reader;
+        this.article = article;
+        this.ranking = ranking;
+    }
 }

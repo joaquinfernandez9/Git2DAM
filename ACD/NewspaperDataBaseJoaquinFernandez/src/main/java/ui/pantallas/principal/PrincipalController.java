@@ -25,7 +25,6 @@ public class PrincipalController {
 
     @FXML
     private final Alert alert;
-    private final DataBaseConnectionPool db;
     public boolean isAdmin;
     public Reader r;
     @FXML
@@ -73,10 +72,10 @@ public class PrincipalController {
     private Stage primaryStage;
 
     @Inject
-    public PrincipalController(Instance<Object> instance, DataBaseConnectionPool db) {
+    public PrincipalController(Instance<Object> instance) {
         this.instance = instance;
         alert = new Alert(Alert.AlertType.NONE);
-        this.db = db;
+
     }
 
     private void cargarPantalla(Pantallas pantalla) {
@@ -175,7 +174,6 @@ public class PrincipalController {
         res.ifPresent(buttonType -> {
             if (buttonType == ButtonType.CANCEL) {
                 event.consume();
-                db.closePool();
             }
         });
     }

@@ -5,72 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="Cannot delete or update a parent row: a foreign key constraint fails">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/JPAUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceArticleType.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceArticles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceLogin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceReadArticle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceReader.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceSubscription.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistenceNewspaper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/query/persistanceQueryArticleRating.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/query/persistanceQueryArticlesNewspaper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/query/persistanceQueryDescNumber.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/0/6/0657f1f87e8e3349150a75c69eb335bb36ea010b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/0/d/0d4306efd9d396fbadfc90715b1f3807835e2bbb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/1/6/1649309a4860b69c224e67101e4ef379d57074cd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/3/4/34ead768792d161eb7e434155d3a6bfb2f07f7c2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/c/1/c153fa5d5d9917bf6aa8b83bab57e65b7371ac16" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/DaoLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/impl/DaoLoginImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/retrofit/JavaNetCookieJar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/retrofit/llamadas/LoginApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/services/LoginServ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/services/impl/LoginServImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/login/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/login/LoginState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/login/LoginViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/resources/fxml/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/model/Code.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/model/LoginMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/mapper/CodeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/mapper/LoginMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/filter/Active.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/filter/FilterActive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/filter/FilterLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/filter/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/rest/MandarMail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/rest/RestLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/rest/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/security/InMemoryIdentityStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/security/JWTAuth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/servlets/ServActivation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/jakarta/servlets/ServRecoverPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9452e80a-7c50-4d16-8ec7-15b8c5615f2d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9452e80a-7c50-4d16-8ec7-15b8c5615f2d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/503a0b205b3731452483fafa537f9ef227ca5ad4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/712f3d75f554e68822b6e29d19accd9447894adb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/712f3d75f554e68822b6e29d19accd9447894adb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71e44dc5fcf1746c413aa5589868c3f834301a33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e79cc33a8792211d6cc0824cb51a7cf45561880" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/15a3d7e8017d63923ed644539b4536940b180b65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c27b0a151645ba141e92fe41db7f7db30209be7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c27b0a151645ba141e92fe41db7f7db30209be7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1dfefe12640e0a872771feb7212b19f2a19bc0f2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1dfefe12640e0a872771feb7212b19f2a19bc0f2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1ec020c76d1412769452612053dc0801fbc4ca17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f8e27512b0125ffd5f569174acc3fcd11f019bb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f8e27512b0125ffd5f569174acc3fcd11f019bb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20c8202b3bc94efa3d02ec21c4bdb3bb57dcfe0f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20c8202b3bc94efa3d02ec21c4bdb3bb57dcfe0f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29d4be5d284d65b0729e0bc26fc2a01f29333efb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29d4be5d284d65b0729e0bc26fc2a01f29333efb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37e40f73f27d10f4a36b46b65290adda6d067887" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37e40f73f27d10f4a36b46b65290adda6d067887" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4eb39ed9aed5a09869a3d7b710b8bdd9e5b9f1d6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4eb39ed9aed5a09869a3d7b710b8bdd9e5b9f1d6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/b/5b9bbea9b2922a36880bc6fa8eec81875df77718" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/b/5b9bbea9b2922a36880bc6fa8eec81875df77718" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5ca874a8e0026263e90adcbb6346bda22a67005e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6699e1d439ac0d1922c217887651886f9bf8ac69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/6854908843d482996cd7f7c9ccd44ffdc547ca45" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/6854908843d482996cd7f7c9ccd44ffdc547ca45" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a42d393a53ba83fa71e4e197762502d040a051c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a42d393a53ba83fa71e4e197762502d040a051c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d208660e089269867a48db8006a4d3b8497dfe2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d208660e089269867a48db8006a4d3b8497dfe2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/712f3d75f554e68822b6e29d19accd9447894adb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71e44dc5fcf1746c413aa5589868c3f834301a33" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71e44dc5fcf1746c413aa5589868c3f834301a33" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72440157c446318bc29b0757b8a5cff6e934480f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e45a5e4843ad94e9984bdec9fc262f77e5fad5e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/81f1bcf48b37917d27b2b03b6fb127a39eaf65d4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/81f1bcf48b37917d27b2b03b6fb127a39eaf65d4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a222ff1a2ecf1294a5a85bf4cc407ca3a9cc40f0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a222ff1a2ecf1294a5a85bf4cc407ca3a9cc40f0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99f4ea86658401191d1286ffc77aba6f6db602b1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99f4ea86658401191d1286ffc77aba6f6db602b1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a222ff1a2ecf1294a5a85bf4cc407ca3a9cc40f0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/adb0472ca0ddedc5d67879d19927f44fd26c9deb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/adb0472ca0ddedc5d67879d19927f44fd26c9deb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8a4831445dd30e72d44929977b5eafd9913fa1a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8a4831445dd30e72d44929977b5eafd9913fa1a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c54083f69a40f7e92e2067a00f60638b93a58517" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b95b1a01f13469863090e3f8f8b29fd28de46f5f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b95b1a01f13469863090e3f8f8b29fd28de46f5f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c74859bdd94066f6fdfbd820cae9e3d4f94e998e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c74859bdd94066f6fdfbd820cae9e3d4f94e998e" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d940e9b1c3e290c9f863007602bcf03aebd211cd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc2ad7f96bcb7f869abc97016b0d27fc06e72770" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc2ad7f96bcb7f869abc97016b0d27fc06e72770" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc93d87f6f192408bc0bee328c8f77e509e08153" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc93d87f6f192408bc0bee328c8f77e509e08153" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc93d87f6f192408bc0bee328c8f77e509e08153" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e23a83a56683fbac0dffbbba4784668fa61ea383" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e23a83a56683fbac0dffbbba4784668fa61ea383" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ec75ca22881b9fe9cc082f0033bd4bcaf8460c92" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ec75ca22881b9fe9cc082f0033bd4bcaf8460c92" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f1f8f776b5008420997e8e1a8c0569f41a65ce17" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f1f8f776b5008420997e8e1a8c0569f41a65ce17" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoArticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoReadArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoReadArticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoSubscriptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoSubscriptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/dataBase/DataBaseConnectionPool.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/DaoArticleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoArticleImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/DaoNewspaperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoNewspaperImpl.java" afterDir="false" />
@@ -81,201 +54,73 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/DaoTypeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoTypeImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ArticleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ArticleType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Newspaper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Newspaper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ReadArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ReadArticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Subscription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ArticleServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ArticleServ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReaderServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReaderServ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/ArticleServImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/ArticleServImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/LoginServImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/LoginServImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/NewspaperServImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/NewspaperServImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/ReadArticleServImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/ReadArticleServImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/ReaderServImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/ReaderServImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/add/ArticleAddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/list/ArticleListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/update/ArticleUpdateViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/update/ArticleUpdateViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/list/NewsState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/update/NewsUpdateViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/update/NewsUpdateViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/principal/PrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/Configuration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Const.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoArticle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoLogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoNewspaper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoQuerys.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoReadArticle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoSubscriptions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DaoType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/dataBase/DataBaseConnectionPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoArticleImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoLoginImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoNewspaperImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoQuerysImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoReadArticleImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoReaderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoSubscriptionsImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/DaoTypeImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/localDate/LocalDateAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/strings/DaoConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/querys.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/querys.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Article.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ArticleType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Newspaper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ReadArticle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Reader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Subscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/querys/QueryArticleRating.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/querys/QueryArticlesNewspaper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/querys/QueryDescNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ArticleServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/LoginServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/NewspaperServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/QuerysServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReadArticleServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReaderServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/SubscriptionServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/TypeServ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/ArticleServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/LoginServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/NewspaperServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/QuerysServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/ReadArticleServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/ReaderServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/SubscriptionServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/TypeServImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/strings/ServConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/main/FXMLLoaderProducer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/main/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/main/MainFX.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/main/StartupScene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/add/ArticleAddController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/add/ArticleAddState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/add/ArticleAddViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/delete/ArticleDeleteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/delete/ArticleDeleteState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/delete/ArticleDeleteViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/list/ArticleListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/list/ArticleListState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/list/ArticleListViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/update/ArticleUpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/update/ArticleUpdateState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/article/update/ArticleUpdateViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/common/BasePantallaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/common/Pantallas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/common/UiConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/login/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/login/LoginState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/login/LoginViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/add/NewsAddController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/add/NewsAddState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/add/NewsAddViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/delete/NewsDeleteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/delete/NewsDeleteViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/delete/NewsState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/list/NewsListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/list/NewsListViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/list/NewsState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/update/NewsUpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/update/NewsUpdateState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/newspaper/update/NewsUpdateViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/principal/PrincipalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/querys/QueryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/querys/QueryState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/querys/QueryViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/addReader/AddReaderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/addReader/AddReaderState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/addReader/AddReaderViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/appendArticle/AppendArticleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/appendArticle/AppendArticleState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/appendArticle/AppendArticleViewmodel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/delete/ReaderDeleteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/delete/ReaderDeleteState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/delete/ReaderDeleteViewmodel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/listSubscription/ListSubscriptionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/listSubscription/ListSubscriptionState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/listSubscription/ListSubscriptionViewmodel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/listType/ListTypeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/listType/ListTypeState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/listType/ListTypeViewmodel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/subscribe/SubscribeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/subscribe/SubscribeState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/subscribe/SubscribeViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/updateReader/UpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/updateReader/UpdateState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/reader/updateReader/UpdateViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/pantallas/welcome/WelcomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/4/b/4bdde7567605f35c955aa21b1cd5a516ae470f6f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/4/f/4fea73c1381b997b8709dcfa5dd73f0c10c63e73" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/6/f/6f8fd2a37315c5788aead5aefc756dac36d8b298" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/7/3/739d4c157710640d92be801017af1916fc78ea85" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/8/a/8ac48cca8487e18469cf8c049ed2502b7f987565" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/b/d/bd0e565e8e8753fea6cf26735f4d8f3dd1934183" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/e/2/e2cc35a2529a1904dd9d76efc9b601e3f3b97b49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/appendArticle/AppendArticleViewmodel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/appendArticle/AppendArticleViewmodel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteViewmodel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteViewmodel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ListSubscriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ListSubscriptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ListSubscriptionViewmodel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ListSubscriptionViewmodel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listType/ListTypeViewmodel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listType/ListTypeViewmodel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceArticleType.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceArticles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceLogin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceReadArticle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceReader.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistanceSubscription.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/persistenceNewspaper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/query/persistanceQueryArticleRating.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/query/persistanceQueryArticlesNewspaper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistance/query/persistanceQueryDescNumber.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/newspaper/npAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/newspaper/npAdd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/newspaper/npList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/newspaper/npList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/persistanceArticleType.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/persistanceArticles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/persistanceLogin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/persistanceReadArticle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/persistanceReader.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/persistanceSubscription.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/persistenceNewspaper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/query/persistanceQueryArticleRating.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/query/persistanceQueryArticlesNewspaper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistance/query/persistanceQueryDescNumber.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/newspaper/npAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/newspaper/npAdd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/newspaper/npList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/newspaper/npList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/5/c/5cb6bb67d40cbe3a8e53499348ee7b3ca14d94d1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/5/c/5cb6bb67d40cbe3a8e53499348ee7b3ca14d94d1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/7/4/74ee923ca9ec89e4da4e341483403fabe3e1ca46" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/7/4/74ee923ca9ec89e4da4e341483403fabe3e1ca46" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/9/2/927585c1eeb30dcec22479cccbe63cf6d4b1e182" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/9/2/927585c1eeb30dcec22479cccbe63cf6d4b1e182" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/CRUDJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/8/b/8b6b03e575041779beaff6c8ece3af979b7c570f" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/8/b/8b6b03e575041779beaff6c8ece3af979b7c570f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/6/f/6f8fd2a37315c5788aead5aefc756dac36d8b298" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/6/f/6f8fd2a37315c5788aead5aefc756dac36d8b298" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/7/a/7a18baa88e85200f4133cf5430194b3c29da79f2" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/7/a/7a18baa88e85200f4133cf5430194b3c29da79f2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/d/e/ded5c6a6ec7544ca49e3415bb5c8a4e72ff53a02" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/d/e/ded5c6a6ec7544ca49e3415bb5c8a4e72ff53a02" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/0/b/0b74d861cf3be4ec2c64e74e296bff7db0aea1bb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/1/5/15191b101f7f1d48416c164730d4f41e49babfc6" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/1/5/15191b101f7f1d48416c164730d4f41e49babfc6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/1/9/19b0ff088229df72e4590510ab35c96caa69ad20" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/1/9/19b0ff088229df72e4590510ab35c96caa69ad20" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/3/4/345ae8ac72686cd0142863152f8fa9e95ab6ddd0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/3/b/3b9718cb21bfda670f2db468fbf0b9aee7871f59" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/7/d/7d231fc177be2e06984dcd0c94435b892bb91573" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/8/2/82c7c7d3e1d91a87e8f724e908744c60d879861d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/a/4/a413d424c6b559dd4846044ec5c7b36684cbf738" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/a/4/a413d424c6b559dd4846044ec5c7b36684cbf738" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/b/f/bf5793fd11f0335004e37d661fd47e1589b9429e" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/b/f/bf5793fd11f0335004e37d661fd47e1589b9429e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/c/e/ce23f918d997c2f444ef667e7f74ee7b1a04e130" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/d/3/d39ac64464451257bb09b56332fd6387d173cae7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/d/8/d849b836bd4052ca3d6055fa370c0766bc19caf5" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/d/8/d849b836bd4052ca3d6055fa370c0766bc19caf5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/impl/DaoGeneric.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/impl/DaoGeneric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/impl/DaoNewspapersImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/impl/DaoNewspapersImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/retrofit/ProducesRetrofit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/retrofit/ProducesRetrofit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/retrofit/llamadas/NewspaperApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/dao/retrofit/llamadas/NewspaperApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/common/Pantallas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/common/Pantallas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/common/UiConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/common/UiConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/principal/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/java/ui/pantallas/principal/PrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/resources/fxml/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/src/main/resources/fxml/principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/dao/impl/DaoGeneric.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/dao/impl/DaoGeneric.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/dao/impl/DaoNewspapersImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/dao/impl/DaoNewspapersImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/dao/retrofit/ProducesRetrofit.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/dao/retrofit/ProducesRetrofit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/fxml/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/fxml/principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/ui/pantallas/common/Pantallas.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/ui/pantallas/common/Pantallas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/ui/pantallas/common/UiConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/ui/pantallas/common/UiConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/ui/pantallas/principal/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/cliente/target/classes/ui/pantallas/principal/PrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/model/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/model/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/model/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/model/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/target/classes/model/Error.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/target/classes/model/Error.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/target/classes/model/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/target/classes/model/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/domain/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/DaoLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/DaoLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/DaoArticleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/DaoArticleImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/DaoLoginImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/DaoLoginImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/IntegerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/dao/impl/mapper/IntegerRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/domain/services/LoginServ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/domain/services/LoginServ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/domain/services/impl/LoginServImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/domain/services/impl/LoginServImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/DaoLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/DaoLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/impl/DaoArticleImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/impl/DaoArticleImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/impl/DaoLoginImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/impl/DaoLoginImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/impl/DaoQuerysImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/impl/DaoQuerysImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/dao/impl/IntegerRowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/domain/services/LoginServ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/domain/services/LoginServ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/domain/services/impl/LoginServImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/domain/services/impl/LoginServImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/DaoLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/DaoLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/impl/DaoArticleImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/impl/DaoArticleImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/impl/DaoLoginImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/impl/DaoLoginImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/impl/DaoQuerysImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/impl/DaoQuerysImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/dao/impl/IntegerRowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/domain/services/LoginServ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/domain/services/LoginServ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/domain/services/impl/LoginServImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/domain/services/impl/LoginServImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/lib/domain-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/servidor/target/servidor-1.0-SNAPSHOT/WEB-INF/lib/domain-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,6 +192,7 @@
       <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDB\src\main\java\ui\pantallas\reader" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseJoaquinFernandez\src\main\resources\META-INF" />
       <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseJoaquinFernandez\src\main\resources\META-INF\persistance" />
       <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseSql\src\main\resources" />
     </key>
@@ -586,6 +432,12 @@
       <workItem from="1672136181350" duration="34000" />
       <workItem from="1673077614299" duration="2767000" />
       <workItem from="1673101594916" duration="1322000" />
+      <workItem from="1673266468620" duration="3578000" />
+      <workItem from="1673347620380" duration="7780000" />
+      <workItem from="1673435283167" duration="7724000" />
+      <workItem from="1673508492896" duration="620000" />
+      <workItem from="1673788954646" duration="10458000" />
+      <workItem from="1673806289085" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="he arreglado cosas varias pero no me acuerdo de cuales eran asi que todo jodido para que nadie entienda nada ya que ni yo entiendo que hago pero tamos piola uuuuuuuuuuuuuuuuuuuuuuuuueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
       <created>1664809829447</created>
@@ -690,47 +542,92 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/delete/ReaderDeleteController.java</url>
           <line>44</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java</url>
           <line>39</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java</url>
           <line>45</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java</url>
           <line>40</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderController.java</url>
           <line>70</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderController.java</url>
-          <line>71</line>
+          <line>72</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/impl/ArticleServImpl.java</url>
-          <line>61</line>
+          <line>69</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/login/LoginViewModel.java</url>
           <line>42</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderViewModel.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteViewModel.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/NewspaperServImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/listSubscription/ListSubscriptionController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/services/impl/QuerysServImpl.java</url>
           <line>31</line>
           <properties class="services.impl.QuerysServImpl" method="getAll">
@@ -739,23 +636,50 @@
           </properties>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/services/impl/ArticleServImpl.java</url>
-          <line>49</line>
+          <line>57</line>
           <properties class="services.impl.ArticleServImpl" method="addArticle">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/login/LoginViewModel.java</url>
-          <line>28</line>
-          <properties class="ui.pantallas.login.LoginViewModel" method="login">
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoArticle.java</url>
+          <line>14</line>
+          <properties class="dao.DaoArticle" method="delete">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="86" />
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java</url>
+          <line>122</line>
+          <properties class="dao.impl.DaoLoginImpl" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java</url>
+          <line>82</line>
+          <properties class="dao.impl.DaoLoginImpl" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderViewModel.java</url>
+          <line>40</line>
+          <properties class="ui.pantallas.reader.addReader.AddReaderViewModel" method="addReader">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

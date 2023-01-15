@@ -20,7 +20,7 @@ public class LoginServImpl implements LoginServ {
 
     @Override
     public int get(String userName, String password){
-        return daoLoginImpl.get(userName, password);
+        return -1;
     }
 
 }

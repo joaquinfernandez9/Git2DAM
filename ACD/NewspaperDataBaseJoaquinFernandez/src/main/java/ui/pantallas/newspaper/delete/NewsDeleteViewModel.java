@@ -7,8 +7,9 @@ import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import services.ArticleServ;
 import services.NewspaperServ;
-import ui.pantallas.newspaper.list.NewsState;
+import ui.pantallas.newspaper.delete.NewsState;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -53,7 +54,7 @@ public class NewsDeleteViewModel {
     public boolean containsArticels(int id) {
         AtomicBoolean response = new AtomicBoolean(false);
         newspaperServImpl.getAll().stream().filter(newspaper -> newspaper.getId() == id).findFirst().ifPresent(newspaper -> {
-            if (articleServImpl.getAll().stream().anyMatch(article -> article.getId_newspaper() == newspaper.getId())) {
+            if (articleServImpl.getAll().stream().anyMatch(article -> article.getNewspaper().getId() == newspaper.getId())) {
                 response.set(true);
             }
         });

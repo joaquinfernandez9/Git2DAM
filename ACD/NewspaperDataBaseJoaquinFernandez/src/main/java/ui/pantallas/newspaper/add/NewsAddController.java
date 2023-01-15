@@ -49,7 +49,6 @@ public class NewsAddController extends BasePantallaController {
 
     @FXML
     private void add() {
-        newsAddViewModel.addNewspaper(
-                Integer.parseInt(idLabel.getText()), nameLabel.getText());
+        newsAddViewModel.addNewspaper(nameLabel.getText());
     }
 }

@@ -1,5 +1,6 @@
 package ui.pantallas.newspaper.list;
 
+import model.Article;
 import model.Newspaper;
 import lombok.Data;
 
@@ -10,5 +11,6 @@ public class NewsState {
     private final String error;
     private final boolean change;
     private final List<Newspaper> newspaperList;
+    private final List<Article> articleList;
 
 }

@@ -7,6 +7,8 @@ import java.util.List;
 public interface ArticleServ {
     List<Article> getAll();
 
+    List<Article> getAll(int id);
+
     List<Article> getArticlesOfAReader(int idReader);
 
     List<Article> getArticlesFilter(String description);
