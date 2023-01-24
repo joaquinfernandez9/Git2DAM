@@ -4,6 +4,7 @@ import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import model.Newspaper;
 import services.ArticleServ;
 import services.NewspaperServ;
 
@@ -20,11 +21,11 @@ public class NewsListViewModel {
     public NewsListViewModel(NewspaperServ newspaperServImpl, ArticleServ articleServImpl) {
         this.newspaperServImpl = newspaperServImpl;
         this.articleServImpl = articleServImpl;
-        state = new SimpleObjectProperty<>(new NewsState(null, false, newspaperServImpl.getAll(), Collections.emptyList()));
+        state = new SimpleObjectProperty<>(new NewsState(null, null, false));
     }
 
     public void load() {
-        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServImpl.getAll(), Collections.emptyList()));
+        state.setValue(new NewsState(newspaperServImpl.getAll(), null, !state.get().isChange()));
     }
 
     public ReadOnlyObjectProperty<NewsState> getState() {
@@ -32,9 +33,17 @@ public class NewsListViewModel {
     }
 
     public void getArticles(int id) {
-        state.setValue(new NewsState(null, !state.get().isChange(), newspaperServImpl.getAll(), articleServImpl.getAll(id)));
+        state.setValue(new NewsState(newspaperServImpl.getAll(), null, !state.get().isChange(), articleServImpl.getAll()));
     }
 
+    public void deleteArticles(Newspaper idNewspaper) {
+        String a = articleServImpl.deleteArticle(idNewspaper.getId());
+        state.set(new NewsState(newspaperServImpl.getAll(), a, !state.get().isChange()));
+    }
+
+    public void getNbrArticles(int newspaper) {
+        state.set(new NewsState(newspaperServImpl.getAll(), null, !state.get().isChange(), newspaperServImpl.getNbrArticles(newspaper)));
+    }
 
 
 }

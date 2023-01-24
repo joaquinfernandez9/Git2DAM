@@ -3,7 +3,9 @@ package dao.impl;
 import dao.Const;
 import dao.DaoReadArticle;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.PersistenceException;
+import jakarta.persistence.Tuple;
 import model.ReadArticle;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
@@ -13,8 +15,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Log4j2
 public class DaoReadArticleImpl implements DaoReadArticle {
@@ -45,20 +49,42 @@ public class DaoReadArticleImpl implements DaoReadArticle {
             em.getTransaction().begin();
             em.persist(readArticle);
             em.getTransaction().commit();
+
             response = 1;
         } catch (PersistenceException ex){
             log.error(ex.getMessage());
+            response = -1;
         }
 
         return response;
     }
 
     @Override
-    public int delete(int id){
-        int response=0;
-        return response;
+    public Map<Double, String> getAvgRating(int reader) {
+        Map<Double, String> result;
+        em = jpaUtil.getEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            result = em
+                    .createQuery("select avg(r.ranking) as avg, r.article.newspaper as title from ReadArticle r where r.reader.id = :idReader group by r.article.newspaper", Tuple.class)
+                    .setParameter("idReader", reader)
+                    .getResultList()
+                    .stream()
+                    .collect(
+                            Collectors.toMap(
+                                    tuple -> Double.valueOf(tuple.get("avg").toString()),
+                                    tuple -> tuple.get("title").toString()
+                            ));
+            tx.commit();
+        } catch (PersistenceException e) {
+            e.printStackTrace();
+            result = null;
+        } finally {
+            em.close();
+        }
+        return result;
     }
-
 
 
 

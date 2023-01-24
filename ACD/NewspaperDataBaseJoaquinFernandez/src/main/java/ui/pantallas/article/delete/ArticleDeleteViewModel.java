@@ -30,17 +30,17 @@ public class ArticleDeleteViewModel {
 
     public void delete(int id) {
         //esto es int comprender errores
-        int response = articleServImpl.deleteArticle(id);
-        if (response == 1) {
-            state.setValue(new
-                    ArticleDeleteState("Article deleted correctly", !state.get().isChange(),
-                    articleServImpl.getAll()));
-        } else {
-            state.setValue(new
-                    ArticleDeleteState("Error deleting article", !state.get().isChange(),
-                    articleServImpl.getAll()));
-        }
-        load();
+//        int response = articleServImpl.deleteArticle(id);
+//        if (response == 1) {
+//            state.setValue(new
+//                    ArticleDeleteState("Article deleted correctly", !state.get().isChange(),
+//                    articleServImpl.getAll()));
+//        } else {
+//            state.setValue(new
+//                    ArticleDeleteState("Error deleting article", !state.get().isChange(),
+//                    articleServImpl.getAll()));
+//        }
+//        load();
     }
 
 

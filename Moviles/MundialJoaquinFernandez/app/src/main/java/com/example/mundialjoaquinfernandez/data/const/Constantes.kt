@@ -1,0 +1,36 @@
+package com.example.mundialjoaquinfernandez.data.const
+
+object Constantes {
+    const val GET_ALL_EQUIPOS = "SELECT * FROM equipo"
+    const val GET_EQUIPO_BY_NAME = "SELECT * FROM equipo WHERE nombre = :nombre"
+    const val GET_ALL_JUGADORES_DE_EQUIPO = "select * from jugadores where equipo= :nombreEquipo"
+    const val DELETE_JUGADOR = "delete from jugadores where nombre= :nombre"
+    const val GET_ID_PARTIDO =
+        "select  a.id_partido from PartidoEquipoCrossRef a join PartidoEquipoCrossRef b using(id_partido) where a.nombre_equipo=:nombreLocal and b.nombre_equipo =:nombreVisitante and a.id_partido = b.id_partido order by id_partido desc"
+    const val GET_PARTIDO_BY_ID = "select * from partido where id = :id"
+    const val EQUIPOS_DATABASE = "equiposDatabase"
+    const val DATABASE_FILE = "database/futbol.db"
+    const val FUTBOL = "futbol"
+    const val EQUIPO = "equipo"
+    const val JUGADOR = "jugador"
+    const val JUGADORES = "Jugadores"
+    const val PARTIDO = "partido"
+    const val NOMBRE = "nombre"
+    const val DORSAL = "dorsal"
+    const val POSICION = "posicion"
+    const val ID_PARTIDO = "id_partido"
+    const val NOMBRE_EQUIPO = "nombre_equipo"
+    const val CAPS_ID = "ID"
+    const val GOLES_LOCAL = "goles_local"
+    const val GOLES_VISITANTE = "goles_visitante"
+    const val FECHA = "fecha"
+    const val GUION = " - "
+    const val ERROR_MISMO_EQUIPO = "El mismo equipo no puede jugar"
+    const val ERROR_EQUIPO_VACIO = "Debe ingresar los dos equipos"
+    const val JUGADOR_ELIMINADO = "Jugador eliminado"
+    const val DESHACER = "Deshacer"
+    const val TAG = "TAG"
+    const val SHOW_APP_BAR = "ShowAppBar"
+    const val BLANK = " "
+
+}

@@ -3,10 +3,7 @@ package services.impl;
 import dao.*;
 import dao.impl.DaoLoginImpl;
 import dao.impl.DaoTypeImpl;
-import model.Article;
-import model.Login;
-import model.ReadArticle;
-import model.Reader;
+import model.*;
 import services.ReaderServ;
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
@@ -36,8 +33,18 @@ public class ReaderServImpl implements ReaderServ {
     }
 
     @Override
-    public Either<Integer, List<Reader>> getAll(int idNews, String description) {
-        return daoReaderImpl.getAll(idNews, description);
+    public Either<Integer, List<Reader>> getAll(Newspaper idNews, ArticleType description) {
+        if (idNews.getId() == 0 && description == null) {
+            return daoReaderImpl.getAll();
+        } else if (idNews.getId() != 0 && description == null) {
+            return daoReaderImpl.getAll(idNews);
+        } else if (idNews.getId() == 0 && description != null) {
+            return daoReaderImpl.getAll(description);
+        } else {
+            return Either.left(-1);
+        }
+
+
     }
 
     @Override
@@ -56,10 +63,6 @@ public class ReaderServImpl implements ReaderServ {
         return restult;
     }
 
-    @Override
-    public Either<Integer, List<Reader>> getAll(String description) {
-        return daoReaderImpl.getAll(description);
-    }
 
     @Override
     public int update(Reader r) {
@@ -71,20 +74,5 @@ public class ReaderServImpl implements ReaderServ {
         return daoLoginImpl.add(log);
     }
 
-    @Override
-    public int appendReadArticle(Reader reader, int article, int rating) {
-        int response;
-        Article art = daoArticleImpl.getAll().stream().filter(article1 ->
-                article1.getId() == article).findFirst().orElse(null);
-        if (!daoArticleImpl.getAll().contains(art)) {
-            response = -5;
-        } else {
-            ReadArticle readArticle = new ReadArticle(reader,
-                    art, rating);
-            daoReadArticleImpl.add(readArticle);
-            response = 1;
-        }
-        return response;
-    }
 
 }

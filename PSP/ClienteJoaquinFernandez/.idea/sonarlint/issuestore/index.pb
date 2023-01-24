@@ -243,8 +243,6 @@ a
 1servidor/src/main/java/dao/impl/DaoLoginImpl.java,1\5\15191b101f7f1d48416c164730d4f41e49babfc6
 r
 Bservidor/src/main/java/jakarta/security/InMemoryIdentityStore.java,d\2\d27a3b6f3e7189dd152c40360c2781f0bbd5e79a
-^
-.cliente/src/main/java/dao/impl/DaoGeneric.java,b\f\bf5793fd11f0335004e37d661fd47e1589b9429e
 d
 4servidor/src/main/java/jakarta/security/JWTAuth.java,8\b\8bf34372121846621594eff9cf22d589fe697670
 i
@@ -263,11 +261,13 @@ w
 Gcliente/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java,f\7\f705311b683c5e91bf2fdef81c9a9293f0b49a6e
 m
 =cliente/src/main/java/ui/pantallas/login/LoginController.java,1\6\1649309a4860b69c224e67101e4ef379d57074cd
-l
-<cliente/src/main/java/ui/pantallas/login/LoginViewModel.java,3\4\34ead768792d161eb7e434155d3a6bfb2f07f7c2
-h
-8cliente/src/main/java/ui/pantallas/login/LoginState.java,0\d\0d4306efd9d396fbadfc90715b1f3807835e2bbb
 u
 Ecliente/src/main/java/ui/pantallas/principal/PrincipalController.java,1\9\19b0ff088229df72e4590510ab35c96caa69ad20
 x
 Hcliente/src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java,c\8\c830d91392b16227e286b81f1d6344ff4f10b38b
+l
+<cliente/src/main/java/ui/pantallas/login/LoginViewModel.java,3\4\34ead768792d161eb7e434155d3a6bfb2f07f7c2
+h
+8cliente/src/main/java/ui/pantallas/login/LoginState.java,0\d\0d4306efd9d396fbadfc90715b1f3807835e2bbb
+^
+.cliente/src/main/java/dao/impl/DaoGeneric.java,b\f\bf5793fd11f0335004e37d661fd47e1589b9429e

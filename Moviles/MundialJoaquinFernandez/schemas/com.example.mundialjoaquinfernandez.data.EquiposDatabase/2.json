@@ -1,0 +1,149 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "5a94b7cb81eccd35781cca280fba85d8",
+    "entities": [
+      {
+        "tableName": "equipo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre_equipo` TEXT NOT NULL, PRIMARY KEY(`nombre_equipo`))",
+        "fields": [
+          {
+            "fieldPath": "nombreEquipo",
+            "columnName": "nombre_equipo",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nombre_equipo"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "jugadores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre_jugador` TEXT NOT NULL, `dorsal` INTEGER NOT NULL, `posicion` TEXT NOT NULL, `equipo` TEXT NOT NULL, PRIMARY KEY(`nombre_jugador`), FOREIGN KEY(`equipo`) REFERENCES `equipo`(`nombre_equipo`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "nombreJugador",
+            "columnName": "nombre_jugador",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dorsal",
+            "columnName": "dorsal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "posicion",
+            "columnName": "posicion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "equipo",
+            "columnName": "equipo",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nombre_jugador"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "equipo",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "equipo"
+            ],
+            "referencedColumns": [
+              "nombre_equipo"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "partido",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_partido` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `gol_local` INTEGER NOT NULL, `gol_visitante` INTEGER NOT NULL, `fecha` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id_partido",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "golLocal",
+            "columnName": "gol_local",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "golVisitante",
+            "columnName": "gol_visitante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fecha",
+            "columnName": "fecha",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_partido"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "PartidoEquipoCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_partido` INTEGER NOT NULL, `nombre_equipo` TEXT NOT NULL, PRIMARY KEY(`id_partido`, `nombre_equipo`))",
+        "fields": [
+          {
+            "fieldPath": "idPartido",
+            "columnName": "id_partido",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombreEquipo",
+            "columnName": "nombre_equipo",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_partido",
+            "nombre_equipo"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5a94b7cb81eccd35781cca280fba85d8')"
+    ]
+  }
+}

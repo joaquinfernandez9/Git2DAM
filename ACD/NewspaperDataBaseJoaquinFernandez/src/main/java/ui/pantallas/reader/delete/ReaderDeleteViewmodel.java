@@ -3,6 +3,7 @@ package ui.pantallas.reader.delete;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import model.Newspaper;
 import model.Reader;
 import model.Subscription;
 import services.ReaderServ;
@@ -24,7 +25,7 @@ public class ReaderDeleteViewmodel {
         this.subscriptionServImpl = subscriptionServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ReaderDeleteState(null, false,
-                        readerServImpl.getAll(-1, null).get()));
+                        readerServImpl.getAll(new Newspaper(0), null).get()));
     }
 
     public ReadOnlyObjectProperty<ReaderDeleteState> getState() {
@@ -32,13 +33,13 @@ public class ReaderDeleteViewmodel {
     }
 
     public List<Reader> getAll() {
-        return readerServImpl.getAll(-1, null).get();
+        return readerServImpl.getAll(new Newspaper(0), null).get();
     }
 
     public void reloadState() {
         state.setValue(new ReaderDeleteState(
                 null, !state.get().isChange(),
-                readerServImpl.getAll(-1, null).get()
+                readerServImpl.getAll(new Newspaper(0), null).get()
         ));
     }
 
@@ -47,17 +48,17 @@ public class ReaderDeleteViewmodel {
         if (response == 1) {
             state.setValue(new ReaderDeleteState(
                     "Reader deleted", true,
-                    readerServImpl.getAll(-1, null).get()
+                    readerServImpl.getAll(new Newspaper(0), null).get()
             ));
         } else if (response == -1) {
             state.setValue(new ReaderDeleteState(
                     "Reader not found", true,
-                    readerServImpl.getAll(-1, null).get()
+                    readerServImpl.getAll(new Newspaper(0), null).get()
             ));
         } else if (response == -2) {
             state.setValue(new ReaderDeleteState(
                     "Database error", true,
-                    readerServImpl.getAll(-1, null).get()
+                    readerServImpl.getAll(new Newspaper(0), null).get()
             ));
         }
     }

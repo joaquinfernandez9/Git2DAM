@@ -1,6 +1,8 @@
 package ui.pantallas.newspaper.list;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ListView;
 import model.Article;
 import model.Newspaper;
 import jakarta.inject.Inject;
@@ -11,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 
 import java.util.Date;
+import java.util.Map;
 
 public class NewsListController extends BasePantallaController {
 
@@ -34,6 +37,9 @@ public class NewsListController extends BasePantallaController {
     @FXML
     private TableColumn<String, Article> description;
 
+
+    @FXML
+    public ListView<Map<String,Integer>> numberArticlesType;
     @Inject
     public NewsListController(NewsListViewModel newsListViewModel) {
         this.newsListViewModel = newsListViewModel;
@@ -72,6 +78,29 @@ public class NewsListController extends BasePantallaController {
         if (newspaper != null) {
             newsListViewModel.getArticles(newspaper.getId());
 
+        }
+    }
+
+    public void deleteArticles() {
+        if (tableNews.getSelectionModel().getSelectedItem() != null) {
+            newsListViewModel.deleteArticles(tableNews.getSelectionModel().getSelectedItem());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Articles");
+            alert.setHeaderText("Articles");
+            alert.setContentText(newsListViewModel.getState().get().getError());
+            alert.showAndWait();
+        }else {
+            getPrincipalController().errorAlert("Select a newspaper");
+        }
+    }
+
+    public void getNbrArticles() {
+        if (tableNews.getSelectionModel().getSelectedItem() != null) {
+            newsListViewModel.getNbrArticles(tableNews.getSelectionModel().getSelectedItem().getId());
+            numberArticlesType.getItems().clear();
+            numberArticlesType.getItems().addAll(newsListViewModel.getState().get().getNbrArticles());
+        }else {
+            getPrincipalController().errorAlert("Select a newspaper");
         }
     }
 }

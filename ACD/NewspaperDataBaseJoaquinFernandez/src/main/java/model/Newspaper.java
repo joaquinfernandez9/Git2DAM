@@ -9,7 +9,7 @@ import java.util.Collection;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+
 @Entity
 @Table(name = "newspaper")
 @NamedQueries({@NamedQuery(name = "GET_ALL_NEWSPAPERS",
@@ -36,5 +36,16 @@ public class Newspaper {
         this.release_date = LocalDate.parse(dateNewspaper);
     }
 
+    public Newspaper(int id) {
+        this.id = id;
+    }
 
+    @Override
+    public String toString() {
+        return "Newspaper{" +
+                "id=" + id +
+                ", name_newspaper='" + name_newspaper + '\'' +
+                ", release_date=" + release_date +
+                '}';
+    }
 }

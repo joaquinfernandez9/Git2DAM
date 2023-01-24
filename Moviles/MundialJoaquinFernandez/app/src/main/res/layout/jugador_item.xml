@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <TextView
+        android:id="@+id/tvNombreJugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline08h"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline08h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tvNombreJugadorItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline08h"
+        app:layout_constraintEnd_toStartOf="@id/tvPosicion"/>
+
+    <TextView
+        android:id="@+id/tvPosicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posicion"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="27dp"
+        app:layout_constraintStart_toEndOf="@id/tvNombreJugadorItem"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline08h"
+        app:layout_constraintEnd_toStartOf="@id/tvDorsal"/>
+
+    <TextView
+        android:id="@+id/tvDorsal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dorsal"
+        tools:layout_editor_absoluteX="318dp"
+        tools:layout_editor_absoluteY="32dp"
+        app:layout_constraintStart_toEndOf="@id/tvPosicion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline08h"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

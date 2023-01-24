@@ -45,10 +45,17 @@ public class DaoTypeImpl implements DaoType {
     }
 
     @Override
-    public ArticleType get(Integer id) {
-        List<ArticleType> n=null;
+    public ArticleType get() {
+        em = jpaUtil.getEntityManager();
+        ArticleType type = null;
+        try {
+            type = em.createQuery("select ra.article.type from ReadArticle ra group by ra.article.type order by count(ra.article.type) desc", ArticleType.class)
+                    .getResultList().get(0);
 
-        return (ArticleType) n;
+        } catch (PersistenceException e) {
+            e.printStackTrace();
+        }
+        return type;
     }
 
 }

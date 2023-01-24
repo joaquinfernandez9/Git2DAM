@@ -1,0 +1,10 @@
+<TextView android:id="@+id/tvNombreEquipo"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:text="Equipo"
+    android:textSize="20sp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

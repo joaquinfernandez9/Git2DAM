@@ -1,8 +1,10 @@
 package services;
 
 import model.Article;
+import model.ArticleType;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ArticleServ {
     List<Article> getAll();
@@ -15,7 +17,9 @@ public interface ArticleServ {
 
     int addArticle(Article a);
 
-    int deleteArticle(int id);
+    String deleteArticle(int id);
+
+
 
     int updateArticle(Article a);
 }

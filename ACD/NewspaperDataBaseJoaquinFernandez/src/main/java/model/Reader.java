@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Table(name = "reader")
 @NamedQuery(name = "GET_ALL_READERS", query = "from Reader")
 @NamedQuery(name = "GET_ALL_READERS_BY_NEWSPAPER",
-        query = "from Subscription sub join Reader r where sub.id_newspaper = :idNewspaper and sub.cancellation_date is not null ")
+        query = "select sub.reader from Subscription sub where sub.id_newspaper = :idNewspaper and sub.cancellation_date is null")
 @NamedQuery(name = "DELETE_READ_ARTICLE", query="delete from ReadArticle  ra where ra.reader.id = :idReader")
 @NamedQuery(name = "GET_READER_BY_TYPE_DESC", query = "select distinct ra.reader from ReadArticle ra where ra.article.type.description = :description")
 @NamedQuery(name= "DELETE_READER_SUSCRIPTIONS", query = "delete from Subscription r where r.id_reader = :idReader")

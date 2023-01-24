@@ -1,0 +1,5 @@
+
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÊÒúÿÿÿÿ
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÊÒúÿÿÿÿ
+k	java:S116"VRename this field "name_reader" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÙÎ®
+q	java:S116"WRename this field "birth_reader" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¨¼şÿÿÿÿ

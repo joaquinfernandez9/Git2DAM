@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    android:label="@string/lista_equipos"
+    app:startDestination="@id/pricipal_screen">
+    <fragment
+        android:id="@+id/pricipal_screen"
+        android:name="com.example.mundialjoaquinfernandez.ui.pantallas.PrincipalScreen"
+        android:label="Pantalla principal"
+        tools:layout="@layout/principal_screen">
+        <action
+            android:id="@+id/action_primerFragment_to_segundoFragment"
+            app:destination="@id/lista_equipos"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_primerFragment_to_tercerFragment"
+            app:destination="@id/seleccionar_equipos" />
+    </fragment>
+    <fragment
+        android:id="@+id/lista_equipos"
+        android:name="com.example.mundialjoaquinfernandez.ui.pantallas.listaEquipos.ListaEquipos"
+        android:label="@string/lista_equipos"
+        tools:layout="@layout/lista_equipos">
+        <action
+            android:id="@+id/verJugadores"
+            app:destination="@id/lista_jugadores" />
+        <action
+            android:id="@+id/action_lista_equipos_to_seleccionar_equipos"
+            app:destination="@id/seleccionar_equipos" />
+        <action
+            android:id="@+id/action_lista_equipos_to_pricipal_screen"
+            app:destination="@id/pricipal_screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/seleccionar_equipos"
+        android:name="com.example.mundialjoaquinfernandez.ui.pantallas.juego.SeleccionarEquipos"
+        android:label="@string/seleccionar_equipos"
+        tools:layout="@layout/elegir_equipos">
+        <action
+            android:id="@+id/resultadoPartido"
+            app:destination="@id/resultadoPartido" />
+        <action
+            android:id="@+id/action_seleccionar_equipos_to_lista_equipos"
+            app:destination="@id/lista_equipos" />
+        <action
+            android:id="@+id/action_seleccionar_equipos_to_pricipal_screen"
+            app:destination="@id/pricipal_screen" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/lista_jugadores"
+        android:name="com.example.mundialjoaquinfernandez.ui.pantallas.listaJugadores.ListaJugadores"
+        android:label="Lista Jugadores"
+        tools:layout="@layout/lista_jugadores">
+        <argument
+            android:name="nombre"
+            android:defaultValue="nada"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultadoPartido"
+        android:name="com.example.mundialjoaquinfernandez.ui.pantallas.juego.resultado.ResultadoPartido"
+        android:label="Resultado partido"
+        tools:layout="@layout/resultado_partido">
+        <argument
+            android:name="local"
+            app:argType="string" />
+        <argument
+            android:name="visitante"
+            app:argType="string" />
+    </fragment>
+</navigation>

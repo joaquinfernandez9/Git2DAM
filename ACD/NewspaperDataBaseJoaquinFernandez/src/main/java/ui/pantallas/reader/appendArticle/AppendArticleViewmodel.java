@@ -67,7 +67,7 @@ public class AppendArticleViewmodel {
                     readArticleServ.getAll(r.getId()),
                     articleServ.getArticlesOfAReader(r.getId())
             ));
-        } else if (response == -2) {
+        } else if (response == 0) {
             state.setValue(new AppendArticleState(
                     "Database error",
                     true,

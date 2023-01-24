@@ -5,10 +5,13 @@ import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.PersistenceException;
+import jakarta.persistence.Tuple;
 import model.Newspaper;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Log4j2
 public class DaoNewspaperImpl implements DaoNewspaper {
@@ -78,10 +81,33 @@ public class DaoNewspaperImpl implements DaoNewspaper {
 
     }
 
+    @Override
+    public Map<String, Integer> getNbrArticles(int newspaper) {
+        Map<String, Integer> map = null;
+        em = jpaUtil.getEntityManager();
+        try {
+            map = em
+                    .createQuery("select a.type.description as des, count(a) as number from Article a where a.newspaper.id =:newspaper group by a.type.description", Tuple.class)
+                    .setParameter("newspaper", newspaper)
+                    .getResultList()
+                    .stream()
+                    .collect(
+                            Collectors.toMap(
+                                    tuple -> tuple.get("des").toString(),
+                                    tuple -> Integer.parseInt(tuple.get("number").toString())
+                            ));
+        } catch (PersistenceException e) {
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return map;
+    }
+
 
     @Override
     public int delete(int id){
-        // TODO: unable to locate persister
+        // pasar newspaper desde seleccion de tabla
         int response;
         em = jpaUtil.getEntityManager();
         EntityTransaction tx = em.getTransaction();
@@ -95,7 +121,7 @@ public class DaoNewspaperImpl implements DaoNewspaper {
             if (tx.isActive()) tx.rollback();
             e.printStackTrace();
             response = -1;
-        } finally {
+        } /*catch (PersistenceException)*/finally {
             if (em!=null) em.close();
         }
         return response;

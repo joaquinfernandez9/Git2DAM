@@ -1,6 +1,7 @@
 package ui.pantallas.reader.addReader;
 
 import model.Login;
+import model.Newspaper;
 import model.Reader;
 import services.ReaderServ;
 import jakarta.inject.Inject;
@@ -20,7 +21,7 @@ public class AddReaderViewModel {
         this.readerServImpl = readerServImpl;
         this.state = new SimpleObjectProperty<>(
                 new AddReaderState(null, false,
-                        readerServImpl.getAll(-1, null).get()));
+                        readerServImpl.getAll(new Newspaper(0), null).get()));
     }
 
     public ReadOnlyObjectProperty<AddReaderState> getState() {
@@ -30,12 +31,12 @@ public class AddReaderViewModel {
     public void reloadState() {
         state.setValue(new AddReaderState(
                 null, !state.get().isChange(),
-                readerServImpl.getAll(-1, null).get()
+                readerServImpl.getAll(new Newspaper(0), null).get()
         ));
     }
 
     public List<Reader> getAll() {
-        return readerServImpl.getAll(-1, null).get();
+        return readerServImpl.getAll(new Newspaper(0), null).get();
     }
 
     public void addReader(Login log) {
@@ -43,22 +44,22 @@ public class AddReaderViewModel {
         if (result == 1) {
             state.setValue(new AddReaderState(
                     "Reader added", true,
-                    readerServImpl.getAll(-1, null).get()
+                    readerServImpl.getAll(new Newspaper(0), null).get()
             ));
         } else if (result == -1) {
             state.setValue(new AddReaderState(
                     "Reader already exists", true,
-                    readerServImpl.getAll(-1, null).get()
+                    readerServImpl.getAll(new Newspaper(0), null).get()
             ));
         } else if (result == -2) {
             state.setValue(new AddReaderState(
                     "Reader id already exists", true,
-                    readerServImpl.getAll(-1, null).get()
+                    readerServImpl.getAll(new Newspaper(0), null).get()
             ));
         } else if (result == -3) {
             state.setValue(new AddReaderState(
                     "Database error", true,
-                    readerServImpl.getAll(-1, null).get()
+                    readerServImpl.getAll(new Newspaper(0), null).get()
             ));
         }
 

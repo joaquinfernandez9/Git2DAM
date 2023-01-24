@@ -17,9 +17,10 @@ import java.time.LocalDate;
 @NamedQuery(name = "GET_ALL_SUBSCRIPTIONS",
         query = "from Subscription where id_newspaper=:idNewspaper and cancellation_date is not null")
 @NamedQuery(name = "GET_ALL_SUBSCRIPTIONS_READER",
-        query = "from Subscription where id_reader=:idReader and cancellation_date is not null")
+        query = "from Subscription where id_reader=:idReader and cancellation_date is null")
 @NamedQuery(name = "DELETE_SUBSCRIPTION_READER",
         query = "delete from Subscription where id_reader=:idReader")
+
 public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

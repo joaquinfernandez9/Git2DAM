@@ -1,8 +1,11 @@
 package ui.pantallas.reader.listSubscription;
 
+import model.ArticleType;
+import model.Newspaper;
 import model.Reader;
 import services.NewspaperServ;
 import services.QuerysServ;
+import services.ReadArticleServ;
 import services.ReaderServ;
 import jakarta.inject.Inject;
 import javafx.beans.property.ObjectProperty;
@@ -16,14 +19,17 @@ public class ListSubscriptionViewmodel {
     private final QuerysServ querysServ;
     private final ObjectProperty<ListSubscriptionState> state;
     private final NewspaperServ servicesNewspaperImpl;
+    private final ReadArticleServ servicesReadArticleImpl;
 
     @Inject
-    public ListSubscriptionViewmodel(ReaderServ readerServImpl, NewspaperServ servicesNewspaperImpl, QuerysServ querysServ) {
+    public ListSubscriptionViewmodel(ReaderServ readerServImpl, NewspaperServ servicesNewspaperImpl, QuerysServ querysServ, ReadArticleServ servicesReadArticleImpl) {
         this.querysServ = querysServ;
+
         this.readerServImpl = readerServImpl;
+        this.servicesReadArticleImpl = servicesReadArticleImpl;
         this.state = new SimpleObjectProperty<>(
                 new ListSubscriptionState(null, false,
-                        readerServImpl.getAll(0, null).get(), servicesNewspaperImpl.getAll()));
+                        readerServImpl.getAll(new Newspaper(0), null).get(), servicesNewspaperImpl.getAll()));
         this.servicesNewspaperImpl = servicesNewspaperImpl;
     }
 
@@ -32,7 +38,7 @@ public class ListSubscriptionViewmodel {
     }
 
 
-    public void reloadState(int idNewspaper, String description) {
+    public void reloadState(Newspaper idNewspaper, ArticleType description) {
         state.setValue(new ListSubscriptionState(
                 null, !state.get().isChange(),
                 readerServImpl.getAll(idNewspaper,  description).get(),
@@ -41,11 +47,20 @@ public class ListSubscriptionViewmodel {
     }
 
     public List<Reader> getAll(){
-        return readerServImpl.getAll(0,null).get();
+        return readerServImpl.getAll(new Newspaper(0),null).get();
     }
 
     public void getOldest(int idNewspaper){
         querysServ.getOldest(idNewspaper).get();
+    }
+
+    public void getAvgRating(int reader){
+        state.setValue(new ListSubscriptionState(
+                !state.get().isChange(),
+                readerServImpl.getAll(new Newspaper(0), null).get(),
+                servicesNewspaperImpl.getAll(),
+                servicesReadArticleImpl.getAvgRating(reader)
+        ));
     }
 
 

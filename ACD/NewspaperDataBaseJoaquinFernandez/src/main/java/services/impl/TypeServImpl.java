@@ -20,4 +20,10 @@ public class TypeServImpl implements TypeServ {
         return daoTypeImpl.getAll();
     }
 
+
+    @Override
+    public ArticleType get() {
+        return daoTypeImpl.get();
+    }
+
 }

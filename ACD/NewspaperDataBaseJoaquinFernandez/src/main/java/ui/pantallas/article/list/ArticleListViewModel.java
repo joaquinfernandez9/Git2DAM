@@ -22,13 +22,13 @@ public class ArticleListViewModel {
         this.typeServImpl = typeServImpl;
         this.state = new SimpleObjectProperty<>(
                 new ArticleListState(null, false,
-                        articleServImpl.getAll()));
+                        articleServImpl.getAll(), typeServImpl.get()));
     }
 
     public void reloadState() {
         state.setValue(new
                 ArticleListState(null, !state.get().isChange(),
-                articleServImpl.getAll()));
+                articleServImpl.getAll(), typeServImpl.get()));
     }
 
     public ReadOnlyObjectProperty<ArticleListState> getState() {
@@ -37,7 +37,7 @@ public class ArticleListViewModel {
 
 
     public void getAllfilter(String description){
-        state.setValue(new ArticleListState(null, !state.get().isChange(), articleServImpl.getArticlesFilter(description)));
+        state.setValue(new ArticleListState(null, !state.get().isChange(), articleServImpl.getArticlesFilter(description), typeServImpl.get()));
         articleServImpl.getArticlesFilter(description);
     }
 

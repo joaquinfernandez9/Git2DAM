@@ -11,6 +11,7 @@ import jakarta.inject.Inject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ArticleServImpl implements ArticleServ {
@@ -59,7 +60,7 @@ public class ArticleServImpl implements ArticleServ {
         //check integrity
         List<Article> articles = getAll();
         int response;
-        ArticleType art = daoTypeImpl.get(a.getType().getId());
+        ArticleType art = daoTypeImpl.get();
         Newspaper np = daoNewspaperImpl.get(a.getNewspaper().getId());
         if (!articles.contains(a) && np != null && art != null) {
             response = daoArticleImpl.save(a);
@@ -70,9 +71,14 @@ public class ArticleServImpl implements ArticleServ {
     }
 
     @Override
-    public int deleteArticle(int id) {
-        return daoArticleImpl.delete(id);
+    public String deleteArticle(int id) {
+        return daoArticleImpl.delete(id) > 0
+                ? "The articles were deleted" :
+                "The articles couldn´t be deleted";
     }
+
+
+
 
     @Override
     public int updateArticle(Article a) {

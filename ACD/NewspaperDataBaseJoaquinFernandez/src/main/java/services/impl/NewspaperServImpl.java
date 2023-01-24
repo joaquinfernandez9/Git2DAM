@@ -6,6 +6,7 @@ import jakarta.inject.Inject;
 import services.NewspaperServ;
 
 import java.util.List;
+import java.util.Map;
 
 public class NewspaperServImpl implements NewspaperServ {
 
@@ -34,6 +35,12 @@ public class NewspaperServImpl implements NewspaperServ {
         }
 
     }
+
+    @Override
+    public Map<String, Integer> getNbrArticles(int newspaper) {
+        return daoNewspaper.getNbrArticles(newspaper);
+    }
+
 
 
     @Override

@@ -1,17 +1,14 @@
 package services;
 
-import model.Article;
-import model.Login;
-import model.Reader;
+import model.*;
 import io.vavr.control.Either;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public interface ReaderServ {
-    Either<Integer, List<Reader>> getAll(int idNews, String description);
+    Either<Integer, List<Reader>> getAll(Newspaper idNews, ArticleType description);
 
-    Either<Integer, List<Reader>> getAll(String description);
 
     Either<Integer, Reader> get(int id);
 
@@ -24,5 +21,4 @@ public interface ReaderServ {
 
 //    List<Reader> getReadersFromArticleType(String descType);
 
-    int appendReadArticle(Reader reader, int article, int rating);
 }

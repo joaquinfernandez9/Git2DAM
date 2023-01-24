@@ -5,7 +5,9 @@ import dao.DaoNewspaper;
 import dao.Const;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Id;
 import jakarta.persistence.PersistenceException;
+import jakarta.persistence.Tuple;
 import model.Article;
 import lombok.extern.log4j.Log4j2;
 import model.Newspaper;
@@ -17,6 +19,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Log4j2
 public class DaoArticleImpl implements DaoArticle {
@@ -68,9 +71,22 @@ public class DaoArticleImpl implements DaoArticle {
 
     @Override
     public int delete(int id) {
-        int response = 1;
+        em = jpautil.getEntityManager();
+        int response = -1;
+        try {
+            em.getTransaction().begin();
+            response = em
+                    .createQuery("delete from Article a where a.newspaper.id = :id ")
+                    .setParameter("id", id)
+                    .executeUpdate();
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return response;
     }
+
+
 
     @Override
     public int update(Article a) {

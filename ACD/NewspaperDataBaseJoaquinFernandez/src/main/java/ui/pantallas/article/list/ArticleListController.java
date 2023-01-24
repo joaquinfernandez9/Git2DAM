@@ -1,5 +1,6 @@
 package ui.pantallas.article.list;
 
+import javafx.scene.control.Label;
 import model.Article;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import jakarta.inject.Inject;
@@ -24,7 +25,8 @@ public class ArticleListController extends BasePantallaController {
     @FXML
     public TableColumn<String, Article> typeID;
 
-
+    @FXML
+    public Label typeText;
     @FXML
     public MFXComboBox<ArticleType> combo;
 
@@ -37,7 +39,6 @@ public class ArticleListController extends BasePantallaController {
 
     @Override
     public void principalCargado() {
-        // TODO: because "c" is null
         combo.getItems().addAll(articleListViewModel.getAll());
 
 
@@ -55,6 +56,7 @@ public class ArticleListController extends BasePantallaController {
                 tableArticle.getItems().addAll(newValue.getArticleList());
             }
         });
+        typeText.setText("The most read type of article is: " + articleListViewModel.getState().get().getType().getDescription());
 
         articleListViewModel.reloadState();
     }

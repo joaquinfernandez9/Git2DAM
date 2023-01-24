@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TypeServ {
     List<ArticleType> getAll();
+
+    ArticleType get();
 }

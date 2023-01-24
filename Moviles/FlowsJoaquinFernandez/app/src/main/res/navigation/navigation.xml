@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/trendingMovies">
+
+    <fragment
+        android:id="@+id/trendingMovies"
+        android:name="com.example.flowsjoaquinfernandez.framework.movies.TrendingMovies"
+        android:label="fragment_trending_movies"
+        tools:layout="@layout/fragment_trending_movies" />
+    <fragment
+        android:id="@+id/trendingTvSeries"
+        android:name="com.example.flowsjoaquinfernandez.framework.series.SearchSeries"
+        android:label="fragment_trending_tv_series"
+        tools:layout="@layout/fragment_search_tv_series" />
+</navigation>

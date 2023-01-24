@@ -23,4 +23,8 @@ public class ArticleType {
     public String toString() {
         return description;
     }
+
+    public ArticleType(String description) {
+        this.description = description;
+    }
 }

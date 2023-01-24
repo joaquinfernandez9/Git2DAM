@@ -1,0 +1,17 @@
+
+y
+java:S14880"^Immediately return this expression instead of assigning it to the temporary variable "result".(öß—Ûúÿÿÿÿ
+l
+java:S1450"QRemove the "em" field and declare it as a local variable in the relevant methods.(‘æ¿Úúÿÿÿÿ
+A
+java:S1128"&Remove this unused import 'dao.Const'.(‰õ‡¼ûÿÿÿÿ
+;
+java:S1128"%Remove this unused import 'java.sql'.(´Ý…Å
+K
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+J
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶
+K
+java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš

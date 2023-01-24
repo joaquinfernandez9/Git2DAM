@@ -7,6 +7,7 @@ import model.ReadArticle;
 import services.ReadArticleServ;
 
 import java.util.List;
+import java.util.Map;
 
 public class ReadArticleServImpl implements ReadArticleServ {
 
@@ -25,6 +26,11 @@ public class ReadArticleServImpl implements ReadArticleServ {
     @Override
     public int appendReadArticle(ReadArticle readArticle) {
         return daoReadArticle.add(readArticle);
+    }
+
+    @Override
+    public Map<Double, String> getAvgRating(int reader) {
+        return daoReadArticle.getAvgRating(reader);
     }
 
 

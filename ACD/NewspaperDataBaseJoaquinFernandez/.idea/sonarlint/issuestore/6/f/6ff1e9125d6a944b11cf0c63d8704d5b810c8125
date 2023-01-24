@@ -1,4 +1,4 @@
 
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áüáúÿÿÿÿ8§÷şÛ0
 R
-java:S1128
-"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8áú«ñÆ0
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8çæşÛ0

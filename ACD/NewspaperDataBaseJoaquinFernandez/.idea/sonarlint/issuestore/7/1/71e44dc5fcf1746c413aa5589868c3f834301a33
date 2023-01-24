@@ -1,23 +1,28 @@
 
-{
-java:S1488G"`Immediately return this expression instead of assigning it to the temporary variable "response".(¼Í‡İşÿÿÿÿ
-{
-java:S1488M"`Immediately return this expression instead of assigning it to the temporary variable "response".(¼Í‡İşÿÿÿÿ
+‚
+java:S1488]"`Immediately return this expression instead of assigning it to the temporary variable "response".(¼Í‡İşÿÿÿÿ8ª—³Îİ0
 J
-java:S1128"-Remove this unused import 'dao.DaoNewspaper'.(˜çÒÓ8ÕÊŞÙ0
+java:S1128"-Remove this unused import 'dao.DaoNewspaper'.(˜çÒÓ8ºõ‰Ïİ0
 H
-java:S1128"&Remove this unused import 'dao.Const'.(‰õ‡¼ûÿÿÿÿ8ÖÊŞÙ0
+java:S1128"&Remove this unused import 'dao.Const'.(‰õ‡¼ûÿÿÿÿ8»õ‰Ïİ0
+P
+java:S1128"3Remove this unused import 'jakarta.persistence.Id'.(š¨ô 8»õ‰Ïİ0
+S
+java:S1128
+"6Remove this unused import 'jakarta.persistence.Tuple'.(„È÷­8»õ‰Ïİ0
 I
-java:S1128",Remove this unused import 'model.Newspaper'.(ÒÚÄŠ8ÖÊŞÙ0
+java:S1128",Remove this unused import 'model.Newspaper'.(ÒÚÄŠ8»õ‰Ïİ0
 p
-java:S1128"TRemove this unused import 'org.springframework.dao.DataIntegrityViolationException'.(ÅÔº(8ÖÊŞÙ0
+java:S1128"TRemove this unused import 'org.springframework.dao.DataIntegrityViolationException'.(ÅÔº(8»õ‰Ïİ0
 r
-java:S1128"PRemove this unused import 'org.springframework.jdbc.core.BeanPropertyRowMapper'.(ß©Å´ÿÿÿÿÿ8ÖÊŞÙ0
+java:S1128"PRemove this unused import 'org.springframework.jdbc.core.BeanPropertyRowMapper'.(ß©Å´ÿÿÿÿÿ8»õ‰Ïİ0
 i
-java:S1128"GRemove this unused import 'org.springframework.jdbc.core.JdbcTemplate'.(å ê‹ÿÿÿÿÿ8ÖÊŞÙ0
+java:S1128"GRemove this unused import 'org.springframework.jdbc.core.JdbcTemplate'.(å ê‹ÿÿÿÿÿ8»õ‰Ïİ0
 o
-java:S1128"RRemove this unused import 'org.springframework.jdbc.core.simple.SimpleJdbcInsert'.(ü¾®¤8ÖÊŞÙ0
+java:S1128"RRemove this unused import 'org.springframework.jdbc.core.simple.SimpleJdbcInsert'.(ü¾®¤8¼õ‰Ïİ0
 Q
-java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8ÖÊŞÙ0
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8¼õ‰Ïİ0
 R
-java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8ÖÊŞÙ0
+java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8¼õ‰Ïİ0
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8¼õ‰Ïİ0

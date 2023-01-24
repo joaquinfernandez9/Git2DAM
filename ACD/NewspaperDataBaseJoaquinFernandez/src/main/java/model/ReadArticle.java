@@ -10,14 +10,19 @@ import lombok.*;
 @ToString
 @Entity
 @Table(name = "readarticle")
+@NamedQuery(name = "GET_ALL_READ_ARTICLES_READER",
+        query = "from ReadArticle where reader.id=:idReader")
+@NamedQuery(name = "DELETE_READ_ARTICLES_READER",
+        query = "delete from ReadArticle where reader.id=:idReader")
 public class ReadArticle {
-    @Id
-    private int id;
     @Column
     private int ranking;
+
+    @Id
     @ManyToOne
     @JoinColumn(name = "id_reader", referencedColumnName = "id", nullable = false)
     private Reader reader;
+    @Id
     @ManyToOne
     @JoinColumn(name = "id_article", referencedColumnName = "id", nullable = false)
     private Article article;

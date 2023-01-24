@@ -1,13 +1,11 @@
 package ui.pantallas.reader.listSubscription;
 
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import model.Newspaper;
 import model.Reader;
 import jakarta.inject.Inject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 import ui.pantallas.common.UiConstants;
@@ -27,6 +25,8 @@ public class ListSubscriptionController extends BasePantallaController {
     private TableColumn<Date, Reader> dateColumn;
     @FXML
     private ComboBox<String> idNewspaper;
+    @FXML
+    private ListView average;
 
     @Inject
     public ListSubscriptionController(ListSubscriptionViewmodel viewmodel) {
@@ -53,7 +53,7 @@ public class ListSubscriptionController extends BasePantallaController {
                 readersTable.getItems().addAll(newValue.getReaderList());
             }
         });
-        viewmodel.reloadState(0, null);
+        viewmodel.reloadState(new Newspaper(0), null);
 
     }
 
@@ -66,9 +66,9 @@ public class ListSubscriptionController extends BasePantallaController {
         }
     }
 
-    private int getNewspaperId(String name) {
+    private Newspaper getNewspaperId(String name) {
         return viewmodel.getState().get().getNewspapersList()
-                .stream().filter(n -> n.getName_newspaper().equals(name)).findFirst().get().getId();
+                .stream().filter(n -> n.getName_newspaper().equals(name)).findFirst().get();
     }
 
     @FXML
@@ -76,7 +76,23 @@ public class ListSubscriptionController extends BasePantallaController {
         if (idNewspaper.getValue() == null) {
             getPrincipalController().errorAlert(UiConstants.NOT_FOUND);
         } else {
-            viewmodel.getOldest(getNewspaperId(idNewspaper.getValue()));
+//            viewmodel.getOldest(getNewspaperId(idNewspaper.getValue()));
         }
     }
+
+    @FXML
+    private void getAverage()  {
+        if (readersTable.getSelectionModel().getSelectedItem() != null) {
+            viewmodel.getAvgRating(readersTable.getSelectionModel().getSelectedItem().getId());
+            average.getItems().clear();
+            average.getItems().addAll(viewmodel.getState().get().getAverageRating());
+
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Correct");
+            alert.setContentText("Select a reader");
+            alert.showAndWait();
+        }
+    }
+
 }

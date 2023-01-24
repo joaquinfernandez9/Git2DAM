@@ -65,6 +65,19 @@ public class AppendArticleController extends BasePantallaController {
                 tableReadArticle.getItems().clear();
                 tableReadArticle.getItems().addAll(newValue.getReadArticleList());
             }
+            if (newValue.getError() != null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Correct");
+                alert.setContentText(newValue.getError());
+                alert.showAndWait();
+            }
+            if (newValue.getError() != null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText(newValue.getError());
+                alert.showAndWait();
+            }
         });
 
         viewmodel.reloadState(getPrincipalController().r.getId());

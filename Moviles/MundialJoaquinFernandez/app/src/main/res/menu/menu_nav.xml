@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/seleccionar_equipos"
+        android:title="@string/jugar"
+        android:contentDescription="@string/seleccionar_equipos"
+        />
+    <item
+        android:id="@+id/lista_equipos"
+        android:title="@string/lista_equipos"
+        android:contentDescription="@string/ir_a_listado_de_equipos"
+        />
+</menu>
