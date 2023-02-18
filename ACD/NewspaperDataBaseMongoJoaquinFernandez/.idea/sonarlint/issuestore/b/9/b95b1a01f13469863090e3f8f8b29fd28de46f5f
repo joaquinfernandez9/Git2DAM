@@ -1,0 +1,6 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Á…ë
+@
+java:S1172*"+Remove this unused method parameter "desc".(¢é‹E
+D
+java:S1128".Remove this unused import 'model.ArticleType'.(–È¡Ó

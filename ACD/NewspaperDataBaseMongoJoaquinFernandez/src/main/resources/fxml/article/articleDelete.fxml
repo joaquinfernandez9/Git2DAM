@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.pantallas.article.delete.ArticleDeleteController">
+    <TableView fx:id="articleTable" layoutX="66.0" layoutY="57.0" prefHeight="386.0" prefWidth="406.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID"/>
+            <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title"/>
+            <TableColumn fx:id="npIDColumn" prefWidth="75.0" text="Newspaper ID"/>
+            <TableColumn fx:id="typeIDColumn" prefWidth="75.0" text="Type ID"/>
+        </columns>
+    </TableView>
+    <Button onAction="#delete" layoutX="560.0" layoutY="431.0" mnemonicParsing="false" text="Button"/>
+
+
+</AnchorPane>

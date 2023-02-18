@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 11,
-    "identityHash": "cd5221ff8d91105b8d6e719ba09beed7",
+    "identityHash": "5861e856a02db4ec3ffc6bb0aab25bc8",
     "entities": [
       {
         "tableName": "equipo",
@@ -25,7 +25,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "jugador",
+        "tableName": "Jugadores",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `dorsal` INTEGER NOT NULL, `posicion` TEXT NOT NULL, `equipo` TEXT NOT NULL, PRIMARY KEY(`nombre`), FOREIGN KEY(`equipo`) REFERENCES `equipo`(`nombre`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
         "fields": [
           {
@@ -61,13 +61,13 @@
         },
         "indices": [
           {
-            "name": "index_jugador_equipo",
+            "name": "index_Jugadores_equipo",
             "unique": false,
             "columnNames": [
               "equipo"
             ],
             "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_jugador_equipo` ON `${TABLE_NAME}` (`equipo`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Jugadores_equipo` ON `${TABLE_NAME}` (`equipo`)"
           }
         ],
         "foreignKeys": [
@@ -153,7 +153,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cd5221ff8d91105b8d6e719ba09beed7')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5861e856a02db4ec3ffc6bb0aab25bc8')"
     ]
   }
 }

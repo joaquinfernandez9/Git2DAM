@@ -1,0 +1,31 @@
+
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ö£®üıÿÿÿÿ
+A
+java:S1168!"+Return an empty collection instead of null.(¥¹ï
+A
+java:S1128"&Remove this unused import 'dao.Const'.(‰õ‡¼ûÿÿÿÿ
+C
+java:S1128"-Remove this unused import 'dao.DaoNewspaper'.(˜çÒÓ
+Y
+java:S1128">Remove this unused import 'jakarta.persistence.EntityManager'.(·ïŸéúÿÿÿÿ
+`
+java:S1128"ERemove this unused import 'jakarta.persistence.PersistenceException'.(§‘êùÿÿÿÿ
+i
+java:S1128"TRemove this unused import 'org.springframework.dao.DataIntegrityViolationException'.(ÅÔº(
+k
+java:S1128"PRemove this unused import 'org.springframework.jdbc.core.BeanPropertyRowMapper'.(ß©Å´ÿÿÿÿÿ
+b
+java:S1128"GRemove this unused import 'org.springframework.jdbc.core.JdbcTemplate'.(å ê‹ÿÿÿÿÿ
+h
+java:S1128"RRemove this unused import 'org.springframework.jdbc.core.simple.SimpleJdbcInsert'.(ü¾®¤
+M
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ
+J
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶
+K
+java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš

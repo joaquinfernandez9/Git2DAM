@@ -23,8 +23,6 @@ U
 %src/main/java/services/LoginServ.java,3\2\3224b1c0918dd9d2235540940dd854df5357c431
 m
 =src/main/java/ui/pantallas/reader/listType/ListTypeState.java,f\c\fc0737588142f2aa1efff93953ab0ed4144644fc
-m
-=src/main/java/ui/pantallas/common/BasePantallaController.java,c\c\cc1ae912583ea46a90bdbcb27df07083ec460f34
 o
 ?src/main/java/ui/pantallas/reader/updateReader/UpdateState.java,5\8\58cc758feade9aba1329f0db511c9e638c9c47a7
 o
@@ -67,8 +65,6 @@ t
 Dsrc/main/java/ui/pantallas/reader/updateReader/UpdateController.java,b\8\b879931e9e67b4f214b78518d296a2a7603b4055
 t
 Dsrc/main/java/ui/pantallas/reader/subscribe/SubscribeController.java,9\1\913361cf877bc31d2517069e925b627701f50c81
-e
-5src/main/java/ui/pantallas/login/LoginController.java,0\0\00a168197ce395305c37a33f896012577da7634b
 i
 9src/main/java/ui/pantallas/welcome/WelcomeController.java,0\9\098ad45b9172a1baaa953bb9c21e1cd1735c88df
 C
@@ -83,8 +79,6 @@ a
 .src/main/java/services/impl/LoginServImpl.java,e\4\e47fc9c37a2e7323821ff42b25bdfa56d6ddbf99
 t
 Dsrc/main/java/ui/pantallas/newspaper/update/NewsUpdateViewModel.java,e\4\e46603438c05a4d5586659d5d12d5cf833ade2f0
-p
-@src/main/java/ui/pantallas/article/add/ArticleAddController.java,6\f\6f65008c4429282c115106bd65c0c1e5e6d88c95
 u
 Esrc/main/java/ui/pantallas/article/update/ArticleUpdateViewModel.java,6\e\6eb6865fb2ef35e65ce5681de2f91aa3b3c8af09
 b
@@ -99,8 +93,6 @@ N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 S
 #src/main/java/dao/impl/JPAUtil.java,a\3\a3966e5130437f98e96d5fccd9262d48059aec0a
-W
-'src/main/java/config/Configuration.java,7\f\7f9a1455549e9958f1cfe6993a695569484b133b
 d
 4src/main/java/ui/pantallas/login/LoginViewModel.java,e\7\e7d8d195a68c5e0e3b34a11a1a18d22d5e312b65
 O
@@ -169,8 +161,6 @@ O
 src/main/java/model/Reader.java,5\c\5ca874a8e0026263e90adcbb6346bda22a67005e
 U
 %src/main/java/model/Subscription.java,7\1\712f3d75f554e68822b6e29d19accd9447894adb
-Y
-)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
 T
 $src/main/java/model/ArticleType.java,8\7\876de9e6a629e7bae3fb43b804631c90e9852e2f
 T
@@ -205,8 +195,6 @@ q
 Asrc/main/java/ui/pantallas/newspaper/list/NewsListController.java,e\c\ec75ca22881b9fe9cc082f0033bd4bcaf8460c92
 p
 @src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java,b\9\b994ab04d25534c8ea2a17f872b34b5e053b3e4c
-X
-(src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153
 Z
 *src/main/java/dao/impl/DaoArticleImpl.java,7\1\71e44dc5fcf1746c413aa5589868c3f834301a33
 \
@@ -219,15 +207,27 @@ W
 'src/main/java/services/ArticleServ.java,b\5\b5e11aa0ba713b206fd86e3ababa2887b2c444e3
 W
 'src/main/java/dao/impl/DaoTypeImpl.java,8\1\81f1bcf48b37917d27b2b03b6fb127a39eaf65d4
+m
+=src/main/java/ui/pantallas/article/list/ArticleListState.java,8\0\80c4413bdb90236232f054ab04b745f12ef7984b
+]
+-src/main/java/services/impl/TypeServImpl.java,9\6\96a7039f38f04f54b451af940c830043f4e1f2c9
 T
 $src/main/java/services/TypeServ.java,9\0\900d9645f92c15fe9f06786aabe7a8a921f21994
 N
 src/main/java/dao/DaoType.java,3\a\3ac623b9bae3a82390d199eb7b0d436c65f991d5
-]
--src/main/java/services/impl/TypeServImpl.java,9\6\96a7039f38f04f54b451af940c830043f4e1f2c9
-m
-=src/main/java/ui/pantallas/article/list/ArticleListState.java,8\0\80c4413bdb90236232f054ab04b745f12ef7984b
-q
-Asrc/main/java/ui/pantallas/article/list/ArticleListViewModel.java,5\b\5b215911e44bb0685a47014071b88bdfa38bd402
+W
+'src/main/java/config/Configuration.java,7\f\7f9a1455549e9958f1cfe6993a695569484b133b
+e
+5src/main/java/ui/pantallas/login/LoginController.java,0\0\00a168197ce395305c37a33f896012577da7634b
 r
 Bsrc/main/java/ui/pantallas/article/list/ArticleListController.java,2\9\29d4be5d284d65b0729e0bc26fc2a01f29333efb
+q
+Asrc/main/java/ui/pantallas/article/list/ArticleListViewModel.java,5\b\5b215911e44bb0685a47014071b88bdfa38bd402
+m
+=src/main/java/ui/pantallas/common/BasePantallaController.java,c\c\cc1ae912583ea46a90bdbcb27df07083ec460f34
+p
+@src/main/java/ui/pantallas/article/add/ArticleAddController.java,6\f\6f65008c4429282c115106bd65c0c1e5e6d88c95
+Y
+)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
+X
+(src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153

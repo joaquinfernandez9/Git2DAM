@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.reader.subscribe.SubscribeController">
+        <TableView fx:id="tableNewspaper" layoutX="29.0" layoutY="51.0" prefHeight="200.0" prefWidth="270.0">
+            <columns>
+                <TableColumn fx:id="idNewspaper" prefWidth="40.0" text="id" />
+                <TableColumn fx:id="nameNewspaper" prefWidth="115.0" text="Name" />
+                <TableColumn fx:id="rdNewspaper" prefWidth="115.0" text="Release date" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tableSubscriptions" layoutX="310.0" layoutY="51.0" prefHeight="200.0" prefWidth="270.0">
+            <columns>
+                <TableColumn fx:id="idNewspaperSubscription" prefWidth="40.0" text="ID NP" />
+                <TableColumn fx:id="singDate" prefWidth="115.0" text="Sing date" />
+                <TableColumn fx:id="cancelDate" prefWidth="115.0" text="Cancellation date" />
+            </columns>
+        </TableView>
+
+        <Button layoutX="389.0" layoutY="292.0" mnemonicParsing="false" onAction="#unsubscribe" text="Unsubscribe" />
+        <Button layoutX="129.0" layoutY="292.0" mnemonicParsing="false" onAction="#subscribe" text="Subscribe" />
+        <Label layoutX="114.0" layoutY="24.0" text="List of newspapers" />
+        <Label layoutX="381.0" layoutY="24.0" text="Your subscriptions" />
+
+
+</AnchorPane>

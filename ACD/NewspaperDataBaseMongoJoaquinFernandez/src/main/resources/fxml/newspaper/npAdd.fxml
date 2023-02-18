@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.newspaper.add.NewsAddController">
+        <TableView fx:id="tableNews" layoutX="66.0" layoutY="57.0" prefHeight="386.0" prefWidth="406.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Price" />
+            </columns>
+        </TableView>
+        <Button layoutX="549.0" layoutY="248.0" mnemonicParsing="false" onAction="#add" text="Add" />
+      <TextField fx:id="nameLabel" layoutX="494.0" layoutY="189.0" promptText="Name" />
+</AnchorPane>

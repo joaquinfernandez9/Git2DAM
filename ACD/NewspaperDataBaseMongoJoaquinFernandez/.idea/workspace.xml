@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="Cannot delete or update a parent row: a foreign key constraint fails">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00a168197ce395305c37a33f896012577da7634b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/07fd3999a31202924a58182e2885e7a6dd5a21d3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29d4be5d284d65b0729e0bc26fc2a01f29333efb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/b/5b215911e44bb0685a47014071b88bdfa38bd402" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5ca874a8e0026263e90adcbb6346bda22a67005e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99f4ea86658401191d1286ffc77aba6f6db602b1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc2ad7f96bcb7f869abc97016b0d27fc06e72770" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aggregations/DaoAggregations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aggregations/DaoAggregationsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aggregations/Init.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aggregations/MainAggregations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aggregations/Start.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/ProducerGson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/Prueba.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/addDeleteUpdate/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/addDeleteUpdate/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pantallas/article/addDeleteUpdate/ViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/2/b/2bde61d2d76b91116e577108665be90d2246eb36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/4/5/4517b2cd0d63a52fb2939d109daf2609389a3213" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/5/d/5d7c0d64dac0e77a3663d6aa2d43e27690e50523" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/9/5/95affea78a62a6d3c189a4e6a69c01accda1da77" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/f/9/f9134d929c98e99c324078a3373d1290491f9179" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/f/a/fa7eddc5c2c45807036315a533854c08d1eeb251" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/f/b/fb3ecf92ed80d2a452933b94dda6c40461b51ff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/f/e/fe219fdcad25f8139261d0adad0f1b6f724a1781" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/androidTest/java/com/example/joaquinfernandezcomposefinal/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ComposeMain.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/EquiposDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/const/Constantes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/dao/EquiposDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/dao/JugadoresDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/dao/PartidoDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/di/RoomModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/EquipoConJugadores.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/EquipoEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/JugadorEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/PartidoConEquipos.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/PartidoEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/PartidoEquipoCrossRef.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/datamapper/Datamappers.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/EquiposRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/JugadoresRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/PartidoRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/model/Equipo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/model/Jugador.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/model/Partido.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/theme/Shape.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/equipos/GetAllEquipos.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/jugadores/DeleteJugador.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/jugadores/GetAllJugadores.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/jugadores/InsertJugador.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/partido/GetPartido.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/partido/InsertPartido.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/test/java/com/example/joaquinfernandezcomposefinal/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/CajaFuerteJoaquinFernandez.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/Const.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/DaoGeneric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/api/LoginAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/api/MessageAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/api/VaultAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/api/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/api/di/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/api/utils/AuthorizationInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/api/utils/CacheAuthorization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/dao/di/ProducerGson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/cliente/src/main/resources/config/api.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/domain/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/domain/src/main/java/domain/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/domain/src/main/java/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/domain/src/main/java/domain/Vault.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/domain/src/main/java/domain/error/BaseError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/domain/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/security/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/security/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/security/src/main/java/org/example/Encriptacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/security/src/main/java/org/example/ProviderSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/security/src/main/java/org/example/impl/EncryptAES.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/config/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/config/Const.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/DaoFolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/DaoLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/DaoMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/database/DatabaseConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/ErrorDatabaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/IntegrityException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/services/ServicesLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/services/ServicesMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/services/ServicesVault.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/services/impl/ServicesLoginImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/services/impl/ServicesMessageImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/domain/services/impl/ServicesVaultImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/impl/DaoFolderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/impl/DaoLoginImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/dao/impl/DaoMessageImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/di/Producers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/errores/ApiError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/errores/ErrorDatabaseExceptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/errores/IntegrityExceptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/errores/NotFoundExceptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/rest/JAXRSApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/rest/RestLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/rest/RestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/rest/RestVault.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/security/BDIdentityStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/security/JWTAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/jakarta/security/JWTBlackList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/java/utils/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/resources/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/CajaFuerteJoaquinFernandez/servidor/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/data/ArticleEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/data/NewspaperEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/data/modelo/ArticleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/data/modelo/NewspaperEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/data/modelo/mapper/ArticleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/data/modelo/mapper/NewspaperMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/domain/model/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/domain/model/Newspaper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/domain/usecases/ArticlesServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/domain/usecases/NewspaperServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/spring/SpringRestMavenJavaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/java/spring/controllers/NewspaperController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/SpringJoaquinFernandez/src/test/java/com/example/springjoaquinfernandez/SpringJoaquinFernandezApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/SpringRestMavenJavaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/data/ArticleEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/data/NewspaperEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/data/modelo/ArticleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/data/modelo/NewspaperEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/data/modelo/mapper/ArticleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/data/modelo/mapper/NewspaperMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/domain/exceptions/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/domain/model/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/domain/model/Newspaper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/domain/usecases/ArticlesServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/domain/usecases/NewspaperServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/spring/controllers/ArticlesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/spring/controllers/NewspaperController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/spring/errors/ApiError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/java/com/example/springcosas/spring/errors/ControlErrores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PSP/springCosas/src/test/java/com/example/springcosas/SpringCosasApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/dataSources/9452e80a-7c50-4d16-8ec7-15b8c5615f2d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/dataSources/9452e80a-7c50-4d16-8ec7-15b8c5615f2d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/dao/DaoType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/dao/DaoType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/dao/impl/DaoTypeImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/dao/impl/DaoTypeImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/services/TypeServ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/services/TypeServ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/services/impl/ArticleServImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/services/impl/ArticleServImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/services/impl/TypeServImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/services/impl/TypeServImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/ui/pantallas/article/list/ArticleListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/ui/pantallas/article/list/ArticleListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/ui/pantallas/article/list/ArticleListState.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/ui/pantallas/article/list/ArticleListState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/ui/pantallas/article/list/ArticleListViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NewspaperDataBaseJoaquinFernandez/target/classes/ui/pantallas/article/list/ArticleListViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/0/4/0433dc1f00401c369e87875c3b230f79486428d0" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/0/4/0433dc1f00401c369e87875c3b230f79486428d0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/0/b/0b2130e86da8b8a179a806fb86951d31769ab7de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/1/3/13693e86e519ebf51ddfd415c7b63b584e0a81b6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/1/a/1a2872bac06f09bf10459be052c0d494db01a605" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/3/1/312935c776f28ecca5d8d4a963fefc8fa0c04360" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/3/9/398b23486473e683149a29a8095a0c72787b8604" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/4/1/41e6474e9375d0d8459418938683532da4afcfc9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/5/4/54dc091dbc5432d92762e47d47e9f522aea68cc3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/5/5/55b441a445c49031b129de2c06f7c44248d30bc7" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/5/5/55b441a445c49031b129de2c06f7c44248d30bc7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/6/2/62a4ebe63ffb955cbcf8c337105dee8fd09b1436" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/7/7/77c8771f5db0cddcfaac587034aeffd8ff0838a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/7/c/7c6a87dff898b8aa34fd4715d25420e8b026a4d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/8/5/85490fab46826739f8e120bbb4d901106707548a" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/8/5/85490fab46826739f8e120bbb4d901106707548a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/9/5/9556f4874b93734e92f78c2475c3ad3e2c9625c8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/a/7/a7572a94761ed60dfacf1032f20977348738ebf5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/d/9/d9fb38746975bf4c902c77032edb9ab96dec208d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/0/f/0fd963969d59ee4213ece4e776fb7a8331cf5d77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/e/d/ed7887a6c3078564640a0240a1c4c74a46f0b783" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/e/d/ed7887a6c3078564640a0240a1c4c74a46f0b783" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/app/src/main/java/com/example/mundialjoaquinfernandez/data/di/RoomModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/app/src/main/java/com/example/mundialjoaquinfernandez/data/di/RoomModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/app/src/main/java/com/example/mundialjoaquinfernandez/usecases/equipos/GetAllEquipos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/app/src/main/java/com/example/mundialjoaquinfernandez/usecases/equipos/GetAllEquipos.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/schemas/com.example.mundialjoaquinfernandez.data.EquiposDatabase/11.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/schemas/com.example.mundialjoaquinfernandez.data.EquiposDatabase/11.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/1/b/1bc4b36f7bc12a606bbc7fe2e1a0b5e6c8fc038f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/3/4/34ead768792d161eb7e434155d3a6bfb2f07f7c2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/6/7/677b66e9c2905a1d0c197e6227adef32f7259a25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/6/f/6f3955601655fa3dcf546ef885d3aeb491e0d9a4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/7/4/74d2158e8bb88e4ca4cdf3d6cf3bc41f2523ffa4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/b/f/bf5793fd11f0335004e37d661fd47e1589b9429e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/c/7/c76037a9f6465084d7ff8d7dd4772c908203b79b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP/ClienteJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SGE/docker/config/odoo.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SGE/docker/docker-compose.yaml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="Kotlin Class" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="AnnotationType" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2F1rWWae1XaQ3QlDerfAgOSTnbl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joaqu/Documents/GitHub/2-DAM/DATA ACCESS/NewspaperMongo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b5094183098f0335ee33abfe4d86ed18&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dao.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseSql\src\main\resources" />
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseSql" />
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDB\src\main\java\domain\modelo" />
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDB\data" />
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDB\src\main\java\ui\pantallas\reader" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseJoaquinFernandez\src\main\resources\META-INF" />
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseJoaquinFernandez\src\main\resources\META-INF\persistance" />
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\ACD\NewspaperDataBaseSql\src\main\resources" />
+    </key>
+    <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="dao.Const" />
+      <recent name="ui.pantallas.common.UiConstants" />
+      <recent name="dao.impl.DaoTypeImpl" />
+      <recent name="dao.impl.DaoSubscriptionsImpl" />
+      <recent name="dao.Querys" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="aggregations" />
+      <recent name="services.impl" />
+      <recent name="dao.impl" />
+      <recent name="domain.services.impl" />
+      <recent name="dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="config" />
+      <recent name="dao.localDate" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Init">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="cd2db865-7c8e-48c3-8741-3a4e4a129eaa" />
+      <option name="artifact" />
+      <option name="autoPort" value="true" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="funcPort" value="0" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Init" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aggregations.Init" />
+      <module name="NewspaperDataBaseMongoJoaquinFernandez" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aggregations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.main.Main" />
+      <module name="NewspaperDataBaseMongoJoaquinFernandez" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPrueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.MainPrueba" />
+      <module name="NewspaperDB" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.MainTest" />
+      <module name="NewspaperDB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dao.impl.Prueba" />
+      <module name="NewspaperDataBaseMongoJoaquinFernandez" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Init" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Prueba" />
+        <item itemvalue="Application.MainTest" />
+        <item itemvalue="Application.MainPrueba" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d19d6e1d-5871-4486-94b5-515674db1180" name="Changes" comment="" />
+      <created>1663670466462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663670466462</updated>
+      <workItem from="1663670467791" duration="937000" />
+      <workItem from="1663671423731" duration="336000" />
+      <workItem from="1663671798651" duration="1000" />
+      <workItem from="1663671810253" duration="23000" />
+      <workItem from="1663671875810" duration="2595000" />
+      <workItem from="1663686629076" duration="3993000" />
+      <workItem from="1663743335359" duration="118000" />
+      <workItem from="1663758584489" duration="2897000" />
+      <workItem from="1663761645539" duration="1172000" />
+      <workItem from="1663766197499" duration="2047000" />
+      <workItem from="1663839367841" duration="1022000" />
+      <workItem from="1663959801156" duration="2769000" />
+      <workItem from="1663962595744" duration="2272000" />
+      <workItem from="1663967236761" duration="41000" />
+      <workItem from="1664011470434" duration="2318000" />
+      <workItem from="1664015318874" duration="843000" />
+      <workItem from="1664021641565" duration="93000" />
+      <workItem from="1664021956049" duration="4999000" />
+      <workItem from="1664039041136" duration="1771000" />
+      <workItem from="1664112961292" duration="11270000" />
+      <workItem from="1664136204238" duration="2369000" />
+      <workItem from="1664180845321" duration="613000" />
+      <workItem from="1664187432398" duration="7078000" />
+      <workItem from="1664205302312" duration="14763000" />
+      <workItem from="1664271502280" duration="6339000" />
+      <workItem from="1664277859006" duration="2780000" />
+      <workItem from="1664293522439" duration="1144000" />
+      <workItem from="1664294682965" duration="4962000" />
+      <workItem from="1664312437028" duration="1179000" />
+      <workItem from="1664347400657" duration="1690000" />
+      <workItem from="1664360157676" duration="1148000" />
+      <workItem from="1664364394558" duration="2804000" />
+      <workItem from="1664468763128" duration="543000" />
+      <workItem from="1664469657816" duration="1045000" />
+      <workItem from="1664484563228" duration="29000" />
+      <workItem from="1664484781033" duration="482000" />
+      <workItem from="1664619163505" duration="27000" />
+      <workItem from="1664795558784" duration="3079000" />
+      <workItem from="1664808218123" duration="3304000" />
+      <workItem from="1664812544765" duration="1514000" />
+      <workItem from="1664876392016" duration="4454000" />
+      <workItem from="1664902377715" duration="8983000" />
+      <workItem from="1664951859706" duration="12961000" />
+      <workItem from="1664986432446" duration="4436000" />
+      <workItem from="1664994187336" duration="608000" />
+      <workItem from="1665044767199" duration="1868000" />
+      <workItem from="1665063145465" duration="9504000" />
+      <workItem from="1665076372464" duration="3936000" />
+      <workItem from="1665160717197" duration="3503000" />
+      <workItem from="1665166453410" duration="677000" />
+      <workItem from="1665175321216" duration="3905000" />
+      <workItem from="1665215508706" duration="3425000" />
+      <workItem from="1665309199776" duration="13713000" />
+      <workItem from="1665336453262" duration="182000" />
+      <workItem from="1665390310376" duration="506000" />
+      <workItem from="1665399135452" duration="19000" />
+      <workItem from="1665484082823" duration="2495000" />
+      <workItem from="1665487979636" duration="2284000" />
+      <workItem from="1665510516330" duration="2963000" />
+      <workItem from="1665819870759" duration="8500000" />
+      <workItem from="1665833989776" duration="1976000" />
+      <workItem from="1665907226181" duration="7000" />
+      <workItem from="1665911067898" duration="2133000" />
+      <workItem from="1665919250359" duration="610000" />
+      <workItem from="1665948730880" duration="166000" />
+      <workItem from="1666006870184" duration="2310000" />
+      <workItem from="1666022156137" duration="3865000" />
+      <workItem from="1666086300454" duration="7600000" />
+      <workItem from="1666165051833" duration="1793000" />
+      <workItem from="1666190994934" duration="270000" />
+      <workItem from="1666458163490" duration="673000" />
+      <workItem from="1666514802222" duration="1253000" />
+      <workItem from="1666519180457" duration="11240000" />
+      <workItem from="1666533129732" duration="117000" />
+      <workItem from="1666600947075" duration="5000" />
+      <workItem from="1666607598545" duration="3722000" />
+      <workItem from="1666631361200" duration="1828000" />
+      <workItem from="1666679784871" duration="99000" />
+      <workItem from="1666691022691" duration="9166000" />
+      <workItem from="1666767215656" duration="3376000" />
+      <workItem from="1666799805077" duration="8000" />
+      <workItem from="1666806443879" duration="922000" />
+      <workItem from="1666859317777" duration="11000" />
+      <workItem from="1666890434395" duration="53000" />
+      <workItem from="1666938653158" duration="8000" />
+      <workItem from="1666968839431" duration="27000" />
+      <workItem from="1666968970738" duration="651000" />
+      <workItem from="1667133624762" duration="7329000" />
+      <workItem from="1667208618197" duration="6698000" />
+      <workItem from="1667219984338" duration="9000" />
+      <workItem from="1667310696231" duration="1495000" />
+      <workItem from="1667330447169" duration="1161000" />
+      <workItem from="1667375040815" duration="604000" />
+      <workItem from="1667382199575" duration="1235000" />
+      <workItem from="1667387557826" duration="4244000" />
+      <workItem from="1667410777651" duration="2334000" />
+      <workItem from="1667560542129" duration="634000" />
+      <workItem from="1667641467121" duration="7991000" />
+      <workItem from="1667729807685" duration="6657000" />
+      <workItem from="1667766627317" duration="2434000" />
+      <workItem from="1667809538187" duration="13000" />
+      <workItem from="1667820955964" duration="5289000" />
+      <workItem from="1667837951297" duration="21000" />
+      <workItem from="1668017124886" duration="2094000" />
+      <workItem from="1668068543149" duration="33000" />
+      <workItem from="1668192634070" duration="8138000" />
+      <workItem from="1668240737440" duration="35860000" />
+      <workItem from="1668295422733" duration="23681000" />
+      <workItem from="1668365993431" duration="1265000" />
+      <workItem from="1668370183563" duration="1553000" />
+      <workItem from="1668414332386" duration="58000" />
+      <workItem from="1668417188794" duration="638000" />
+      <workItem from="1668427009161" duration="402000" />
+      <workItem from="1668500927203" duration="235000" />
+      <workItem from="1668509782717" duration="4708000" />
+      <workItem from="1668597542637" duration="14000" />
+      <workItem from="1668626660669" duration="1334000" />
+      <workItem from="1668672645225" duration="41000" />
+      <workItem from="1668673133231" duration="61000" />
+      <workItem from="1668689722610" duration="643000" />
+      <workItem from="1668702688257" duration="1008000" />
+      <workItem from="1668906879099" duration="391000" />
+      <workItem from="1668934288658" duration="1492000" />
+      <workItem from="1668962151086" duration="637000" />
+      <workItem from="1668974158104" duration="955000" />
+      <workItem from="1669019863410" duration="1220000" />
+      <workItem from="1669058948404" duration="6039000" />
+      <workItem from="1669105040874" duration="484000" />
+      <workItem from="1669110337173" duration="4526000" />
+      <workItem from="1669136373880" duration="2967000" />
+      <workItem from="1669198197183" duration="2551000" />
+      <workItem from="1671454036688" duration="979000" />
+      <workItem from="1671532934092" duration="1126000" />
+      <workItem from="1671534064219" duration="6453000" />
+      <workItem from="1672136181350" duration="34000" />
+      <workItem from="1673077614299" duration="2767000" />
+      <workItem from="1673101594916" duration="1322000" />
+      <workItem from="1673266468620" duration="3578000" />
+      <workItem from="1673347620380" duration="7780000" />
+      <workItem from="1673435283167" duration="7724000" />
+      <workItem from="1673508492896" duration="620000" />
+      <workItem from="1673788954646" duration="10458000" />
+      <workItem from="1673806289085" duration="602000" />
+      <workItem from="1673807447164" duration="775000" />
+      <workItem from="1673821565973" duration="788000" />
+      <workItem from="1673871677858" duration="2071000" />
+      <workItem from="1673952576345" duration="7937000" />
+      <workItem from="1674034071187" duration="646000" />
+      <workItem from="1674037075953" duration="16000" />
+      <workItem from="1674389388169" duration="5300000" />
+      <workItem from="1674547617517" duration="920000" />
+      <workItem from="1674669992039" duration="537000" />
+      <workItem from="1674671908636" duration="1134000" />
+      <workItem from="1675069310877" duration="852000" />
+      <workItem from="1675070618100" duration="686000" />
+      <workItem from="1675077164040" duration="49000" />
+      <workItem from="1675175068224" duration="2000" />
+      <workItem from="1675236971617" duration="16000" />
+      <workItem from="1675238085073" duration="1831000" />
+      <workItem from="1675255911374" duration="1147000" />
+      <workItem from="1675324677488" duration="2550000" />
+      <workItem from="1675342052261" duration="16000" />
+      <workItem from="1675669321337" duration="5599000" />
+      <workItem from="1675707730284" duration="9512000" />
+      <workItem from="1675766929050" duration="5374000" />
+      <workItem from="1675794936813" duration="16000" />
+      <workItem from="1676289364076" duration="2666000" />
+      <workItem from="1676304917261" duration="715000" />
+      <workItem from="1676391480816" duration="11391000" />
+      <workItem from="1676457542416" duration="580000" />
+      <workItem from="1676711608299" duration="6000" />
+    </task>
+    <task id="LOCAL-00001" summary="he arreglado cosas varias pero no me acuerdo de cuales eran asi que todo jodido para que nadie entienda nada ya que ni yo entiendo que hago pero tamos piola uuuuuuuuuuuuuuuuuuuuuuuuueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
+      <created>1664809829447</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664809829447</updated>
+    </task>
+    <task id="LOCAL-00002" summary="xml funciona, en proceso el dao completo">
+      <created>1664960730457</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664960730457</updated>
+    </task>
+    <task id="LOCAL-00003" summary="delete btn borra todo el xml, cargan las pantallas y se puede poner todos los datos">
+      <created>1665073074888</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665073074888</updated>
+    </task>
+    <task id="LOCAL-00004" summary="funciona todo lo probado por ahora uwuwuwuwuwuwuwuwuwuwu">
+      <created>1665080280820</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665080280820</updated>
+    </task>
+    <task id="LOCAL-00005" summary="falta filtrar lectores por tipo pero no se hacerlo pumpumpum">
+      <created>1665220982216</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665220982216</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ruben chupame el pito uwu">
+      <created>1665313028965</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665313028965</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Ayer fui al super a por manzanas y me encontre un gato de camino. Saludos.">
+      <created>1665511959566</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665511959566</updated>
+    </task>
+    <task id="LOCAL-00008" summary="me he cruzado con alvaro y me ha hecho gracia, lucia te quiero reventar la vida asquerosa de los cojones">
+      <created>1665823210742</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665823210742</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Cannot delete or update a parent row: a foreign key constraint fails">
+      <created>1665828367858</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665828367858</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Cannot delete or update a parent row: a foreign key constraint fails">
+      <created>1668281759601</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668281759601</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="he arreglado cosas varias pero no me acuerdo de cuales eran asi que todo jodido para que nadie entienda nada ya que ni yo entiendo que hago pero tamos piola uuuuuuuuuuuuuuuuuuuuuuuuueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" />
+    <MESSAGE value="xml funciona, en proceso el dao completo" />
+    <MESSAGE value="delete btn borra todo el xml, cargan las pantallas y se puede poner todos los datos" />
+    <MESSAGE value="funciona todo lo probado por ahora uwuwuwuwuwuwuwuwuwuwu" />
+    <MESSAGE value="falta filtrar lectores por tipo pero no se hacerlo pumpumpum" />
+    <MESSAGE value="ruben chupame el pito uwu" />
+    <MESSAGE value="Ayer fui al super a por manzanas y me encontre un gato de camino. Saludos." />
+    <MESSAGE value="me he cruzado con alvaro y me ha hecho gracia, lucia te quiero reventar la vida asquerosa de los cojones" />
+    <MESSAGE value="Cannot delete or update a parent row: a foreign key constraint fails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cannot delete or update a parent row: a foreign key constraint fails" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/add/NewsAddController.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderController.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/ArticleServImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/login/LoginViewModel.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderViewModel.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/newspaper/delete/NewsDeleteViewModel.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoArticleImpl.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoArticleImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/QuerysServImpl.java</url>
+          <line>31</line>
+          <properties class="services.impl.QuerysServImpl" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/ArticleServImpl.java</url>
+          <line>50</line>
+          <properties class="services.impl.ArticleServImpl" method="addArticle">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DaoArticle.java</url>
+          <line>20</line>
+          <properties class="dao.DaoArticle" method="delete">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java</url>
+          <line>45</line>
+          <properties class="dao.impl.DaoLoginImpl" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoLoginImpl.java</url>
+          <line>38</line>
+          <properties class="dao.impl.DaoLoginImpl" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ui/pantallas/reader/addReader/AddReaderViewModel.java</url>
+          <line>52</line>
+          <properties class="ui.pantallas.reader.addReader.AddReaderViewModel" method="addReader">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReadArticleImpl.java</url>
+          <line>42</line>
+          <properties class="dao.impl.DaoReadArticleImpl" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/ReaderServImpl.java</url>
+          <line>25</line>
+          <properties class="services.impl.ReaderServImpl" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>44</line>
+          <properties class="dao.impl.DaoReaderImpl" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoReaderImpl.java</url>
+          <line>63</line>
+          <properties class="dao.impl.DaoReaderImpl" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/impl/DaoArticleImpl.java</url>
+          <line>43</line>
+          <properties class="dao.impl.DaoArticleImpl" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="articleList.get(1)" />
+        <watch expression="daoReaderImpl.getAll()" />
+        <watch expression="articleList" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

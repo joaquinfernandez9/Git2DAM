@@ -1,0 +1,21 @@
+
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ë†ôØøÿÿÿÿ8£ÍÓ³Ù0
+K
+java:S1172%")Remove this unused method parameter "rs".( ÷§Ÿúÿÿÿÿ8ñÕ³Ù0
+E
+java:S11722")Remove this unused method parameter "rs".(¿°²M8ç©Ö³Ù0
+H
+java:S1128"&Remove this unused import 'dao.Const'.(‰õ‡¼ûÿÿÿÿ8ÂÅŞÙ0
+r
+java:S1128"PRemove this unused import 'org.springframework.jdbc.core.BeanPropertyRowMapper'.(ß©Å´ÿÿÿÿÿ8ÂÅŞÙ0
+i
+java:S1128"GRemove this unused import 'org.springframework.jdbc.core.JdbcTemplate'.(å ê‹ÿÿÿÿÿ8ÃÅŞÙ0
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ÃÅŞÙ0
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÃÅŞÙ0
+M
+java:S1144%"+Remove this unused private "readRS" method.( ÷§Ÿúÿÿÿÿ8ºüÓ³Ù0
+M
+java:S11442"1Remove this unused private "readRSReader" method.(¿°²M8Ù½Õ³Ù0

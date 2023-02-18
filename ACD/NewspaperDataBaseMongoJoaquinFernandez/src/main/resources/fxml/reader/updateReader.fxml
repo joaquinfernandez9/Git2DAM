@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.reader.updateReader.UpdateController">
+    <TableView fx:id="readersTable" layoutX="228.0" layoutY="18.0" prefHeight="418.0" prefWidth="185.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="50.3" text="ID" />
+            <TableColumn fx:id="nameColum" prefWidth="50.3" text="Name" />
+            <TableColumn fx:id="dateColumn" prefWidth="50.3" text="Date of Birth" />
+        </columns>
+    </TableView>
+    <TableView fx:id="newspaperTable" layoutX="14.0" layoutY="18.0" prefHeight="418.0" prefWidth="214.0">
+        <columns>
+            <TableColumn fx:id="idTable" prefWidth="69.0" text="Id" />
+            <TableColumn fx:id="nameTable" prefWidth="69.0" text="Name" />
+            <TableColumn fx:id="releaseTableDate" prefWidth="69.0" text="Release Date" />
+        </columns>
+    </TableView>
+    <Button layoutX="302.0" layoutY="453.0" mnemonicParsing="false" onAction="#getReaders" text="Get Readers" />
+    <Button layoutX="544.0" layoutY="368.0" mnemonicParsing="false" onAction="#updateReader" text="Update" />
+   <DatePicker fx:id="dateReader" layoutX="485.0" layoutY="151.0" promptText="Birth date" />
+    <MFXTextField fx:id="nameReader" layoutX="481.0" layoutY="71.0" prefHeight="50.0" prefWidth="182.0" promptText="Name" />
+   <MFXTextField fx:id="username" layoutX="481.0" layoutY="219.0" prefHeight="50.0" prefWidth="182.0" promptText="Username" />
+   <MFXTextField fx:id="password" layoutX="481.0" layoutY="282.0" prefHeight="50.0" prefWidth="182.0" promptText="Password" />
+
+</AnchorPane>

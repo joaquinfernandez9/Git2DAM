@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.article.addDeleteUpdate.Controller">
+    <TableView fx:id="articleTable" layoutX="50.0" layoutY="277.0" prefHeight="156.0" prefWidth="406.0">
+        <columns>
+            <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="typeIDColumn" prefWidth="75.0" text="Type ID" />
+        </columns>
+    </TableView>
+
+    <TableView fx:id="npTable" layoutX="50.0" layoutY="74.0" prefHeight="156.0" prefWidth="406.0">
+        <columns>
+            <TableColumn fx:id="idTable" prefWidth="100.0" text="Id" />
+            <TableColumn fx:id="nameTable" prefWidth="100.0" text="Name" />
+            <TableColumn fx:id="releaseTableDate" prefWidth="100.0" text="Release Date" />
+        </columns>
+    </TableView>
+    <Button layoutX="554.0" layoutY="225.0" mnemonicParsing="false" onAction="#add" text="add" />
+    <MFXTextField fx:id="name" layoutX="498.0" layoutY="49.0" prefHeight="37.0" prefWidth="176.0" promptText="Title" />
+    <MFXTextField fx:id="type" layoutX="498.0" layoutY="124.0" prefHeight="37.0" prefWidth="176.0" promptText="Type ID" />
+    <Button layoutX="554.0" layoutY="277.0" mnemonicParsing="false" onAction="#delete" text="delete" />
+    <Button layoutX="554.0" layoutY="324.0" mnemonicParsing="false" onAction="#update" text="update" />
+</AnchorPane>

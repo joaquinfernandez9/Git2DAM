@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500" prefWidth="700" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.reader.appendArticle.AppendArticleController">
+   <Button layoutX="241.0" layoutY="408.0" mnemonicParsing="false" onAction="#addReadArticle" text="Add Read article" />
+    <MFXTextField fx:id="ratingText" layoutX="355.0" layoutY="396.0" promptText="Rating" />
+   <TableView fx:id="tableReadArticle" layoutX="355.0" layoutY="34.0" prefHeight="324.0" prefWidth="320.0">
+     <columns>
+       <TableColumn fx:id="articleID" prefWidth="75.0" text="art id" />
+         <TableColumn fx:id="ranking" prefWidth="75.0" text="ranking" />
+     </columns>
+   </TableView>
+   <TableView fx:id="tableArticle" layoutX="25.0" layoutY="34.0" prefHeight="324.0" prefWidth="320.0">
+     <columns>
+       <TableColumn fx:id="idArticle" prefWidth="75.0" text="id" />
+       <TableColumn fx:id="nameArticle" prefWidth="75.0" text="Name" />
+         <TableColumn fx:id="typeID" prefWidth="75.0" text="type" />
+         <TableColumn fx:id="newspaperID" prefWidth="75.0" text="newspaper" />
+     </columns>
+   </TableView>
+   <Label layoutX="171.0" layoutY="368.0" text="Article list" />
+   <Label layoutX="501.0" layoutY="368.0" text="Your read articles" />
+
+</AnchorPane>

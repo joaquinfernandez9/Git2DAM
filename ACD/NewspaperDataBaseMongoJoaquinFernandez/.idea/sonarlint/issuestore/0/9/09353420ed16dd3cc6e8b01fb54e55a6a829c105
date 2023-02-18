@@ -1,0 +1,19 @@
+
+l
+java:S1192"JDefine a constant instead of duplicating this literal "$articles" 5 times.(ъ▓ча     8Р╫аех0
+c
+java:S11924"FDefine a constant instead of duplicating this literal "count" 3 times.(Яс┬Ю8Р╫аех0
+j
+java:S1192"HDefine a constant instead of duplicating this literal "$unwind" 9 times.(ъ▓ча     8С╫аех0
+c
+java:S11924"FDefine a constant instead of duplicating this literal "$sort" 4 times.(Яс┬Ю8С╫аех0
+i
+java:S1192"GDefine a constant instead of duplicating this literal "$group" 5 times.(ъ▓ча     8С╫аех0
+y
+java:S1192"WDefine a constant instead of duplicating this literal "$articles.readArticles" 4 times.(ъ▓ча     8Т╫аех0
+|
+java:S1192"ZDefine a constant instead of duplicating this literal "$articles.readArticles.id" 3 times.(ъ▓ча     8Т╫аех0
+i
+java:S1192"GDefine a constant instead of duplicating this literal "$match" 3 times.(ъ▓ча     8Т╫аех0
+f
+java:S2095"IUse try-with-resources or close this "MongoClient" in a "finally" clause.(л╦╠┼8░╫аех0

@@ -1,0 +1,11 @@
+
+f
+java:S11924"IDefine a constant instead of duplicating this literal "articles" 6 times.(┴╨╛Г8М╒аех0
+l	java:S117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ъ├щ8О╒аех0
+s	java:S117Я"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( с ▀√    8О╒аех0
+f
+java:S2095%"IUse try-with-resources or close this "MongoClient" in a "finally" clause.(л╦╠┼8Ф╓аех0
+I
+java:S1168в"+Return an empty collection instead of null.(е╣яН8╧╓аех0
+P
+java:S1128"3Remove this unused import 'io.vavr.control.Either'.(ў┐ЬТ8╫╓аех0
