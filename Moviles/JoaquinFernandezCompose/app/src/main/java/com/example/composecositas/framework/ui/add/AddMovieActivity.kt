@@ -63,15 +63,11 @@ class AddMovieActivity : ComponentActivity() {
                     .fillMaxSize()
                     .align(Alignment.Center)
             ) {
-
                 OutlinedTextField(value = text, onValueChange = { text = it },
                 shape = RoundedCornerShape(16.dp), placeholder = { Text(text = "Title") }, singleLine = true,
                 )
-
 //                var text by rememberSaveable { mutableStateOf("") }
 //                TextField(value = text, onValueChange = { text = it }, label = { Text("Label") })
-
-
                 FloatingActionButton(
                     onClick = {
                         viewModel.handleEvent(AddContract.Event.Add(movie = Movie(text)))
@@ -83,7 +79,6 @@ class AddMovieActivity : ComponentActivity() {
                     Icon(imageVector = Icons.Filled.Add, contentDescription = "Add")
                 }
             }
-
         }
     }
 

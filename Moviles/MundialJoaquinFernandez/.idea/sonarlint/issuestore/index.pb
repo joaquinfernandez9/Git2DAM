@@ -87,15 +87,15 @@ Lapp/src/main/java/com/example/mundialjoaquinfernandez/data/dao/EquiposDao.kt,9
 Zapp/src/main/java/com/example/mundialjoaquinfernandez/data/repository/EquiposRepository.kt,6\f\6f2849f10178405015bb84b01ffa3a49f691d16c
 ‡
 Wapp/src/main/java/com/example/mundialjoaquinfernandez/usecases/equipos/GetAllEquipos.kt,9\b\9b24e612be668ca78e8067fb6ca47b6b1f04d6d1
+Ž
+^app/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/juego/SeleccionViewModel.kt,d\3\d3f7ef21656c4c48c6960853e34c4d22710c9a1f
 }
 Mapp/src/main/java/com/example/mundialjoaquinfernandez/data/EquiposDatabase.kt,7\c\7c082db0ca9e2bc21b5a4bd08d8a1b04b198eeca
 ~
 Napp/src/main/java/com/example/mundialjoaquinfernandez/data/const/Constantes.kt,0\6\06a40b64284888853120664dc8db5087fa5b3a8c
-Ž
-^app/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/juego/SeleccionViewModel.kt,d\3\d3f7ef21656c4c48c6960853e34c4d22710c9a1f
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 Ž
 ^app/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/juego/SeleccionarEquipos.kt,e\d\ed7887a6c3078564640a0240a1c4c74a46f0b783
