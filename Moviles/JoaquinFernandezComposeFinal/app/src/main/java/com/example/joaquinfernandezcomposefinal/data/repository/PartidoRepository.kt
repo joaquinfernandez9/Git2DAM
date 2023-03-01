@@ -4,12 +4,9 @@ import com.example.mundialjoaquinfernandez.data.dao.EquiposDao
 import com.example.mundialjoaquinfernandez.data.dao.PartidoDao
 import com.example.mundialjoaquinfernandez.data.model.PartidoConEquipos
 import com.example.mundialjoaquinfernandez.data.model.PartidoEntity
-import com.example.mundialjoaquinfernandez.data.model.datamapper.toEquipoEntity
-import com.example.mundialjoaquinfernandez.data.model.datamapper.toPartido
-import com.example.mundialjoaquinfernandez.model.Equipo
-import com.example.mundialjoaquinfernandez.model.Partido
+import com.example.joaquinfernandezcomposefinal.data.model.datamapper.toPartido
+import com.example.joaquinfernandezcomposefinal.domain.model.Partido
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
 class PartidoRepository @Inject constructor(private val partidoDao: PartidoDao, private val equiposDao: EquiposDao) {
@@ -37,6 +34,16 @@ class PartidoRepository @Inject constructor(private val partidoDao: PartidoDao, 
     suspend fun getPartido(nombreLocal: String, nombreVisitante: String): Partido {
         val id =  partidoDao.getPartido(nombreLocal, nombreVisitante)
         return partidoDao.getPartidoById(id.toInt()).toPartido()
+    }
+
+    suspend fun getLastMatch(): Partido {
+        val partido = partidoDao.getLastMatch()
+        return partido.toPartido()
+    }
+
+    suspend fun getAllMatches(): List<Partido> {
+        val partidos = partidoDao.getAllMatches()
+        return partidos.map { it.toPartido() }
     }
 
 

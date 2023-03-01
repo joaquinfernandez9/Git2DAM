@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/initFrag">
+
+    <fragment
+        android:id="@+id/initFrag"
+        android:name="com.example.examen.framework.xml.initScreen.InitFrag"
+        android:label="init_fragment"
+        tools:layout="@layout/init_fragment" />
+    <fragment
+        android:id="@+id/allPatients"
+        android:name="com.example.examen.framework.xml.getAllPatients.AllPatients"
+        android:label="all_patients"
+        tools:layout="@layout/all_patients" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.examen.framework.xml.detail.DetailFragment"
+        android:label="detail"
+        tools:layout="@layout/detail" />
+</navigation>

@@ -50,20 +50,16 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-
     // Lifecycle libraries
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-
 
     //by viewModels
     implementation "androidx.fragment:fragment-ktx:1.5.5"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     implementation 'com.google.ar:core:1.30.0'
-
-
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"

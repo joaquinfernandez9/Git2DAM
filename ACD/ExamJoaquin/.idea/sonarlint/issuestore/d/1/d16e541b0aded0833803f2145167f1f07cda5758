@@ -1,0 +1,9 @@
+
+d
+java:S2095&"IUse try-with-resources or close this "MongoClient" in a "finally" clause.(ö‹­µÿÿÿÿÿ
+l
+java:S1450 "QRemove the "em" field and declare it as a local variable in the relevant methods.(‘æ¿Úúÿÿÿÿ
+V
+java:S1128"@Remove this unused import 'com.mongodb.client.model.Filters.eq'.(©§›
+[
+java:S1128"@Remove this unused import 'com.mongodb.client.model.Filters.in'.( ùÃÆÿÿÿÿÿ

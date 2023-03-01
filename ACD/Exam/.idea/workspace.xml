@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a6476f20-d6c2-4529-871d-2061cac83f5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/db/HospitalesDB.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/di/NetworkModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/di/RoomModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/local/dao/HospitalesDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/model/HospitalConPacientes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/model/HospitalEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/model/PacienteEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/data/remote/BaseApiResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/domain/model/Hospital.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/domain/model/Paciente.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/domain/usecases/Usecases.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/App.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/detail/Detail.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/listPatients/Patients.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/litsHospitals/Hospitals.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/litsHospitals/HospitalsContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/litsHospitals/HospitalsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/theme/Shape.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/compose/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/detail/DetailContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/detail/DetailFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/detail/DetailViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/detail/PatientDetail.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/getAllPatients/AllPatients.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/getAllPatients/ListPatients.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/getAllPatients/PatientsAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/getAllPatients/PatientsContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/getAllPatients/PatientsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/initScreen/InitAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/initScreen/InitContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/initScreen/InitFrag.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/framework/xml/initScreen/InitViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/network/AuthInterceptor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/network/services/HospitalService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/utils/Config.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/utils/NetworkResult.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/java/com/example/examen/utils/Utils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/res/layout/all_patients.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/res/layout/detail.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/res/layout/fragment_init.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/res/layout/hospital_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/res/layout/init_fragment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/res/menu/bottom_navigation_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/app/src/main/res/navigation/navigation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez2/schemas/com.example.examen.data.db.HospitalesDB/1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/0/b/0b2130e86da8b8a179a806fb86951d31769ab7de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/1/3/13693e86e519ebf51ddfd415c7b63b584e0a81b6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/3/1/312935c776f28ecca5d8d4a963fefc8fa0c04360" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/3/9/398b23486473e683149a29a8095a0c72787b8604" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/4/1/41e6474e9375d0d8459418938683532da4afcfc9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/5/4/54dc091dbc5432d92762e47d47e9f522aea68cc3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/6/2/62a4ebe63ffb955cbcf8c337105dee8fd09b1436" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/7/7/77c8771f5db0cddcfaac587034aeffd8ff0838a3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/7/c/7c6a87dff898b8aa34fd4715d25420e8b026a4d0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/9/5/9556f4874b93734e92f78c2475c3ad3e2c9625c8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/a/7/a7572a94761ed60dfacf1032f20977348738ebf5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/d/9/d9fb38746975bf4c902c77032edb9ab96dec208d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/1/5/15efa9d9771127b75deff66b97c33eecf807b9f2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/1/7/177fe1d101e74d41e984c03876143149f27925a3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/1/a/1a61706f504e85c9a1de76a43f1f621beb8b6177" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/1/a/1acb6f5282a337a18042ce8fae0d83154938dcd6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/2/3/2364d8e5e1c48792bdb729fed4bea1b3d1965cf0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/2/7/2725a5f8ebabc13a12268bfe73c731992d596c3d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/3/5/3521eda95195000d470cc0ad320af6ae979022fc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/5/7/57b2deffeae074a2ef1f33a7142e0730227a2301" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/5/d/5de895f48b7dd1af4e63e3895868e4bf2ad7eb97" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/6/2/62c43e3877ec178dc251a30451940c761a315974" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/6/7/679e9f04ceb04e7fa67a8743796abb64ce02dae5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/a/0/a0d5b55bfbb320f7d881c58a1d2e923458cb754c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/a/d/ad769b36c531a8dd28b73004ef3c0c0847608b29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/a/f/af643e5d0476ba9a93ce63ed75f100345061ffbc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/c/5/c5a69759c70cb92f4fda30093226f126aaf0b29e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/c/a/ca5965cba72af0dcca9870238ebf6019b24a46c5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/e/2/e2826a450a5bd0c883d4e7858d0301772347bf34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/e/3/e3764fc64ac72c584d0d0c08ea2d8589422341c6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/e/f/ef1905a321bbbdbbb970c33c0828de7f599b4711" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/f/2/f293065a93a654a7967dd5c166dc8a35481d7ab8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/assets/database/futbol.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/domain/usecases/Usecases.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/mainScreen/InitContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/mainScreen/InitViewmodel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/result/ResultContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/result/ResultScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/result/ResultViewmodel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/JPAUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/ProducesGson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DaoHibernate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DaoMongo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/query.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/config/JPAUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/config/ProducesGson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/DaoClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/DaoMongoAggregations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/DaoMongoEmployees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/DaoPurchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/DaoTransfer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/hibernateModel/Friend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/hibernateModel/Hobbies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/dao/hibernateModel/PersonHibernate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/modelo/hibernate/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/modelo/hibernate/Items.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/modelo/hibernate/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/modelo/hibernate/PurchaseItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/modelo/mongo/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/modelo/mongo/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/modelo/mongo/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/services/ServicesClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/ui/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/java/ui/MongoAggregations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/resources/Log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamJoaquin/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PeliculasExamenJoaquinFernandez/.idea/PeliculasExamenJoaquinFernandez.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PeliculasExamenJoaquinFernandez/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PeliculasExamenJoaquinFernandez/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ACD/NewspaperDataBaseJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../ACD/NewspaperDataBaseJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ACD/NewspaperDataBaseJoaquinFernandez/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ACD/NewspaperDataBaseJoaquinFernandez/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ACD/NewspaperDataBaseMongoJoaquinFernandez/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ACD/NewspaperDataBaseMongoJoaquinFernandez/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/8/9/8932197f644b3d0240f9f54bb4cfddf5251d3a78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/8/b/8b6b03e575041779beaff6c8ece3af979b7c570f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/c/c/cce9409c4282fdb9f188dea0a0c1bc002ce2dec2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/f/2/f28c2d10bdde097148f741a59b2e36a96a8fb81a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ColocacionCosas/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/0/f/0fd9866990274e5f49039b4ec33aa7bf43b990d7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/4/f/4fea73c1381b997b8709dcfa5dd73f0c10c63e73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/6/f/6f8fd2a37315c5788aead5aefc756dac36d8b298" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/7/3/739d4c157710640d92be801017af1916fc78ea85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/7/6/7639b84900f8fc1204395a3a4c6a6d9eac0ca6cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/7/a/7a18baa88e85200f4133cf5430194b3c29da79f2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/d/e/ded5c6a6ec7544ca49e3415bb5c8a4e72ff53a02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/ExamenJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/0/4/0433dc1f00401c369e87875c3b230f79486428d0" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/0/4/0433dc1f00401c369e87875c3b230f79486428d0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/8/5/85490fab46826739f8e120bbb4d901106707548a" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/8/5/85490fab46826739f8e120bbb4d901106707548a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/java/com/example/flowsjoaquinfernandez/di/NetworkModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/java/com/example/flowsjoaquinfernandez/di/NetworkModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/java/com/example/flowsjoaquinfernandez/framework/movies/TrendingMovies.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/java/com/example/flowsjoaquinfernandez/framework/movies/TrendingMovies.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/java/com/example/flowsjoaquinfernandez/network/services/MovieService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/java/com/example/flowsjoaquinfernandez/network/services/MovieService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/res/layout/rv_movie_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/FlowsJoaquinFernandez/app/src/main/res/layout/rv_movie_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/f/b/fb3ecf92ed80d2a452933b94dda6c40461b51ff2" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/f/b/fb3ecf92ed80d2a452933b94dda6c40461b51ff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/app/src/main/java/com/example/composecositas/framework/ui/add/AddMovieActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezCompose/app/src/main/java/com/example/composecositas/framework/ui/add/AddMovieActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/5/5/5537f387a4872882904f77e85bf63613b59e365d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/EquiposDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/EquiposDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/dao/PartidoDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/dao/PartidoDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/EquipoConJugadores.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/EquipoEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/JugadorEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/PartidoConEquipos.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/PartidoEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/PartidoEquipoCrossRef.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/model/datamapper/Datamappers.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/EquiposRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/EquiposRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/JugadoresRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/JugadoresRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/PartidoRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/data/repository/PartidoRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/model/Equipo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/domain/model/Equipo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/model/Jugador.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/domain/model/Jugador.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/model/Partido.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/domain/model/Partido.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/Routes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/game/GameViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/mainScreen/InitScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/ui/framework/mainScreen/InitScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/equipos/GetAllEquipos.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/jugadores/DeleteJugador.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/jugadores/GetAllJugadores.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/jugadores/InsertJugador.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/partido/GetPartido.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/JoaquinFernandezComposeFinal/app/src/main/java/com/example/joaquinfernandezcomposefinal/usecases/partido/InsertPartido.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/3/2/3296678e16c41cfcb61fbfcab42ecece3ce9643b" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/3/2/3296678e16c41cfcb61fbfcab42ecece3ce9643b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Moviles/MundialJoaquinFernandez/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PeliculasExamenJoaquinFernandez/.idea/runConfigurations.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MP78ZN1C2zG6g0bMzuOAu7Trup" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/joaqu/Documents/Clase/Git2DAM/PSP/Exam/src/main/java/config",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\PSP\Exam\src\main\java\config" />
+      <recent name="C:\Users\joaqu\Documents\Clase\Git2DAM\PSP\Exam\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="96045fdd-eb1e-46b5-a010-dca8968db375" />
+      <option name="artifact" />
+      <option name="autoPort" value="true" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="funcPort" value="0" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6476f20-d6c2-4529-871d-2061cac83f5f" name="Changes" comment="" />
+      <created>1677657205324</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677657205324</updated>
+      <workItem from="1677657206552" duration="537000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,11 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÍª
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ˆøÿÿÿÿ
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÙÒëüÿÿÿÿ
+h	java:S116
+"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÿ€àùÿÿÿÿ
+i	java:S116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬­Áøÿÿÿÿ
+m	java:S116"SRename this field "LastName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş‡àıÿÿÿÿ
+h	java:S116"NRename this field "Age" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ßÄÃûÿÿÿÿ
+l	java:S116"RRename this field "Hobbies" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±õ‹„ùÿÿÿÿ
+l	java:S116"RRename this field "Friends" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ş¢Ôüÿÿÿÿ

@@ -3,7 +3,6 @@ package com.example.flowsjoaquinfernandez.network.services
 import com.example.flowsjoaquinfernandez.data.model.MovieDesc
 import com.example.flowsjoaquinfernandez.data.model.TrendingResponse
 import com.example.flowsjoaquinfernandez.utils.Constants
-import dagger.Provides
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

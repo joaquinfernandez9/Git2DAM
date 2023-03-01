@@ -66,8 +66,6 @@ class TrendingMovies : Fragment() {
 
         adapter = MovieAdapter()
         binding.rvMovies.adapter = adapter
-
-
     }
 
 

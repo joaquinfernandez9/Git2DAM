@@ -1,12 +1,12 @@
-package com.example.mundialjoaquinfernandez.data.model.datamapper
+package com.example.joaquinfernandezcomposefinal.data.model.datamapper
 
 import com.example.mundialjoaquinfernandez.data.model.EquipoConJugadores
 import com.example.mundialjoaquinfernandez.data.model.EquipoEntity
 import com.example.mundialjoaquinfernandez.data.model.JugadorEntity
 import com.example.mundialjoaquinfernandez.data.model.PartidoEntity
-import com.example.mundialjoaquinfernandez.model.Equipo
-import com.example.mundialjoaquinfernandez.model.Jugador
-import com.example.mundialjoaquinfernandez.model.Partido
+import com.example.joaquinfernandezcomposefinal.domain.model.Equipo
+import com.example.joaquinfernandezcomposefinal.domain.model.Jugador
+import com.example.joaquinfernandezcomposefinal.domain.model.Partido
 
 fun EquipoConJugadores.toEquipo(): Equipo {
     return Equipo(

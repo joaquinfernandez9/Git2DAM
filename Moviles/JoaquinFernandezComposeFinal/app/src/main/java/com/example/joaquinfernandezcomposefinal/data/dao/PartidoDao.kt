@@ -37,6 +37,14 @@ interface PartidoDao {
     @Query(Constantes.GET_PARTIDO_BY_ID)
     suspend fun getPartidoById(id: Int): PartidoEntity
 
+    //get last match
+    @Query("SELECT * FROM ${Constantes.PARTIDO} ORDER BY ${Constantes.CAPS_ID} DESC LIMIT 1" )
+    suspend fun getLastMatch(): PartidoEntity
+
+    //get all matches
+    @Query("SELECT * FROM ${Constantes.PARTIDO}")
+    suspend fun getAllMatches(): List<PartidoEntity>
+
 
 
 }

@@ -21,8 +21,11 @@ import androidx.navigation.compose.composable
 import com.example.joaquinfernandezcomposefinal.ui.framework.mainScreen.InitScreen
 import com.example.joaquinfernandezcomposefinal.ui.theme.AppTheme
 import androidx.navigation.compose.rememberNavController
-import com.example.joaquinfernandezcomposefinal.ui.framework.game.GameActivity
+import com.example.joaquinfernandezcomposefinal.ui.framework.game.GameScreen
+import com.example.joaquinfernandezcomposefinal.ui.framework.result.ResultScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,20 +55,15 @@ fun Navigation(){
             })
         }
         composable("gameActivity"){
-            GameActivity(onNavigate = {
-                id -> navController.navigate(id)
-            })
+            GameScreen(navController)
         }
-        composable("resultadoPartido"){
-
+        composable("resultadoPartido/{equipo1}/{equipo2}"){
+            val equipo1 = it.arguments?.getString("equipo1")
+            val equipo2 = it.arguments?.getString("equipo2")
+            if (equipo2 != null && equipo1 != null) {
+                ResultScreen(equipo1, equipo2)
+            }
         }
     }
 }
 
-@Preview
-@Composable
-fun MainScreenPreview() {
-    AppTheme {
-//        InitScreen()
-    }
-}

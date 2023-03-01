@@ -19,7 +19,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NetworkModule {
 
     private const val baseLink = Config.BASE_URL
-    private const val baseLinkImg = Config.IMAGE_URL
 
     @Provides
     fun provideHTTPLoggingInterceptor(): HttpLoggingInterceptor {

@@ -1,14 +1,10 @@
 
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 Ö
 Uapp/src/main/java/com/example/mundialjoaquinfernandez/data/model/PartidoConEquipos.kt,8\d\8d2e71093a9c7a32eefb8f7e0a2e40758ceed5c8
 â
 Yapp/src/main/java/com/example/mundialjoaquinfernandez/data/model/PartidoEquipoCrossRef.kt,3\9\390fc8283d30fa83a737a25f860cb2c8a408dcec
 ä
 Zapp/src/main/java/com/example/mundialjoaquinfernandez/data/repository/PartidoRepository.kt,5\9\599b106c2710ab1c1cc85f6057b55f5b2c76d822
-u
-Eapp/src/main/java/com/example/mundialjoaquinfernandez/model/Equipo.kt,4\c\4ce549de93f0709bea018c34b050dfc69f20cf0f
 v
 Fapp/src/main/java/com/example/mundialjoaquinfernandez/model/Partido.kt,8\4\84bb012c03f6f311f5d17c828d15624bcbc3ccce
 î
@@ -41,8 +37,6 @@ lapp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/listaJugador
 Rapp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/MainActivity.kt,f\7\f734d01c0bb066273705e5f9f6a71dfd0772a55c
 Ö
 Uapp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/PrincipalScreen.kt,8\5\85d058b676726f0c336400193719e3ff104eaa1f
-z
-Japp/src/main/java/com/example/mundialjoaquinfernandez/ui/SplashActivity.kt,3\2\3296678e16c41cfcb61fbfcab42ecece3ce9643b
 â
 Yapp/src/main/java/com/example/mundialjoaquinfernandez/usecases/jugadores/DeleteJugador.kt,9\3\934f1b18964c242ac47f616146de0a7bfcd65266
 ã
@@ -57,24 +51,18 @@ p
 @app/src/main/java/com/example/mundialjoaquinfernandez/RoomApp.kt,e\1\e1db02a1c5eba28a82727400e034ec461dc3ec4f
 ä
 Zapp/src/main/java/com/example/mundialjoaquinfernandez/data/model/datamapper/Datamappers.kt,2\1\21c5912cacd3b8a5c48f13dfbd9cb5cc4a753122
-Ü
-Vapp/src/main/java/com/example/mundialjoaquinfernandez/data/model/EquipoConJugadores.kt,6\f\6fee1b8c1288caeb203b686d022da70b795b3d2f
 å
 \app/src/main/java/com/example/mundialjoaquinfernandez/data/repository/JugadoresRepository.kt,a\d\ad757149515a7a8773aac5a166e5c416a14ade4a
 ñ
 fapp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/juego/resultado/ResultadoPartido.kt,6\4\641886ddfbc17c66dc0d9112f7eb35a6be820683
 ì
 capp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/listaJugadores/ListaJugadores.kt,c\6\c69ed3b71be14ba28931a9625468fdb15cb484ad
-v
-Fapp/src/main/java/com/example/mundialjoaquinfernandez/model/Jugador.kt,1\4\14e132a3c8722a74215bed6a64a810dd8c59848e
 Å
 Qapp/src/main/java/com/example/mundialjoaquinfernandez/data/model/JugadorEntity.kt,5\5\552383dc87c0dabe8918094103409c4e6a632a32
 |
 Lapp/src/main/java/com/example/mundialjoaquinfernandez/data/dao/PartidoDao.kt,f\6\f6dd2759ec65d30e163c6c4e1cd62c4834183e29
 ~
 Napp/src/main/java/com/example/mundialjoaquinfernandez/data/dao/JugadoresDao.kt,c\f\cf9c93f21b51aeeba5d53ccaf2f5892a6819b8cc
-Ä
-Papp/src/main/java/com/example/mundialjoaquinfernandez/data/model/EquipoEntity.kt,e\a\ead6537a01fd1f0ea9751c7a8ed5fd3ae7b78dd2
 Å
 Qapp/src/main/java/com/example/mundialjoaquinfernandez/data/model/PartidoEntity.kt,e\6\e6de53f11788832553d724e5ddfc982746f0ebd6
 è
@@ -99,3 +87,15 @@ Napp/src/main/java/com/example/mundialjoaquinfernandez/data/const/Constantes.kt
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 é
 ^app/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/juego/SeleccionarEquipos.kt,e\d\ed7887a6c3078564640a0240a1c4c74a46f0b783
+v
+Fapp/src/main/java/com/example/mundialjoaquinfernandez/model/Jugador.kt,1\4\14e132a3c8722a74215bed6a64a810dd8c59848e
+u
+Eapp/src/main/java/com/example/mundialjoaquinfernandez/model/Equipo.kt,4\c\4ce549de93f0709bea018c34b050dfc69f20cf0f
+Ä
+Papp/src/main/java/com/example/mundialjoaquinfernandez/data/model/EquipoEntity.kt,e\a\ead6537a01fd1f0ea9751c7a8ed5fd3ae7b78dd2
+Ü
+Vapp/src/main/java/com/example/mundialjoaquinfernandez/data/model/EquipoConJugadores.kt,6\f\6fee1b8c1288caeb203b686d022da70b795b3d2f
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+z
+Japp/src/main/java/com/example/mundialjoaquinfernandez/ui/SplashActivity.kt,3\2\3296678e16c41cfcb61fbfcab42ecece3ce9643b

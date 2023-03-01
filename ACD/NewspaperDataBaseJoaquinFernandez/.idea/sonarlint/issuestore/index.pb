@@ -9,12 +9,8 @@ w
 G.idea/sonarlint/issuestore/6/3/639d7002b6404379a71e79b109bc12a7217fab50,c\2\c2d963b311c39c13b29c5e6084149f06314e8441
 w
 G.idea/sonarlint/issuestore/6/6/6699e1d439ac0d1922c217887651886f9bf8ac69,7\5\7505eca3f12c5dd99df8aba1e32942db919f48a4
-E
-data/articlesType.txt,e\d\edfe09e2c6ea872a8a499393c00347d2b1ed5a4b
 j
 :.idea/dataSources/9452e80a-7c50-4d16-8ec7-15b8c5615f2d.xml,c\b\cbc6fc1ce22b82a9904970b23d2c3726739f1be6
-A
-data/articles.txt,e\b\eba3ccb9beb9883b0df9fcda7ca192f5623a5ea4
 [
 +src/main/java/dao/strings/DaoConstants.java,2\6\266ebb578d492b464d44e02bd135373fb1e2bf72
 b
@@ -67,8 +63,6 @@ t
 Dsrc/main/java/ui/pantallas/reader/subscribe/SubscribeController.java,9\1\913361cf877bc31d2517069e925b627701f50c81
 i
 9src/main/java/ui/pantallas/welcome/WelcomeController.java,0\9\098ad45b9172a1baaa953bb9c21e1cd1735c88df
-C
-data/newspapers.txt,2\6\265da7cdb708512fd84e9ea10efb0f0af1573ba4
 o
 ?src/main/java/ui/pantallas/reader/addReader/AddReaderState.java,4\f\4f6dd35afcfa7fdc8f255f2b3fc3205d8ef2d63c
 a
@@ -89,8 +83,6 @@ _
 /src/main/java/model/querys/QueryDescNumber.java,2\7\27eecdddaef230928e0c223c0543cb0a5b1e869c
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-N
-src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 S
 #src/main/java/dao/impl/JPAUtil.java,a\3\a3966e5130437f98e96d5fccd9262d48059aec0a
 d
@@ -127,8 +119,6 @@ e
 5src/main/java/services/impl/SubscriptionServImpl.java,e\f\efdacda246356e91296ef4a4e98312f10a8d9e8e
 L
 src/main/java/dao/Const.java,a\d\ad8edbc36c847bb32e9dc743db393b0dd5e23a5b
-P
- src/main/java/model/Article.java,9\9\99f4ea86658401191d1286ffc77aba6f6db602b1
 |
 Lsrc/main/java/ui/pantallas/reader/appendArticle/AppendArticleController.java,a\d\adb0472ca0ddedc5d67879d19927f44fd26c9deb
 `
@@ -195,8 +185,6 @@ q
 Asrc/main/java/ui/pantallas/newspaper/list/NewsListController.java,e\c\ec75ca22881b9fe9cc082f0033bd4bcaf8460c92
 p
 @src/main/java/ui/pantallas/newspaper/list/NewsListViewModel.java,b\9\b994ab04d25534c8ea2a17f872b34b5e053b3e4c
-Z
-*src/main/java/dao/impl/DaoArticleImpl.java,7\1\71e44dc5fcf1746c413aa5589868c3f834301a33
 \
 ,src/main/java/dao/impl/DaoNewspaperImpl.java,d\9\d940e9b1c3e290c9f863007602bcf03aebd211cd
 ^
@@ -215,8 +203,6 @@ T
 $src/main/java/services/TypeServ.java,9\0\900d9645f92c15fe9f06786aabe7a8a921f21994
 N
 src/main/java/dao/DaoType.java,3\a\3ac623b9bae3a82390d199eb7b0d436c65f991d5
-W
-'src/main/java/config/Configuration.java,7\f\7f9a1455549e9958f1cfe6993a695569484b133b
 e
 5src/main/java/ui/pantallas/login/LoginController.java,0\0\00a168197ce395305c37a33f896012577da7634b
 r
@@ -231,3 +217,17 @@ Y
 )src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
 X
 (src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153
+Z
+*src/main/java/dao/impl/DaoArticleImpl.java,7\1\71e44dc5fcf1746c413aa5589868c3f834301a33
+N
+src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
+P
+ src/main/java/model/Article.java,9\9\99f4ea86658401191d1286ffc77aba6f6db602b1
+A
+data/articles.txt,e\b\eba3ccb9beb9883b0df9fcda7ca192f5623a5ea4
+E
+data/articlesType.txt,e\d\edfe09e2c6ea872a8a499393c00347d2b1ed5a4b
+C
+data/newspapers.txt,2\6\265da7cdb708512fd84e9ea10efb0f0af1573ba4
+W
+'src/main/java/config/Configuration.java,7\f\7f9a1455549e9958f1cfe6993a695569484b133b
