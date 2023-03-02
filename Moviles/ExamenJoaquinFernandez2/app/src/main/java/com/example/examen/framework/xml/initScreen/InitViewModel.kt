@@ -18,11 +18,11 @@ class InitViewModel @Inject constructor(
     @ApplicationContext val context: Context,
     private val repo: HospitalRepository,
 ) : ViewModel() {
-    private val _state: MutableStateFlow<State> by lazy { MutableStateFlow(State()) }
-    val state: StateFlow<State> = _state
+    private val _hospitales: MutableStateFlow<State> by lazy { MutableStateFlow(State()) }
+    val state: StateFlow<State> = _hospitales
 
-    private val _uiError = Channel<String>()
-    val uiError = _uiError.receiveAsFlow()
+//    private val _uiError = Channel<String>()
+//    val uiError = _uiError.receiveAsFlow()
 
     fun handleEvent(event: Event) {
         when (event) {
@@ -32,12 +32,36 @@ class InitViewModel @Inject constructor(
 
 
     private fun cargar() {
+        _hospitales.value = _hospitales.value.copy(isLoading = true)
         viewModelScope.launch {
-            repo.fetchHospitales().catch(
-                action = { cause ->
-                    _uiError.send(cause.message ?: "Error")
+            repo.listHospitales().collect { result ->
+                when (result) {
+                    is NetworkResult.Error -> {
+                        _hospitales.update {
+                            it.copy(
+                                error = result.message,
+                                isLoading = false,
+                            )
+                        }
+                    }
+                    is NetworkResult.Loading -> {
+                        _hospitales.update {
+                            it.copy(
+                                isLoading = false,
+                            )
+                        }
+                    }
+                    is NetworkResult.Success -> {
+                        _hospitales.update {
+                            it.copy(
+                                hospitales = result.data,
+                                isLoading = false,
+                            )
+                        }
+                    }
+
                 }
-            ).collect()
+            }
         }
     }
 }

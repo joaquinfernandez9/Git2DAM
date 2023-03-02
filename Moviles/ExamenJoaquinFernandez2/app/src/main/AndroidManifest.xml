@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
-
     <application
         android:usesCleartextTraffic="true"
         android:name=".framework.App"
@@ -18,23 +17,14 @@
         android:theme="@style/Theme.ExamenJoaquinFernandez"
         tools:targetApi="31">
         <activity
-            android:name=".framework.compose.MainActivity"
-            android:exported="true">
+            android:name=".framework.xml.MainActivity"
+            android:exported="true"
+            android:label="JoaquinCosas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name=".framework.compose.MainActivity"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
     </application>
 
 </manifest>

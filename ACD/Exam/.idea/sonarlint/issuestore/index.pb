@@ -5,3 +5,43 @@ V
 &src/main/java/config/ProducesGson.java,d\6\d6cd662b00051e372c115c7237fa24bcf163116c
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+N
+src/main/java/dao/DaoMenu.java,5\6\56a7e6bdd55e5e2ee3a5f5bf3a55a3bf0e40c4c7
+[
++src/main/java/dao/pattern/DaoHibernate.java,1\c\1cba4d3aa9aca0221ddb245f5825d98d9616db74
+P
+ src/main/java/dao/DaoTables.java,e\0\e043cc5c455526dfac72a7a3df86704fe7ae4245
+[
++src/main/java/model/hibernate/MenuItem.java,e\d\edb576d632168d1e61ead6c4354b2d276a591c33
+X
+(src/main/java/model/hibernate/Table.java,d\c\dc262aa25d69f4769ec5603aafc2b8bdb6fe0d98
+X
+(src/main/java/model/hibernate/Order.java,f\3\f31d9effc3c260bc1101596f3534e6a901be1bfd
+Y
+)src/main/java/services/ClientService.java,7\4\74613506b70d5d2889588166a78ab713be1f36b0
+R
+"src/main/java/dao/DaoCustomer.java,f\2\f216e783b06b790810271ae548894858bc39c6f8
+[
++src/main/java/model/hibernate/Customer.java,5\e\5e36bf9b9e190bd70eb8b077076c53256c89e2a4
+W
+'src/main/java/services/MenuService.java,6\1\61f0f2f0c5bb36ee002961da6c5278a7f3b7b899
+S
+#src/main/java/dao/DaoMenuItems.java,3\6\36adde878f3a98e677441a40f5f9b9de46c810ea
+]
+-src/main/java/model/hibernate/OrderItems.java,8\b\8b4c24950e56e44b68b55fbf1f9c27f6fea59f0c
+W
+'src/main/java/dao/pattern/DaoMongo.java,7\1\71a9c6caf1685e14743038204d00bf1de57b836e
+Y
+)src/main/java/services/OrdersService.java,f\a\fa4750be0e9dd549bfcf2446d2074fca10acbb2a
+O
+src/main/java/ui/Exercise5.java,6\6\667bc189d097f6aedaa517f4766642f7ab48bfe3
+O
+src/main/java/ui/Exercise4.java,2\d\2d1241212d9e5b2d3932900c6a6b60d503bdbcb5
+O
+src/main/java/ui/Exercise3.java,b\4\b4b26055224e18db8c306c29b4f513094aa11347
+O
+src/main/java/ui/Exercise2.java,f\6\f68fa909a0b37b1babf0d2153afb51c7c80d06b6
+O
+src/main/java/ui/Exercise1.java,5\5\5595d98733afd11db78f64ef43edf168aab71a13
+P
+ src/main/java/dao/DaoOrders.java,e\a\ea266c4c4d03f77269c4df8119a5222d5588f7b8

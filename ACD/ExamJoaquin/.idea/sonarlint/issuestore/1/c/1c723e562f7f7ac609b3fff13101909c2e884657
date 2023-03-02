@@ -2,3 +2,5 @@
 e
 java:S1104"OMake age a static final constant or non-public and provide accessors if needed.(×Áò¿
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õµÁ
+I
+java:S1128"'Remove this unused import 'dao.Person'.(Ë‚¼”şÿÿÿÿ8 ¿Ìäé0

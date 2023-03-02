@@ -39,11 +39,11 @@ fun Hospitals() {
                         .weight(1f),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    items(list.value) { item ->
-                        Button(onClick = { /*get pacientes*/ }) {
-                            Text(text = item.nombre)
-                        }
-                    }
+//                    items(list.value) { item ->
+//                        Button(onClick = { /*get pacientes*/ }) {
+//                            Text(text = item.nombre)
+//                        }
+//                    }
                 }
             }
             //patients

@@ -1,27 +1,27 @@
 
 o
-java:S1192Ö"LDefine a constant instead of duplicating this literal "Friends.Age" 3 times.(¤ª‡œıÿÿÿÿ8¦¬ÁĞé0
+java:S1192Ö"LDefine a constant instead of duplicating this literal "Friends.Age" 3 times.(¤ª‡œıÿÿÿÿ8ÏØòçé0
 k
-java:S1192<"IDefine a constant instead of duplicating this literal "$Hobbies" 7 times.(Ú¢»èùÿÿÿÿ8òÚŠÏé0
+java:S1192<"IDefine a constant instead of duplicating this literal "$Hobbies" 7 times.(Ú¢»èùÿÿÿÿ8ĞØòçé0
 k
-java:S1192Ò"HDefine a constant instead of duplicating this literal "Friends" 4 times.(ß§Û¡üÿÿÿÿ8§¬ÁĞé0
+java:S1192Ò"HDefine a constant instead of duplicating this literal "Friends" 4 times.(ß§Û¡üÿÿÿÿ8ĞØòçé0
 g
-java:S1192Ô"IDefine a constant instead of duplicating this literal "$Friends" 5 times.(“ˆÜˆ8À“„Ğé0
-e
-java:S1192)"JDefine a constant instead of duplicating this literal "$project" 12 times.(¡âÜÉıÿÿÿÿ
+java:S1192Ô"IDefine a constant instead of duplicating this literal "$Friends" 5 times.(“ˆÜˆ8ĞØòçé0
+l
+java:S1192)"JDefine a constant instead of duplicating this literal "$project" 12 times.(¡âÜÉıÿÿÿÿ8ĞØòçé0
 i
-java:S1192N"GDefine a constant instead of duplicating this literal "$group" 4 times.(‚˜˜Àüÿÿÿÿ8¸Î¡Ğé0
+java:S1192N"GDefine a constant instead of duplicating this literal "$group" 4 times.(‚˜˜Àüÿÿÿÿ8ĞØòçé0
 h
-java:S1192;"FDefine a constant instead of duplicating this literal "$size" 4 times.(·–¨ªıÿÿÿÿ8ôÚŠÏé0
+java:S1192;"FDefine a constant instead of duplicating this literal "$size" 4 times.(·–¨ªıÿÿÿÿ8ĞØòçé0
 s
-java:S1192:"QDefine a constant instead of duplicating this literal "cantidad_hobbies" 6 times.(ÂÕ«¢ıÿÿÿÿ8ôÚŠÏé0
+java:S1192:"QDefine a constant instead of duplicating this literal "cantidad_hobbies" 6 times.(ÂÕ«¢ıÿÿÿÿ8ĞØòçé0
 j
-java:S1192<"HDefine a constant instead of duplicating this literal "$ifNull" 4 times.(Ú¢»èùÿÿÿÿ8óÚŠÏé0
-^
-java:S1192+"IDefine a constant instead of duplicating this literal "Hobbies" 10 times.(¨Ëâ
-c
-java:S1192"HDefine a constant instead of duplicating this literal "$match" 11 times.(ş ­ğûÿÿÿÿ
-d
-java:S2095"IUse try-with-resources or close this "MongoClient" in a "finally" clause.(ö‹­µÿÿÿÿÿ
-G
-java:S1128	",Remove this unused import 'javax.print.Doc'.(ö«‘™ıÿÿÿÿ
+java:S1192<"HDefine a constant instead of duplicating this literal "$ifNull" 4 times.(Ú¢»èùÿÿÿÿ8ĞØòçé0
+e
+java:S1192+"IDefine a constant instead of duplicating this literal "Hobbies" 10 times.(¨Ëâ8ĞØòçé0
+j
+java:S1192"HDefine a constant instead of duplicating this literal "$match" 11 times.(ş ­ğûÿÿÿÿ8ÑØòçé0
+k
+java:S2095"IUse try-with-resources or close this "MongoClient" in a "finally" clause.(ö‹­µÿÿÿÿÿ8ëØòçé0
+N
+java:S1128	",Remove this unused import 'javax.print.Doc'.(ö«‘™ıÿÿÿÿ8‡Ùòçé0

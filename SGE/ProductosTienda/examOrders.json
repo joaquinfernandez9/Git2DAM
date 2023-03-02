@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "63ff365802bf1c97bcce0289"
+  },
+  "date": "2022-02-28",
+  "customer": {
+    "name": "John Doe",
+    "email": "johndoe@example.com"
+  },
+  "menu_items": [
+    {
+      "name": "Hamburger",
+      "quantity": 2,
+      "price": 10.99
+    },
+    {
+      "name": "Fries",
+      "quantity": 1,
+      "price": 3.99
+    }
+  ]
+}]
