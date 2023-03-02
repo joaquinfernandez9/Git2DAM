@@ -1,9 +1,6 @@
 package com.example.examen.data.local.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.example.examen.data.model.PacienteEntity
 
 @Dao
@@ -16,7 +13,7 @@ interface PacientesDao {
     suspend fun getPacientes(id: String): PacienteEntity
 
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(movies: List<PacienteEntity>)
 
 

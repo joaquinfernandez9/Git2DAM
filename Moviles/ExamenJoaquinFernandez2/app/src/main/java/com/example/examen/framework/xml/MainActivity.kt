@@ -37,33 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController,appBarConfig)
         navView.setupWithNavController(navController)
-
-        /*setContentView(R.layout.activity_main)
-        replaceFragment(InitFrag())
-//        val intent =
-//            Intent(this@MainActivity, com.example.examen.framework.compose.MainActivity::class.java)
-        with(binding) {
-            bottomNavigation.setOnItemSelectedListener {
-                when (it.itemId) {
-                    R.id.firstScreen -> {
-                        replaceFragment(InitFrag())
-                        true
-                    }
-                    R.id.secondScreen -> {
-                        replaceFragment(AllPatients())
-                        true
-                    }
-                    R.id.compose -> {
-                        startActivity(intent)
-                        true
-                    }
-                    else -> false
-                }
-            }
-        }*/
-
-
-
     }
 
     private fun replaceFragment(fragment: Fragment) {

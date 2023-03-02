@@ -22,6 +22,9 @@
         android:name="com.example.examen.framework.xml.getAllPatients.AllPatients"
         android:label="all_patients"
         tools:layout="@layout/all_patients" >
+        <action
+            android:id="@+id/action_all_patients_to_detailFragment"
+            app:destination="@id/detailFragment" />
         <argument
             android:name="id"
             app:argType="string" />

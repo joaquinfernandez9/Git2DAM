@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/firstScreen"
+        android:id="@+id/initFrag"
         android:enabled="true"
         android:icon="@drawable/ic_100tb"
         android:title="First"/>
     <item
-        android:id="@+id/secondScreen"
+        android:id="@+id/allPatients"
         android:enabled="true"
         android:icon="@drawable/ic_launcher_background"
         android:title="Second"/>

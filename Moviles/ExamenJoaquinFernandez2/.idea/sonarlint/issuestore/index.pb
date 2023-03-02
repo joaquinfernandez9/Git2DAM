@@ -3,8 +3,6 @@
 Qapp/src/main/java/com/example/examen/framework/xml/getAllPatients/ListPatients.kt,4\d\4dbfc3239fbeda16eaf7d14a014458adea38bc1a
 „
 Tapp/src/main/java/com/example/examen/framework/xml/getAllPatients/PatientsAdapter.kt,1\f\1ff6225d1e3945618528586cb6882a8aa6ecd43c
-…
-Uapp/src/main/java/com/example/examen/framework/xml/getAllPatients/PatientsContract.kt,5\7\57cfcf91f2a9b8cc46b0583fe0960aa829bb621e
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 <
