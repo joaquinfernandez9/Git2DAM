@@ -11,26 +11,14 @@ w
 Gapp/src/main/java/com/example/examen/data/model/HospitalConPacientes.kt,3\d\3d6ca25b29af5390f1356caabc83ab774f304a0f
 u
 Eapp/src/main/java/com/example/examen/framework/compose/theme/Theme.kt,e\7\e79e4d36183b311df4735cedb99e48291f3cb240
-e
-5app/src/main/java/com/example/examen/framework/App.kt,5\f\5f8eeb397a639286a0d2fe00b1fefdc5bf615c09
 w
 Gapp/src/main/java/com/example/examen/framework/compose/detail/Detail.kt,2\4\24534dae56ecf64011c240be7cc27c527936f4ce
-
-Oapp/src/main/java/com/example/examen/framework/compose/listPatients/Patients.kt,9\1\91c5ca44eaaac1ceab93478c0bf7c9ae4f98b2f3
 s
 Capp/src/main/java/com/example/examen/data/remote/BaseApiResponse.kt,f\3\f3268ea4eedf9a0e7cc1fa640f477f75898107bb
 â
 Yapp/src/main/java/com/example/examen/framework/compose/litsHospitals/HospitalsContract.kt,b\a\ba2a46f8cd26980730fe5470779da75d5982dc72
-ä
-Zapp/src/main/java/com/example/examen/framework/compose/litsHospitals/HospitalsViewModel.kt,6\9\69488d9b85573ff6eab4862f5dbfaba0e1bcd152
 c
 3app/src/main/java/com/example/examen/utils/Utils.kt,8\b\8b5d1c79ba156ba592ab30601ee3afa1b668daf7
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-v
-Fapp/src/main/java/com/example/examen/framework/compose/MainActivity.kt,d\1\d1bf0d60bfbfeff6aaea6f86af15bb3d07cd4132
-Å
-Qapp/src/main/java/com/example/examen/framework/compose/litsHospitals/Hospitals.kt,c\e\cea17251970cf4bd75093402693c354866dd5501
 m
 =app/src/main/java/com/example/examen/domain/model/Hospital.kt,4\7\4753d914d5b536ce548a72fcba9408080c0e06ce
 q

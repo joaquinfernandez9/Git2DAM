@@ -6,15 +6,20 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.examen.framework.xml.initScreen.InitContract
+import com.example.examen.framework.xml.initScreen.InitViewModel
 
 @Composable
-fun Hospitals() {
-    val viewModel: HospitalsViewModel = hiltViewModel()
-    val list = viewModel.hospitales
+fun Hospitals(onNavigate: (String) -> Unit) {
+    val viewModel: InitViewModel = hiltViewModel()
+    val state by viewModel.state.collectAsState()
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -39,11 +44,14 @@ fun Hospitals() {
                         .weight(1f),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-//                    items(list.value) { item ->
-//                        Button(onClick = { /*get pacientes*/ }) {
-//                            Text(text = item.nombre)
-//                        }
-//                    }
+                    items(state.hospitales ?: emptyList()) { item ->
+                        Button(onClick = {
+                            //esto carga la lista de pacientes
+                            viewModel.handleEvent(InitContract.Event.GetPacientes(item))
+                        }) {
+                            Text(text = item.nombre)
+                        }
+                    }
                 }
             }
             //patients
@@ -53,9 +61,30 @@ fun Hospitals() {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
+                LazyColumn(
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxWidth()
+                        .weight(1f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    items(state.pacientes) { item ->
+                        Button(onClick = {
+                            onNavigate("detail_patient/${item.nombre}")
+                        }) {
+                            Text(text = item.nombre)
+                        }
+                    }
+                }
 
             }
 
         }
     }
+}
+
+@Preview
+@Composable
+fun PreviewHospitals() {
+    Hospitals(onNavigate = {})
 }

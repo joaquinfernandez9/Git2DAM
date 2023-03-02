@@ -1,5 +1,6 @@
 package com.example.examen.framework.xml.initScreen
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.examen.R
 import com.example.examen.databinding.FragmentInitBinding
 import com.example.examen.domain.model.Hospital
 import com.example.examen.domain.model.Paciente
+import com.example.examen.framework.compose.MainActivity
 import com.example.examen.framework.xml.adapter.HospitalsAdapter
 import com.example.examen.framework.xml.adapter.PatientsAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,7 +55,15 @@ class InitFrag : Fragment() {
                 }
             }
         }
+        binding.goCompose.setOnClickListener {
+            goCompose()
+        }
         return binding.root
+    }
+
+    fun goCompose(){
+        val intent = Intent(this.context, MainActivity::class.java)
+        startActivity(intent)
     }
 
 

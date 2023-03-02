@@ -9,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -23,27 +24,22 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val navController = rememberNavController()
             AppTheme {
                 Surface(Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-                    Navigation()
-
+                    Navigation(navController = navController)
                 }
 
             }
         }
     }
 }
-
-/*
-a ver que se le ocurre
- */
-
 @Composable
-fun Navigation() {
-    val navController = rememberNavController()
+fun Navigation(navController: NavHostController) {
+
     NavHost(navController = navController, startDestination = "init") {
         composable("init") {
-            Hospitals()
+            Hospitals(onNavigate = { id -> navController.navigate(id) })
         }
         composable("patients") {
             Patients(onNavigate = { id -> navController.navigate(id) })
@@ -54,22 +50,6 @@ fun Navigation() {
         }
     }
 
-//    Scaffold(
-//        topBar = {
-//            TopAppBar(
-//                title = { Text("TopAppBar") },
-//                navigationIcon = {
-//                    IconButton(onClick = { navController.popBackStack() }) {
-//                        Icon(Icons.Filled.Menu, contentDescription = null)
-//                    }
-//                }
-//            )
-//        }
-//    , content = {
-//        //no comprendo
-//
-//        }
-//    )
 
 
 }
