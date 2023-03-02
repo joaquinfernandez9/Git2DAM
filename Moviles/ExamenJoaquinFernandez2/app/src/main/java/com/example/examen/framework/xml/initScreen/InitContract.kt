@@ -5,8 +5,9 @@ import com.example.examen.domain.model.Paciente
 
 interface InitContract {
 
-    sealed class Event {
-        object Cargar: Event()
+    sealed interface Event {
+        object Cargar: Event
+        data class GetPacientes(val hospital: Hospital): Event
     }
 
     data class State(

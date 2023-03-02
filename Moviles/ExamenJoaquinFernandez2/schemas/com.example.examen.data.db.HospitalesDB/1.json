@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "755a82f7df2c130c160db8a8919d29b2",
+    "identityHash": "7fcc68493fb33505f2e6604d2fe403e2",
     "entities": [
       {
-        "tableName": "HospitalEntity",
+        "tableName": "hospitales",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` BLOB NOT NULL, `nombre` TEXT NOT NULL, `numeroCamas` INTEGER NOT NULL, `direccion` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
@@ -43,13 +43,13 @@
         "foreignKeys": []
       },
       {
-        "tableName": "PacienteEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` BLOB NOT NULL, `nombre` TEXT NOT NULL, `dni` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "tableName": "pacientes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `nombre` TEXT NOT NULL, `dni` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
-            "affinity": "BLOB",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -78,7 +78,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '755a82f7df2c130c160db8a8919d29b2')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7fcc68493fb33505f2e6604d2fe403e2')"
     ]
   }
 }

@@ -9,7 +9,7 @@ import com.example.mundialjoaquinfernandez.data.model.JugadorEntity
 
 @Dao
 interface JugadoresDao {
-
+//no se si es este proyecto
     @Query(Constantes.GET_ALL_JUGADORES_DE_EQUIPO)
     suspend fun getAll(nombreEquipo: String): List<JugadorEntity>
 

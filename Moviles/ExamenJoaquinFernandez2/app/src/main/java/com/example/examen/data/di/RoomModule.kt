@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.room.Room
 import com.example.examen.data.db.HospitalesDB
 import com.example.examen.data.local.dao.HospitalesDao
+import com.example.examen.data.local.dao.PacientesDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -28,7 +28,11 @@ object RoomModule {
     }
 
     @Provides
-    fun providesPartidosDao(roomDB: HospitalesDB): HospitalesDao =
+    fun providesHospitalesDao(roomDB: HospitalesDB): HospitalesDao =
         roomDB.hospitalDao()
+
+    @Provides
+    fun providesPacientesDao(roomDB: HospitalesDB): PacientesDao =
+        roomDB.pacientesDao()
 
 }

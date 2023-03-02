@@ -1,11 +1,8 @@
 package com.example.examen.data.local.repos
 
-import com.example.examen.data.local.dao.HospitalesDao
-import com.example.examen.data.model.toHospitalEntity
-import com.example.examen.data.remote.BaseApiResponse
+import com.example.examen.data.model.HospitalesResponse
 import com.example.examen.data.remote.HospitalRemoteDataSouce
 import com.example.examen.domain.model.Hospital
-import com.example.examen.network.services.HospitalService
 import com.example.examen.utils.NetworkResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
@@ -21,6 +18,14 @@ class HospitalRepository @Inject constructor(
         return flow {
             emit(NetworkResult.Loading())
             val result = hospitalRemoteDataSouce.fetchHospitales()
+            emit(result)
+        }.flowOn(Dispatchers.IO)
+    }
+
+    fun deleteHospital(id: String): Flow<NetworkResult<HospitalesResponse>> {
+        return flow {
+            emit(NetworkResult.Loading())
+            val result = hospitalRemoteDataSouce.deleteHospital(id)
             emit(result)
         }.flowOn(Dispatchers.IO)
     }

@@ -11,15 +11,9 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="Second"/>
 
-    <item
-        android:id="@+id/thirdScreen"
-        android:enabled="true"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="Third"/>
-
-    <item
-        android:id="@+id/compose"
-        android:enabled="true"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="Ir Compose"/>
+<!--    <item-->
+<!--        android:id="@+id/compose"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/ic_launcher_foreground"-->
+<!--        android:title="Ir Compose"/>-->
 </menu>

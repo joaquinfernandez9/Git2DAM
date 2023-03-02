@@ -24,7 +24,7 @@ fun Patients(onNavigate: (String) -> Unit) {
                 .weight(1f),
                 horizontalAlignment = Alignment.CenterHorizontally) {
                 items(lista){item ->
-                Button(onClick = { onNavigate("detail/{${item.nombre}}")}, ) {
+                Button(onClick = { onNavigate("detail_patient/{${item.nombre}}")}, ) {
                     Text(text = item.nombre)
                 }
                 }
