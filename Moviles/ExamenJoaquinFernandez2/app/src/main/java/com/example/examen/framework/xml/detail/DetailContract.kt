@@ -15,6 +15,7 @@ interface DetailContract {
     sealed interface Event {
         // ver paciente
         data class GetPaciente(val id: String): Event
+        data class GetPacienteNombre(val nombre: String): Event
         // ver enfermedades
         data class VerEnfermedades(val paciente: Paciente): Event
         // update nombre paciente

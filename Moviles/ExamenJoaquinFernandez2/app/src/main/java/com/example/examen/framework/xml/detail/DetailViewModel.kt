@@ -9,7 +9,6 @@ import com.example.examen.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -25,7 +24,8 @@ class DetailViewModel @Inject constructor(
 
     fun event(event: DetailContract.Event) {
         when (event) {
-            is DetailContract.Event.GetPaciente -> getPaciente(event.id)
+            is DetailContract.Event.GetPaciente -> getPacienteId(event.id)
+            is DetailContract.Event.GetPacienteNombre -> getPacienteNombre(event.nombre)
             is DetailContract.Event.VerEnfermedades -> verEnfermedades(event.paciente)
             is DetailContract.Event.UpdatePaciente -> updatePaciente(event.id, event.paciente)
             is DetailContract.Event.PostEnfermedad -> addEnfermedad(event.id, event.enfermedades)
@@ -65,7 +65,7 @@ class DetailViewModel @Inject constructor(
         }
     }
 
-    private fun getPaciente(id: String) {
+    private fun getPacienteId(id: String) {
         viewModelScope.launch {
             getPacientesDet.getPacientes().collect { result ->
                 when (result) {
@@ -87,6 +87,52 @@ class DetailViewModel @Inject constructor(
                     }
                     is NetworkResult.Success -> {
                         val pacientes = result.data?.find { it.id == id }
+                        if (pacientes != null) {
+                            _paciente.update {
+                                it.copy(
+                                    pacientes = pacientes,
+                                    isLoading = false
+
+                                )
+                            }
+                        } else {
+                            _paciente.update {
+                                it.copy(
+                                    error = "No se ha encontrado el paciente",
+                                    isLoading = false
+
+                                )
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    private fun getPacienteNombre(id: String) {
+        viewModelScope.launch {
+            getPacientesDet.getPacientes().collect { result ->
+                when (result) {
+                    is NetworkResult.Error -> {
+                        _paciente.update {
+                            it.copy(
+                                error = result.message,
+                                isLoading = false
+
+                            )
+                        }
+                    }
+                    is NetworkResult.Loading -> {
+                        _paciente.update {
+                            it.copy(
+                                isLoading = true
+                            )
+                        }
+                    }
+                    is NetworkResult.Success -> {
+                        val pacientes = result.data?.find { it.nombre == id }
                         if (pacientes != null) {
                             _paciente.update {
                                 it.copy(

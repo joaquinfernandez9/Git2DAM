@@ -7,7 +7,7 @@ import java.util.UUID
 @Parcelize
 data class Paciente(
     val id: String,
-    val nombre: String,
+    var nombre: String,
     val dni: String,
     val enfermedades: List<Enfermedades>? = emptyList()
 ) : Parcelable

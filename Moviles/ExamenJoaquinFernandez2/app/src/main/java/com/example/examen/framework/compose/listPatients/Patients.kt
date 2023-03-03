@@ -17,6 +17,7 @@ fun Patients(onNavigate: (String) -> Unit) {
     Box(modifier = Modifier
         .fillMaxSize()
         .padding(20.dp)){
+        Text(text = "pacientes")
         Column() {
             LazyColumn(modifier = Modifier
                 .padding(16.dp)

@@ -79,12 +79,10 @@ public class DaoOrders {
         return orderId;
     }
 
-
     //get all orders of a customer
     public List<Order> getAll(Customer customer) {
         List<Order> response = Collections.emptyList();
         em = jpautil.getEntityManager();
-
         try {
             response = em.createQuery("select o from Order o where customer.id =: id", Order.class)
                     .setParameter("id", customer.id)
@@ -103,6 +101,7 @@ public class DaoOrders {
         b) An object customer, with the name and email of the client
         c) An array of menu_items ordered, with the quantity, the name and the price of the item
      */
+
     //get all the data from the table orders and write it into a mongo collection with that instructions
 
     //get all orders

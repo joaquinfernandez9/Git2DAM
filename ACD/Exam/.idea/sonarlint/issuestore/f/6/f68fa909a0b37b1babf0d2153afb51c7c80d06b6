@@ -1,8 +1,8 @@
 
-]
-java:S1854";Remove this useless assignment to local variable "scanner".(ù ƒ‘üÿÿÿÿ8†“òæé0
-N
-java:S1481",Remove this unused "scanner" local variable.(ù ƒ‘üÿÿÿÿ8ˆ“òæé0
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ò¢‹úüÿÿÿÿ8£˜óæé0
-P
-java:S1128"3Remove this unused import 'services.ClientService'.(ÂŒ§•8ªÆ˜èé0
+V
+java:S1854";Remove this useless assignment to local variable "scanner".(ù ƒ‘üÿÿÿÿ
+G
+java:S1481",Remove this unused "scanner" local variable.(ù ƒ‘üÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ò¢‹úüÿÿÿÿ
+I
+java:S1128"3Remove this unused import 'services.ClientService'.(ÂŒ§•

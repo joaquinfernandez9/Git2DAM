@@ -35,6 +35,10 @@ class InitViewModel @Inject constructor(
         }
     }
 
+    init {
+        cargar()
+    }
+
 
     private fun cargar() {
         _hospitales.value = _hospitales.value.copy(isLoading = true)
