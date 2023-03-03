@@ -3,11 +3,7 @@ package com.example.examendiputadosjoaquinfernandez.data.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.examendiputadosjoaquinfernandez.domain.model.CausasConfirmadas
-import com.example.examendiputadosjoaquinfernandez.domain.model.CausasSupuestas
 import com.example.examendiputadosjoaquinfernandez.domain.model.Diputado
-import com.example.examendiputadosjoaquinfernandez.framework.compose.diputados.Diputados
-import java.time.LocalDate
 import java.util.*
 
 @Entity(tableName = "diputados")
@@ -33,10 +29,10 @@ fun DiputadoEntity.toDiputado(): Diputado {
     return Diputado(
         id = id,
         nombre = nombre,
-        fecha_entrada = fecha_entrada,
+        fechaEntradaCongreso = fecha_entrada,
         corrupto = corrupto,
-        id_partido = id_partido,
-        causasConf = listOf(),
+        idPartido = id_partido,
+        causasConfirmadas = listOf(),
         causasSupuestas = listOf(),
     )
 }
@@ -45,8 +41,8 @@ fun Diputado.toDiputadoEntity(): DiputadoEntity {
     return DiputadoEntity(
         id = id,
         nombre = nombre,
-        fecha_entrada = fecha_entrada,
+        fecha_entrada = fechaEntradaCongreso,
         corrupto = corrupto,
-        id_partido = id_partido,
+        id_partido = idPartido,
     )
 }

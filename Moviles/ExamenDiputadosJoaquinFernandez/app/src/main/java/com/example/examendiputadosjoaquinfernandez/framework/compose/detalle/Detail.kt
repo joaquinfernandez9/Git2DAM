@@ -37,17 +37,17 @@ fun DetailDiputado(nombre: String) {
             } else {
                 Text(text = "Corrupto: No")
             }
-            Text(text = "En el congreso desde: ${diputado?.fecha_entrada}")
+            Text(text = "En el congreso desde: ${diputado?.fechaEntradaCongreso}")
 
             LazyColumn {
-                items(diputado?.causasConf ?: emptyList()) { causasConf ->
-                    Text(text = causasConf.nombre)
+                items(diputado?.causasConfirmadas ?: emptyList()) { causasConf ->
+                    Text(text = causasConf)
                 }
             }
 
             LazyColumn {
                 items(diputado?.causasSupuestas ?: emptyList()) { causasSup ->
-                    Text(text = causasSup.nombre)
+                    Text(text = causasSup)
                 }
             }
         }

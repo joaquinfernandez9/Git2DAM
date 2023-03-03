@@ -21,17 +21,16 @@ class DiputadoRepository @Inject constructor(
         return flow {
             emit(NetworkResult.Loading())
             val result = dataSource.getDiputados(id)
+            emit(result)
             if (result is NetworkResult.Success) {
                 result.data.let { item ->
                     if (item != null) {
-                        dao.deleteAll(item.map { it.toDiputadoEntity() })
-                        dao.insertAll(item.map { it.toDiputadoEntity() })
+//                        dao.deleteAll(item.map { it.toDiputadoEntity() })
+//                        dao.insertAll(item.map { it.toDiputadoEntity() })
                     }
                 }
-                emit(result)
-            } else {
-                emit(fetchDiputados())
             }
+
         }.flowOn(Dispatchers.IO)
     }
 

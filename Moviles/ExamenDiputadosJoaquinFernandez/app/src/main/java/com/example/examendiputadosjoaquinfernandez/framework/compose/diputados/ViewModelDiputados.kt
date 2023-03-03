@@ -53,7 +53,7 @@ class ViewModelDiputados @Inject constructor(
                     is NetworkResult.Loading -> {
                         _diputados.update {
                             it.copy(
-                                isLoading = false,
+                                isLoading = true,
                             )
                         }
                     }

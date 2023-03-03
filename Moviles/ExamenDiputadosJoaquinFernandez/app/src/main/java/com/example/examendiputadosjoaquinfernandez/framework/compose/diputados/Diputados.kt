@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.examendiputadosjoaquinfernandez.domain.model.Diputado
 
 @Composable
 fun Diputados(onNavigate: (String) -> Unit) {
@@ -20,6 +21,7 @@ fun Diputados(onNavigate: (String) -> Unit) {
     var text by remember {
         mutableStateOf(state.error ?: "")
     }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -102,7 +104,7 @@ fun Diputados(onNavigate: (String) -> Unit) {
                                             .padding(8.dp)
                                     )
                                 }
-                                Text(text = item.fecha_entrada)
+                                Text(text = item.fechaEntradaCongreso)
                             }
                         } else {
                             Row(
@@ -120,7 +122,7 @@ fun Diputados(onNavigate: (String) -> Unit) {
                                             .padding(8.dp)
                                     )
                                 }
-                                Text(text = item.fecha_entrada)
+                                Text(text = item.fechaEntradaCongreso)
                             }
 
                         }
