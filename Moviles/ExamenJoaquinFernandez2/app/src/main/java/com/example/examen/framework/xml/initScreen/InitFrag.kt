@@ -98,7 +98,7 @@ class InitFrag : Fragment() {
                 override fun onPatientClicked(patient: Paciente) {
                     findNavController().navigate(R.id.action_initFrag_to_detailFragment,
                         Bundle().apply
-                        { putString("id", patient.id) })
+                        { putString("id", patient.id.toString()) })
                 }
             }
         )

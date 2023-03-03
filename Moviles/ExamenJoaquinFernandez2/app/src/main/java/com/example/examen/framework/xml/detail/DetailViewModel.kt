@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -86,7 +87,7 @@ class DetailViewModel @Inject constructor(
                         }
                     }
                     is NetworkResult.Success -> {
-                        val pacientes = result.data?.find { it.id == id }
+                        val pacientes = result.data?.find { it.id == UUID.fromString(id) }
                         if (pacientes != null) {
                             _paciente.update {
                                 it.copy(

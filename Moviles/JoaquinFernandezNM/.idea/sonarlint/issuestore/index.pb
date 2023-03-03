@@ -55,9 +55,9 @@ z
 Japp/src/main/java/com/example/myapplication/ui/subject/SubjectViewModel.kt,c\9\c953e7a5fce45b48bc43ae6e941c552e254bff68
 n
 >app/src/main/java/com/example/myapplication/ui/main/Actions.kt,6\4\648044f258c2c90d636196b202f7a2e535eef45c
-x
-Happ/src/main/java/com/example/myapplication/ui/student/StudentAdapter.kt,4\b\4b6ee19727b4c05145980da7b6b827fb11f4d4bb
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 s
 Capp/src/main/java/com/example/myapplication/ui/main/MainActivity.kt,0\f\0f7744750c79067cce9d6681858379332a8a083d
+x
+Happ/src/main/java/com/example/myapplication/ui/student/StudentAdapter.kt,4\b\4b6ee19727b4c05145980da7b6b827fb11f4d4bb

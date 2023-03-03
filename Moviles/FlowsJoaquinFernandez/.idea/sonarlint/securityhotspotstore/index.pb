@@ -1,0 +1,21 @@
+
+}
+Mapp/src/main/java/com/example/flowsjoaquinfernandez/data/model/SerieEntity.kt,0\c\0cb61f882c28f8781a6883896c83fe23a04ae542
+{
+Kapp/src/main/java/com/example/flowsjoaquinfernandez/data/model/MovieDesc.kt,5\5\55b441a445c49031b129de2c06f7c44248d30bc7
+{
+Kapp/src/main/java/com/example/flowsjoaquinfernandez/data/model/SerieDesc.kt,8\3\83ec974dd1814ee9fe8ce24983fb405fc2b71382
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+}
+Mapp/src/main/java/com/example/flowsjoaquinfernandez/data/model/MovieEntity.kt,e\7\e7688487d8c1fb7e102fb96427263c362fead0cb
+x
+Happ/src/main/java/com/example/flowsjoaquinfernandez/di/DatabaseModule.kt,d\9\d9fb38746975bf4c902c77032edb9ab96dec208d
+z
+Japp/src/main/java/com/example/flowsjoaquinfernandez/data/local/MovieDao.kt,1\0\103c98311445121cf283d74bc0877fbd15de6b77
+‡
+Wapp/src/main/java/com/example/flowsjoaquinfernandez/data/local/repos/MovieRepository.kt,0\4\0433dc1f00401c369e87875c3b230f79486428d0
+}
+Mapp/src/main/java/com/example/flowsjoaquinfernandez/framework/MainActivity.kt,1\3\13693e86e519ebf51ddfd415c7b63b584e0a81b6
+x
+Happ/src/main/java/com/example/flowsjoaquinfernandez/framework/FlowApp.kt,4\1\41e6474e9375d0d8459418938683532da4afcfc9

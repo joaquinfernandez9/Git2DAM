@@ -1,0 +1,25 @@
+
+|
+Lapp/src/main/java/com/example/mundialjoaquinfernandez/data/dao/EquiposDao.kt,9\1\911d2c5e86aa0abb8728d584d0840c51f720875e
+}
+Mapp/src/main/java/com/example/mundialjoaquinfernandez/data/EquiposDatabase.kt,7\c\7c082db0ca9e2bc21b5a4bd08d8a1b04b198eeca
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+å
+\app/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/juego/SeleccionAdapter.kt,b\8\b82e294453f02fb101a5ce785b56895c037ed7c7
+z
+Japp/src/main/java/com/example/mundialjoaquinfernandez/ui/SplashActivity.kt,3\2\3296678e16c41cfcb61fbfcab42ecece3ce9643b
+Ö
+Uapp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/PrincipalScreen.kt,8\5\85d058b676726f0c336400193719e3ff104eaa1f
+é
+^app/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/juego/SeleccionarEquipos.kt,e\d\ed7887a6c3078564640a0240a1c4c74a46f0b783
+Ç
+Rapp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/MainActivity.kt,f\7\f734d01c0bb066273705e5f9f6a71dfd0772a55c
+~
+Napp/src/main/java/com/example/mundialjoaquinfernandez/data/dao/JugadoresDao.kt,c\f\cf9c93f21b51aeeba5d53ccaf2f5892a6819b8cc
+~
+Napp/src/main/java/com/example/mundialjoaquinfernandez/data/const/Constantes.kt,0\6\06a40b64284888853120664dc8db5087fa5b3a8c
+ñ
+fapp/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/listaEquipos/ListaEquiposAdapter.kt,8\2\82d5a9d5f676aded3ebc2db68c3f0572ae8d9b69
+è
+_app/src/main/java/com/example/mundialjoaquinfernandez/ui/pantallas/listaEquipos/ListaEquipos.kt,d\4\d46ad68f46c78d0b62acb4ea990d9b96a11ba4c8

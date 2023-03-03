@@ -6,7 +6,7 @@ import java.util.UUID
 
 @Parcelize
 data class Paciente(
-    val id: String,
+    val id: UUID,
     var nombre: String,
     val dni: String,
     val enfermedades: List<Enfermedades>? = emptyList()
