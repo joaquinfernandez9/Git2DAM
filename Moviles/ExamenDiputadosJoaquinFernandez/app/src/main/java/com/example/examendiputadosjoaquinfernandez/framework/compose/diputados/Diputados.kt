@@ -32,8 +32,6 @@ fun Diputados(onNavigate: (String) -> Unit) {
                 .padding(16.dp)
                 .fillMaxSize()
         ) {
-            //cargar partidos
-            Text(text = "partidos")
             Row(
                 modifier = Modifier
                     .padding(16.dp)
@@ -79,7 +77,6 @@ fun Diputados(onNavigate: (String) -> Unit) {
                     .fillMaxSize()
                     .padding(10.dp)
             ) {
-                Text(text = text)
                 LazyColumn(
                     modifier = Modifier
                         .padding(16.dp)
@@ -93,7 +90,11 @@ fun Diputados(onNavigate: (String) -> Unit) {
                                     .padding(16.dp)
                                     .fillMaxWidth()
                                     .weight(1f)
-                                    .background(color = Color.Red)
+                                    .background(color = Color.Red),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically,
+                                //backgroundColor = Color.Red
+
                             ) {
                                 Button(onClick = {
                                     onNavigate(item.nombre)

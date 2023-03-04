@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
 fun Navigation(navHostController: NavHostController) {
     NavHost(navController = navHostController, startDestination = "diputados") {
         composable("diputados") {
-            Diputados(onNavigate = { nombre -> navHostController.navigate("detail_patient/$nombre") })
+            Diputados(onNavigate = { nombre -> navHostController.navigate("detail/$nombre") })
         }
         composable("detail/{nombre}",
             arguments = listOf(navArgument("nombre") { type = NavType.StringType })

@@ -1,11 +1,9 @@
 package com.example.examendiputadosjoaquinfernandez.framework.compose.detalle
 
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -32,24 +30,32 @@ fun DetailDiputado(nombre: String) {
         Column {
             Text(text = "ID: ${diputado?.id}")
             Text(text = "Nombre diputado: ${diputado?.nombre}")
-            if (diputado?.corrupto == true){
+            if (diputado?.corrupto == true) {
                 Text(text = "Corrupto: Si")
             } else {
                 Text(text = "Corrupto: No")
             }
             Text(text = "En el congreso desde: ${diputado?.fechaEntradaCongreso}")
 
-            LazyColumn {
-                items(diputado?.causasConfirmadas ?: emptyList()) { causasConf ->
-                    Text(text = causasConf)
+
+            Row {
+                Text(text = "Causas confirmadas: ")
+                LazyRow {
+                    items(diputado?.causasConfirmadas ?: emptyList()) { causasConf ->
+                        Text(text = "$causasConf ,")
+                    }
+                }
+            }
+            Row {
+                Text(text = "Causas supuestas: ")
+                LazyRow {
+                    items(diputado?.causasSupuestas ?: emptyList()) { causasSup ->
+                        Text(text = "$causasSup ,")
+                    }
                 }
             }
 
-            LazyColumn {
-                items(diputado?.causasSupuestas ?: emptyList()) { causasSup ->
-                    Text(text = causasSup)
-                }
-            }
+
         }
     }
 }
