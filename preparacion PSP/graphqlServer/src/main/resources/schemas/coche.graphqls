@@ -1,22 +1,22 @@
 type Coche{
-    id: String
-    marca: String
-    ruedas: [Rueda]
+    id: ID!
+    marca: String!
+    ruedas: [Rueda!]!
 }
 
 type Rueda{
-    nombre: String
-    pulgadas: Int
-    id_coche: String
+    nombre: String!
+    pulgadas: Int!
+    id_coche: String!
 }
 
 type Query {
-    getAllCoches: [Coche]
-    getCoche(idCoche: String!): Coche
+    getAllCoches: [Coche!]!
+    getCoche(idCoche: ID!): Coche
 }
 
 type Mutation {
-    postCoche(id: String!, marca: String!): Coche
-    addRueda(id: String!, nombre: String!, pulgadas: Int!, idCoche: String!): Coche
-    deleteCoche(idCoche: String!): Boolean
+    postCoche(id: ID!, marca: String!): Coche!
+#    delete(idCoche: ID!): Boolean
+#    addRueda(id: ID!, nombre: String!, pulgadas: Int!): Coche!
 }

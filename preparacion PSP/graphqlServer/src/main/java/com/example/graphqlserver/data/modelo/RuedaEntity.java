@@ -16,6 +16,6 @@ public class RuedaEntity {
     private int pulgadas;
 
     @ManyToOne
-    @JoinColumn(name = "id_coche", referencedColumnName = "id")
-    private CocheEntity id_coche;
+    @JoinColumn(name = "id_coche")
+    private CocheEntity coche;
 }

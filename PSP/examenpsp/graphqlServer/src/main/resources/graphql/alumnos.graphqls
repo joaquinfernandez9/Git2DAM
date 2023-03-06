@@ -1,0 +1,20 @@
+type Alumno {
+    id: ID
+    nombre: String
+    notas: [Nota]
+}
+
+type Nota {
+    id: ID
+    nombre: String
+    nota: Int
+    id_alumno: ID
+}
+
+type Query{
+    getAllAlumnos: [Alumno]
+}
+
+type Mutation{
+    addAlumno(nombre:String): Alumno
+}

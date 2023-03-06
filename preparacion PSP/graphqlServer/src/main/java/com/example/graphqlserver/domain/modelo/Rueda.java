@@ -10,6 +10,5 @@ import lombok.NoArgsConstructor;
 public class Rueda {
     private String nombre;
     private int pulgadas;
-
     private String id_coche;
 }
