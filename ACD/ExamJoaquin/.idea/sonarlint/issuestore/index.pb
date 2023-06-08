@@ -9,8 +9,6 @@ X
 0src/main/java/modelo/hibernate/PurchaseItem.java,b\0\b01cfe83216280bdf7d45ced36a66aff65157e50
 e
 5src/main/java/dao/hibernateModel/PersonHibernate.java,1\b\1b94ccfb2c867749970ddbc6995271a4b0e3d7d9
-V
-&src/main/java/config/ProducesGson.java,d\6\d6cd662b00051e372c115c7237fa24bcf163116c
 M
 src/main/java/dao/Person.java,2\2\22496d075be3a6f80142925d8be349ced31a2ee2
 R
@@ -33,17 +31,19 @@ Z
 *src/main/java/modelo/hibernate/Client.java,f\0\f0571c491ade9b3b62fd34d5a35e9da3542b3163
 Y
 )src/main/java/modelo/hibernate/Items.java,3\d\3d69fc2035a83c377452f46c960489406562088a
-X
-(src/main/java/dao/DaoMongoEmployees.java,2\2\228e9b8670cadcd8fdf3729c45fe17480c6a6b00
 \
 ,src/main/java/modelo/hibernate/Purchase.java,b\7\b73f490632ec315bc4f8f3a3a56ea6e30fe8229e
 J
 src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
-P
- src/main/java/dao/DaoClient.java,5\0\5020226b4bcb8c8ded1410fa2fe629a2b2e9d68f
 Z
 *src/main/java/services/ServicesClient.java,e\b\eb2a53077db98896729b1fda69574c5b9c99c0e4
-[
-+src/main/java/dao/DaoMongoAggregations.java,4\a\4ab6c1696288120587e00d4e91f3565596b641f1
 R
 "src/main/java/dao/DaoPurchase.java,e\3\e3f5245408cdd1a0ce4bf3d0da1ea70db4e85fd1
+[
++src/main/java/dao/DaoMongoAggregations.java,4\a\4ab6c1696288120587e00d4e91f3565596b641f1
+P
+ src/main/java/dao/DaoClient.java,5\0\5020226b4bcb8c8ded1410fa2fe629a2b2e9d68f
+V
+&src/main/java/config/ProducesGson.java,d\6\d6cd662b00051e372c115c7237fa24bcf163116c
+X
+(src/main/java/dao/DaoMongoEmployees.java,2\2\228e9b8670cadcd8fdf3729c45fe17480c6a6b00

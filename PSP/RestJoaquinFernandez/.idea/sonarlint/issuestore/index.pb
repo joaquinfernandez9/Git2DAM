@@ -53,16 +53,8 @@ Q
 !src/main/webapp/WEB-INF/beans.xml,8\3\83008b1a88ba03a2548bb5b9ad0768c6c307d36c
 O
 src/main/java/config/Const.java,a\3\a3be7ac6c8ecbf846f495ac05a4cdf1b4df8960a
-Z
-*src/main/java/dao/impl/DaoArticleImpl.java,7\1\71e44dc5fcf1746c413aa5589868c3f834301a33
-X
-(src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153
-Y
-)src/main/java/dao/impl/DaoQuerysImpl.java,4\e\4eb39ed9aed5a09869a3d7b710b8bdd9e5b9f1d6
 ^
 .src/main/java/dao/impl/DaoReadArticleImpl.java,c\7\c74859bdd94066f6fdfbd820cae9e3d4f94e998e
-Y
-)src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
 `
 0src/main/java/dao/impl/DaoSubscriptionsImpl.java,a\2\a222ff1a2ecf1294a5a85bf4cc407ca3a9cc40f0
 L
@@ -101,8 +93,6 @@ S
 .src/main/java/jakarta/rest/RestNewspapers.java,3\a\3a54a8c80507be4216fc826977b2620c9c32ca47
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-\
-,src/main/java/dao/impl/DaoNewspaperImpl.java,d\9\d940e9b1c3e290c9f863007602bcf03aebd211cd
 b
 2src/main/java/services/impl/NewspaperServImpl.java,1\3\139bbde76232a7d0e91c1a45a6aae8bcbce3460d
 Y

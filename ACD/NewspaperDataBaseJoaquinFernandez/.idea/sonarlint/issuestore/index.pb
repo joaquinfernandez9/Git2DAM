@@ -217,17 +217,17 @@ Y
 )src/main/java/dao/impl/DaoReaderImpl.java,7\2\72440157c446318bc29b0757b8a5cff6e934480f
 X
 (src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153
-Z
-*src/main/java/dao/impl/DaoArticleImpl.java,7\1\71e44dc5fcf1746c413aa5589868c3f834301a33
-N
-src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-P
- src/main/java/model/Article.java,9\9\99f4ea86658401191d1286ffc77aba6f6db602b1
 A
 data/articles.txt,e\b\eba3ccb9beb9883b0df9fcda7ca192f5623a5ea4
 E
 data/articlesType.txt,e\d\edfe09e2c6ea872a8a499393c00347d2b1ed5a4b
 C
 data/newspapers.txt,2\6\265da7cdb708512fd84e9ea10efb0f0af1573ba4
+Z
+*src/main/java/dao/impl/DaoArticleImpl.java,7\1\71e44dc5fcf1746c413aa5589868c3f834301a33
 W
 'src/main/java/config/Configuration.java,7\f\7f9a1455549e9958f1cfe6993a695569484b133b
+N
+src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
+P
+ src/main/java/model/Article.java,9\9\99f4ea86658401191d1286ffc77aba6f6db602b1

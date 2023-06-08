@@ -83,10 +83,10 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.6.1'
 
     //by viewModels
-    implementation "androidx.fragment:fragment-ktx:1.5.5"
+    implementation "androidx.fragment:fragment-ktx:1.5.7"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-    implementation 'com.google.ar:core:1.30.0'
+    implementation 'com.google.ar:core:1.37.0'
 
     // Lifecycle libraries
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
